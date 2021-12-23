@@ -1,7 +1,7 @@
 version: "2.0"
 
 rules:
-
+############## general #########################
 - rule: Say goodbye anytime the user says goodbye
   steps:
   - intent: goodbye
@@ -11,3 +11,168 @@ rules:
   steps:
   - intent: bot_challenge
   - action: utter_iamabot
+
+- rule: Terminate the conversation
+  steps:
+  - intent: terminate_conversation
+  - action: action_restart
+
+- rule: Out-of-scope  
+  steps:
+  - intent: out_of_scope
+  - action: utter_out_of_scope
+
+- rule: Say hi and ask what user would lke to do if user started with greets
+  conversation_start: True
+  steps:
+  - intent: greet
+  - action: utter_greet
+  - action: utter_help
+
+- rule: Say hi anytime the users greet
+  steps:
+  - intent: greet
+  - action: utter_greet
+
+- rule: Reply to thank you
+  steps:
+  - intent: thanks
+  - action: utter_yourwelcome
+
+- rule: Implementation of the Two-Stage-Fallback
+  steps:
+  - intent: nlu_fallback
+  - action: action_two_stage_fallback
+  - active_loop: action_two_stage_fallback
+
+- rule: Repeat what the bot just said
+  steps: 
+  - intent: repeat_again
+  - action: action_repeat
+
+
+############# user info #############################
+# - rule: Tell the number of books user is borrowing 
+#   steps:
+#   - intent: check_userstats
+#   - action: stat_request_form
+#   - active_loop: stat_request_form
+#   - slot_was_set:
+#     - stat_request_type: current
+#   - action: action_total_limit
+#   - action: action_show_count
+
+# - rule: Tell the number of books user can still borrow 
+#   steps:
+#   - intent: check_userstats
+#   - slot_was_set:
+#     - stat_request_type: remaining
+#   - action: action_total_limit
+#   - action: action_show_count
+
+# - rule: Tell the totla number of books user can borrow in general.
+#   steps:
+#   - intent: check_userstats
+#   - slot_was_set:
+#     - stat_request_type: total
+#   - action: action_total_limit
+
+# # TODO(nami) move this to stories.yml
+# # TODO(nami) fix it
+# - rule: Tell the return dates of books 
+#   steps:
+#   # first tell how many books they have and then activate form to know which book they want to know 
+#   - intent: check_return
+#   - action: action_show_count
+#   - action: activate_which_book_form
+#     condition:
+#   - action: action_tell_return_times
+
+############# library info ############################
+- rule: Tell the library open dates/hours
+  steps:
+  - intent: faq_check_open
+  - action: action_tell_opentime
+
+- rule: Tell the location of the library 
+  steps:
+  - intent: faq_check_location
+  - action: utter_library_location
+
+############## library contact info #####################
+- rule: Tell the library email 
+  steps:
+  - intent: contact_library
+    entities: 
+      - contact_type: email 
+  - action: utter_library_email
+
+- rule: Tell the library phone number 
+  steps:
+  - intent: contact_library
+    entities:
+      - contact_type: phone
+  - action: utter_library_phone
+
+- rule: Activate contact_form
+  steps:
+  - intent: contact_library
+  - action: contact_form
+  - slot_was_set:
+    - contact_type: null
+  - active_loop: contact_form
+
+# - rule: Deactivate contact_form - phone
+#   condition:
+#   - active_loop: contact_form
+#   steps:
+#   - action: contact_form
+#   - slot_was_set:
+#     - requested_slot: null
+#   - active_loop: null
+#   - slot_was_set:
+#     - contact_type: phone
+#   - action: action_tell_contact_info
+
+# - rule: Deactivate contact_form - email
+  # condition:
+  # - active_loop: contact_form
+  # steps:
+  # - action: contact_form
+  # - slot_was_set:
+  #   - requested_slot: null
+  # - active_loop: null
+  # - slot_was_set:
+  #   - contact_type: email
+  # - action: action_tell_contact_info
+- rule: Deactivate contact_form - phone
+  condition:
+  - active_loop: contact_form
+  steps:
+  - action: contact_form
+  - slot_was_set:
+    - requested_slot: contact_type
+  - slot_was_set:
+    - contact_type: phone
+  - slot_was_set:
+    - requested_slot: null
+  - active_loop: null
+  - action: action_tell_contact_info
+  - slot_was_set:
+    - contact_type: null
+
+- rule: Deactivate contact_form - email
+  condition:
+  - active_loop: contact_form
+  steps:
+  - action: contact_form
+  - slot_was_set:
+    - requested_slot: contact_type
+  - slot_was_set:
+    - contact_type: email
+  - slot_was_set:
+    - requested_slot: null
+  - active_loop: null
+  - action: action_tell_contact_info
+  - slot_was_set:
+    - contact_type: null

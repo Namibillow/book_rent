@@ -1,30 +1,83 @@
 version: "2.0"
 
-stories:
+# Containing stories that only perform single task #
 
-- story: happy path
-  steps:
-  - intent: greet
-  - action: utter_greet
-  - intent: mood_great
-  - action: utter_happy
+## Part 1: User wants to borrow books ####################
 
-- story: sad path 1
-  steps:
-  - intent: greet
-  - action: utter_greet
-  - intent: mood_unhappy
-  - action: utter_cheer_up
-  - action: utter_did_that_help
-  - intent: affirm
-  - action: utter_happy
+## Part 2: User wants to know their current profile ######
 
-- story: sad path 2
-  steps:
-  - intent: greet
-  - action: utter_greet
-  - intent: mood_unhappy
-  - action: utter_cheer_up
-  - action: utter_did_that_help
-  - intent: deny
-  - action: utter_goodbye
+## Part 3: User wants to now library information #########
+
+## Part 4: User wants to contact library #################
+
+#  Create interactive stories
+# stories: 
+# - story: ask how to contact library - email 
+#   steps:
+#     - intent: contact_library
+#     - action: contact_form
+#     - active_loop: contact_form
+#     - slot_was_set:
+#       - contact_type: email
+#     - slot_was_set:
+#       - requested_slot: null
+#     - active_loop: null
+#     - action: action_tell_contact_info 
+
+# - story: ask how to contack library - phone number
+#   steps: 
+#     - intent: contact_library
+#     - action: contact_form
+#     - active_loop: contact_form
+#     - slot_was_set:
+#       - requested_slot: null
+#     - slot_was_set:
+#       - contact_type: phone 
+#     - active_loop: null
+#     - action: action_tell_contact_info
+    
+# stories: ask library email address 
+
+# stories: ask library 
+############################################################
+# Pattern 1: Complete 1 task 
+
+# stories: borrow books given matching book title and author.
+# - story: 
+#   steps:
+#     - intent: greet # user says hi
+#     - action: utter_start # reply with greeting and ask what user want
+#     - intent: search_book # user wants to find a book to borrow
+#     - action: search_book_form # activate the form
+#     - active_loop: search_book_form # fill the form
+#     - active_loop: null # form complete
+#     - action: utter_book_found # notify and ask if user wants to borrow it
+#     - intent: affirm 
+#     - action: utter_followup
+
+# stories: borrow books interrupted by user asking library info
+#     - intent: greet # user says hi
+#     - action: utter_start # reply with greeting and ask what user want
+#     - intent: search_book # user wants to find a book to borrow
+#     - action: search_book_form # activate the form
+#     - intent: check_open
+#     - action: 
+#     - active_loop: search_book_form # fill the form
+#     - active_loop: null # form complete
+#     - action: utter_book_found # notify and ask if user wants to borrow it
+#     - intent: affirm 
+#     - action: utter_followup
+
+# stories: repeat what was said by bot 
+
+# stories: user asks for extending the borrowing date for currently borrowing books 
+
+# stories: user asks opening dates and hours for the library 
+
+# stories: user asks location of the library 
+
+# stories: user asks both opening time and location of the library 
+
+# Pattern 2: Task interrupted 
+
+# Pattern 3: Multiple tasks (in order) required 

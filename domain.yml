@@ -1,34 +1,143 @@
-version: "2.0"
-
-intents:
-  - greet
-  - goodbye
-  - affirm
-  - deny
-  - mood_great
-  - mood_unhappy
-  - bot_challenge
-
-responses:
-  utter_greet:
-  - text: "Hey! How are you?"
-
-  utter_cheer_up:
-  - text: "Here is something to cheer you up:"
-    image: "https://i.imgur.com/nGF1K8f.jpg"
-
-  utter_did_that_help:
-  - text: "Did that help you?"
-
-  utter_happy:
-  - text: "Great, carry on!"
-
-  utter_goodbye:
-  - text: "Bye"
-
-  utter_iamabot:
-  - text: "I am a bot, powered by Rasa."
+version: '2.0'
 
 session_config:
   session_expiration_time: 60
-  carry_over_slots_to_new_session: true
+  carry_over_slots_to_new_session: false
+
+intents:
+- greet
+- goodbye
+- affirm
+- deny
+- bot_challenge
+- thanks
+- faq_check_location
+- out_of_scope
+- faq_check_open
+- terminate_conversation
+- repeat_again
+- nlu_fallback
+- contact_library
+## - inform_contact_type
+# - search_book
+# - check_userstats
+# - check_return
+# - request_extension
+# - get_random_book
+
+entities:
+- time
+- contact_type
+# - book_author
+# - book_title
+# - book_year
+# - book_genre
+# - address
+# - extend_date
+# - open_day
+# - stat_request_type
+
+# need lists for multiple books
+slots:
+  time:
+    type: any
+    influence_conversation: false
+
+  contact_type:
+    type: categorical 
+    influence_conversation: true 
+    values: 
+      - email 
+      - phone
+
+# - return_date:
+#     type: text
+#     influence_conversation: false
+# - open_day:
+#     type: text
+
+# - book_author
+# - book_title
+# - book_year
+# - book_genre
+# - address
+# - stat_request_type:
+#     type: categorical
+#     values:
+#       - current
+#       - remaining 
+#       - total
+#     influence_conversation: true
+
+responses:
+  utter_greet:
+  - text: Hello there!
+  - text: Hi
+  - text: Hope you are doing great!
+  utter_help:
+  - text: I can provide you library services. I can help you borrow a book or check your profile, as well as provide you with our library information.
+  - text: I am your library bot. I can help you borrow books. To start, you can just say "i am looking for a book".
+  utter_goodbye:
+  - text: Bye, have a nice day!
+  - text: Thanks for talking.
+  utter_iamabot:
+  - text: I am a library service bot. 
+  - text: I am a bot to help you provide library services.
+  utter_out_of_scope:
+  - text: Sorry, I can't handle that request.
+  - text: Sorry, I do not offer the service for your request.
+  utter_ask_rephrase:
+  - text: Sorry, I didn't understand what you just said. Could you repeat or rephrase it again?
+  utter_default:
+  - text: Sorry, I can't help you.
+  utter_yourwelcome:
+  - text: You are welcome.
+  utter_restart:
+  - text: Ok, terminating the conversation.
+  utter_library_location:
+  - text: The library address is Via Adalberto Libera, 3 - 38122 Trento, Italy.
+  utter_default_datetime:
+  - text: We are open through Monday to Saturday from 8am to 11:45pm and Sunday from 2pm to 8:45 pm.
+  utter_specified_date_closed:
+  - text: Sorry we are closed on {day_of_week} {month} {day}, {year}.
+  utter_specified_date_time_closed:
+  - text: Sorry we are closed on {day_of_week} at {hour_min} of {month} {day}, {year}.
+  utter_affirm_open:
+  - text: Yes, for {relative_time} {day_of_week}, we open {hour_min}.
+  utter_next_open_date:
+  - text: We will be open on {day_of_week} {month} {day}, {year} {hour_min}.
+  # utter_datetime:
+  # - text: we got time as {time}!!
+  utter_library_phone:
+  - text: The library phone number is 12 345 6789
+  utter_library_email:
+  - text: The library email address is aaabbbccc@gmail.com
+  utter_ask_contact_type:
+  - text: You can contact us by email or call. Which information would you like to know?
+  
+actions:
+- action_repeat
+- action_tell_opentime
+- action_tell_contact_info
+- validate_contact_form
+# - action_total_limit
+# - action_show_count
+# - action_tell_location
+
+forms:
+  contact_form:
+    required_slots:
+      contact_type:
+        - type: from_entity
+          entity: contact_type
+
+#   search_book_form:
+#     required_slots:
+
+#   stat_request_form:
+#     required_slots:
+#       stat_request_type:
+#         - type: from_entity
+#           entity: stat_request_type
+
+  
