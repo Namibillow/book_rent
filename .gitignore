@@ -1,0 +1,11 @@
+.vscode
+*.so
+*.db
+*.db-shm
+*.db-wal
+models
+node_modules
+credentials.yml
+package-lock.json
+__pycache__
+*.dot

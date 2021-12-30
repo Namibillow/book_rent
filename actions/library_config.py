@@ -36,3 +36,5 @@ LOCATION = "Via Adalberto Libera, 3 - 38122 Trento, Italy"
 EMAIL = "my_library@gmail.com"
 
 PHONE = "39-0461-283011"
+
+DATABASE = "book_rent.db"
