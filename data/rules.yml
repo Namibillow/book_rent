@@ -1,7 +1,7 @@
 version: "2.0"
 
 rules:
-############## general #########################
+# ############## general #########################
 - rule: Say goodbye anytime the user says goodbye
   steps:
   - intent: goodbye
@@ -50,45 +50,12 @@ rules:
   - intent: repeat_again
   - action: action_repeat
 
+- rule: Tell available services
+  steps:
+  - intent: help 
+  - action: utter_provided_services
 
-############# user info #############################
-# - rule: Tell the number of books user is borrowing 
-#   steps:
-#   - intent: check_userstats
-#   - action: stat_request_form
-#   - active_loop: stat_request_form
-#   - slot_was_set:
-#     - stat_request_type: current
-#   - action: action_total_limit
-#   - action: action_show_count
-
-# - rule: Tell the number of books user can still borrow 
-#   steps:
-#   - intent: check_userstats
-#   - slot_was_set:
-#     - stat_request_type: remaining
-#   - action: action_total_limit
-#   - action: action_show_count
-
-# - rule: Tell the totla number of books user can borrow in general.
-#   steps:
-#   - intent: check_userstats
-#   - slot_was_set:
-#     - stat_request_type: total
-#   - action: action_total_limit
-
-# # TODO(nami) move this to stories.yml
-# # TODO(nami) fix it
-# - rule: Tell the return dates of books 
-#   steps:
-#   # first tell how many books they have and then activate form to know which book they want to know 
-#   - intent: check_return
-#   - action: action_show_count
-#   - action: activate_which_book_form
-#     condition:
-#   - action: action_tell_return_times
-
-############# library info ############################
+# ############# library info ############################
 - rule: Tell the library open dates/hours
   steps:
   - intent: faq_check_open
@@ -99,7 +66,12 @@ rules:
   - intent: faq_check_location
   - action: utter_library_location
 
-############## library contact info #####################
+- rule: Tell the total books user can rent 
+  steps:
+  - intent: faq_total_allowance
+  - action: utter_total_allowance
+
+# ############## library contact info #####################
 - rule: Tell the library email 
   steps:
   - intent: contact_library
@@ -122,29 +94,6 @@ rules:
     - contact_type: null
   - active_loop: contact_form
 
-# - rule: Deactivate contact_form - phone
-#   condition:
-#   - active_loop: contact_form
-#   steps:
-#   - action: contact_form
-#   - slot_was_set:
-#     - requested_slot: null
-#   - active_loop: null
-#   - slot_was_set:
-#     - contact_type: phone
-#   - action: action_tell_contact_info
-
-# - rule: Deactivate contact_form - email
-  # condition:
-  # - active_loop: contact_form
-  # steps:
-  # - action: contact_form
-  # - slot_was_set:
-  #   - requested_slot: null
-  # - active_loop: null
-  # - slot_was_set:
-  #   - contact_type: email
-  # - action: action_tell_contact_info
 - rule: Deactivate contact_form - phone
   condition:
   - active_loop: contact_form
@@ -176,3 +125,123 @@ rules:
   - action: action_tell_contact_info
   - slot_was_set:
     - contact_type: null
+
+# ################## search book form ######################
+
+# TODO(nami) Make sure after the first utterance, form is activated
+- rule: Activate search_book form 
+  steps:
+  - intent: search_book 
+  - action: action_reset_slots # reset all slots 
+  - action: utter_search_book_greet  
+  - action: search_book_form
+  - active_loop: search_book_form
+
+# TODO(nami): add explicit confirmation before the action_search_book??  in case of fixing??
+- rule: Submit & Deactivate search_book form
+  condition:
+  - active_loop: search_book_form
+  steps:
+  - action: search_book_form
+  - active_loop: null
+  - slot_was_set:
+    - requested_slot: null
+  - action: action_search_book
+
+- rule: Activate select_from_list form 
+  condition: 
+  - slot_was_set:
+    - has_list_selection: true
+  steps:
+  - action: select_from_list_form
+  - active_loop: select_from_list_form
+
+- rule: Submit & Deactivate select_from_list form
+  condition:
+  - active_loop: select_from_list_form
+  steps:
+  - action: select_from_list_form
+  - active_loop: null
+  - slot_was_set:
+    - requested_slot: null
+
+- rule: Exactly one matched search result - affirm
+  condition:
+  - slot_was_set:
+    - has_found_book: true
+    - has_list_selection: false 
+  steps:
+  - action: utter_confirm_to_borrow
+  - intent: affirm
+  - action: action_perform_borrow
+
+- rule: Exactly one matched search result - deny
+  condition:
+    - slot_was_set:
+      - has_found_book: true 
+      - has_list_selection: false 
+  steps:
+  - action: utter_confirm_to_borrow
+  - intent: deny
+  - action: utter_ok
+
+# - rule: Narrowed to one matched search result from list - affirm
+#   condition:
+#     - slot_was_set:
+#       - has_found_book: true 
+#       - selected_list_index
+#   steps:
+#   - action: utter_confirm_to_borrow
+#   - intent: affirm
+#   - action: action_perform_borrow
+  
+# - rule: Narrowed to one matched search result from list - deny
+#   condition:
+#     - slot_was_set:
+#       - has_found_book: true 
+#       - selected_list_index
+#   steps:
+#   - action: utter_confirm_to_borrow
+#   - intent: deny
+#   - action: utter_ok
+
+- rule: Repeat found book(s)
+  condition:
+  - slot_was_set:
+    - has_found_book: true 
+  steps:
+  - intent: repeat_again 
+  - action: action_repeat
+
+# ######## Check user inventory #################
+- rule: Tell the number of books user is borrowing 
+  steps:
+  - intent: user_inventory_check_current_borrowing
+  - action: action_user_inventory
+
+- rule:  Tell the remaining number of books user can still borrow 
+  steps:
+  - intent: user_inventory_check_remaining
+  - action: action_user_inventory
+
+- rule: Tell the return dates for the currently borrowed books
+  steps:
+  - intent: user_inventory_check_return
+  - action: action_user_inventory
+
+######## inform_book_info #######
+- rule: Assign form to search_book_form or select_from_list_form
+  steps:
+  - intent: inform_book_info
+  - action: action_assign_book_info_to_form
+  - action: search_book_form
+  - active_loop: search_book_form
+
+### Note ### 
+# if title/author/title and author were given, then trigger inform_book_info
+# check if the specific slot was not set, then activate the form 
+# else, it means the forms are already activated and use extracted entities from this intent fulfil the slots and action is never run
+
+# to check 
+# - check if action_user_inventory activates search_book_form then it can keep going 
+# - stort to test if user_inventory intents were activated during either of search_book or list_index_select

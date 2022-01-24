@@ -387,7 +387,7 @@ nlu:
     - i am looking 
     - looking for a book to read
     - need to read something 
-    - start the book searcj 
+    - start the book search 
     - i want to read 
     - i need to read 
     - help me find a book 
@@ -504,22 +504,73 @@ nlu:
 # if PERSON or book_title was specified, then precedence to that than ordinal or number 
 # use last with entity DIET classifier 
 # use PERSON (spacy) and book_title (DIET) if not used index
+
+# Duckling mistakenly extracts time for ones with ordinal preceeded by "the" thus performing a manual mapping 
 - intent: select_from_list
   examples: | 
-    - the first one 
+    - the [first](ordinal) one 
+    - the [second](ordinal) one 
+    - the [third](ordinal) one 
+    - the [fourth](ordinal) one
+    - the [last](ordinal) one 
     - first book
-    - the second book 
-    - get me the third one 
+    - second book 
+    - third book 
+    - fouth book 
+    - fifth book 
+    - sixth book 
+    - seventh book 
+    - eighth book 
+    - ninth book 
+    - tenth book 
+    - [last](ordinal) book 
+    - the [first](ordinal) book 
+    - the [second](ordinal) book 
+    - the [third](ordinal) book 
+    - the [fourth](ordinal) book 
+    - the [fifth](ordinal) book
+    - the [sixth](ordinal) book
+    - the [seventh](ordinal) book
+    - the [eighth](ordinal) book
+    - the [ninth](ordinal) book
+    - the [tenth](ordinal) book
+    - the [last](ordinal) book 
+    - get me first one 
+    - get me second one 
+    - get me third one 
+    - get me fourth one 
+    - get me fifth one 
+    - get me sixth one 
+    - get me [last](ordinal) one 
+    - get me the [first](ordinal) one 
+    - get me the [second](ordinal) one 
+    - get me the [third](ordinal) one 
+    - get me the [fourth](ordinal) one 
+    - get me the [last](ordinal) one 
+    - get me the [tenth](ordinal) one 
+    - borrow first one 
+    - borrow second one 
+    - borrow third one 
+    - borrow fourth one 
+    - borrow ninth one 
+    - borrow [last](ordinal) one 
+    - borrow the [first](ordinal) one 
+    - borrow the [second](ordinal) one 
+    - borrow the [third](ordinal) one 
+    - borrow the [fourth](ordinal) one 
+    - borrow the [fifth](ordinal) one 
     - borrow the [last](ordinal) one 
     - first one 
     - second one 
     - third one 
     - fourth one 
-    - the [last](ordinal) one 
     - [last](ordinal) one 
-    - i want the first one please 
-    - i would like to borrow the first one 
-    - i wanna read the second one 
+    - i want the [first](ordinal) one please 
+    - i want the [second](ordinal) one please 
+    - i want the [third](ordinal) one please 
+    - i want the [fourth](ordinal) one please 
+    - i want the [last](ordinal) one please 
+    - i would like to borrow the [first](ordinal) one 
+    - i wanna read the [second](ordinal) one 
     - i am interested in the [last](ordinal) one 
-    - the first one is the correct one 
-    - get me the second one 
+    - the [first](ordinal) one is the correct one 

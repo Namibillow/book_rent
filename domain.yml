@@ -38,52 +38,49 @@ entities:
 - dummy_entity # used for form: search_book_form
 
 slots:
-  # Default is None 
-  contact_type: # used for actions: action_tell_contact_info, validate_contact_form
+  # default is None 
+  contact_type: # used for storing user choice of the contact type
     type: categorical 
     influence_conversation: true 
     values: 
       - email 
       - phone
     
-  book_title: # used for actions: action_search_book, validate_search_book_form
+  book_title: # used for performing a search of a book 
     type: text
     influence_conversation: true
     auto_fill: false
 
-  book_authors: # used for actions: action_search_book, validate_search_book_form
+  book_authors: # used for performing a search of a book
     type: list
     influence_conversation: true
 
-  found_books: # store search results of books as a list # used for action_search_book, validate_search_book_form
-    type: any
+  found_books: # stores search results of books as a list
+    type: list
   
-  has_found_book:
+  has_found_book: # used for rules condition to trigger actions
     type: bool 
     influence_conversation: true 
-    # have entity to store user values --> use form to handle, assign it to slot called found_books. 
-    # how to distinguish if the search was the continuation or the new ones? 
 
-  # this only used when book_authors are wrongly extracted as book_title 
-  wrong_author_names:
-    type: list # list of names that overlapped with book_title 
+  wrong_author_names: # filled only when book_authors are wrongly extracted as book_title 
+    type: list  
 
   selected_list_index: # entity by text or index but eventually store as number index (1,2,3,...etc)
-    type: text  # stores integer
+    type: text  # stores integer | 
   
-  is_ambiguous:
+  is_ambiguous: # whether the select_from_list_form still is ambiguous
     type: bool 
     influence_conversation: true 
+    initial_value: false  
 
-  # Used when is_ambiguous 
-  narrowed_found_books: 
+  narrowed_found_books: # used when is_ambiguous. stores subset of found_books.
     type: list 
 
-  has_list_selection:
+  has_list_selection: # whther exact match was found or not
     type: bool 
     influence_conversation: true 
 
-  book_info_prefilled:
+  book_info_prefilled: # whether search_book_form was triggered with book_info already provided
     type: bool
     initial_value: false  
   
@@ -191,7 +188,8 @@ responses:
   - text: Seems like not a valid index. Please select again. As for the search result # continue with utter_found_multiple_book
   utter_ambiguous_result:
   - text: There are multiple results for the given query. Let's try again. You can also specify by index, for example, say the first one and so on.
-
+  utter_cannot_borrow:
+  - text: Sorry, you are already borrowing 15 books which is our maximum number of books. Please return some of the books you are currently borrowing.
 actions:
 - action_repeat
 - action_tell_opentime
@@ -232,17 +230,3 @@ forms:
         - type: from_entity
           entity: ordinal  
           intent: select_from_list
-      # not using this method as i need to get indicies as well to check the overlap in authors name 
-      # book_title:
-      #   - type: from_entity 
-      #     entity: book_title
-      #     intent: inform_book_info
-      # book_authors:
-      #   - type: from_entity
-      #     entity: PERSON 
-      #     intent: inform_book_info 
-
-        # - type: from_text
-        #   intent: select_from_list
-        
-      

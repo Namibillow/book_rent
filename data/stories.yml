@@ -1,5 +1,66 @@
 version: "2.0"
 
+stories: 
+  # - story: invalid contact type path 
+  #   steps:
+  #   - intent: contact_library
+  #   - action: contact_form
+  #   - active_loop: contact_form
+  #   - slot_was_set:
+  #     - contact_type: fax
+  #   - slot_was_set:
+  #     - contact_type: null
+  #   - slot_was_set:
+  #     - requested_slot: contact_type
+
+  # - story: Repeat interruption
+
+  # - story: Interruption with other intents
+
+  # - story: Search books by author 
+
+  # - story: Search books by title
+
+  # - story: Search books by title and author 
+
+  # - story: Start search book without indicated 
+ 
+
+############# user info #############################
+# - rule: Tell the number of books user is borrowing 
+#   steps:
+#   - intent: userstats
+#   - action: utter_userstats
+  
+# - rule: Tell the number of books user is borrowing 
+#   steps:
+#   - intent: check_userstats
+#   - action: stat_request_form
+#   - active_loop: stat_request_form
+#   - slot_was_set:
+#     - stat_request_type: current
+#   - action: action_total_limit
+#   - action: action_show_count
+
+# - rule: Tell the number of books user can still borrow 
+#   steps:
+#   - intent: check_userstats
+#   - slot_was_set:
+#     - stat_request_type: remaining
+#   - action: action_total_limit
+#   - action: action_show_count
+
+# # TODO(nami) move this to stories.yml
+# # TODO(nami) fix it
+# - rule: Tell the return dates of books 
+#   steps:
+#   # first tell how many books they have and then activate form to know which book they want to know 
+#   - intent: check_return
+#   - action: action_show_count
+#   - action: activate_which_book_form
+#     condition:
+#   - action: action_tell_return_times
+
 # Containing stories that only perform single task #
 
 ## Part 1: User wants to borrow books ####################
@@ -11,62 +72,15 @@ version: "2.0"
 ## Part 4: User wants to contact library #################
 
 #  Create interactive stories
-# stories: 
 # - story: ask how to contact library - email 
-#   steps:
-#     - intent: contact_library
-#     - action: contact_form
-#     - active_loop: contact_form
-#     - slot_was_set:
-#       - contact_type: email
-#     - slot_was_set:
-#       - requested_slot: null
-#     - active_loop: null
-#     - action: action_tell_contact_info 
 
 # - story: ask how to contack library - phone number
-#   steps: 
-#     - intent: contact_library
-#     - action: contact_form
-#     - active_loop: contact_form
-#     - slot_was_set:
-#       - requested_slot: null
-#     - slot_was_set:
-#       - contact_type: phone 
-#     - active_loop: null
-#     - action: action_tell_contact_info
-    
+
 # stories: ask library email address 
 
 # stories: ask library 
 ############################################################
 # Pattern 1: Complete 1 task 
-
-# stories: borrow books given matching book title and author.
-# - story: 
-#   steps:
-#     - intent: greet # user says hi
-#     - action: utter_start # reply with greeting and ask what user want
-#     - intent: search_book # user wants to find a book to borrow
-#     - action: search_book_form # activate the form
-#     - active_loop: search_book_form # fill the form
-#     - active_loop: null # form complete
-#     - action: utter_book_found # notify and ask if user wants to borrow it
-#     - intent: affirm 
-#     - action: utter_followup
-
-# stories: borrow books interrupted by user asking library info
-#     - intent: greet # user says hi
-#     - action: utter_start # reply with greeting and ask what user want
-#     - intent: search_book # user wants to find a book to borrow
-#     - action: search_book_form # activate the form
-#     - intent: check_open
-#     - action: 
-#     - active_loop: search_book_form # fill the form
-#     - active_loop: null # form complete
-#     - action: utter_book_found # notify and ask if user wants to borrow it
-#     - intent: affirm 
-#     - action: utter_followup
 
 # stories: repeat what was said by bot 
 
