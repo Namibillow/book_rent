@@ -1,0 +1,525 @@
+version: "2.0"
+
+nlu:
+- intent: greet
+  examples: |
+    - hey
+    - hello
+    - hi
+    - hello there
+    - good morning
+    - good evening
+    - moin
+    - hey there
+    - let's go
+    - hey dude
+    - goodmorning
+    - goodevening
+    - good afternoon
+    - how are you doing
+    - what's up
+    - what's good
+    - good afternoon
+
+- intent: goodbye
+  examples: |
+    - good bye
+    - good night
+    - bye
+    - goodbye
+    - have a nice day
+    - see you around
+    - bye bye
+    - see you later
+    - ciao 
+    - see you 
+    - talk to you later
+
+- intent: affirm
+  examples: |
+    - yes
+    - y
+    - indeed
+    - of course
+    - that sounds good
+    - correct
+    - yes please
+    - yes I want to
+    - yeah 
+    - yes I wanna borrow it
+    - positive
+    - go borrow it
+    - yup
+    - sure
+    - ok
+    - sweet
+    - cool
+    - that would be great
+    - okay
+    - yeah sure
+    - yes i do
+    - yes, i accept
+    - yes, i confirm
+    - yes go ahead
+    - yes proceed
+
+- intent: deny
+  examples: |
+    - no
+    - nah
+    - never
+    - i don't think so
+    - i don't like that
+    - no way
+    - not really
+    - no i don't want it
+    - negative 
+    - nope
+    - i don't want to read it 
+    - i don't want to borrow it 
+    - not anymore
+    - no borrow
+    - actually no
+
+- intent: bot_challenge
+  examples: |
+    - are you a bot?
+    - am i speaking to an ai?
+    - are you a human or a bot?
+    - are you real? 
+    - are you virtual? 
+    - are you an ai?
+    - aren't you a bot
+    - are you a chatbot
+    - are you a rasa bot?
+    - are you a real bot?
+    - are you a robot
+    - are you ai
+    - are you artificial
+    - are you artificial intelligence
+    - are you real
+    - are you really a bot
+    - are you robot
+    - are you sure that you're a bot?
+    - bot?
+
+- intent: help 
+  examples: | 
+    - what services do you provide?
+    - what are the services?
+    - what do you offer?
+    - what are the offers?
+    - can you tell me what can i do with you?
+    - what are the things i can do?
+    - help 
+    - help me 
+    - list the services you provide 
+    - what does the bot provide
+    - what can you do?
+    - what are you capable of?
+
+- intent: thanks
+  examples: | 
+    - thanks!
+    - thank you 
+    - thanks for the help 
+    - appriciated 
+    - i appriciate your help
+    - thanks tons 
+    - thanks a lot 
+    - your service is amazing!
+    - good job!
+
+- intent: faq_check_location
+  examples: | 
+    - what is your location?
+    - where is the library located?
+    - where are you?
+    - where can I find your location?
+    - your address please
+    - how to get your place
+    - can i get a map to your location?
+    - give me location please
+    - you got location?
+    - where can i find you?
+    - give me your address.
+    - i don't know where you are located
+    - i would like to get your address.
+    - can you give me your location?
+    - what is your physical location?
+    - the library is located at where?
+    - location
+    - address
+    - gimme the location
+    - tell me your location
+    - i need your address
+    - send me your location
+    - could you give me your address?
+
+- intent: out_of_scope
+  examples: | 
+    - i want to dance
+    - can i order sushi?
+    - you suck
+    - such a kid
+    - my dad is super annoying and i can't understand it anymore
+    - i am a student by the way
+    - do you offer some special deals?
+    - when is the thanksgiving?
+    - jkjkjkjkjkjk
+    - set a reminer
+    - i want to book a hotel
+    - bruhhhhh
+    - what 
+    - you are so annoying
+    - make a cat noise
+    - what is the square root of 5
+    - I want to know the weather
+    - what is the meaning of life.
+    - Fridge Isn't Running
+    - my tv isn't working
+    - I want a pizza
+    - my washing machine isn't working
+    - what year is it
+    - order a pizza
+    - I want to order a pizza
+    - what is the weather today
+    - what is the weather
+    - what the weather today ?
+    - hows the weather
+    - tell me a joke
+    - Can I get a hamburger?
+    - Can YouTube talk?
+    - Can you call me back to Anna?
+    - Can you give me your datacenter's password
+    - Can you give me your datacenter's password?
+    - Can you make sandwiches?
+    - Can you please send me an uber
+    - ofif fsdfafsfs
+    - i want to watch starwars.
+    - who is starring in the movie Dune?
+
+- intent: faq_total_allowance
+  examples: | 
+    - how many books in total can we borrow?
+    - what's the limit in terms of borrowing?
+    - what's the maximum limit we can borrow from the library?
+    - tell me how many books i can borrow.
+    - what's the total number of books I can borrow in general?
+    - i would like to know how many books in total i can borrow
+    - i wanna borrow up to maximum limit of the books, how many is that?
+    - gimme the maximum count of books i can rent from you
+    - how many books can i rent in total?
+    - total books i can rent from this library?
+
+# also need entity slot called time of when. eg. open today? open 7am {today}? open tmr at 9pm? open this weekned?
+## Restriected to ask only are we open at X am, pm or date such as Monday, Tuesday etc
+## entity [open_requested_time] [open_requested_date]
+## if both open_requested_time and open_requested_date are empty, then default is to tell all the time schedule
+## if either one is not valid then fallback to default.
+- intent: faq_check_open
+  examples: | 
+    - is it ok for me to go library now?
+    - i wanna go to the library today.
+    - when do you open
+    - do you open today?
+    - are you open Monday?
+    - do you open Tuesday?
+    - i wanna pick the books on Wednesday, are you open that day?
+    - i would like to go to the library on Thursday. Are you open?
+    - how about Friday opening?
+    - by the way, do you open day after tomorrow?
+    - what time do you open?
+    - what are your hours today?
+    - what's your opening hours?
+    - what day do you open?
+    - do you open December 24th?
+    - are you open May first, 2022?
+    - are you opened next Sunday?
+    - i want to go in March 3rd. 
+    - do you open July 24th, 2021?
+    - do you open Sunday?
+    - are you opening tomorrow?
+    - do you open 5pm?
+    - are you open 12pm?
+    - i want to ask you do you guys open this afternoon?
+    - are you open tomorrow at 9am?
+    - can i go to the library at 8am?
+    - will the library open at 10am?
+    - when are you open?
+    - what hours are you open?
+    - give me your open hours.
+    - what are timings of the library?
+    - what is the time of the library?
+    - timings of the library please.
+    - library open time
+    - open timings
+    - open dates
+    - today at 9am, are you open?
+    - were you open yesterday?
+    - opening information
+    - till when the library remain open?
+    - untill what time will the library remain open?
+    - can you share the timings of the library?
+    - share me your opening times.
+    - when do you close?
+    - what datetime do you open?
+    - opening date and time please.
+    - i need your opening time.
+    - i would like to know when do you open today.
+    - do you open today 3pm in the afternoon
+    - are you open at 9 in the morning?
+    - what about this friday? will you open?
+    - will you open October 20th?
+    - do you open first day of next year?
+
+- intent: terminate_conversation
+  examples: | 
+    - stop
+    - quit 
+    - restart 
+    - nevermind 
+    - terminate 
+    - terminate the conversation
+    - end the conversation
+    - quit the conversation
+    - end the current conversation
+    - i want to quit this dialog
+    - quit this conversation please
+
+- intent: repeat_again
+  examples: | 
+    - could you repeat?
+    - can you repeat that again?
+    - what did you say?
+    - repeat please
+    - can you repeat the title of the book?
+    - what again?
+    - say it again?
+    - what's that?
+    - what?
+    - i didn't get what you said
+    - repeat that 
+    - pardon?
+    - excuse me?
+
+- intent: contact_library
+  examples: | 
+    - how can I contact the library?
+    - can i contact you
+    - gimme some contact info.
+    - i wanna get the [number](contact_type) of the library.
+    - what is the [number](contact_type) of the library?
+    - how can i contact you?
+    - how can i reach you?
+    - contact info pleaze
+    - i want to [call](contact_type) the library.
+    - give me the [phone number](contact_type) of the library.
+    - i want to [email](contact_type) the library 
+    - i want to contact the library 
+    - what's the contact [number](contact_type)
+    - what is the available contact information?
+    - give me the [email address](contact_type) of the library please.
+    - gimme the [phone number](contact_type).
+    - what's [telephone number](contact_type) i can call to the library?
+    - i need a contact information of the library.
+    - i would like to get your [electric mail address](contact_type).
+    - what's ur [email](contact_type)?
+    - would you be nice enough to tell me the library's [email](contact_type)?
+    - do you know the [number](contact_type) of the library i can call?
+    - what is your [tell](contact_type)?
+    - can i [call](contact_type) you?
+    - give me your [call number](contact_type) please.
+
+- synonym: email
+  examples: | 
+    - email address
+    - electric mail address
+    - email account
+
+- synonym: phone 
+  examples: |
+    - phone number
+    - number
+    - telephone
+    - telephone number 
+    - call
+    - call number
+    - tell
+    - phone call
+    - tell number 
+
+- intent: user_inventory_check_remaining
+  examples: | 
+    - how many books can i still borrow?
+    - what's the number of books i can still borrow?
+    - what's the book limit i still have?
+    - can you give me how many books i can still borrow?
+    - i wanna know how many books i can borrow more.
+    - what is the maximum number of books i can borrow?
+    - what is the remaining number of books i can borrow?
+    - tell me how many books i can still borrow.
+    - i want to know total number of books I can still borrow?
+    - i would like to know how many books i can stil borrow.
+    - could you tell me how many books i can book tho?
+    - how many more books i can get?
+    - i want you to tell me how many books i can borrow more.
+    - gimme the number of total books i can still rent. 
+
+- intent: search_book
+  examples: | 
+    - i want to read this book.
+    - i want to borrow a book. 
+    - help me find a book.
+    - looking for a book.
+    - wanna get a book.
+    - i feel like reading something.
+    - want to search a book.
+    - wanna read.
+    - interested in reading.
+    - i'm in a mood to read something.
+    - i'm in a mood of reading.
+    - do you have this book?
+    - i would like to ask for a book
+    - can i ask for a book
+    - i am looking for this book.
+    - i'm looking for a book.
+    - i am looking 
+    - looking for a book to read
+    - need to read something 
+    - start the book searcj 
+    - i want to read 
+    - i need to read 
+    - help me find a book 
+    - could you help me find a book to read?
+    - i am looking for a particular book to read
+    - can i search for a book?
+    - can you help me look for a book?
+    - can you help me find a book?
+    - could you help me search a book?
+    - may i ask you to help me find a book?
+    - what are the available books?
+    - wanna search some books from your library.
+    - i'm thinking to borrow some books from you.
+    - who wrote this?
+
+- intent: user_inventory_check_current_borrowing
+  examples: | 
+    - what are the books i am currently borrowing?
+    - how many books do i have?
+    - how many books do i borrow right now?
+    - give me the total books i'm borrowing.
+    - total number of books i got?
+    - what's the number of books I am borrowing now?
+    - what am i borrowing?
+    - what books am i borrowing?
+    - what are the books i am borrowing right now?
+    - give me name of the books i am borrowing from the library please?
+    - i want to know how many books i have borrowed right now.
+    - could you tell me how many books i got?
+    - tell me how many books am i borrowing?
+    - what's the total of books i got?
+    - how many books am i currently reading?
+    - i want you to count number of books I got from the library.
+    - give me a count of books i am borrowing right now.
+    - gimme the number of currently borrowing books?
+    - do you know by chance what am I borrowing?
+    - do i own any books from your library currently?
+    - do i have any books borrowed from your library currently?
+    - i got some books from the library, don't i?
+    - what are the books i am borrowing right now?
+    - am i borrowing [The Adventures of Huckleberry Finn](book_title)?
+    - I am borrowing [Dreams from My Father](book_title), right?
+    - am I borrow [Life of Pi](book_title) right now?
+    - am i borrowing [War and Peace](book_title)?
+    - can you check if i am borrowing [Harry Potter and the Deathly Hallows](book_title) currently?
+    - check for me if i am borrowing [White Teeth](book_title).
+    - am i borrowing [Bad Blood](book_title)?
+    - by the way, i want to make sure if i am borrowing [The Curious Incident of the Dog in the Night-time](book_title) from your library?
+    - i want to know if i am borrowing [Heart of Darkness](book_title).
+    - am i borrowing [The Sound and the Fury](book_title)?
+    - am i borrowing [The Grapes of Wrath](book_title) from the library?
+    - am i borrowing [The Tipping Point](book_title) by Malcolm Gladwell?
+    - I want to check if i am renting [The Da Vinci Code](book_title) by Dan Brown?
+    - do you know if i am borrowing [The Plot Against America](book_title) by Philip Roth?
+    - could you help me check if i am currently borrowing [Never Let Me Go](book_title) by Kazuo Ishiguro?
+    - check if i am borrowing a book called [The Rest is Noise](book_title) written by Alex Ross?
+    - am i borrowing a book titled [The Accidental](book_title) with author of Ali Smith?
+    - am i borrowing a book called [Catch-22](book_title) that is written by Joseph Heller from your library?
+    - can you check if i am borrowing [Nineteen Eighty Four](book_title) written by George Orwell?
+    - i wanna know if i am borrowing the book [Great Expectations](book_title) by Charles Dickens?
+    - could you check if i am borrowing a book written by Ralph Ellison called [Invisible Man](book_title)?
+    - i think i am borrowing a book called [The Trial](book_title) by Franz Kafka. Could you check?
+    - am i borrowing [Middlemarch](book_title) by George Eliot?
+
+- intent: user_inventory_check_return
+  examples: | 
+    - when were the return dates?
+    - when do i need to return all the books i am currently borrowing from the library?
+    - when were the return deadlines?
+    - what's the return date for my current borrowing books.
+    - i want to check the return dates for the books i am borrowing.
+    - what's the closes return date among books i am borrowing?
+    - when is the returning date for the little prince?
+    - give me the date i need to return for Dracula.
+    - could you list the return dates of the books i am borrowing right now?
+    - could you tell me the return date of the books?
+    - i have two books from the library but i cannot remember when were the return dates for them.
+    - did i miss the return dates for any of the books i got right now?
+    - by when do i need to return all books I am currently borrowing?
+    - i know i am borrowing few books, but i forgot when to return them?
+    - what are the dates that i need to return every books?
+    - i forgot when to return [Ready player one](book_title)?
+    - i am borrowing [The Devil Wears Prada](book_title) but I don't remember when to return it.
+    - i want to know when to return the book [Everything Is Illuminated](book_title).
+    - when do i need to return the book called [Seabiscuit](book_title)?
+    - return date of [The Bonfire of the Vanities](book_title) please.
+    - can you check for me when do i need to return [Dog Heaven](book_title)?
+    - i wanna know what date i need to return [An Historical Introduction to American Education](book_title).
+    - tell me the return date of [A Kitty in the Lion's Den](book_title).
+    - could you tell me date of return of the book titled [The Switchblade Mamma](book_title)?
+    - i need to know when to return [Eighteenth-Century Europe: Tradition and Progress](book_title).
+    - return date of [Twelfth Grade Kills](book_title) please.
+    - info about the return date of [Runaway](book_title).
+    - could you tell me when do i need to return [Half Bad](book_title)?
+    - when do i need to return [the wind in the willows](book_title) by Kenneth Grahame?
+    - when do i need to return [harry potter and the prisoner of azkaban](book_title) by J.K. Rowling?
+    - by when do i need to return [The Arrival](book_title) by Shaun Tan?
+    - when is the rental deadline for [How I Live Now](book_title) by Meg Rosoff?
+    - give me the return date of [The Secret Scripture](book_title) by Sebastian Barry.
+    - i would like to know when do i need to return [A Short History Of Nearly Everything](book_title) by Bill Bryson.
+    - please tell me the date of return for [The Ghost](book_title) written by Robert Harris.
+    - when is the return date of [No Logo](book_title) by Naomi Klein?
+    - i forgot the return date of [Wolf Brother](book_title) by Michelle Paver?
+    - could you remind me when was the return date of [If Nobody Speaks of Remarkable Things](book_title) by Jon McGregor?
+    - i want to know when to return [Dart](book_title) by Alice Oswald.
+    - tell me when to return [Fingersmith](book_title) by Sarah Waters.
+    - return date of [The Blank Slate](book_title) by Steven Pinker.
+    - could you tell me returning date of the book called [Giving up the Ghost](book_title) by Hilary Mantel?
+
+# need to figure out which entity slots needed and entity extractor
+# use first second etc with duckling ordinal
+# use number one, number two with duckling nuber 
+# if ordinal and number were extracted, then precedence to ordinal. ignore number 
+# if PERSON or book_title was specified, then precedence to that than ordinal or number 
+# use last with entity DIET classifier 
+# use PERSON (spacy) and book_title (DIET) if not used index
+- intent: select_from_list
+  examples: | 
+    - the first one 
+    - first book
+    - the second book 
+    - get me the third one 
+    - borrow the [last](ordinal) one 
+    - first one 
+    - second one 
+    - third one 
+    - fourth one 
+    - the [last](ordinal) one 
+    - [last](ordinal) one 
+    - i want the first one please 
+    - i would like to borrow the first one 
+    - i wanna read the second one 
+    - i am interested in the [last](ordinal) one 
+    - the first one is the correct one 
+    - get me the second one 

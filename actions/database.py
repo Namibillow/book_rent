@@ -3,10 +3,15 @@ import argparse
 import pathlib
 import csv
 import time 
+from tqdm import tqdm 
 
-import search 
+from . import search
+# import search 
 
 def create_tables(c):
+    c.execute("SELECT name FROM sqlite_master WHERE type='table';")
+    print(f"naamtokyam: tables: {c.fetchall()}") 
+
     print("-- CREATING TABLES -- ")
     # c.execute("DROP TABLE users")
     ### USER ###
@@ -16,6 +21,7 @@ def create_tables(c):
         user_last_name TEXT NOT NULL
         )""")
 
+    # c.execute(("""DROP TABLE user_book"""))
     c.execute("""CREATE TABLE IF NOT EXISTS user_book (
         user_id INTEGER,
         book_id INTEGER,
@@ -62,6 +68,7 @@ def create_tables(c):
         )""")
 
     ### SERIES ###
+    # c.execute("""DROP TABLE series""")
     c.execute("""CREATE TABLE IF NOT EXISTS series (
         series_id INTEGER NOT NULL PRIMARY KEY,
         series_works_count INTEGER,
@@ -70,6 +77,7 @@ def create_tables(c):
         )""")
     
     ### WORKS ###
+    # c.execute("""DROP TABLE works""")
     c.execute("""CREATE TABLE IF NOT EXISTS works (
         original_publication_year INTEGER,
         work_id INTEGER NOT NULL PRIMARY KEY,
@@ -84,19 +92,36 @@ def create_tables(c):
         )""")
 
 def print_tables(c):
-    pirnt(" -- PRING TABLES -- ")
+    print(" -- PRING TABLES -- ")
 
-    c.execute("""SELECT * FROM user_book""")
-    # c.execute("""SELECT * FROM book_info""")
+    c.execute("""SELECT * FROM users""")
+    print("table users:")
     rows = c.fetchall()
     for row in rows:
         print(row)
+
+    c.execute("""SELECT * FROM user_book""")
+    print("table user_book:")
+    # c.execute("""SELECT * FROM book_info""")
+    rows = c.fetchall()
+    # print(rows)
+    for row in rows:
+        print(row)
+
+    return
     
-    c.execute("""SELECT * FROM book_info  WHERE book_id=1""")
+    # c.execute("""SELECT * FROM book_info  WHERE book_id=1""")
+    c.execute("""SELECT * FROM book_info""")
     print("table book_info:")
-    rows = c.fetchone()
+    rows = c.fetchall()
     print(rows)
 
+    c.execute("""SELECT rowid, * FROM fts4_book""")
+    print("table fts4_book:")
+    rows = c.fetchall()
+    print(rows)
+
+    return 
     c.execute("""SELECT * FROM book_series""")
     print("table book_series:")
     rows = c.fetchall()
@@ -115,7 +140,7 @@ def print_tables(c):
     for row in rows:
         print(row)
 
-    c.execute("""SELECT * FROM authors""")
+    c.execute("""SELECT rowid, * FROM fts4_author""")
     print("table author:")
     rows = c.fetchall()
     for row in rows:
@@ -156,12 +181,17 @@ def main(args):
     author_fts.create_schema()
 
     # print_tables(c)
-    
+    # return
     print("-- INSERT DATA --")
     if args.table_name == "user":
         c.execute("""INSERT INTO users (user_first_name, user_last_name) VALUES ("john","doe")""")
         c.execute("""INSERT INTO users (user_first_name, user_last_name) VALUES ("amanda", "white")""")
-        c.execute("""INSERT INTO user_book (user_id, book_id, return_date, is_returned) VALUES (?,?,?,?)""", (1, 1, "12/28/2021", 0))
+        # The Te of Piglet
+        # c.execute("""INSERT INTO user_book (user_id, book_id, return_date, is_returned) VALUES (?,?,?,?)""", (1, 89371, "01/10/2022", 0))
+        # The Devil's Notebook
+        # c.execute("""INSERT INTO user_book (user_id, book_id, return_date, is_returned) VALUES (?,?,?,?)""", (1, 287149, "01/11/2022", 0))
+        # Penny from Heaven
+        # c.execute("""INSERT INTO user_book (user_id, book_id, return_date, is_returned) VALUES (?,?,?,?)""", (1, 89377, "01/11/2022",1))
     else:
         file = open(args.file_path)
         csvreader = csv.reader(file, delimiter="\t")
@@ -170,14 +200,13 @@ def main(args):
         count = 0
         mismatches = 0
 
-        for row in csvreader:
+        for row in tqdm(csvreader):
+            # if count == 100:
+            #     return 
             count+=1
             if len(row) != len(header):
                 mismatches+=1
                 print("size mismatch!!")
-                # print(f"len(row) {len(row)} -- len(header) {len(header)}" )
-                # print(header)
-                # print(row)
                 continue
 
             if count % 50000 == 0:

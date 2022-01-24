@@ -9,3 +9,11 @@ credentials.yml
 package-lock.json
 __pycache__
 *.dot
+action.json
+credentials.yml 
+*.data
+ga_connector.py 
+gactions
+ngrok
+endpoints.yml
+.DS_Store
