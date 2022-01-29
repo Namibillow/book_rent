@@ -1,3 +1,7 @@
+"""
+Setting up the database.
+"""
+
 import sqlite3
 import argparse
 import pathlib

@@ -80,6 +80,7 @@ nlu:
     - hey
     - goodmorning
     - hi
+    - wassup
 - intent: help
   examples: |
     - help me please
@@ -143,6 +144,7 @@ nlu:
     - correct
     - cool
     - positive
+    - yes
 - intent: user_inventory_check_remaining
   examples: |
     - how many books i can still borrow from the library
@@ -451,6 +453,7 @@ nlu:
     - i want to search
     - start the search of the book
     - i am looking for a particular book to read
+    - help me find a book
 - intent: select_from_list
   examples: |
     - fourth one
@@ -867,6 +870,7 @@ nlu:
     - what is the [call number](contact_type) of the library
     - would you be nice enough to tell me the library's [telephone number](contact_type)
     - do you have an [email address]{"entity": "contact_type", "value": "email"}
+    - i want to contact
 - intent: user_inventory_check_return
   examples: |
     - return date of [diary of a baby](book_title) please
@@ -3985,6 +3989,7 @@ nlu:
     - i feel like i've borrowed books by kevin brooks and natural healing newsletter from your library, but would you check for me
     - check for me that if i am borrowing a book written by peter calvocoressi
     - am i borrowing any books written by wolfgang iser right now
+    - bro can you check what im borrowing
 - intent: inform_book_info
   examples: |
     - can you search for [A Bullet for Cinderella](book_title)
@@ -6584,6 +6589,8 @@ nlu:
     - [shower of stars (berkley sensation)](book_title)
     - the title of a book is called [the new market wizards: conversations with america's top traders](book_title) written by michael rosen .
     - [the wonderful world of barry mckenzie (a gnome book)](book_title) by t.b. calhoun
+    - can you find me [jungle rock blues](book_title)
+    - it's called [first night of summer](book_title)
 - synonym: email
   examples: |
     - email address

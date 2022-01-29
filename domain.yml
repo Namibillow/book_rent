@@ -92,7 +92,8 @@ responses:
   - text: I am your library bot. I can help you borrow books. To start, you can just say "i am looking for a book", or if you already know what would you like to borrow, then you can also just say the name of the book and or author.
   utter_goodbye:
   - text: Bye, have a nice day!
-  - text: Thanks for talking.
+  - text: Thanks for talking with me!
+  - text: Have a nice day!
   - text: Thanks! Talk to you soon.
   utter_ok:
   - text: Ok, Nothing has been done.
@@ -100,7 +101,7 @@ responses:
   - text: got it.
   - text: okay
   utter_iamabot:
-  - text: I am a library service bot.
+  - text: Well, I am a library service bot.
   - text: I am a bot to help you provide library services.
   utter_out_of_scope:
   - text: Sorry, I can't handle that request.
@@ -153,7 +154,7 @@ responses:
   utter_book_is_borrowed:
   - text: '{book_title} by {author_name}'
   utter_borrowed_book_no_match:
-  - text: Hmm there is no match with the requested information in your current borrowing books. Please make sure you have provided the correct book title and or author's name.
+  - text: Hmm... there is no match with the requested information in your current borrowing books. Please make sure you have provided the correct book title and or author's name.
   utter_multiple_search_not_supported:
   - text: Sorry, I currently do not support multiple books search. Please ask one by one.
   utter_search_book_greet:
@@ -182,10 +183,13 @@ responses:
   - text: Which one would you like to borrow? You can select it by index such as "first one" or by title and author names.
   utter_tell_not_available:
   - text: Sorry, this book is currently borrowed by someone else.
+  - text: Oops, looks like this book is currently borrowed by someone else.
   utter_tell_you_already_borrowing:
   - text: Seems like you are borrowing this book already!
+  - text: Looks like you are borrowing this book right now!
   utter_borrow_complete:
   - text: Done! You are now borrowing {book_info}. Please return it by {return_date}.
+  - text: Completed! You are now borrowing {book_info}. Please return it by {return_date}.
   utter_invalid_list_index:
   - text: Seems like not a valid index. Please select again. As for the search result,
   utter_ambiguous_result:
