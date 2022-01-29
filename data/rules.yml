@@ -6,16 +6,12 @@ rules:
   steps:
   - intent: goodbye
   - action: utter_goodbye
+  - action: action_restart
 
 - rule: Say 'I am a bot' anytime the user challenges
   steps:
   - intent: bot_challenge
   - action: utter_iamabot
-
-- rule: Terminate the conversation
-  steps:
-  - intent: terminate_conversation
-  - action: action_restart
 
 - rule: Out-of-scope  
   steps:
@@ -44,6 +40,14 @@ rules:
   - intent: nlu_fallback
   - action: action_two_stage_fallback
   - active_loop: action_two_stage_fallback
+
+- rule: Restart after a full two stage fallback
+  condition:
+  - active_loop: action_two_stage_fallback
+  steps:
+    - action: action_two_stage_fallback
+    - active_loop: null
+    - action: action_restart
 
 - rule: Repeat what the bot just said
   steps: 
@@ -104,6 +108,8 @@ rules:
   - slot_was_set:
     - contact_type: phone
   - slot_was_set:
+    - form_flag: false
+  - slot_was_set:
     - requested_slot: null
   - active_loop: null
   - action: action_tell_contact_info
@@ -120,6 +126,8 @@ rules:
   - slot_was_set:
     - contact_type: email
   - slot_was_set:
+    - form_flag: false
+  - slot_was_set:
     - requested_slot: null
   - active_loop: null
   - action: action_tell_contact_info
@@ -129,89 +137,68 @@ rules:
 # ################## search book form ######################
 
 # TODO(nami) Make sure after the first utterance, form is activated
-- rule: Activate search_book form 
-  steps:
-  - intent: search_book 
-  - action: action_reset_slots # reset all slots 
-  - action: utter_search_book_greet  
-  - action: search_book_form
-  - active_loop: search_book_form
+# - rule: Activate search_book form 
+#   steps:
+#   - intent: search_book 
+#   - action: action_reset_slots # reset all slots 
+#   - action: utter_search_book_greet  
+#   - action: search_book_form
+#   - active_loop: search_book_form
 
-# TODO(nami): add explicit confirmation before the action_search_book??  in case of fixing??
-- rule: Submit & Deactivate search_book form
-  condition:
-  - active_loop: search_book_form
-  steps:
-  - action: search_book_form
-  - active_loop: null
-  - slot_was_set:
-    - requested_slot: null
-  - action: action_search_book
-
-- rule: Activate select_from_list form 
-  condition: 
-  - slot_was_set:
-    - has_list_selection: true
-  steps:
-  - action: select_from_list_form
-  - active_loop: select_from_list_form
-
-- rule: Submit & Deactivate select_from_list form
-  condition:
-  - active_loop: select_from_list_form
-  steps:
-  - action: select_from_list_form
-  - active_loop: null
-  - slot_was_set:
-    - requested_slot: null
-
-- rule: Exactly one matched search result - affirm
-  condition:
-  - slot_was_set:
-    - has_found_book: true
-    - has_list_selection: false 
-  steps:
-  - action: utter_confirm_to_borrow
-  - intent: affirm
-  - action: action_perform_borrow
-
-- rule: Exactly one matched search result - deny
-  condition:
-    - slot_was_set:
-      - has_found_book: true 
-      - has_list_selection: false 
-  steps:
-  - action: utter_confirm_to_borrow
-  - intent: deny
-  - action: utter_ok
-
-# - rule: Narrowed to one matched search result from list - affirm
+# # TODO(nami): add explicit confirmation before the action_search_book??  in case of fixing??
+# - rule: Submit & Deactivate search_book form
 #   condition:
-#     - slot_was_set:
-#       - has_found_book: true 
-#       - selected_list_index
+#   - active_loop: search_book_form
+#   steps:
+#   - action: search_book_form
+#   - active_loop: null
+#   - slot_was_set:
+#     - requested_slot: null
+#   - action: action_search_book
+
+# - rule: Activate select_from_list form 
+#   condition: 
+#   - slot_was_set:
+#     - has_list_selection: true
+#   steps:
+#   - action: select_from_list_form
+#   - active_loop: select_from_list_form
+
+# - rule: Submit & Deactivate select_from_list form
+#   condition:
+#   - active_loop: select_from_list_form
+#   steps:
+#   - action: select_from_list_form
+#   - active_loop: null
+#   - slot_was_set:
+#     - requested_slot: null
+
+# - rule: Exactly one matched search result - affirm
+#   condition:
+#   - slot_was_set:
+#     - has_found_book: true
+#   - slot_was_set:
+#     - has_list_selection: false 
+#   - slot_was_set:
+#     - selected_list_index
 #   steps:
 #   - action: utter_confirm_to_borrow
 #   - intent: affirm
 #   - action: action_perform_borrow
-  
-# - rule: Narrowed to one matched search result from list - deny
+
+# - rule: Exactly one matched search result - deny
 #   condition:
-#     - slot_was_set:
-#       - has_found_book: true 
-#       - selected_list_index
+#   - slot_was_set:
+#     - has_found_book: true
+#   - slot_was_set:
+#     - has_list_selection: false 
+#   - slot_was_set:
+#     - selected_list_index
 #   steps:
 #   - action: utter_confirm_to_borrow
 #   - intent: deny
 #   - action: utter_ok
-
-- rule: Repeat found book(s)
-  condition:
-  - slot_was_set:
-    - has_found_book: true 
-  steps:
-  - intent: repeat_again 
-  - action: action_repeat
+#   # - action: action_reset_slots
 
 # ######## Check user inventory #################
 - rule: Tell the number of books user is borrowing 
@@ -230,12 +217,12 @@ rules:
   - action: action_user_inventory
 
 ######## inform_book_info #######
-- rule: Assign form to search_book_form or select_from_list_form
-  steps:
-  - intent: inform_book_info
-  - action: action_assign_book_info_to_form
-  - action: search_book_form
-  - active_loop: search_book_form
+# - rule: Assign form to search_book_form or select_from_list_form
+#   steps:
+#   - intent: inform_book_info # providing with book_title or/and book_authors
+#   - action: action_assign_book_info_to_form
+#   - action: search_book_form
+#   - active_loop: search_book_form
 
 ### Note ### 
 # if title/author/title and author were given, then trigger inform_book_info

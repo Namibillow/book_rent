@@ -1,0 +1,77 @@
+version: "2.0"
+stories:
+- story: check current borrowing with book_title 
+  steps:
+  - intent: user_inventory_check_current_borrowing
+    entities:
+    - book_title: a short history of nearly everything
+  - action: action_user_inventory
+
+- story: check_return with author 
+  steps:
+  - intent: user_inventory_check_current_borrowing
+    entities:
+    - PERSON: bill bryson
+  - action: action_user_inventory
+
+- story: check current borrowing with book_title and 1 author
+  steps:
+  - intent: user_inventory_check_current_borrowing
+    entities:
+    - book_title: the known world
+    - PERSON: edward p jonas
+  - action: action_user_inventory
+
+- story: check current borrowing with book_title and 2 authors
+  steps:
+  - intent: user_inventory_check_current_borrowing
+    entities:
+    - book_title: agnes and the hitman
+    - PERSON: jennifer crusie
+    - PERSON: bob mayer
+  - action: action_user_inventory
+
+- story: check_return with title
+  steps:
+  - intent: user_inventory_check_return
+    entities:
+    - book_title: plea from a stranger
+  - action: action_user_inventory
+
+- story: check_return with title 2
+  steps:
+  - intent: user_inventory_check_return
+    entities:
+    - book_title: the great white house breakout
+  - action: action_user_inventory
+
+- story: check_return with title and author 
+  steps:
+  - intent: user_inventory_check_return
+    entities:
+    - book_title: death and taxes and fairies
+    - PERSON: k bethany sawyer
+  - action: action_user_inventory
+
+- story: check_return with title and author 2
+  steps:
+  - intent: user_inventory_check_return
+    entities:
+    - book_title: a short history of nearly everything
+    - PERSON: bill bryson
+  - action: action_user_inventory
+
+
+- story: check_return with author 1
+  steps:
+  - intent: user_inventory_check_return
+    entities:
+    - PERSON: bill bryson
+  - action: action_user_inventory
+
+- story: check_return with author 2
+  steps:
+  - intent: user_inventory_check_return
+    entities:
+    - PERSON: zhang yun
+  - action: action_user_inventory

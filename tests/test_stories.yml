@@ -1,91 +1,93 @@
-#### This file contains tests to evaluate that your bot behaves as expected.
-#### If you want to learn more, please see the docs: https://rasa.com/docs/rasa/testing-your-assistant
-
+########## basics ######################
 stories:
-- story: happy path 1
+- story: greet and bye 
   steps:
   - user: |
       hello there!
     intent: greet
   - action: utter_greet
+  - action: utter_help
   - user: |
-      amazing
-    intent: mood_great
-  - action: utter_happy
-
-- story: happy path 2
-  steps:
-  - user: |
-      hello there!
-    intent: greet
-  - action: utter_greet
-  - user: |
-      amazing
-    intent: mood_great
-  - action: utter_happy
-  - user: |
-      bye-bye!
+      bye
     intent: goodbye
   - action: utter_goodbye
 
-- story: sad path 1
-  steps:
+- story: greet, ask for help then bye
+  steps: 
+  - user: | 
+      hey 
+    intent: greet 
+  - action: utter_greet 
+  - action: utter_help 
+  - user: | 
+      what can i do with you 
+    intent: help 
+  - action: utter_provided_services
   - user: |
-      hello
-    intent: greet
-  - action: utter_greet
-  - user: |
-      not good
-    intent: mood_unhappy
-  - action: utter_cheer_up
-  - action: utter_did_that_help
-  - user: |
-      yes
-    intent: affirm
-  - action: utter_happy
-
-- story: sad path 2
-  steps:
-  - user: |
-      hello
-    intent: greet
-  - action: utter_greet
-  - user: |
-      not good
-    intent: mood_unhappy
-  - action: utter_cheer_up
-  - action: utter_did_that_help
-  - user: |
-      not really
-    intent: deny
-  - action: utter_goodbye
-
-- story: sad path 3
-  steps:
-  - user: |
-      hi
-    intent: greet
-  - action: utter_greet
-  - user: |
-      very terrible
-    intent: mood_unhappy
-  - action: utter_cheer_up
-  - action: utter_did_that_help
-  - user: |
-      no
-    intent: deny
-  - action: utter_goodbye
-
-- story: say goodbye
-  steps:
-  - user: |
-      bye-bye!
+      see ya
     intent: goodbye
   - action: utter_goodbye
 
-- story: bot challenge
-  steps:
+- story: greet, repeat, thanks then bye
+  steps: 
+  - user: | 
+      hey 
+    intent: greet 
+  - action: utter_greet 
+  - action: utter_help 
   - user: |
-      are you a bot?
+      repeat again 
+    intent: repeat_again
+  - action: action_repeat
+  - user: |
+      thanks 
+    intent: thanks 
+  - action: utter_yourwelcome
+  - user: | 
+      chat you tomorrow
+    intent: goodbye
+  - action: utter_goodbye
+
+- story: greet, ask bot challenge then bye
+  steps: 
+  - user: | 
+      hey 
+    intent: greet 
+  - action: utter_greet 
+  - action: utter_help 
+  - user: | 
+      what are you?
     intent: bot_challenge
-  - action: utter_iamabot
+  - action: utter_iamabot 
+  - user: | 
+      Oh ok, bye 
+    intent: goodbye
+  - action: utter_goodbye
+
+- story: greet, ask location, thanks
+  steps: 
+  - user: | 
+      hey 
+    intent: greet 
+  - action: utter_greet 
+  - action: utter_help 
+  - user: |
+      where is your library?
+    intent: faq_check_location
+  - action: utter_library_location
+  - user: | 
+      got it, thanks 
+    intent: thanks 
+  - action: utter_yourwelcome
+
+- story: greet, out of scope then bye
+  steps: 
+  - user: | 
+      hey 
+    intent: greet 
+  - action: utter_greet 
+  - action: utter_help 
+  - user:  | 
+      i want to return my books 
+    intent: 
+      

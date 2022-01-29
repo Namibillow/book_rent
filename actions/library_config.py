@@ -1,5 +1,5 @@
 """
-file storing library constant settings
+File storing library constant settings
 """
 
 from datetime import time, date
@@ -19,9 +19,13 @@ OPEN_HOURS = {
     "sunday": [(time(14, 0), time(20,45))]
 }
 
-YEAR = 2021
+YEAR = 2022
 
 YEARLY_HOLIDAYS = (
+    date(2021, 12, 24),
+    date(2021, 12, 25),
+    date(2021, 12, 26),
+    date(2021, 12, 31),
     date(YEAR, 12, 24),
     date(YEAR, 12, 25),
     date(YEAR, 12, 26),
@@ -37,4 +41,6 @@ EMAIL = "my_library@gmail.com"
 
 PHONE = "39-0461-283011"
 
-DATABASE = "book_rent.db"
+DATABASE = "book_rent_copy.db"
+
+MAX_RENT_DAYS = 14

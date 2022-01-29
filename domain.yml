@@ -1,114 +1,110 @@
 version: '2.0'
-
 session_config:
   session_expiration_time: 60
   carry_over_slots_to_new_session: false
-
 intents:
-- greet
-- goodbye
 - affirm
-- deny
-- help
 - bot_challenge
-- thanks
-- terminate_conversation
-- out_of_scope
-- nlu_fallback
-- repeat_again
-- faq_check_open
-- faq_check_location
-- faq_total_allowance
 - contact_library
-- user_inventory_check_remaining
-- user_inventory_check_current_borrowing
-- user_inventory_check_return
-- inform_book_info # used for search_book_form and select_from_list_form
-- search_book 
+- deny
+- faq_check_location
+- faq_check_open
+- faq_total_allowance
+- goodbye
+- greet
+- help
+- inform_book_info
+- nlu_fallback
+- out_of_scope
+- repeat_again
+- search_book
 - select_from_list
-
+- terminate_conversation
+- thanks
+- user_inventory_check_current_borrowing
+- user_inventory_check_remaining
+- user_inventory_check_return
 entities:
-- time # used for intent: faq_check_open
-- contact_type # used for intent: contact_library
-- PERSON # used for intent: user_inventory_check_current_borrowing, user_inventory_check_return, inform_book_info
-- book_title # used for intent: user_inventory_check_current_borrowing, user_inventory_check_return
-
-- ordinal # used for intent: select_from_list
-- info_type # used for intent: faq_check_location
-- dummy_entity # used for form: search_book_form
-
+- time
+- contact_type
+- PERSON
+- book_title
+- ordinal
+- dummy_entity
 slots:
-  # default is None 
-  contact_type: # used for storing user choice of the contact type
-    type: categorical 
-    influence_conversation: true 
-    values: 
-      - email 
-      - phone
-    
-  book_title: # used for performing a search of a book 
+  contact_type:
+    type: categorical
+    influence_conversation: true
+    values:
+    - email
+    - phone
+  book_title:
+    type: text
+    auto_fill: false
+    influence_conversation: true
+  book_authors:
+    type: list
+    influence_conversation: true
+  found_books:
+    type: list
+    influence_conversation: true
+  has_found_book:
+    type: bool
+    influence_conversation: true
+  wrong_author_names:
+    type: list
+    influence_conversation: true
+  selected_list_index:
     type: text
     influence_conversation: true
-    auto_fill: false
-
-  book_authors: # used for performing a search of a book
+  is_ambiguous:
+    type: bool
+    initial_value: false
+    influence_conversation: true
+  narrowed_found_books:
     type: list
     influence_conversation: true
-
-  found_books: # stores search results of books as a list
-    type: list
-  
-  has_found_book: # used for rules condition to trigger actions
-    type: bool 
-    influence_conversation: true 
-
-  wrong_author_names: # filled only when book_authors are wrongly extracted as book_title 
-    type: list  
-
-  selected_list_index: # entity by text or index but eventually store as number index (1,2,3,...etc)
-    type: text  # stores integer | 
-  
-  is_ambiguous: # whether the select_from_list_form still is ambiguous
-    type: bool 
-    influence_conversation: true 
-    initial_value: false  
-
-  narrowed_found_books: # used when is_ambiguous. stores subset of found_books.
-    type: list 
-
-  has_list_selection: # whther exact match was found or not
-    type: bool 
-    influence_conversation: true 
-
-  book_info_prefilled: # whether search_book_form was triggered with book_info already provided
+  has_list_selection:
     type: bool
-    initial_value: false  
-  
-  form_flag: # used for forms when they initially triggered
-    type: bool 
-    initial_value: true 
-
+    influence_conversation: true
+  book_info_prefilled:
+    type: bool
+    initial_value: false
+    influence_conversation: true
+  form_flag:
+    type: bool
+    initial_value: true
+    influence_conversation: true
+  requested_slot:
+    type: unfeaturized
+    influence_conversation: false
 responses:
   utter_greet:
   - text: Hello there!
   - text: Hi
   - text: Hope you are doing great!
+  - text: Welcome!
   utter_provided_services:
-  - text: With me, you can search a book from our collection, ask about the library information such as its opening dates and hours, location, rental limit and contact. You can also ask about your currently borrowing and check their return dates.
+  - text: With me, you can search a book from our collection, and ask about the library information such as its opening dates and hours, location, rental limit and contact. You can also ask about your currently borrowing and check their return dates.
   - text: I can help you with searching a book, providing library information like opening datetime, address, rental limit and contact information. I can also help you checking your current borrowing status as well as their return dates.
   utter_help:
-  - text: I can provide you library services. I can help you borrow a book or check your profile, as well as provide you with our library information.
-  - text: I am your library bot. I can help you borrow books. To start, you can just say "i am looking for a book", or if you already know what would you like to borrow, then state the name of the book and or author.
+  - text: I can provide you library services. I can help you borrow a book or check your profile, as well as provide you with our library information. To start searching a book, just say "i want to read" and i will help you find a book you are looking for.
+  - text: I am your library bot. I can help you borrow books. To start, you can just say "i am looking for a book", or if you already know what would you like to borrow, then you can also just say the name of the book and or author.
   utter_goodbye:
   - text: Bye, have a nice day!
   - text: Thanks for talking.
+  - text: Thanks! Talk to you soon.
   utter_ok:
-  - text: Ok. 
+  - text: Ok, Nothing has been done.
+  - text: alright.
+  - text: got it.
+  - text: okay
   utter_iamabot:
-  - text: I am a library service bot. 
+  - text: I am a library service bot.
   - text: I am a bot to help you provide library services.
   utter_out_of_scope:
   - text: Sorry, I can't handle that request.
+  - text: Sorry, I do not offer that support.
   - text: Sorry, I do not offer the service for your request.
   utter_ask_rephrase:
   - text: Sorry, I didn't understand what you just said. Could you repeat or rephrase it again?
@@ -116,76 +112,82 @@ responses:
   - text: Sorry, I can't help you.
   utter_yourwelcome:
   - text: You are welcome.
+  - text: my pleasure
   utter_restart:
   - text: Ok, terminating the conversation.
   utter_library_location:
-  - text: The library address is Via ABCD Libera, 3 - 38100 Trento, Italy.
+  - text: The library address is Via Alo Libera, 3,  38100 Trento, Italy.
   utter_default_datetime:
   - text: The library is open through Monday to Saturday from 8am to 11:45pm and Sunday from 2pm to 8:45 pm.
   utter_specified_date_closed:
-  - text: Sorry the library {be_tense} closed on {day_of_week} {month} {day}, {year}.
+  - text: Sorry, the library {be_tense} closed on {day_of_week} {month} {day}, {year}.
   utter_specified_date_time_closed:
-  - text: Sorry the library {be_tense} closed on {day_of_week} at {hour_min} of {month} {day}, {year}.
+  - text: Sorry, the library {be_tense} closed on {day_of_week} at {hour_min} of {month} {day}, {year}.
   utter_affirm_open:
   - text: Yes, for {relative_time} {day_of_week}, the library {verb_open} {hour_min}.
   utter_next_open_date:
   - text: The library will be open on {day_of_week} {month} {day}, {year} {hour_min}.
   utter_library_phone:
-  - text: The library phone number is 12 345 6789
+  - text: The library phone number is 512 345 6789
   utter_library_email:
-  - text: The library email address is aaabbbccc@gmail.com
+  - text: The library email address is libraryforyou@bot.com
   utter_ask_contact_type:
   - text: You can contact us by email or call. Which information would you like to know?
   utter_user_inventory_tell_remaining:
   - text: You can borrow {num_books} more books.
   utter_user_inventory_tell_no_remaining:
-  - text: You have reached  our maximum number of books you can rent which is 15. Please return your current borrowing books to borrow. 
+  - text: You have reached our maximum number of books you can rent which is 15. Please return your current borrowing books to borrow.
+  - text: You are borrowing 15 books already from the library and that is our maximum per user. Please return your current borrowing books to borrow a new book.
   utter_user_inventory_tell_return:
-  - text: "{books_return_dates}"
+  - text: '{books_return_dates}'
   utter_user_inventory_tell_current_borrowing:
   - text: You are currently borrowing {num_books} books. Those are {books_info}.
   utter_user_inventory_tell_no_borrowing:
-  - text: You currently do not have any books borrowed from us. Would you like to borrow a book?
+  - text: You currently do not have any books borrowed from the library. Would you like to borrow a book?
   utter_total_allowance:
-  - text: You can borrow in total of 15 books from us.
+  - text: You can borrow in total of 15 books from the library.
   utter_yes_borrowing:
-  - text: Yes. You are borrowing 
+  - text: Yes. You are borrowing
   utter_return_by:
-  - text: You need to return 
+  - text: You need to return
   utter_book_is_borrowed:
-  - text: "{book_title} by {author_name}"
+  - text: '{book_title} by {author_name}'
   utter_borrowed_book_no_match:
   - text: Hmm there is no match with the requested information in your current borrowing books. Please make sure you have provided the correct book title and or author's name.
   utter_multiple_search_not_supported:
-  - text: Sorry, I currently doesn't support multiple books search. Please ask one by one.
+  - text: Sorry, I currently do not support multiple books search. Please ask one by one.
   utter_search_book_greet:
   - text: Sure! I can help you find a book you are looking for.
-  utter_ask_book_title: # asked first 
-  - text: What is the title of the book you are looking for? If you don't know it, please say "skip"
-  utter_ask_book_authors: # asked second
+  utter_ask_book_title:
+  - text: What is the title of the book you are looking for? If you don't know it, please say "skip".
+  utter_ask_book_authors:
   - text: What is the author's name? If you don't know it, please say "skip"
   utter_need_one_book_info:
   - text: Sorry, you need to provide me at least the title or author name to help you find. Let's try again.
   utter_found_one_book:
-  - text: I found {book_info}
+  - text: I found one book matched, and it is {book_info}.
   utter_found_multiple_book:
-  - text: I found {multiple_books_info}
-  # utter_clarify_which_one: # confirmation question for list selection.
-  # - text: Do you mean {book_info}?
+  - text: I found {num_books} books matched, and they are {multiple_books_info}
+  utter_ask_list_have_desired:
+  - text: Are any of these books what you are looking for?
+  utter_sorry_to_hear_that:
+  - text: I'm sorry to hear that. Perhaps, you could try again with a different book?
+  - text: So sorry to hear that. Our library is trying the best to cover more books, so please try again after some times.
+  - text: I'm sorry that we don't have what you were looking for. If you'd like, you could try again with providing more information.
   utter_found_no_book:
   - text: Sorry, there was no matching books for {book_info} in our library.
   utter_confirm_to_borrow:
   - text: Would you like to borrow it?
   utter_ask_selected_list_index:
-  - text: Which one would you like to borrow?
+  - text: Which one would you like to borrow? You can select it by index such as "first one" or by title and author names.
   utter_tell_not_available:
   - text: Sorry, this book is currently borrowed by someone else.
   utter_tell_you_already_borrowing:
   - text: Seems like you are borrowing this book already!
   utter_borrow_complete:
-  - text: Done! You are now borrowing {book_info}. Please return it by {return_date}
+  - text: Done! You are now borrowing {book_info}. Please return it by {return_date}.
   utter_invalid_list_index:
-  - text: Seems like not a valid index. Please select again. As for the search result # continue with utter_found_multiple_book
+  - text: Seems like not a valid index. Please select again. As for the search result,
   utter_ambiguous_result:
   - text: There are multiple results for the given query. Let's try again. You can also specify by index, for example, say the first one and so on.
   utter_cannot_borrow:
@@ -202,31 +204,28 @@ actions:
 - action_perform_borrow
 - validate_select_from_list_form
 - action_reset_slots
-
 forms:
   contact_form:
     required_slots:
       contact_type:
-        - type: from_entity
-          entity: contact_type
-
+      - type: from_entity
+        entity: contact_type
   search_book_form:
-    ignored_intents: 
-    - user_inventory_check_current_borrowing
-    - user_inventory_check_return
-    - repeat 
-    required_slots: # overrided
-      book_title:
-        - type: from_entity
-          entity: dummy_entity
-
-  select_from_list_form:
-    ignored_intents: 
+    ignored_intents:
     - user_inventory_check_current_borrowing
     - user_inventory_check_return
     - repeat
-    required_slots: # overrided
-      selected_list_index: # must be set to true 
-        - type: from_entity
-          entity: ordinal  
-          intent: select_from_list
+    required_slots:
+      book_title:
+      - type: from_entity
+        entity: dummy_entity
+  select_from_list_form:
+    ignored_intents:
+    - user_inventory_check_current_borrowing
+    - user_inventory_check_return
+    - repeat
+    required_slots:
+      selected_list_index:
+      - type: from_entity
+        entity: ordinal
+        intent: select_from_list

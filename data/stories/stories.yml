@@ -1,0 +1,52 @@
+version: "2.0"
+
+stories: 
+  - story: say hi and ask open hours 
+    steps:
+    - intent: greet 
+    - action: utter_greet 
+    - action: utter_help 
+    - intent: faq_check_open
+    - action: action_tell_opentime
+    - intent: thanks
+    - action: utter_yourwelcome
+    - intent: goodbye 
+    - action: utter_goodbye 
+    - action: action_restart
+  
+  - story: say hi and ask library location 
+    steps:
+    - intent: greet 
+    - action: utter_greet 
+    - action: utter_help 
+    - intent: faq_check_location
+    - action: utter_library_location
+    - intent: thanks
+    - action: utter_yourwelcome
+    - intent: goodbye 
+    - action: utter_goodbye 
+    - action: action_restart
+
+  - story: say hi and ask total allowance 
+    steps:
+    - intent: greet 
+    - action: utter_greet 
+    - action: utter_help 
+    - intent: faq_total_allowance
+    - action: utter_total_allowance
+    - intent: thanks
+    - action: utter_yourwelcome
+    - intent: goodbye 
+    - action: utter_goodbye 
+    - action: action_restart
+
+  - story: check open time, repeat , check borrowing, repeat
+    steps:
+    - intent: faq_check_open
+    - action: action_tell_opentime
+    - intent: repeat_again
+    - action: action_repeat
+    - intent: user_inventory_check_current_borrowing
+    - action: action_user_inventory
+    - intent: repeat_again
+    - action: action_repeat

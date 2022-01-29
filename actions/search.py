@@ -113,6 +113,15 @@ class FTS4SpellfixSearch(object):
         correction_map = dict(cursor)
         return template.format(*(correction_map.get(t, t.lower()) for t in terms))
 
+    def search_by_rowid(self, rowid):
+        cursor = self.conn.cursor()
+        if self.table_name=="fts4_book":
+            fts_query = "SELECT title FROM fts4_book WHERE rowid = ?"
+        elif self.table_name == "fts4_author":
+            fts_query = "SELECT author_name FROM fts4_author WHERE rowid = ?"
+        cursor.execute(fts_query, (rowid,))
+        return cursor.fetchone()
+
     def search(self, search_query):
         corrected_query = self.spellcheck_terms(search_query)
         cursor = self.conn.cursor()
@@ -132,17 +141,17 @@ if __name__ == "__main__":
     from pprint import pprint
     db = sqlite3.connect("testing.db")
  
-    fts = FTS4SpellfixSearch(db, './spellfix', table_name="fts4_book")
-    fts.create_schema()
-    fts.index_row(
-        (1,"Deviled Egg Murder: Book 6 in The Bandit Hills Series"),
-        # (1,"Growltiger's Last Stand and Other Poems"),  
-        (2,"Live Bait (Monkeewrench #2)"),  
-        (None,"The Cocktail Party"),   
-        (4,"El secuestro de Robles Martínez"),  
-        (5,"Mother To The World"),  
-        (6,"Skynappers"),   
-    )
+    # fts = FTS4SpellfixSearch(db, './spellfix', table_name="fts4_book")
+    # fts.create_schema()
+    # fts.index_row(
+    #     (1,"Deviled Egg Murder: Book 6 in The Bandit Hills Series"),
+    #     # (1,"Growltiger's Last Stand and Other Poems"),  
+    #     (2,"Live Bait (Monkeewrench #2)"),  
+    #     (None,"The Cocktail Party"),   
+    #     (4,"El secuestro de Robles Martínez"),  
+    #     (5,"Mother To The World"),  
+    #     (6,"Skynappers"),   
+    # )
 
     # pprint(fts.search('Live Bite'))  # edgecase, multiple spellfix matches
     # pprint(fts.search('Love Bite'))
@@ -151,20 +160,20 @@ if __name__ == "__main__":
     # print()
 
     fts2 = FTS4SpellfixSearch(db, './spellfix', table_name="fts4_author")
-    # fts2.create_schema()
+    fts2.create_schema()
     # fts2.index_row(
-    #     (1,"J.K. Rowling"),
-    #     (2,"Stephen King"),  
-    #     (None,"Danzy Senna"),   
-    #     (4,"George R.R Martin"),  
+    #     # (1,"J.K. Rowling"),
+    #     # (2,"Stephen King"),  
+    #     # (None,"Danzy Senna"),   
+    #     # (4,"George R.R Martin"),  
     #     (5,"Khaled Hosseini")
     # )
-
-    pprint(fts2.search('JK Rowling'))
-    pprint(fts2.search('Stephanie King'))
-    pprint(fts2.search('Danzy Senna'))
-    pprint(fts2.search('Daizy Senna')) # doesn't work
-    pprint(fts2.search('George Martin'))
+    pprint(fts2.search([])["results"])
+    # pprint(fts2.search('JK Rowling'))
+    # pprint(fts2.search('Stephanie King'))
+    # pprint(fts2.search('Danzy Senna'))
+    # pprint(fts2.search('Daizy Senna')) # doesn't work
+    # pprint(fts2.search('George Martin'))
 
     # c = db.cursor()
     # c.execute("""SELECT rowid, * FROM fts4data""")

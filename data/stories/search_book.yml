@@ -1,0 +1,4519 @@
+
+version: "2.0"
+stories:
+- story: search_book (title & author - one exact match)
+  steps:
+  - intent: search_book
+  - action: action_reset_slots
+  - action: utter_search_book_greet
+  - action: search_book_form
+  - active_loop: search_book_form
+  - slot_was_set:
+    - book_title: null
+  - slot_was_set:
+    - wrong_author_names: []
+  - slot_was_set:
+    - book_authors: null
+  - slot_was_set:
+    - requested_slot: book_title
+  - slot_was_set:
+    - book_title: plea from a stranger
+  - slot_was_set:
+    - wrong_author_names: []
+  - slot_was_set:
+    - book_authors: null
+  - slot_was_set:
+    - requested_slot: book_authors
+  - slot_was_set:
+    - book_authors:
+      - derek a barrass
+  - slot_was_set:
+    - book_title: plea from a stranger
+  - slot_was_set:
+    - requested_slot: null
+  - slot_was_set:
+    - requested_slot: null
+  - active_loop: null
+  - action: action_search_book
+  - slot_was_set:
+    - book_title: null
+  - slot_was_set:
+    - book_authors: null
+  - slot_was_set:
+    - wrong_author_names: null
+  - slot_was_set:
+    - book_info_prefilled: false
+  - slot_was_set:
+    - found_books:
+      - - 23157957
+        - Plea From A Stranger
+        - - 7970622
+        - - Derek A. Barrass
+  - slot_was_set:
+    - selected_list_index: 0
+  - slot_was_set:
+    - has_found_book: true
+  - slot_was_set:
+    - has_list_selection: false
+  - action: utter_confirm_to_borrow
+  - intent: affirm
+  - action: action_perform_borrow
+  - action: action_reset_slots
+
+- story: search_book (title & author - one exact match - say no to borrowing)
+  steps:
+  - intent: search_book
+  - action: action_reset_slots
+  - action: utter_search_book_greet
+  - action: search_book_form
+  - active_loop: search_book_form
+  - slot_was_set:
+    - book_title: null
+  - slot_was_set:
+    - wrong_author_names: []
+  - slot_was_set:
+    - book_authors: null
+  - slot_was_set:
+    - requested_slot: book_title
+  - slot_was_set:
+    - book_title: cocky bastard
+  - slot_was_set:
+    - wrong_author_names: []
+  - slot_was_set:
+    - book_authors: null
+  - slot_was_set:
+    - requested_slot: book_authors
+  - slot_was_set:
+    - book_authors:
+      - penelope ward
+  - slot_was_set:
+    - book_title: cocky bastard
+  - slot_was_set:
+    - requested_slot: null
+  - slot_was_set:
+    - requested_slot: null
+  - active_loop: null
+  - action: action_search_book
+  - slot_was_set:
+    - book_title: null
+  - slot_was_set:
+    - book_authors: null
+  - slot_was_set:
+    - wrong_author_names: null
+  - slot_was_set:
+    - book_info_prefilled: false
+  - slot_was_set:
+    - found_books:
+      - - 25772000
+        - Cocky Bastard
+        - - 7105545
+          - 6887119
+        - - Penelope Ward
+          - Vi Keeland
+  - slot_was_set:
+    - selected_list_index: 0
+  - slot_was_set:
+    - has_found_book: true
+  - slot_was_set:
+    - has_list_selection: false
+  - action: utter_confirm_to_borrow
+  - intent: deny
+  - action: utter_ok
+  - action: action_reset_slots
+
+- story: search_book Title and author provided, one exact match, say yes to borrowing
+  steps:
+  - intent: search_book
+  - action: action_reset_slots
+  - action: utter_search_book_greet
+  - action: search_book_form
+  - active_loop: search_book_form
+  - slot_was_set:
+    - book_title: null
+  - slot_was_set:
+    - wrong_author_names: []
+  - slot_was_set:
+    - book_authors: null
+  - slot_was_set:
+    - requested_slot: book_title
+  - slot_was_set:
+    - book_title: been loving you too long
+  - slot_was_set:
+    - wrong_author_names: []
+  - slot_was_set:
+    - book_authors: null
+  - slot_was_set:
+    - requested_slot: book_authors
+  - slot_was_set:
+    - book_authors:
+      - seraphina donavan
+  - slot_was_set:
+    - book_title: been loving you too long
+  - slot_was_set:
+    - requested_slot: null
+  - slot_was_set:
+    - requested_slot: null
+  - active_loop: null
+  - action: action_search_book
+  - slot_was_set:
+    - book_title: null
+  - slot_was_set:
+    - book_authors: null
+  - slot_was_set:
+    - wrong_author_names: null
+  - slot_was_set:
+    - book_info_prefilled: false
+  - slot_was_set:
+    - found_books:
+      - - 18068112
+        - 'Been Loving You Too Long (DuChamps Dynasty, #1)'
+        - - 5411173
+        - - Seraphina Donavan
+  - slot_was_set:
+    - selected_list_index: 0
+  - slot_was_set:
+    - has_found_book: true
+  - slot_was_set:
+    - has_list_selection: false
+  - action: utter_confirm_to_borrow
+  - intent: affirm
+  - action: action_perform_borrow
+  - action: action_reset_slots
+
+- story: search_book Title and author provided, one exact match, say yes to borrowing follwed by user_inventory_check_current_borrowing
+  steps:
+  - intent: search_book
+  - action: action_reset_slots
+  - action: utter_search_book_greet
+  - action: search_book_form
+  - active_loop: search_book_form
+  - slot_was_set:
+    - book_title: null
+  - slot_was_set:
+    - wrong_author_names: []
+  - slot_was_set:
+    - book_authors: null
+  - slot_was_set:
+    - requested_slot: book_title
+  - slot_was_set:
+    - book_title: child of god
+  - slot_was_set:
+    - wrong_author_names: []
+  - slot_was_set:
+    - book_authors: null
+  - slot_was_set:
+    - requested_slot: book_authors
+  - slot_was_set:
+    - book_authors:
+      - cormac mccarthy
+  - slot_was_set:
+    - book_title: child of god
+  - slot_was_set:
+    - requested_slot: null
+  - slot_was_set:
+    - requested_slot: null
+  - active_loop: null
+  - action: action_search_book
+  - slot_was_set:
+    - book_title: null
+  - slot_was_set:
+    - book_authors: null
+  - slot_was_set:
+    - wrong_author_names: null
+  - slot_was_set:
+    - book_info_prefilled: false
+  - slot_was_set:
+    - found_books:
+      - - 24349719
+        - Child of God
+        - - 4178
+          - 150134
+        - - Cormac McCarthy
+          - Tom Stechschulte
+  - slot_was_set:
+    - selected_list_index: 0
+  - slot_was_set:
+    - has_found_book: true
+  - slot_was_set:
+    - has_list_selection: false
+  - action: utter_confirm_to_borrow
+  - intent: affirm
+  - action: action_perform_borrow
+  - action: action_reset_slots
+  - intent: user_inventory_check_current_borrowing
+  - action: action_user_inventory
+
+- story: search_book 1 author name provided, two matches, first, select by valid index, borrow, then again search by same author name, try with invalid index, get reprompted, and try again with valid index, then perform borrow
+  steps:
+  - intent: search_book
+  - action: action_reset_slots
+  - action: utter_search_book_greet
+  - action: search_book_form
+  - active_loop: search_book_form
+  - slot_was_set:
+    - book_title: null
+  - slot_was_set:
+    - wrong_author_names: []
+  - slot_was_set:
+    - book_authors: null
+  - slot_was_set:
+    - requested_slot: book_title
+  - slot_was_set:
+    - book_title: skip
+  - slot_was_set:
+    - book_authors: null
+  - slot_was_set:
+    - requested_slot: book_authors
+  - slot_was_set:
+    - book_authors:
+      - arthur b. reeve
+  - slot_was_set:
+    - book_title: skip
+  - slot_was_set:
+    - requested_slot: null
+  - slot_was_set:
+    - requested_slot: null
+  - active_loop: null
+  - action: action_search_book
+  - slot_was_set:
+    - book_title: null
+  - slot_was_set:
+    - book_authors: null
+  - slot_was_set:
+    - wrong_author_names: null
+  - slot_was_set:
+    - book_info_prefilled: false
+  - slot_was_set:
+    - found_books:
+      - - 28092227
+        - The Silent Bullet
+        - - 17280033
+        - - Arthur B. Reeve
+      - - 18895013
+        - 'Craig Kennedy, Scientific Detective Collection: 13 Complete Novels (Unexpurgated Edition)'
+        - - 17280033
+        - - Arthur B. Reeve
+  - slot_was_set:
+    - selected_list_index: null
+  - slot_was_set:
+    - has_found_book: true
+  - slot_was_set:
+    - has_list_selection: true
+  - action: utter_ask_list_have_desired #
+  - intent: affirm #
+  - action: select_from_list_form
+  - active_loop: select_from_list_form
+  - slot_was_set:
+    - form_flag: false
+  - slot_was_set:
+    - selected_list_index: null
+  - slot_was_set:
+    - is_ambiguous: false
+  - slot_was_set:
+    - narrowed_found_books: []
+  - slot_was_set:
+    - has_list_selection: true
+  - slot_was_set:
+    - requested_slot: selected_list_index
+  - slot_was_set:
+    - selected_list_index: 1
+  - slot_was_set:
+    - is_ambiguous: false
+  - slot_was_set:
+    - narrowed_found_books: []
+  - slot_was_set:
+    - has_list_selection: false
+  - slot_was_set:
+    - requested_slot: null
+  - active_loop: null
+  - action: utter_confirm_to_borrow
+  - intent: affirm
+  - action: action_perform_borrow
+  - action: action_reset_slots
+  - intent: search_book
+  - action: action_reset_slots
+  - action: utter_search_book_greet
+  - action: search_book_form
+  - active_loop: search_book_form
+  - slot_was_set:
+    - book_title: null
+  - slot_was_set:
+    - wrong_author_names: []
+  - slot_was_set:
+    - book_authors: null
+  - slot_was_set:
+    - requested_slot: book_title
+  - slot_was_set:
+    - book_title: skip
+  - slot_was_set:
+    - book_authors: null
+  - slot_was_set:
+    - requested_slot: book_authors
+  - slot_was_set:
+    - book_authors:
+      - arthur b. reeve
+  - slot_was_set:
+    - book_title: skip
+  - slot_was_set:
+    - requested_slot: null
+  - slot_was_set:
+    - requested_slot: null
+  - active_loop: null
+  - action: action_search_book
+  - slot_was_set:
+    - book_title: null
+  - slot_was_set:
+    - book_authors: null
+  - slot_was_set:
+    - wrong_author_names: null
+  - slot_was_set:
+    - book_info_prefilled: false
+  - slot_was_set:
+    - found_books:
+      - - 28092227
+        - The Silent Bullet
+        - - 17280033
+        - - Arthur B. Reeve
+      - - 18895013
+        - 'Craig Kennedy, Scientific Detective Collection: 13 Complete Novels (Unexpurgated Edition)'
+        - - 17280033
+        - - Arthur B. Reeve
+  - slot_was_set:
+    - selected_list_index: null
+  - slot_was_set:
+    - has_found_book: true
+  - slot_was_set:
+    - has_list_selection: true
+  - action: utter_ask_list_have_desired #
+  - intent: affirm #
+  - action: select_from_list_form
+  - active_loop: select_from_list_form
+  - slot_was_set:
+    - form_flag: false
+  - slot_was_set:
+    - selected_list_index: null
+  - slot_was_set:
+    - is_ambiguous: false
+  - slot_was_set:
+    - narrowed_found_books: []
+  - slot_was_set:
+    - has_list_selection: true
+  - slot_was_set:
+    - requested_slot: selected_list_index
+  - slot_was_set:
+    - selected_list_index: null
+  - slot_was_set:
+    - is_ambiguous: false
+  - slot_was_set:
+    - narrowed_found_books: []
+  - slot_was_set:
+    - has_list_selection: true
+  - slot_was_set:
+    - requested_slot: selected_list_index
+  - slot_was_set:
+    - selected_list_index: 0
+  - slot_was_set:
+    - is_ambiguous: false
+  - slot_was_set:
+    - narrowed_found_books: []
+  - slot_was_set:
+    - has_list_selection: false
+  - slot_was_set:
+    - requested_slot: null
+  - active_loop: null
+  - action: utter_confirm_to_borrow
+  - intent: affirm
+  - action: action_perform_borrow
+  - action: action_reset_slots
+
+- story: inform_book_info Title and author name provided, one match, say yes to borrowing 
+  steps:
+  - intent: inform_book_info
+    entities:
+    - book_title: light stealer
+    - PERSON: james barclay
+  - action: action_assign_book_info_to_form
+  - slot_was_set:
+    - book_authors: james barclay
+  - slot_was_set:
+    - book_title: light stealer
+  - slot_was_set:
+    - book_info_prefilled: true
+  - action: search_book_form
+  - active_loop: search_book_form
+  - slot_was_set:
+    - book_title: light stealer
+  - slot_was_set:
+    - book_authors:
+      - james barclay
+  - slot_was_set:
+    - requested_slot: null
+  - active_loop: null
+  - action: action_search_book
+  - slot_was_set:
+    - book_title: null
+  - slot_was_set:
+    - book_authors: null
+  - slot_was_set:
+    - wrong_author_names: null
+  - slot_was_set:
+    - book_info_prefilled: false
+  - slot_was_set:
+    - found_books:
+      - - 1341034
+        - Light Stealer
+        - - 4145
+        - - James Barclay
+  - slot_was_set:
+    - selected_list_index: 0
+  - slot_was_set:
+    - has_found_book: true
+  - slot_was_set:
+    - has_list_selection: false
+  - action: utter_confirm_to_borrow
+  - intent: affirm
+  - action: action_perform_borrow
+  - action: action_reset_slots
+
+- story: inform_book_info 1 author name provided, three matches, first select by author name, too many titles with same name, select by title, then borrow it.
+  steps:
+  - intent: inform_book_info
+    entities:
+    - PERSON: john snow
+  - action: action_assign_book_info_to_form
+  - slot_was_set:
+    - book_authors: john snow
+  - slot_was_set:
+    - book_title: ''
+  - slot_was_set:
+    - book_info_prefilled: true
+  - action: search_book_form
+  - active_loop: search_book_form
+  - slot_was_set:
+    - book_title: ''
+  - slot_was_set:
+    - book_authors:
+      - john snow
+  - slot_was_set:
+    - requested_slot: null
+  - active_loop: null
+  - action: action_search_book
+  - slot_was_set:
+    - book_title: null
+  - slot_was_set:
+    - book_authors: null
+  - slot_was_set:
+    - wrong_author_names: null
+  - slot_was_set:
+    - book_info_prefilled: false
+  - slot_was_set:
+    - found_books:
+      - - 5424863
+        - On the Mode of Communication of Cholera
+        - - 7577883
+        - - John Snow
+      - - 29607871
+        - 'The Bitch Queen (The Viking #4)'
+        - - 7092025
+        - - John Snow
+      - - 17926281
+        - 'The Slayer Rune (The Viking #1)'
+        - - 7092025
+        - - John Snow
+  - slot_was_set:
+    - selected_list_index: null
+  - slot_was_set:
+    - has_found_book: true
+  - slot_was_set:
+    - has_list_selection: true
+  - action: utter_ask_list_have_desired #
+  - intent: affirm #
+  - action: select_from_list_form
+  - active_loop: select_from_list_form
+  - slot_was_set:
+    - form_flag: false
+  - slot_was_set:
+    - selected_list_index: null
+  - slot_was_set:
+    - is_ambiguous: false
+  - slot_was_set:
+    - narrowed_found_books: []
+  - slot_was_set:
+    - has_list_selection: true
+  - slot_was_set:
+    - requested_slot: selected_list_index
+  - slot_was_set:
+    - selected_list_index: null
+  - slot_was_set:
+    - is_ambiguous: true
+  - slot_was_set:
+    - narrowed_found_books:
+      - - 5424863
+        - On the Mode of Communication of Cholera
+        - - 7577883
+        - - John Snow
+      - - 29607871
+        - 'The Bitch Queen (The Viking #4)'
+        - - 7092025
+        - - John Snow
+      - - 17926281
+        - 'The Slayer Rune (The Viking #1)'
+        - - 7092025
+        - - John Snow
+  - slot_was_set:
+    - has_list_selection: true
+  - slot_was_set:
+    - requested_slot: selected_list_index
+  - slot_was_set:
+    - selected_list_index: 1
+  - slot_was_set:
+    - is_ambiguous: false
+  - slot_was_set:
+    - narrowed_found_books: []
+  - slot_was_set:
+    - has_list_selection: false
+  - slot_was_set:
+    - requested_slot: null
+  - active_loop: null
+  - action: utter_confirm_to_borrow
+  - intent: affirm
+  - action: action_perform_borrow
+  - action: action_reset_slots
+
+- story: search_book title , one exact match, no borrow
+  steps:
+  - intent: search_book
+  - action: action_reset_slots
+  - action: utter_search_book_greet
+  - action: search_book_form
+  - active_loop: search_book_form
+  - slot_was_set:
+    - book_title: null
+  - slot_was_set:
+    - wrong_author_names: []
+  - slot_was_set:
+    - book_authors: null
+  - slot_was_set:
+    - requested_slot: book_title
+  - slot_was_set:
+    - book_title: i sold andy warhol
+  - slot_was_set:
+    - wrong_author_names: []
+  - slot_was_set:
+    - book_authors: null
+  - slot_was_set:
+    - requested_slot: book_authors
+  - slot_was_set:
+    - book_authors:
+      - skip
+  - slot_was_set:
+    - book_title: i sold andy warhol
+  - slot_was_set:
+    - requested_slot: null
+  - slot_was_set:
+    - requested_slot: null
+  - active_loop: null
+  - action: action_search_book
+  - slot_was_set:
+    - book_title: null
+  - slot_was_set:
+    - book_authors: null
+  - slot_was_set:
+    - wrong_author_names: null
+  - slot_was_set:
+    - book_info_prefilled: false
+  - slot_was_set:
+    - found_books:
+      - - 6546089
+        - I Sold Andy Warhol
+        - - 91652
+        - - Richard Polsky
+  - slot_was_set:
+    - selected_list_index: 0
+  - slot_was_set:
+    - has_found_book: true
+  - slot_was_set:
+    - has_list_selection: false
+  - action: utter_confirm_to_borrow
+  - intent: deny
+  - action: utter_ok
+  - action: action_reset_slots
+
+- story: inform_book_info (given title - 4 matches - last index -  borrow)
+  steps:
+  - intent: inform_book_info
+    entities:
+    - book_title: breakout
+  - action: action_assign_book_info_to_form
+  - slot_was_set:
+    - book_authors: []
+  - slot_was_set:
+    - book_title: breakout
+  - slot_was_set:
+    - book_info_prefilled: true
+  - action: search_book_form
+  - active_loop: search_book_form
+  - slot_was_set:
+    - book_title: breakout
+  - slot_was_set:
+    - book_title: breakout
+  - slot_was_set:
+    - requested_slot: null
+  - active_loop: null
+  - action: action_search_book
+  - slot_was_set:
+    - book_title: null
+  - slot_was_set:
+    - book_authors: null
+  - slot_was_set:
+    - wrong_author_names: null
+  - slot_was_set:
+    - book_info_prefilled: false
+  - slot_was_set:
+    - found_books:
+      - - 2133799
+        - The Great White House Breakout
+        - - 970555
+          - 498068
+        - - Helen M. Thomas
+          - Chip Bok
+      - - 15805948
+        - 'British Zombie Breakout: Part One'
+        - - 3290692
+        - - Peter Salisbury
+      - - 17188482
+        - Breakout
+        - - 13634
+        - - Richard Stark
+      - - 23786968
+        - 'Virus Z: Breakout - Episode 1'
+        - - 1026937
+        - - Robert Paine
+  - slot_was_set:
+    - selected_list_index: null
+  - slot_was_set:
+    - has_found_book: true
+  - slot_was_set:
+    - has_list_selection: true
+  - action: utter_ask_list_have_desired #
+  - intent: affirm #
+  - action: select_from_list_form
+  - active_loop: select_from_list_form
+  - slot_was_set:
+    - form_flag: false
+  - slot_was_set:
+    - selected_list_index: null
+  - slot_was_set:
+    - is_ambiguous: false
+  - slot_was_set:
+    - narrowed_found_books: []
+  - slot_was_set:
+    - has_list_selection: true
+  - slot_was_set:
+    - requested_slot: selected_list_index
+  - slot_was_set:
+    - selected_list_index: 3
+  - slot_was_set:
+    - is_ambiguous: false
+  - slot_was_set:
+    - narrowed_found_books: []
+  - slot_was_set:
+    - has_list_selection: false
+  - slot_was_set:
+    - requested_slot: null
+  - active_loop: null
+  - action: utter_confirm_to_borrow
+  - intent: affirm
+  - action: action_perform_borrow
+  - action: action_reset_slots
+
+- story: inform_book_info (given title invalid) -> inform_book_info (given title - one match - reject)
+  steps:
+  - intent: inform_book_info
+    entities:
+    - book_title: the book of mississippi
+  - action: action_assign_book_info_to_form
+  - slot_was_set:
+    - book_authors: []
+  - slot_was_set:
+    - book_title: the book of mississippi
+  - slot_was_set:
+    - book_info_prefilled: true
+  - action: search_book_form
+  - active_loop: search_book_form
+  - slot_was_set:
+    - book_title: the book of mississippi
+  - slot_was_set:
+    - book_title: the book of mississippi
+  - slot_was_set:
+    - requested_slot: null
+  - active_loop: null
+  - action: action_search_book
+  - slot_was_set:
+    - book_title: null
+  - slot_was_set:
+    - book_authors: null
+  - slot_was_set:
+    - wrong_author_names: null
+  - slot_was_set:
+    - book_info_prefilled: false
+  - slot_was_set:
+    - found_books: null
+  - slot_was_set:
+    - selected_list_index: null
+  - slot_was_set:
+    - has_found_book: false
+  - slot_was_set:
+    - has_list_selection: false
+  - intent: inform_book_info
+    entities:
+    - book_title: the theory of everything
+  - action: action_assign_book_info_to_form
+  - slot_was_set:
+    - book_authors: []
+  - slot_was_set:
+    - book_title: the theory of everything
+  - slot_was_set:
+    - book_info_prefilled: true
+  - action: search_book_form
+  - active_loop: search_book_form
+  - slot_was_set:
+    - book_title: the theory of everything
+  - slot_was_set:
+    - book_title: the theory of everything
+  - slot_was_set:
+    - requested_slot: null
+  - active_loop: null
+  - action: action_search_book
+  - slot_was_set:
+    - book_title: null
+  - slot_was_set:
+    - book_authors: null
+  - slot_was_set:
+    - wrong_author_names: null
+  - slot_was_set:
+    - book_info_prefilled: false
+  - slot_was_set:
+    - found_books:
+      - - 5495632
+        - The Illustrated Theory of Everything
+        - - 1401
+          - 324242
+        - - Stephen Hawking
+          - Marcelo Gleiser
+  - slot_was_set:
+    - selected_list_index: 0
+  - slot_was_set:
+    - has_found_book: true
+  - slot_was_set:
+    - has_list_selection: false
+  - action: utter_confirm_to_borrow
+  - intent: deny
+  - action: utter_ok
+  - action: action_reset_slots
+
+- story: inform_book_info (given author invalid) 
+  steps:
+  - intent: inform_book_info
+    entities:
+    - PERSON: joseph christina wang
+  - action: action_assign_book_info_to_form
+  - slot_was_set:
+    - book_authors: joseph christina wang
+  - slot_was_set:
+    - book_title: ''
+  - slot_was_set:
+    - book_info_prefilled: true
+  - action: search_book_form
+  - active_loop: search_book_form
+  - slot_was_set:
+    - book_title: ''
+  - slot_was_set:
+    - book_authors:
+      - joseph christina wang
+  - slot_was_set:
+    - requested_slot: null
+  - active_loop: null
+  - action: action_search_book
+  - slot_was_set:
+    - book_title: null
+  - slot_was_set:
+    - book_authors: null
+  - slot_was_set:
+    - wrong_author_names: null
+  - slot_was_set:
+    - book_info_prefilled: false
+  - slot_was_set:
+    - found_books: null
+  - slot_was_set:
+    - selected_list_index: null
+  - slot_was_set:
+    - has_found_book: false
+  - slot_was_set:
+    - has_list_selection: false
+
+- story: inform_book_info (given authors invalid)
+  steps:
+  - intent: inform_book_info
+    entities:
+    - PERSON: alexa nico
+    - PERSON: lexi zach
+  - action: action_assign_book_info_to_form
+  - slot_was_set:
+    - book_authors: 
+      - alexa nico
+      - lexi zach
+  - slot_was_set:
+    - book_title: ''
+  - slot_was_set:
+    - book_info_prefilled: true
+  - action: search_book_form
+  - active_loop: search_book_form
+  - slot_was_set:
+    - book_title: ''
+  - slot_was_set:
+    - book_authors:
+      - alexa nico
+      - lexi zach
+  - slot_was_set:
+    - requested_slot: null
+  - active_loop: null
+  - action: action_search_book
+  - slot_was_set:
+    - book_title: null
+  - slot_was_set:
+    - book_authors: null
+  - slot_was_set:
+    - wrong_author_names: null
+  - slot_was_set:
+    - book_info_prefilled: false
+  - slot_was_set:
+    - found_books: null
+  - slot_was_set:
+    - selected_list_index: null
+  - slot_was_set:
+    - has_found_book: false
+  - slot_was_set:
+    - has_list_selection: false
+
+- story: inform_book_info (given title & author invalid)
+  steps:
+  - intent: inform_book_info
+    entities:
+    - book_title: the beautiful creatures and how they look like
+  - action: action_assign_book_info_to_form
+  - slot_was_set:
+    - book_authors: []
+  - slot_was_set:
+    - book_title: the beautiful creatures and how they look like
+  - slot_was_set:
+    - book_info_prefilled: true
+  - action: search_book_form
+  - active_loop: search_book_form
+  - slot_was_set:
+    - book_title: the beautiful creatures and how they look like
+  - slot_was_set:
+    - book_title: the beautiful creatures and how they look like
+  - slot_was_set:
+    - requested_slot: null
+  - active_loop: null
+  - action: action_search_book
+  - slot_was_set:
+    - book_title: null
+  - slot_was_set:
+    - book_authors: null
+  - slot_was_set:
+    - wrong_author_names: null
+  - slot_was_set:
+    - book_info_prefilled: false
+  - slot_was_set:
+    - found_books: null
+  - slot_was_set:
+    - selected_list_index: null
+  - slot_was_set:
+    - has_found_book: false
+  - slot_was_set:
+    - has_list_selection: false
+
+- story: search_book (give title invalid)
+  steps:
+  - intent: search_book
+  - action: action_reset_slots
+  - action: utter_search_book_greet
+  - action: search_book_form
+  - active_loop: search_book_form
+  - slot_was_set:
+    - book_title: null
+  - slot_was_set:
+    - wrong_author_names: []
+  - slot_was_set:
+    - book_authors: null
+  - slot_was_set:
+    - requested_slot: book_title
+  - slot_was_set:
+    - book_title: the start of great football
+  - slot_was_set:
+    - wrong_author_names: []
+  - slot_was_set:
+    - book_authors: null
+  - slot_was_set:
+    - requested_slot: book_authors
+  - slot_was_set:
+    - book_authors:
+      - skip
+  - slot_was_set:
+    - book_title: the start of great football
+  - slot_was_set:
+    - requested_slot: null
+  - slot_was_set:
+    - requested_slot: null
+  - active_loop: null
+  - action: action_search_book
+  - slot_was_set:
+    - book_title: null
+  - slot_was_set:
+    - book_authors: null
+  - slot_was_set:
+    - wrong_author_names: null
+  - slot_was_set:
+    - book_info_prefilled: false
+  - slot_was_set:
+    - found_books: null
+  - slot_was_set:
+    - selected_list_index: null
+  - slot_was_set:
+    - has_found_book: false
+  - slot_was_set:
+    - has_list_selection: false
+
+- story: search_book (give author invalid)
+  steps:
+  - intent: search_book
+  - action: action_reset_slots
+  - action: utter_search_book_greet
+  - action: search_book_form
+  - active_loop: search_book_form
+  - slot_was_set:
+    - book_title: null
+  - slot_was_set:
+    - wrong_author_names: []
+  - slot_was_set:
+    - book_authors: null
+  - slot_was_set:
+    - requested_slot: book_title
+  - slot_was_set:
+    - book_title: skip
+  - slot_was_set:
+    - book_authors: null
+  - slot_was_set:
+    - requested_slot: book_authors
+  - slot_was_set:
+    - book_authors:
+      - alex lee
+  - slot_was_set:
+    - book_title: skip
+  - slot_was_set:
+    - requested_slot: null
+  - slot_was_set:
+    - requested_slot: null
+  - active_loop: null
+  - action: action_search_book
+  - slot_was_set:
+    - book_title: null
+  - slot_was_set:
+    - book_authors: null
+  - slot_was_set:
+    - wrong_author_names: null
+  - slot_was_set:
+    - book_info_prefilled: false
+  - slot_was_set:
+    - found_books: null
+  - slot_was_set:
+    - selected_list_index: null
+  - slot_was_set:
+    - has_found_book: false
+  - slot_was_set:
+    - has_list_selection: false
+
+- story: search_book (give authors - one author valid - one match - not borrowing )
+  steps:
+  - intent: search_book
+  - action: action_reset_slots
+  - action: utter_search_book_greet
+  - action: search_book_form
+  - active_loop: search_book_form
+  - slot_was_set:
+    - book_title: null
+  - slot_was_set:
+    - wrong_author_names: []
+  - slot_was_set:
+    - book_authors: null
+  - slot_was_set:
+    - requested_slot: book_title
+  - slot_was_set:
+    - book_title: skip
+  - slot_was_set:
+    - book_authors: null
+  - slot_was_set:
+    - requested_slot: book_authors
+  - slot_was_set:
+    - book_authors:
+      - amanda clark
+      - joshua brown
+  - slot_was_set:
+    - book_title: skip
+  - slot_was_set:
+    - requested_slot: null
+  - slot_was_set:
+    - requested_slot: null
+  - active_loop: null
+  - action: action_search_book
+  - slot_was_set:
+    - book_title: null
+  - slot_was_set:
+    - book_authors: null
+  - slot_was_set:
+    - wrong_author_names: null
+  - slot_was_set:
+    - book_info_prefilled: false
+  - slot_was_set:
+    - found_books:
+      - - 23506424
+        - 'The Beta gets his Man (The Derwent Pack #2)'
+        - - 2427
+        - - Amanda Clark
+  - slot_was_set:
+    - selected_list_index: 0
+  - slot_was_set:
+    - has_found_book: true
+  - slot_was_set:
+    - has_list_selection: false
+  - action: utter_confirm_to_borrow
+  - intent: deny
+  - action: utter_ok
+  - action: action_reset_slots
+
+- story: search_book (give authors invalid)
+  steps:
+  - intent: search_book
+  - action: action_reset_slots
+  - action: utter_search_book_greet
+  - action: search_book_form
+  - active_loop: search_book_form
+  - slot_was_set:
+    - book_title: null
+  - slot_was_set:
+    - wrong_author_names: []
+  - slot_was_set:
+    - book_authors: null
+  - slot_was_set:
+    - requested_slot: book_title
+  - slot_was_set:
+    - book_title: skip
+  - slot_was_set:
+    - book_authors: null
+  - slot_was_set:
+    - requested_slot: book_authors
+  - slot_was_set:
+    - book_authors:
+      - alan rickman
+      - joe brown
+  - slot_was_set:
+    - book_title: skip
+  - slot_was_set:
+    - requested_slot: null
+  - slot_was_set:
+    - requested_slot: null
+  - active_loop: null
+  - action: action_search_book
+  - slot_was_set:
+    - book_title: null
+  - slot_was_set:
+    - book_authors: null
+  - slot_was_set:
+    - wrong_author_names: null
+  - slot_was_set:
+    - book_info_prefilled: false
+  - slot_was_set:
+    - found_books: null
+  - slot_was_set:
+    - selected_list_index: null
+  - slot_was_set:
+    - has_found_book: false
+  - slot_was_set:
+    - has_list_selection: false
+
+- story: search_book (give title & author invalid) wrong_author_names
+  steps:
+  - intent: search_book
+  - action: action_reset_slots
+  - action: utter_search_book_greet
+  - action: search_book_form
+  - active_loop: search_book_form
+  - slot_was_set:
+    - book_title: null
+  - slot_was_set:
+    - wrong_author_names: []
+  - slot_was_set:
+    - book_authors: null
+  - slot_was_set:
+    - requested_slot: book_title
+  - slot_was_set:
+    - book_title: joe and big adventure
+  - slot_was_set:
+    - wrong_author_names:
+      - joe
+  - slot_was_set:
+    - book_authors: null
+  - slot_was_set:
+    - requested_slot: book_authors
+  - slot_was_set:
+    - book_authors:
+      - chris barak
+  - slot_was_set:
+    - book_title: joe and big adventure
+  - slot_was_set:
+    - requested_slot: null
+  - slot_was_set:
+    - requested_slot: null
+  - active_loop: null
+  - action: action_search_book
+  - slot_was_set:
+    - book_title: null
+  - slot_was_set:
+    - book_authors: null
+  - slot_was_set:
+    - wrong_author_names: null
+  - slot_was_set:
+    - book_info_prefilled: false
+  - slot_was_set:
+    - found_books: null
+  - slot_was_set:
+    - selected_list_index: null
+  - slot_was_set:
+    - has_found_book: false
+  - slot_was_set:
+    - has_list_selection: false
+
+- story: search_book (give title & authors invalid)
+  steps:
+  - intent: search_book
+  - action: action_reset_slots
+  - action: utter_search_book_greet
+  - action: search_book_form
+  - active_loop: search_book_form
+  - slot_was_set:
+    - book_title: null
+  - slot_was_set:
+    - wrong_author_names: []
+  - slot_was_set:
+    - book_authors: null
+  - slot_was_set:
+    - requested_slot: book_title
+  - slot_was_set:
+    - book_title: the wrong girl in town
+  - slot_was_set:
+    - wrong_author_names: []
+  - slot_was_set:
+    - book_authors: null
+  - slot_was_set:
+    - requested_slot: book_authors
+  - slot_was_set:
+    - book_authors:
+      - amanda pattson
+      - sally redman
+  - slot_was_set:
+    - book_title: the wrong girl in town
+  - slot_was_set:
+    - requested_slot: null
+  - slot_was_set:
+    - requested_slot: null
+  - active_loop: null
+  - action: action_search_book
+  - slot_was_set:
+    - book_title: null
+  - slot_was_set:
+    - book_authors: null
+  - slot_was_set:
+    - wrong_author_names: null
+  - slot_was_set:
+    - book_info_prefilled: false
+  - slot_was_set:
+    - found_books: null
+  - slot_was_set:
+    - selected_list_index: null
+  - slot_was_set:
+    - has_found_book: false
+  - slot_was_set:
+    - has_list_selection: false
+
+- story: search_book (give title & author invalid) 2
+  steps:
+  - intent: search_book
+  - action: action_reset_slots
+  - action: utter_search_book_greet
+  - action: search_book_form
+  - active_loop: search_book_form
+  - slot_was_set:
+    - book_title: null
+  - slot_was_set:
+    - wrong_author_names: []
+  - slot_was_set:
+    - book_authors: null
+  - slot_was_set:
+    - requested_slot: book_title
+  - slot_was_set:
+    - book_title: lose weight smart in ten days
+  - slot_was_set:
+    - wrong_author_names: []
+  - slot_was_set:
+    - book_authors: null
+  - slot_was_set:
+    - requested_slot: book_authors
+  - slot_was_set:
+    - book_authors:
+      - maya bowman
+  - slot_was_set:
+    - book_title: lose weight smart in ten days
+  - slot_was_set:
+    - requested_slot: null
+  - slot_was_set:
+    - requested_slot: null
+  - active_loop: null
+  - action: action_search_book
+  - slot_was_set:
+    - book_title: null
+  - slot_was_set:
+    - book_authors: null
+  - slot_was_set:
+    - wrong_author_names: null
+  - slot_was_set:
+    - book_info_prefilled: false
+  - slot_was_set:
+    - found_books: null
+  - slot_was_set:
+    - selected_list_index: null
+  - slot_was_set:
+    - has_found_book: false
+  - slot_was_set:
+    - has_list_selection: false
+
+- story: search_book (first skip & skip, second title - one match - borrow yes)
+  steps:
+  - intent: search_book
+  - action: action_reset_slots
+  - action: utter_search_book_greet
+  - action: search_book_form
+  - active_loop: search_book_form
+  - slot_was_set:
+    - book_title: null
+  - slot_was_set:
+    - wrong_author_names: []
+  - slot_was_set:
+    - book_authors: null
+  - slot_was_set:
+    - requested_slot: book_title
+  - slot_was_set:
+    - book_title: skip
+  - slot_was_set:
+    - book_authors: null
+  - slot_was_set:
+    - requested_slot: book_authors
+  - slot_was_set:
+    - book_authors: null
+  - slot_was_set:
+    - book_title: null
+  - slot_was_set:
+    - requested_slot: book_title
+  - slot_was_set:
+    - book_title: feline alchemy
+  - slot_was_set:
+    - wrong_author_names: []
+  - slot_was_set:
+    - book_authors: null
+  - slot_was_set:
+    - requested_slot: book_authors
+  - slot_was_set:
+    - book_authors:
+      - skip
+  - slot_was_set:
+    - book_title: feline alchemy
+  - slot_was_set:
+    - requested_slot: null
+  - slot_was_set:
+    - requested_slot: null
+  - active_loop: null
+  - action: action_search_book
+  - slot_was_set:
+    - book_title: null
+  - slot_was_set:
+    - book_authors: null
+  - slot_was_set:
+    - wrong_author_names: null
+  - slot_was_set:
+    - book_info_prefilled: false
+  - slot_was_set:
+    - found_books:
+      - - 22231976
+        - Feline Alchemy
+        - - 8252086
+        - - Sue Blake
+  - slot_was_set:
+    - selected_list_index: 0
+  - slot_was_set:
+    - has_found_book: true
+  - slot_was_set:
+    - has_list_selection: false
+  - action: utter_confirm_to_borrow
+  - intent: affirm
+  - action: action_perform_borrow
+  - action: action_reset_slots
+
+- story: search_book (first skip & skip, second author - one match - borrow yes)
+  steps:
+  - intent: search_book
+  - action: action_reset_slots
+  - action: utter_search_book_greet
+  - action: search_book_form
+  - active_loop: search_book_form
+  - slot_was_set:
+    - book_title: null
+  - slot_was_set:
+    - wrong_author_names: []
+  - slot_was_set:
+    - book_authors: null
+  - slot_was_set:
+    - requested_slot: book_title
+  - slot_was_set:
+    - book_title: skip
+  - slot_was_set:
+    - book_authors: null
+  - slot_was_set:
+    - requested_slot: book_authors
+  - slot_was_set:
+    - book_authors: null
+  - slot_was_set:
+    - book_title: null
+  - slot_was_set:
+    - requested_slot: book_title
+  - slot_was_set:
+    - book_title: skip
+  - slot_was_set:
+    - book_authors: null
+  - slot_was_set:
+    - requested_slot: book_authors
+  - slot_was_set:
+    - book_authors:
+      - david blake
+  - slot_was_set:
+    - book_title: skip
+  - slot_was_set:
+    - requested_slot: null
+  - slot_was_set:
+    - requested_slot: null
+  - active_loop: null
+  - action: action_search_book
+  - slot_was_set:
+    - book_title: null
+  - slot_was_set:
+    - book_authors: null
+  - slot_was_set:
+    - wrong_author_names: null
+  - slot_was_set:
+    - book_info_prefilled: false
+  - slot_was_set:
+    - found_books:
+      - - 34057745
+        - Fish Fingered
+        - - 15104629
+        - - David Blake
+  - slot_was_set:
+    - selected_list_index: 0
+  - slot_was_set:
+    - has_found_book: true
+  - slot_was_set:
+    - has_list_selection: false
+  - action: utter_confirm_to_borrow
+  - intent: affirm
+  - action: action_perform_borrow
+  - action: action_reset_slots
+
+- story: search_book (first skip & skip, second author - no match)
+  steps:
+  - intent: search_book
+  - action: action_reset_slots
+  - action: utter_search_book_greet
+  - action: search_book_form
+  - active_loop: search_book_form
+  - slot_was_set:
+    - book_title: null
+  - slot_was_set:
+    - wrong_author_names: []
+  - slot_was_set:
+    - book_authors: null
+  - slot_was_set:
+    - requested_slot: book_title
+  - slot_was_set:
+    - book_title: skip
+  - slot_was_set:
+    - book_authors: null
+  - slot_was_set:
+    - requested_slot: book_authors
+  - slot_was_set:
+    - book_authors: null
+  - slot_was_set:
+    - book_title: null
+  - slot_was_set:
+    - requested_slot: book_title
+  - slot_was_set:
+    - book_title: the dog sitter and its scenary
+  - slot_was_set:
+    - wrong_author_names: []
+  - slot_was_set:
+    - book_authors: null
+  - slot_was_set:
+    - requested_slot: book_authors
+  - slot_was_set:
+    - book_authors:
+      - sally gonzalez
+  - slot_was_set:
+    - book_title: the dog sitter and its scenary
+  - slot_was_set:
+    - requested_slot: null
+  - slot_was_set:
+    - requested_slot: null
+  - active_loop: null
+  - action: action_search_book
+  - slot_was_set:
+    - book_title: null
+  - slot_was_set:
+    - book_authors: null
+  - slot_was_set:
+    - wrong_author_names: null
+  - slot_was_set:
+    - book_info_prefilled: false
+  - slot_was_set:
+    - found_books: null
+  - slot_was_set:
+    - selected_list_index: null
+  - slot_was_set:
+    - has_found_book: false
+  - slot_was_set:
+    - has_list_selection: false
+
+- story: search_book (author - multiple match - select by author name - reprompt - select by title and author - borrow yes)
+  steps:
+  - intent: search_book
+  - action: action_reset_slots
+  - action: utter_search_book_greet
+  - action: search_book_form
+  - active_loop: search_book_form
+  - slot_was_set:
+    - book_title: null
+  - slot_was_set:
+    - wrong_author_names: []
+  - slot_was_set:
+    - book_authors: null
+  - slot_was_set:
+    - requested_slot: book_title
+  - slot_was_set:
+    - book_title: skip
+  - slot_was_set:
+    - book_authors: null
+  - slot_was_set:
+    - requested_slot: book_authors
+  - slot_was_set:
+    - book_authors:
+      - stephen king
+  - slot_was_set:
+    - book_title: skip
+  - slot_was_set:
+    - requested_slot: null
+  - slot_was_set:
+    - requested_slot: null
+  - active_loop: null
+  - action: action_search_book
+  - slot_was_set:
+    - book_title: null
+  - slot_was_set:
+    - book_authors: null
+  - slot_was_set:
+    - wrong_author_names: null
+  - slot_was_set:
+    - book_info_prefilled: false
+  - slot_was_set:
+    - found_books:
+      - - 15832782
+        - The Running Man
+        - - 3389
+        - - Stephen King
+      - - 36320
+        - Tales of the Cthulhu Mythos
+        - - 3389
+        - - Stephen King
+      - - 19197783
+        - Ojos de fuego
+        - - 3389
+        - - Stephen King
+      - - 6289689
+        - Sorry, Right Number, and Other Stories
+        - - 3389
+        - - Stephen King
+  - slot_was_set:
+    - selected_list_index: null
+  - slot_was_set:
+    - has_found_book: true
+  - slot_was_set:
+    - has_list_selection: true
+  - action: utter_ask_list_have_desired #
+  - intent: affirm #
+  - action: select_from_list_form
+  - active_loop: select_from_list_form
+  - slot_was_set:
+    - form_flag: false
+  - slot_was_set:
+    - selected_list_index: null
+  - slot_was_set:
+    - is_ambiguous: false
+  - slot_was_set:
+    - narrowed_found_books: []
+  - slot_was_set:
+    - has_list_selection: true
+  - slot_was_set:
+    - requested_slot: selected_list_index
+  - slot_was_set:
+    - selected_list_index: null
+  - slot_was_set:
+    - is_ambiguous: true
+  - slot_was_set:
+    - narrowed_found_books:
+      - - 15832782
+        - The Running Man
+        - - 3389
+        - - Stephen King
+      - - 36320
+        - Tales of the Cthulhu Mythos
+        - - 3389
+        - - Stephen King
+      - - 19197783
+        - Ojos de fuego
+        - - 3389
+        - - Stephen King
+      - - 6289689
+        - Sorry, Right Number, and Other Stories
+        - - 3389
+        - - Stephen King
+  - slot_was_set:
+    - has_list_selection: true
+  - slot_was_set:
+    - requested_slot: selected_list_index
+  - slot_was_set:
+    - selected_list_index: 0
+  - slot_was_set:
+    - is_ambiguous: false
+  - slot_was_set:
+    - narrowed_found_books: []
+  - slot_was_set:
+    - has_list_selection: false
+  - slot_was_set:
+    - requested_slot: null
+  - active_loop: null
+  - action: utter_confirm_to_borrow
+  - intent: affirm
+  - action: action_perform_borrow
+  - action: action_reset_slots
+
+- story: search_book (author - multiple - select by index - no borrow)
+  steps:
+  - intent: search_book
+  - action: action_reset_slots
+  - action: utter_search_book_greet
+  - action: search_book_form
+  - active_loop: search_book_form
+  - slot_was_set:
+    - book_title: null
+  - slot_was_set:
+    - wrong_author_names: []
+  - slot_was_set:
+    - book_authors: null
+  - slot_was_set:
+    - requested_slot: book_title
+  - slot_was_set:
+    - book_title: skip
+  - slot_was_set:
+    - book_authors: null
+  - slot_was_set:
+    - requested_slot: book_authors
+  - slot_was_set:
+    - book_authors:
+      - kate mosse
+  - slot_was_set:
+    - book_title: skip
+  - slot_was_set:
+    - requested_slot: null
+  - slot_was_set:
+    - requested_slot: null
+  - active_loop: null
+  - action: action_search_book
+  - slot_was_set:
+    - book_title: null
+  - slot_was_set:
+    - book_authors: null
+  - slot_was_set:
+    - wrong_author_names: null
+  - slot_was_set:
+    - book_info_prefilled: false
+  - slot_was_set:
+    - found_books:
+      - - 18139945
+        - Citadel
+        - - 9343
+        - - Kate Mosse
+      - - 15701701
+        - 'Citadel (Languedoc, #3)'
+        - - 9343
+        - - Kate Mosse
+      - - 498835
+        - 'Sepulchre (Languedoc, #2)'
+        - - 9343
+        - - Kate Mosse
+      - - 18374015
+        - The Mistletoe Bride & Other Haunting Tales
+        - - 9343
+        - - Kate Mosse
+  - slot_was_set:
+    - selected_list_index: null
+  - slot_was_set:
+    - has_found_book: true
+  - slot_was_set:
+    - has_list_selection: true
+  - action: utter_ask_list_have_desired #
+  - intent: affirm #
+  - action: select_from_list_form
+  - active_loop: select_from_list_form
+  - slot_was_set:
+    - form_flag: false
+  - slot_was_set:
+    - selected_list_index: null
+  - slot_was_set:
+    - is_ambiguous: false
+  - slot_was_set:
+    - narrowed_found_books: []
+  - slot_was_set:
+    - has_list_selection: true
+  - slot_was_set:
+    - requested_slot: selected_list_index
+  - slot_was_set:
+    - selected_list_index: 2
+  - slot_was_set:
+    - is_ambiguous: false
+  - slot_was_set:
+    - narrowed_found_books: []
+  - slot_was_set:
+    - has_list_selection: false
+  - slot_was_set:
+    - requested_slot: null
+  - active_loop: null
+  - action: utter_confirm_to_borrow
+  - intent: deny
+  - action: utter_ok
+  - action: action_reset_slots
+
+- story: inform_book_info (author - one match - no borrow)
+  steps:
+  - intent: inform_book_info
+    entities:
+    - PERSON: kathleen bryan
+  - action: action_assign_book_info_to_form
+  - slot_was_set:
+    - book_authors: kathleen bryan
+  - slot_was_set:
+    - book_title: ''
+  - slot_was_set:
+    - book_info_prefilled: true
+  - action: search_book_form
+  - active_loop: search_book_form
+  - slot_was_set:
+    - book_title: ''
+  - slot_was_set:
+    - book_authors:
+      - kathleen bryan
+  - slot_was_set:
+    - requested_slot: null
+  - active_loop: null
+  - action: action_search_book
+  - slot_was_set:
+    - book_title: null
+  - slot_was_set:
+    - book_authors: null
+  - slot_was_set:
+    - wrong_author_names: null
+  - slot_was_set:
+    - book_info_prefilled: false
+  - slot_was_set:
+    - found_books:
+      - - 2061187
+        - 'The Serpent and the Rose (War of the Rose, #1)'
+        - - 410348
+        - - Kathleen Bryan
+  - slot_was_set:
+    - selected_list_index: 0
+  - slot_was_set:
+    - has_found_book: true
+  - slot_was_set:
+    - has_list_selection: false
+  - action: utter_confirm_to_borrow
+  - intent: affirm
+  - action: action_perform_borrow
+  - action: action_reset_slots
+
+- story: inform_book_info (author - multiple - borrow)
+  steps:
+  - intent: inform_book_info
+    entities:
+    - PERSON: john langan
+  - action: action_assign_book_info_to_form
+  - slot_was_set:
+    - book_authors: john langan
+  - slot_was_set:
+    - book_title: ''
+  - slot_was_set:
+    - book_info_prefilled: true
+  - action: search_book_form
+  - active_loop: search_book_form
+  - slot_was_set:
+    - book_title: ''
+  - slot_was_set:
+    - book_authors:
+      - john langan
+  - slot_was_set:
+    - requested_slot: null
+  - active_loop: null
+  - action: action_search_book
+  - slot_was_set:
+    - book_title: null
+  - slot_was_set:
+    - book_authors: null
+  - slot_was_set:
+    - wrong_author_names: null
+  - slot_was_set:
+    - book_info_prefilled: false
+  - slot_was_set:
+    - found_books:
+      - - 13449177
+        - Nightingale Songs
+        - - 7083555
+        - - John Langan
+      - - 11741673
+        - 'Vampires: The Recent Undead'
+        - - 7083555
+        - - John Langan
+      - - 14475644
+        - 'Ghosts: Recent Hauntings'
+        - - 7083555
+        - - John Langan
+      - - 11251545
+        - 'Creatures: Thirty Years of Monsters'
+        - - 7083555
+        - - John Langan
+  - slot_was_set:
+    - selected_list_index: null
+  - slot_was_set:
+    - has_found_book: true
+  - slot_was_set:
+    - has_list_selection: true
+  - action: utter_ask_list_have_desired #
+  - intent: affirm #
+  - action: select_from_list_form
+  - active_loop: select_from_list_form
+  - slot_was_set:
+    - form_flag: false
+  - slot_was_set:
+    - selected_list_index: null
+  - slot_was_set:
+    - is_ambiguous: false
+  - slot_was_set:
+    - narrowed_found_books: []
+  - slot_was_set:
+    - has_list_selection: true
+  - slot_was_set:
+    - requested_slot: selected_list_index
+  - slot_was_set:
+    - selected_list_index: 0
+  - slot_was_set:
+    - is_ambiguous: false
+  - slot_was_set:
+    - narrowed_found_books: []
+  - slot_was_set:
+    - has_list_selection: false
+  - slot_was_set:
+    - requested_slot: null
+  - active_loop: null
+  - action: utter_confirm_to_borrow
+  - intent: affirm
+  - action: action_perform_borrow
+  - action: action_reset_slots
+
+- story: inform_book_info (author - one match - no borrow) 2
+  steps:
+  - intent: inform_book_info
+    entities:
+    - PERSON: rafael ortiz
+  - action: action_assign_book_info_to_form
+  - slot_was_set:
+    - book_authors: rafael ortiz
+  - slot_was_set:
+    - book_title: ''
+  - slot_was_set:
+    - book_info_prefilled: true
+  - action: search_book_form
+  - active_loop: search_book_form
+  - slot_was_set:
+    - book_title: ''
+  - slot_was_set:
+    - book_authors:
+      - rafael ortiz
+  - slot_was_set:
+    - requested_slot: null
+  - active_loop: null
+  - action: action_search_book
+  - slot_was_set:
+    - book_title: null
+  - slot_was_set:
+    - book_authors: null
+  - slot_was_set:
+    - wrong_author_names: null
+  - slot_was_set:
+    - book_info_prefilled: false
+  - slot_was_set:
+    - found_books:
+      - - 22171732
+        - Crossed Volume 8
+        - - 1251983
+        - - Rafael Ortiz
+  - slot_was_set:
+    - selected_list_index: 0
+  - slot_was_set:
+    - has_found_book: true
+  - slot_was_set:
+    - has_list_selection: false
+  - action: utter_confirm_to_borrow
+  - intent: deny
+  - action: utter_ok
+  - action: action_reset_slots
+
+- story: inform_book_info (title - multiple match - index select - borrow)
+  steps:
+  - intent: inform_book_info
+    entities:
+    - book_title: the jungle
+  - action: action_assign_book_info_to_form
+  - slot_was_set:
+    - book_authors: []
+  - slot_was_set:
+    - book_title: the jungle
+  - slot_was_set:
+    - book_info_prefilled: true
+  - action: search_book_form
+  - active_loop: search_book_form
+  - slot_was_set:
+    - book_title: the jungle
+  - slot_was_set:
+    - book_title: the jungle
+  - slot_was_set:
+    - requested_slot: null
+  - active_loop: null
+  - action: action_search_book
+  - slot_was_set:
+    - book_title: null
+  - slot_was_set:
+    - book_authors: null
+  - slot_was_set:
+    - wrong_author_names: null
+  - slot_was_set:
+    - book_info_prefilled: false
+  - slot_was_set:
+    - found_books:
+      - - 41686
+        - The Jungle
+        - - 23510
+          - 120056
+        - - Upton Sinclair
+          - Maura Spiegel
+      - - 128518
+        - The Second Jungle Book
+        - - 6989
+        - - Rudyard Kipling
+      - - 168656
+        - The Jungle
+        - - 23510
+        - - Upton Sinclair
+      - - 492769
+        - The Jungle
+        - - 23510
+          - 5811876
+        - - Upton Sinclair
+          - Emory Eliott
+  - slot_was_set:
+    - selected_list_index: null
+  - slot_was_set:
+    - has_found_book: true
+  - slot_was_set:
+    - has_list_selection: true
+  - action: utter_ask_list_have_desired #
+  - intent: affirm #
+  - action: select_from_list_form
+  - active_loop: select_from_list_form
+  - slot_was_set:
+    - form_flag: false
+  - slot_was_set:
+    - selected_list_index: null
+  - slot_was_set:
+    - is_ambiguous: false
+  - slot_was_set:
+    - narrowed_found_books: []
+  - slot_was_set:
+    - has_list_selection: true
+  - slot_was_set:
+    - requested_slot: selected_list_index
+  - slot_was_set:
+    - selected_list_index: 0
+  - slot_was_set:
+    - is_ambiguous: false
+  - slot_was_set:
+    - narrowed_found_books: []
+  - slot_was_set:
+    - has_list_selection: false
+  - slot_was_set:
+    - requested_slot: null
+  - active_loop: null
+  - action: utter_confirm_to_borrow
+  - intent: affirm
+  - action: action_perform_borrow
+  - action: action_reset_slots
+
+- story: inform_book_info (title & author - multiple match - select by author too vague - sleect by index - no borrow)
+  steps:
+  - intent: inform_book_info
+    entities:
+    - PERSON: penelope
+  - action: action_assign_book_info_to_form
+  - slot_was_set:
+    - book_authors: penelope
+  - slot_was_set:
+    - book_title: ''
+  - slot_was_set:
+    - book_info_prefilled: true
+  - action: search_book_form
+  - active_loop: search_book_form
+  - slot_was_set:
+    - book_title: ''
+  - slot_was_set:
+    - book_authors:
+      - penelope
+  - slot_was_set:
+    - requested_slot: null
+  - active_loop: null
+  - action: action_search_book
+  - slot_was_set:
+    - book_title: null
+  - slot_was_set:
+    - book_authors: null
+  - slot_was_set:
+    - wrong_author_names: null
+  - slot_was_set:
+    - book_info_prefilled: false
+  - slot_was_set:
+    - found_books:
+      - - 657798
+        - Emma in Winter
+        - - 2559
+        - - Penelope Farmer
+      - - 3740
+        - Charlotte Sometimes
+        - - 2559
+        - - Penelope Farmer
+      - - 657796
+        - A Castle of Bone
+        - - 2559
+        - - Penelope Farmer
+      - - 108615
+        - Offshore
+        - - 3222
+        - - Penelope Fitzgerald
+  - slot_was_set:
+    - selected_list_index: null
+  - slot_was_set:
+    - has_found_book: true
+  - slot_was_set:
+    - has_list_selection: true
+  - action: utter_ask_list_have_desired #
+  - intent: affirm #
+  - action: select_from_list_form
+  - active_loop: select_from_list_form
+  - slot_was_set:
+    - form_flag: false
+  - slot_was_set:
+    - selected_list_index: null
+  - slot_was_set:
+    - is_ambiguous: false
+  - slot_was_set:
+    - narrowed_found_books: []
+  - slot_was_set:
+    - has_list_selection: true
+  - slot_was_set:
+    - requested_slot: selected_list_index
+  - slot_was_set:
+    - selected_list_index: null
+  - slot_was_set:
+    - is_ambiguous: true
+  - slot_was_set:
+    - narrowed_found_books:
+      - - 657798
+        - Emma in Winter
+        - - 2559
+        - - Penelope Farmer
+      - - 3740
+        - Charlotte Sometimes
+        - - 2559
+        - - Penelope Farmer
+      - - 657796
+        - A Castle of Bone
+        - - 2559
+        - - Penelope Farmer
+  - slot_was_set:
+    - has_list_selection: true
+  - slot_was_set:
+    - requested_slot: selected_list_index
+  - slot_was_set:
+    - selected_list_index: 2
+  - slot_was_set:
+    - is_ambiguous: false
+  - slot_was_set:
+    - narrowed_found_books: []
+  - slot_was_set:
+    - has_list_selection: false
+  - slot_was_set:
+    - requested_slot: null
+  - active_loop: null
+  - action: utter_confirm_to_borrow
+  - intent: deny
+  - action: utter_ok
+  - action: action_reset_slots
+
+- story: search_book (first skip & skip, second title - no match)
+  steps:
+  - intent: search_book
+  - action: action_reset_slots
+  - action: utter_search_book_greet
+  - action: search_book_form
+  - active_loop: search_book_form
+  - slot_was_set:
+    - book_title: null
+  - slot_was_set:
+    - wrong_author_names: []
+  - slot_was_set:
+    - book_authors: null
+  - slot_was_set:
+    - requested_slot: book_title
+  - slot_was_set:
+    - book_title: skip
+  - slot_was_set:
+    - book_authors: null
+  - slot_was_set:
+    - requested_slot: book_authors
+  - slot_was_set:
+    - book_authors: null
+  - slot_was_set:
+    - book_title: null
+  - slot_was_set:
+    - requested_slot: book_title
+  - slot_was_set:
+    - book_title: the beauty lie within your body
+  - slot_was_set:
+    - wrong_author_names: []
+  - slot_was_set:
+    - book_authors: null
+  - slot_was_set:
+    - requested_slot: book_authors
+  - slot_was_set:
+    - book_authors:
+      - lea smith
+  - slot_was_set:
+    - book_title: the beauty lie within your body
+  - slot_was_set:
+    - requested_slot: null
+  - slot_was_set:
+    - requested_slot: null
+  - active_loop: null
+  - action: action_search_book
+  - slot_was_set:
+    - book_title: null
+  - slot_was_set:
+    - book_authors: null
+  - slot_was_set:
+    - wrong_author_names: null
+  - slot_was_set:
+    - book_info_prefilled: false
+  - slot_was_set:
+    - found_books: null
+  - slot_was_set:
+    - selected_list_index: null
+  - slot_was_set:
+    - has_found_book: false
+  - slot_was_set:
+    - has_list_selection: false
+
+- story: search_book (first skip & skip, second author - no match) 2
+  steps:
+  - intent: search_book
+  - action: action_reset_slots
+  - action: utter_search_book_greet
+  - action: search_book_form
+  - active_loop: search_book_form
+  - slot_was_set:
+    - book_title: null
+  - slot_was_set:
+    - wrong_author_names: []
+  - slot_was_set:
+    - book_authors: null
+  - slot_was_set:
+    - requested_slot: book_title
+  - slot_was_set:
+    - book_title: skip
+  - slot_was_set:
+    - book_authors: null
+  - slot_was_set:
+    - requested_slot: book_authors
+  - slot_was_set:
+    - book_authors: null
+  - slot_was_set:
+    - book_title: null
+  - slot_was_set:
+    - requested_slot: book_title
+  - slot_was_set:
+    - book_title: skip
+  - slot_was_set:
+    - book_authors: null
+  - slot_was_set:
+    - requested_slot: book_authors
+  - slot_was_set:
+    - book_authors:
+      - patrick ross
+  - slot_was_set:
+    - book_title: skip
+  - slot_was_set:
+    - requested_slot: null
+  - slot_was_set:
+    - requested_slot: null
+  - active_loop: null
+  - action: action_search_book
+  - slot_was_set:
+    - book_title: null
+  - slot_was_set:
+    - book_authors: null
+  - slot_was_set:
+    - wrong_author_names: null
+  - slot_was_set:
+    - book_info_prefilled: false
+  - slot_was_set:
+    - found_books: null
+  - slot_was_set:
+    - selected_list_index: null
+  - slot_was_set:
+    - has_found_book: false
+  - slot_was_set:
+    - has_list_selection: false
+
+- story: inform_book_info (title & authors - no valid match)
+  steps:
+  - intent: inform_book_info
+    entities:
+    - book_title: the business man in jungle
+    - PERSON: lee clarkson
+    - PERSON: jackson wang
+  - action: action_assign_book_info_to_form
+  - slot_was_set:
+    - book_authors:
+      - lee clarkson
+      - jackson wang
+  - slot_was_set:
+    - book_title: the business man in jungle
+  - slot_was_set:
+    - book_info_prefilled: true
+  - action: search_book_form
+  - active_loop: search_book_form
+  - slot_was_set:
+    - book_title: the business man in jungle
+  - slot_was_set:
+    - book_authors:
+      - lee clarkson
+      - jackson wang
+  - slot_was_set:
+    - requested_slot: null
+  - active_loop: null
+  - action: action_search_book
+  - slot_was_set:
+    - book_title: null
+  - slot_was_set:
+    - book_authors: null
+  - slot_was_set:
+    - wrong_author_names: null
+  - slot_was_set:
+    - book_info_prefilled: false
+  - slot_was_set:
+    - found_books: null
+  - slot_was_set:
+    - selected_list_index: null
+  - slot_was_set:
+    - has_found_book: false
+  - slot_was_set:
+    - has_list_selection: false
+
+- story: inform_book_info (title no borrow) - inform_book_info (author no borrow)
+  steps:
+  - intent: inform_book_info
+    entities:
+    - book_title: bite of envy
+  - action: action_assign_book_info_to_form
+  - slot_was_set:
+    - book_authors: []
+  - slot_was_set:
+    - book_title: bite of envy
+  - slot_was_set:
+    - book_info_prefilled: true
+  - action: search_book_form
+  - active_loop: search_book_form
+  - slot_was_set:
+    - book_title: bite of envy
+  - slot_was_set:
+    - book_title: bite of envy
+  - slot_was_set:
+    - requested_slot: null
+  - active_loop: null
+  - action: action_search_book
+  - slot_was_set:
+    - book_title: null
+  - slot_was_set:
+    - book_authors: null
+  - slot_was_set:
+    - wrong_author_names: null
+  - slot_was_set:
+    - book_info_prefilled: false
+  - slot_was_set:
+    - found_books:
+      - - 16125454
+        - 'Bite of Envy (Just One Bite, #4)'
+        - - 5823680
+        - - Kay Glass
+  - slot_was_set:
+    - selected_list_index: 0
+  - slot_was_set:
+    - has_found_book: true
+  - slot_was_set:
+    - has_list_selection: false
+  - action: utter_confirm_to_borrow
+  - intent: deny
+  - action: utter_ok
+  - action: action_reset_slots
+  - intent: inform_book_info
+    entities:
+    - PERSON: gregory gerard
+  - action: action_assign_book_info_to_form
+  - slot_was_set:
+    - book_authors:
+      - gregory gerard
+  - slot_was_set:
+    - book_title: ''
+  - slot_was_set:
+    - book_info_prefilled: true
+  - action: search_book_form
+  - active_loop: search_book_form
+  - slot_was_set:
+    - book_title: ''
+  - slot_was_set:
+    - book_authors:
+      - gregory gerard
+  - slot_was_set:
+    - requested_slot: null
+  - active_loop: null
+  - action: action_search_book
+  - slot_was_set:
+    - book_title: null
+  - slot_was_set:
+    - book_authors: null
+  - slot_was_set:
+    - wrong_author_names: null
+  - slot_was_set:
+    - book_info_prefilled: false
+  - slot_was_set:
+    - found_books:
+      - - 6751827
+        - In Jupiter's Shadow
+        - - 3037628
+        - - Gregory Gerard
+  - slot_was_set:
+    - selected_list_index: 0
+  - slot_was_set:
+    - has_found_book: true
+  - slot_was_set:
+    - has_list_selection: false
+  - action: utter_confirm_to_borrow
+  - intent: affirm
+  - action: action_perform_borrow
+  - action: action_reset_slots
+
+- story: inform_book_info (title & author no match) - search_book (title no borrow)
+  steps:
+  - intent: inform_book_info
+    entities:
+    - book_title: dark water
+    - PERSON: laura ward
+  - action: action_assign_book_info_to_form
+  - slot_was_set:
+    - book_authors:
+      - laura ward
+  - slot_was_set:
+    - book_title: dark water
+  - slot_was_set:
+    - book_info_prefilled: true
+  - action: search_book_form
+  - active_loop: search_book_form
+  - slot_was_set:
+    - book_title: dark water
+  - slot_was_set:
+    - book_authors:
+      - laura ward
+  - slot_was_set:
+    - requested_slot: null
+  - active_loop: null
+  - action: action_search_book
+  - slot_was_set:
+    - book_title: null
+  - slot_was_set:
+    - book_authors: null
+  - slot_was_set:
+    - wrong_author_names: null
+  - slot_was_set:
+    - book_info_prefilled: false
+  - slot_was_set:
+    - found_books: null
+  - slot_was_set:
+    - selected_list_index: null
+  - slot_was_set:
+    - has_found_book: false
+  - slot_was_set:
+    - has_list_selection: false
+  - intent: search_book
+  - action: action_reset_slots
+  - action: utter_search_book_greet
+  - action: search_book_form
+  - active_loop: search_book_form
+  - slot_was_set:
+    - book_title: null
+  - slot_was_set:
+    - wrong_author_names: []
+  - slot_was_set:
+    - book_authors: null
+  - slot_was_set:
+    - requested_slot: book_title
+  - slot_was_set:
+    - book_title: i saw her standing there
+  - slot_was_set:
+    - wrong_author_names: []
+  - slot_was_set:
+    - book_authors: null
+  - slot_was_set:
+    - requested_slot: book_authors
+  - slot_was_set:
+    - book_authors:
+      - skip
+  - slot_was_set:
+    - book_title: i saw her standing there
+  - slot_was_set:
+    - requested_slot: null
+  - slot_was_set:
+    - requested_slot: null
+  - active_loop: null
+  - action: action_search_book
+  - slot_was_set:
+    - book_title: null
+  - slot_was_set:
+    - book_authors: null
+  - slot_was_set:
+    - wrong_author_names: null
+  - slot_was_set:
+    - book_info_prefilled: false
+  - slot_was_set:
+    - found_books:
+      - - 23520793
+        - 'I Saw Her Standing There (Green Mountain #3)'
+        - - 1508588
+        - - Marie Force
+  - slot_was_set:
+    - selected_list_index: 0
+  - slot_was_set:
+    - has_found_book: true
+  - slot_was_set:
+    - has_list_selection: false
+  - action: utter_confirm_to_borrow
+  - intent: deny
+  - action: utter_ok
+  - action: action_reset_slots
+
+- story: search_book (title & author one match no borrow) - search_book (author one match yes borrow)
+  steps:
+  - intent: search_book
+  - action: action_reset_slots
+  - action: utter_search_book_greet
+  - action: search_book_form
+  - active_loop: search_book_form
+  - slot_was_set:
+    - book_title: null
+  - slot_was_set:
+    - wrong_author_names: []
+  - slot_was_set:
+    - book_authors: null
+  - slot_was_set:
+    - requested_slot: book_title
+  - slot_was_set:
+    - book_title: scarlet letters
+  - slot_was_set:
+    - wrong_author_names: []
+  - slot_was_set:
+    - book_authors: null
+  - slot_was_set:
+    - requested_slot: book_authors
+  - slot_was_set:
+    - book_authors:
+      - genella degrey
+  - slot_was_set:
+    - book_title: scarlet letters
+  - slot_was_set:
+    - requested_slot: null
+  - slot_was_set:
+    - requested_slot: null
+  - active_loop: null
+  - action: action_search_book
+  - slot_was_set:
+    - book_title: null
+  - slot_was_set:
+    - book_authors: null
+  - slot_was_set:
+    - wrong_author_names: null
+  - slot_was_set:
+    - book_info_prefilled: false
+  - slot_was_set:
+    - found_books:
+      - - 30064660
+        - Scarlet Letters
+        - - 2964442
+        - - Genella deGrey
+  - slot_was_set:
+    - selected_list_index: 0
+  - slot_was_set:
+    - has_found_book: true
+  - slot_was_set:
+    - has_list_selection: false
+  - action: utter_confirm_to_borrow
+  - intent: deny
+  - action: utter_ok
+  - action: action_reset_slots
+  - intent: search_book
+  - action: action_reset_slots
+  - action: utter_search_book_greet
+  - action: search_book_form
+  - active_loop: search_book_form
+  - slot_was_set:
+    - book_title: null
+  - slot_was_set:
+    - wrong_author_names: []
+  - slot_was_set:
+    - book_authors: null
+  - slot_was_set:
+    - requested_slot: book_title
+  - slot_was_set:
+    - book_title: skip
+  - slot_was_set:
+    - book_authors: null
+  - slot_was_set:
+    - requested_slot: book_authors
+  - slot_was_set:
+    - book_authors:
+      - elizabeth wolf
+  - slot_was_set:
+    - book_title: skip
+  - slot_was_set:
+    - requested_slot: null
+  - slot_was_set:
+    - requested_slot: null
+  - active_loop: null
+  - action: action_search_book
+  - slot_was_set:
+    - book_title: null
+  - slot_was_set:
+    - book_authors: null
+  - slot_was_set:
+    - wrong_author_names: null
+  - slot_was_set:
+    - book_info_prefilled: false
+  - slot_was_set:
+    - found_books:
+      - - 524640
+        - Who Was Ronald Reagan?
+        - - 67268
+        - - Elizabeth Wolf
+  - slot_was_set:
+    - selected_list_index: 0
+  - slot_was_set:
+    - has_found_book: true
+  - slot_was_set:
+    - has_list_selection: false
+  - action: utter_confirm_to_borrow
+  - intent: affirm
+  - action: action_perform_borrow
+  - action: action_reset_slots
+
+- story: search_book (author one match) - inform_book_info (title  - multiple - no borrow)
+  steps:
+  - intent: search_book
+  - action: action_reset_slots
+  - action: utter_search_book_greet
+  - action: search_book_form
+  - active_loop: search_book_form
+  - slot_was_set:
+    - book_title: null
+  - slot_was_set:
+    - wrong_author_names: []
+  - slot_was_set:
+    - book_authors: null
+  - slot_was_set:
+    - requested_slot: book_title
+  - slot_was_set:
+    - book_title: skip
+  - slot_was_set:
+    - book_authors: null
+  - slot_was_set:
+    - requested_slot: book_authors
+  - slot_was_set:
+    - book_authors:
+      - Eric Stanton
+  - slot_was_set:
+    - book_title: skip
+  - slot_was_set:
+    - requested_slot: null
+  - slot_was_set:
+    - requested_slot: null
+  - active_loop: null
+  - action: action_search_book
+  - slot_was_set:
+    - book_title: null
+  - slot_was_set:
+    - book_authors: null
+  - slot_was_set:
+    - wrong_author_names: null
+  - slot_was_set:
+    - book_info_prefilled: false
+  - slot_was_set:
+    - found_books:
+      - - 504742
+        - 'Eric Stanton: Reunion in Ropes & Other Stories'
+        - - 342207
+        - - Eric Stanton
+  - slot_was_set:
+    - selected_list_index: 0
+  - slot_was_set:
+    - has_found_book: true
+  - slot_was_set:
+    - has_list_selection: false
+  - action: utter_confirm_to_borrow
+  - intent: deny
+  - action: utter_ok
+  - action: action_reset_slots
+  - intent: inform_book_info
+    entities:
+    - book_title: wanted
+  - action: action_assign_book_info_to_form
+  - slot_was_set:
+    - book_authors: []
+  - slot_was_set:
+    - book_title: wanted
+  - slot_was_set:
+    - book_info_prefilled: true
+  - action: search_book_form
+  - active_loop: search_book_form
+  - slot_was_set:
+    - book_title: wanted
+  - slot_was_set:
+    - book_title: wanted
+  - slot_was_set:
+    - requested_slot: null
+  - active_loop: null
+  - action: action_search_book
+  - slot_was_set:
+    - book_title: null
+  - slot_was_set:
+    - book_authors: null
+  - slot_was_set:
+    - wrong_author_names: null
+  - slot_was_set:
+    - book_info_prefilled: false
+  - slot_was_set:
+    - found_books:
+      - - 272595
+        - She Wanted It All
+        - - 158834
+        - - Kathryn Casey
+      - - 444047
+        - 'Wanted: Mistress and Mother'
+        - - 4990
+        - - Carol Marinelli
+      - - 1407418
+        - Most Wanted
+        - - 12692
+        - - Diana Palmer
+      - - 1568571
+        - The Penguin Who Wanted to Find Out
+        - - 42015
+          - 948969
+        - - Jill Tomlinson
+          - Paul Howard
+  - slot_was_set:
+    - selected_list_index: null
+  - slot_was_set:
+    - has_found_book: true
+  - slot_was_set:
+    - has_list_selection: true
+  - action: utter_ask_list_have_desired #
+  - intent: affirm #
+  - action: select_from_list_form
+  - active_loop: select_from_list_form
+  - slot_was_set:
+    - form_flag: false
+  - slot_was_set:
+    - selected_list_index: null
+  - slot_was_set:
+    - is_ambiguous: false
+  - slot_was_set:
+    - narrowed_found_books: []
+  - slot_was_set:
+    - has_list_selection: true
+  - slot_was_set:
+    - requested_slot: selected_list_index
+  - slot_was_set:
+    - selected_list_index: 1
+  - slot_was_set:
+    - is_ambiguous: false
+  - slot_was_set:
+    - narrowed_found_books: []
+  - slot_was_set:
+    - has_list_selection: false
+  - slot_was_set:
+    - requested_slot: null
+  - active_loop: null
+  - action: utter_confirm_to_borrow
+  - intent: deny
+  - action: utter_ok
+  - action: action_reset_slots
+
+######################### cancel ##########################
+- story: search_book cancel at title 
+  steps:
+  - intent: search_book
+  - action: action_reset_slots
+  - action: utter_search_book_greet
+  - action: search_book_form
+  - active_loop: search_book_form
+  - slot_was_set:
+    - book_title: null
+  - slot_was_set:
+    - wrong_author_names: []
+  - slot_was_set:
+    - book_authors: null
+  - slot_was_set:
+    - requested_slot: book_title
+  - intent: terminate_conversation
+  - action: utter_ok
+  - action: action_deactivate_loop
+  - active_loop: null
+  - slot_was_set:
+    - requested_slot: null
+  - action: action_reset_slots
+
+- story: search_book cancel at author 
+  steps:
+  - intent: search_book
+  - action: action_reset_slots
+  - action: utter_search_book_greet
+  - action: search_book_form
+  - active_loop: search_book_form
+  - slot_was_set:
+    - book_title: null
+  - slot_was_set:
+    - wrong_author_names: []
+  - slot_was_set:
+    - book_authors: null
+  - slot_was_set:
+    - requested_slot: book_title
+  - slot_was_set:
+    - book_title: a life of pie
+  - slot_was_set:
+    - wrong_author_names: []
+  - slot_was_set:
+    - book_authors: null
+  - slot_was_set:
+    - requested_slot: book_authors
+  - intent: terminate_conversation
+  - action: utter_ok
+  - action: action_deactivate_loop
+  - active_loop: null
+  - slot_was_set:
+    - requested_slot: null
+  - action: action_reset_slots
+
+- story: search_book cancel at author 2
+  steps:
+  - intent: search_book
+  - action: action_reset_slots
+  - action: utter_search_book_greet
+  - action: search_book_form
+  - active_loop: search_book_form
+  - slot_was_set:
+    - book_title: null
+  - slot_was_set:
+    - wrong_author_names: []
+  - slot_was_set:
+    - book_authors: null
+  - slot_was_set:
+    - requested_slot: book_title
+  - slot_was_set:
+    - book_title: skip
+  - slot_was_set:
+    - book_authors: null
+  - slot_was_set:
+    - requested_slot: book_authors
+  - intent: terminate_conversation
+  - action: utter_ok
+  - action: action_deactivate_loop
+  - active_loop: null
+  - slot_was_set:
+    - requested_slot: null
+  - action: action_reset_slots
+
+- story: search_book cancel at skip - skip - title 
+  steps:
+  - intent: search_book
+  - action: action_reset_slots
+  - action: utter_search_book_greet
+  - action: search_book_form
+  - active_loop: search_book_form
+  - slot_was_set:
+    - book_title: null
+  - slot_was_set:
+    - wrong_author_names: []
+  - slot_was_set:
+    - book_authors: null
+  - slot_was_set:
+    - requested_slot: book_title
+  - slot_was_set:
+    - book_title: skip
+  - slot_was_set:
+    - book_authors: null
+  - slot_was_set:
+    - requested_slot: book_authors
+  - slot_was_set:
+    - book_authors: null
+  - slot_was_set:
+    - book_title: null
+  - slot_was_set:
+    - requested_slot: book_title
+  - intent: terminate_conversation
+  - action: utter_ok
+  - action: action_deactivate_loop
+  - active_loop: null
+  - slot_was_set:
+    - requested_slot: null
+  - action: action_reset_slots
+
+- story: search_book cancel at confirm borrow  
+  steps:
+  - intent: search_book
+  - action: action_reset_slots
+  - action: utter_search_book_greet
+  - action: search_book_form
+  - active_loop: search_book_form
+  - slot_was_set:
+    - book_title: null
+  - slot_was_set:
+    - wrong_author_names: []
+  - slot_was_set:
+    - book_authors: null
+  - slot_was_set:
+    - requested_slot: book_title
+  - slot_was_set:
+    - book_title: ava the sunset fairy
+  - slot_was_set:
+    - wrong_author_names: []
+  - slot_was_set:
+    - book_authors: null
+  - slot_was_set:
+    - requested_slot: book_authors
+  - slot_was_set:
+    - book_authors:
+      - skip
+  - slot_was_set:
+    - book_title: ava the sunset fairy
+  - slot_was_set:
+    - requested_slot: null
+  - slot_was_set:
+    - requested_slot: null
+  - active_loop: null
+  - action: action_search_book
+  - slot_was_set:
+    - book_title: null
+  - slot_was_set:
+    - book_authors: null
+  - slot_was_set:
+    - wrong_author_names: null
+  - slot_was_set:
+    - book_info_prefilled: false
+  - slot_was_set:
+    - found_books:
+      - - 10851989
+        - Ava The Sunset Fairy
+        - - 17618
+          - 546590
+        - - Daisy Meadows
+          - Georgie Ripper
+  - slot_was_set:
+    - selected_list_index: 0
+  - slot_was_set:
+    - has_found_book: true
+  - slot_was_set:
+    - has_list_selection: false
+  - action: utter_confirm_to_borrow
+  - intent: terminate_conversation
+  - action: utter_ok
+  - action: action_reset_slots
+
+- story: search_book cancel at list index selection frist try 
+  steps:
+  - intent: search_book
+  - action: action_reset_slots
+  - action: utter_search_book_greet
+  - action: search_book_form
+  - active_loop: search_book_form
+  - slot_was_set:
+    - book_title: null
+  - slot_was_set:
+    - wrong_author_names: []
+  - slot_was_set:
+    - book_authors: null
+  - slot_was_set:
+    - requested_slot: book_title
+  - slot_was_set:
+    - book_title: skip
+  - slot_was_set:
+    - book_authors: null
+  - slot_was_set:
+    - requested_slot: book_authors
+  - slot_was_set:
+    - book_authors:
+      - robert tucker
+  - slot_was_set:
+    - book_title: skip
+  - slot_was_set:
+    - requested_slot: null
+  - slot_was_set:
+    - requested_slot: null
+  - active_loop: null
+  - action: action_search_book
+  - slot_was_set:
+    - book_title: null
+  - slot_was_set:
+    - book_authors: null
+  - slot_was_set:
+    - wrong_author_names: null
+  - slot_was_set:
+    - book_info_prefilled: false
+  - slot_was_set:
+    - found_books:
+      - - 286433
+        - 'Stalin in Power: The Revolution from Above, 1928-1941'
+        - - 104631
+        - - Robert C. Tucker
+      - - 19033760
+        - The Ghosts of Rapid Creek
+        - - 4902792
+        - - Robert Tucker
+  - slot_was_set:
+    - selected_list_index: null
+  - slot_was_set:
+    - has_found_book: true
+  - slot_was_set:
+    - has_list_selection: true
+  - action: utter_ask_list_have_desired #
+  - intent: affirm #
+  - action: select_from_list_form
+  - active_loop: select_from_list_form
+  - slot_was_set:
+    - form_flag: false
+  - slot_was_set:
+    - selected_list_index: null
+  - slot_was_set:
+    - is_ambiguous: false
+  - slot_was_set:
+    - narrowed_found_books: []
+  - slot_was_set:
+    - has_list_selection: true
+  - slot_was_set:
+    - requested_slot: selected_list_index
+  - intent: terminate_conversation
+  - action: utter_ok
+  - action: action_deactivate_loop
+  - active_loop: null
+  - slot_was_set:
+    - requested_slot: null
+  - action: action_reset_slots
+
+- story: search_book cancel at list index selection second try 
+  steps:
+  - intent: search_book
+  - action: action_reset_slots
+  - action: utter_search_book_greet
+  - action: search_book_form
+  - active_loop: search_book_form
+  - slot_was_set:
+    - book_title: null
+  - slot_was_set:
+    - wrong_author_names: []
+  - slot_was_set:
+    - book_authors: null
+  - slot_was_set:
+    - requested_slot: book_title
+  - slot_was_set:
+    - book_title: skip
+  - slot_was_set:
+    - book_authors: null
+  - slot_was_set:
+    - requested_slot: book_authors
+  - slot_was_set:
+    - book_authors:
+      - bill ward
+  - slot_was_set:
+    - book_title: skip
+  - slot_was_set:
+    - requested_slot: null
+  - slot_was_set:
+    - requested_slot: null
+  - active_loop: null
+  - action: action_search_book
+  - slot_was_set:
+    - book_title: null
+  - slot_was_set:
+    - book_authors: null
+  - slot_was_set:
+    - wrong_author_names: null
+  - slot_was_set:
+    - book_info_prefilled: false
+  - slot_was_set:
+    - found_books:
+      - - 20797164
+        - 'Azieran Adventures Presents Artifacts and Relics: Extreme Sorcery'
+        - - 477351
+        - - Bill Ward
+      - - 6604300
+        - Rage of the Behemoth
+        - - 477351
+        - - Bill Ward
+      - - 25815821
+        - 'Abducted (Powell, #2)'
+        - - 7263461
+        - - Bill Ward
+      - - 24916938
+        - 'Trafficking (Powell, #1)'
+        - - 7263461
+        - - Bill Ward
+  - slot_was_set:
+    - selected_list_index: null
+  - slot_was_set:
+    - has_found_book: true
+  - slot_was_set:
+    - has_list_selection: true
+  - action: utter_ask_list_have_desired #
+  - intent: affirm #
+  - action: select_from_list_form
+  - active_loop: select_from_list_form
+  - slot_was_set:
+    - form_flag: false
+  - slot_was_set:
+    - selected_list_index: null
+  - slot_was_set:
+    - is_ambiguous: false
+  - slot_was_set:
+    - narrowed_found_books: []
+  - slot_was_set:
+    - has_list_selection: true
+  - slot_was_set:
+    - requested_slot: selected_list_index
+  - slot_was_set:
+    - selected_list_index: null
+  - slot_was_set:
+    - is_ambiguous: false
+  - slot_was_set:
+    - narrowed_found_books: []
+  - slot_was_set:
+    - has_list_selection: true
+  - slot_was_set:
+    - requested_slot: selected_list_index
+  - intent: terminate_conversation
+  - action: utter_ok
+  - action: action_deactivate_loop
+  - active_loop: null
+  - slot_was_set:
+    - requested_slot: null
+  - action: action_reset_slots
+
+- story: search_book cancel at confirm borrow after list index selection 
+  steps:
+  - intent: search_book
+  - action: action_reset_slots
+  - action: utter_search_book_greet
+  - action: search_book_form
+  - active_loop: search_book_form
+  - slot_was_set:
+    - book_title: null
+  - slot_was_set:
+    - wrong_author_names: []
+  - slot_was_set:
+    - book_authors: null
+  - slot_was_set:
+    - requested_slot: book_title
+  - slot_was_set:
+    - book_title: powerful
+  - slot_was_set:
+    - wrong_author_names: []
+  - slot_was_set:
+    - book_authors: null
+  - slot_was_set:
+    - requested_slot: book_authors
+  - slot_was_set:
+    - book_authors:
+      - skip
+  - slot_was_set:
+    - book_title: powerful
+  - slot_was_set:
+    - requested_slot: null
+  - slot_was_set:
+    - requested_slot: null
+  - active_loop: null
+  - action: action_search_book
+  - slot_was_set:
+    - book_title: null
+  - slot_was_set:
+    - book_authors: null
+  - slot_was_set:
+    - wrong_author_names: null
+  - slot_was_set:
+    - book_info_prefilled: false
+  - slot_was_set:
+    - found_books:
+      - - 74104
+        - 'Inherit the Wind: The Powerful Drama of the Greatest Courtroom Clash of the Century'
+        - - 41992
+          - 2792028
+        - - Jerome Lawrence
+          - Robert E. Lee
+      - - 929479
+        - 'The One Minute Apology: A Powerful Way to Make Things Better'
+        - - 4112157
+          - 200753
+        - - Kenneth H. Blanchard
+          - Margret McBride
+      - - 3685736
+        - "IBM and the Holocaust: The Strategic Alliance Between Nazi Germany and America's Most Powerful Corporation"
+        - - 27423
+        - - Edwin Black
+      - - 6283654
+        - "The Kingmaker's Sisters: Six Powerful Women in the Wars of the Roses"
+        - - 16029
+        - - David Baldwin
+  - slot_was_set:
+    - selected_list_index: null
+  - slot_was_set:
+    - has_found_book: true
+  - slot_was_set:
+    - has_list_selection: true
+  - action: utter_ask_list_have_desired #
+  - intent: affirm #
+  - action: select_from_list_form
+  - active_loop: select_from_list_form
+  - slot_was_set:
+    - form_flag: false
+  - slot_was_set:
+    - selected_list_index: null
+  - slot_was_set:
+    - is_ambiguous: false
+  - slot_was_set:
+    - narrowed_found_books: []
+  - slot_was_set:
+    - has_list_selection: true
+  - slot_was_set:
+    - requested_slot: selected_list_index
+  - slot_was_set:
+    - selected_list_index: 0
+  - slot_was_set:
+    - is_ambiguous: false
+  - slot_was_set:
+    - narrowed_found_books: []
+  - slot_was_set:
+    - has_list_selection: false
+  - slot_was_set:
+    - requested_slot: null
+  - active_loop: null
+  - action: utter_confirm_to_borrow
+  - intent: terminate_conversation
+  - action: utter_ok
+  - action: action_reset_slots
+
+- story: inform_book_info cancel at confirm borrow  
+  steps:
+  - intent: inform_book_info
+    entities:
+    - book_title: beyond the toxic harvest
+  - action: action_assign_book_info_to_form
+  - slot_was_set:
+    - book_authors: []
+  - slot_was_set:
+    - book_title: beyond the toxic harvest
+  - slot_was_set:
+    - book_info_prefilled: true
+  - action: search_book_form
+  - active_loop: search_book_form
+  - slot_was_set:
+    - book_title: beyond the toxic harvest
+  - slot_was_set:
+    - book_title: beyond the toxic harvest
+  - slot_was_set:
+    - requested_slot: null
+  - active_loop: null
+  - action: action_search_book
+  - slot_was_set:
+    - book_title: null
+  - slot_was_set:
+    - book_authors: null
+  - slot_was_set:
+    - wrong_author_names: null
+  - slot_was_set:
+    - book_info_prefilled: false
+  - slot_was_set:
+    - found_books:
+      - - 18084746
+        - Beyond the Toxic Harvest
+        - - 7136768
+        - - Eve Hilary
+  - slot_was_set:
+    - selected_list_index: 0
+  - slot_was_set:
+    - has_found_book: true
+  - slot_was_set:
+    - has_list_selection: false
+  - action: utter_confirm_to_borrow
+  - intent: terminate_conversation
+  - action: utter_ok
+  - action: action_reset_slots
+
+- story: inform_book_info cancel at list index selection frist try 
+  steps:
+  - intent: inform_book_info
+    entities:
+    - book_title: gene
+  - action: action_assign_book_info_to_form
+  - slot_was_set:
+    - book_authors: []
+  - slot_was_set:
+    - book_title: gene
+  - slot_was_set:
+    - book_info_prefilled: true
+  - action: search_book_form
+  - active_loop: search_book_form
+  - slot_was_set:
+    - book_title: gene
+  - slot_was_set:
+    - book_title: gene
+  - slot_was_set:
+    - requested_slot: null
+  - active_loop: null
+  - action: action_search_book
+  - slot_was_set:
+    - book_title: null
+  - slot_was_set:
+    - book_authors: null
+  - slot_was_set:
+    - wrong_author_names: null
+  - slot_was_set:
+    - book_info_prefilled: false
+  - slot_was_set:
+    - found_books:
+      - - 57064
+        - 'Hammerfall (The Gene Wars, #1)'
+        - - 989968
+        - - C.J. Cherryh
+      - - 83669
+        - The Selfish Gene
+        - - 1194
+        - - Richard Dawkins
+      - - 7125851
+        - The Green Gene
+        - - 5345
+          - 4699102
+        - - Peter Dickinson
+          - Unknown
+      - - 9401507
+        - 'Demon Dance (Vampire Gene, #3)'
+        - - 1681383
+        - - Sam Stone
+  - slot_was_set:
+    - selected_list_index: null
+  - slot_was_set:
+    - has_found_book: true
+  - slot_was_set:
+    - has_list_selection: true
+  - action: utter_ask_list_have_desired #
+  - intent: affirm #
+  - action: select_from_list_form
+  - active_loop: select_from_list_form
+  - slot_was_set:
+    - form_flag: false
+  - slot_was_set:
+    - selected_list_index: null
+  - slot_was_set:
+    - is_ambiguous: false
+  - slot_was_set:
+    - narrowed_found_books: []
+  - slot_was_set:
+    - has_list_selection: true
+  - slot_was_set:
+    - requested_slot: selected_list_index
+  - intent: terminate_conversation
+  - action: utter_ok
+  - action: action_deactivate_loop
+  - active_loop: null
+  - slot_was_set:
+    - requested_slot: null
+  - action: action_reset_slots
+
+- story: inform_book_info cancel at list index selection second try 
+  steps:
+  - intent: inform_book_info
+    entities:
+    - book_title: time to tell
+  - action: action_assign_book_info_to_form
+  - slot_was_set:
+    - book_authors: []
+  - slot_was_set:
+    - book_title: time to tell
+  - slot_was_set:
+    - book_info_prefilled: true
+  - action: search_book_form
+  - active_loop: search_book_form
+  - slot_was_set:
+    - book_title: time to tell
+  - slot_was_set:
+    - book_title: time to tell
+  - slot_was_set:
+    - requested_slot: null
+  - active_loop: null
+  - action: action_search_book
+  - slot_was_set:
+    - book_title: null
+  - slot_was_set:
+    - book_authors: null
+  - slot_was_set:
+    - wrong_author_names: null
+  - slot_was_set:
+    - book_info_prefilled: false
+  - slot_was_set:
+    - found_books:
+      - - 3359011
+        - A Time to Tell
+        - - 1418272
+        - - Maria Savva
+      - - 11994174
+        - Time to Tell
+        - - 301002
+        - - Silvia Violet
+  - slot_was_set:
+    - selected_list_index: null
+  - slot_was_set:
+    - has_found_book: true
+  - slot_was_set:
+    - has_list_selection: true
+  - action: utter_ask_list_have_desired #
+  - intent: affirm #
+  - action: select_from_list_form
+  - active_loop: select_from_list_form
+  - slot_was_set:
+    - form_flag: false
+  - slot_was_set:
+    - selected_list_index: null
+  - slot_was_set:
+    - is_ambiguous: false
+  - slot_was_set:
+    - narrowed_found_books: []
+  - slot_was_set:
+    - has_list_selection: true
+  - slot_was_set:
+    - requested_slot: selected_list_index
+  - slot_was_set:
+    - selected_list_index: null
+  - slot_was_set:
+    - is_ambiguous: false
+  - slot_was_set:
+    - narrowed_found_books: []
+  - slot_was_set:
+    - has_list_selection: true
+  - slot_was_set:
+    - requested_slot: selected_list_index
+  - intent: terminate_conversation
+  - action: utter_ok
+  - action: action_deactivate_loop
+  - active_loop: null
+  - slot_was_set:
+    - requested_slot: null
+  - action: action_reset_slots
+
+- story: inform_book_info cancel at confirm borrow after list index selection 
+  steps:
+  - intent: inform_book_info
+    entities:
+    - book_title: gene
+  - action: action_assign_book_info_to_form
+  - slot_was_set:
+    - book_authors: []
+  - slot_was_set:
+    - book_title: gene
+  - slot_was_set:
+    - book_info_prefilled: true
+  - action: search_book_form
+  - active_loop: search_book_form
+  - slot_was_set:
+    - book_title: gene
+  - slot_was_set:
+    - book_title: gene
+  - slot_was_set:
+    - requested_slot: null
+  - active_loop: null
+  - action: action_search_book
+  - slot_was_set:
+    - book_title: null
+  - slot_was_set:
+    - book_authors: null
+  - slot_was_set:
+    - wrong_author_names: null
+  - slot_was_set:
+    - book_info_prefilled: false
+  - slot_was_set:
+    - found_books:
+      - - 57064
+        - 'Hammerfall (The Gene Wars, #1)'
+        - - 989968
+        - - C.J. Cherryh
+      - - 83669
+        - The Selfish Gene
+        - - 1194
+        - - Richard Dawkins
+      - - 7125851
+        - The Green Gene
+        - - 5345
+          - 4699102
+        - - Peter Dickinson
+          - Unknown
+      - - 9401507
+        - 'Demon Dance (Vampire Gene, #3)'
+        - - 1681383
+        - - Sam Stone
+  - slot_was_set:
+    - selected_list_index: null
+  - slot_was_set:
+    - has_found_book: true
+  - slot_was_set:
+    - has_list_selection: true
+  - action: utter_ask_list_have_desired #
+  - intent: affirm #
+  - action: select_from_list_form
+  - active_loop: select_from_list_form
+  - slot_was_set:
+    - form_flag: false
+  - slot_was_set:
+    - selected_list_index: null
+  - slot_was_set:
+    - is_ambiguous: false
+  - slot_was_set:
+    - narrowed_found_books: []
+  - slot_was_set:
+    - has_list_selection: true
+  - slot_was_set:
+    - requested_slot: selected_list_index
+  - slot_was_set:
+    - selected_list_index: 0
+  - slot_was_set:
+    - is_ambiguous: false
+  - slot_was_set:
+    - narrowed_found_books: []
+  - slot_was_set:
+    - has_list_selection: false
+  - slot_was_set:
+    - requested_slot: null
+  - active_loop: null
+  - action: utter_confirm_to_borrow
+  - intent: terminate_conversation
+  - action: utter_ok
+  - action: action_reset_slots
+
+- story: search_book cancel at confirm borrow -> search_book cancel at title
+  steps:
+  - intent: search_book
+  - action: action_reset_slots
+  - action: utter_search_book_greet
+  - action: search_book_form
+  - active_loop: search_book_form
+  - slot_was_set:
+    - book_title: null
+  - slot_was_set:
+    - wrong_author_names: []
+  - slot_was_set:
+    - book_authors: null
+  - slot_was_set:
+    - requested_slot: book_title
+  - slot_was_set:
+    - book_title: squat
+  - slot_was_set:
+    - wrong_author_names: []
+  - slot_was_set:
+    - book_authors: null
+  - slot_was_set:
+    - requested_slot: book_authors
+  - slot_was_set:
+    - book_authors:
+      - skip
+  - slot_was_set:
+    - book_title: squat
+  - slot_was_set:
+    - requested_slot: null
+  - slot_was_set:
+    - requested_slot: null
+  - active_loop: null
+  - action: action_search_book
+  - slot_was_set:
+    - book_title: null
+  - slot_was_set:
+    - book_authors: null
+  - slot_was_set:
+    - wrong_author_names: null
+  - slot_was_set:
+    - book_info_prefilled: false
+  - slot_was_set:
+    - found_books:
+      - - 18165479
+        - Squat
+        - - 6896744
+        - - Alp Mortal
+  - slot_was_set:
+    - selected_list_index: 0
+  - slot_was_set:
+    - has_found_book: true
+  - slot_was_set:
+    - has_list_selection: false
+  - action: utter_confirm_to_borrow
+  - intent: terminate_conversation
+  - action: utter_ok
+  - action: action_reset_slots
+  - intent: search_book
+  - action: action_reset_slots
+  - action: utter_search_book_greet
+  - action: search_book_form
+  - active_loop: search_book_form
+  - slot_was_set:
+    - book_title: null
+  - slot_was_set:
+    - wrong_author_names: []
+  - slot_was_set:
+    - book_authors: null
+  - slot_was_set:
+    - requested_slot: book_title
+  - intent: terminate_conversation
+  - action: utter_ok
+  - action: action_deactivate_loop
+  - active_loop: null
+  - slot_was_set:
+    - requested_slot: null
+  - action: action_reset_slots
+
+- story: search_book cancel at confirm borrow -> search_book title and author invalid
+  steps:
+  - intent: search_book
+  - action: action_reset_slots
+  - action: utter_search_book_greet
+  - action: search_book_form
+  - active_loop: search_book_form
+  - slot_was_set:
+    - book_title: null
+  - slot_was_set:
+    - wrong_author_names: []
+  - slot_was_set:
+    - book_authors: null
+  - slot_was_set:
+    - requested_slot: book_title
+  - slot_was_set:
+    - book_title: the athelete
+  - slot_was_set:
+    - wrong_author_names: []
+  - slot_was_set:
+    - book_authors: null
+  - slot_was_set:
+    - requested_slot: book_authors
+  - slot_was_set:
+    - book_authors:
+      - skip
+  - slot_was_set:
+    - book_title: the athelete
+  - slot_was_set:
+    - requested_slot: null
+  - slot_was_set:
+    - requested_slot: null
+  - active_loop: null
+  - action: action_search_book
+  - slot_was_set:
+    - book_title: null
+  - slot_was_set:
+    - book_authors: null
+  - slot_was_set:
+    - wrong_author_names: null
+  - slot_was_set:
+    - book_info_prefilled: false
+  - slot_was_set:
+    - found_books:
+      - - 32828195
+        - The Revolt of the Black Athlete
+        - - 344384
+        - - Harry Edwards
+  - slot_was_set:
+    - selected_list_index: 0
+  - slot_was_set:
+    - has_found_book: true
+  - slot_was_set:
+    - has_list_selection: false
+  - action: utter_confirm_to_borrow
+  - intent: terminate_conversation
+  - action: utter_ok
+  - action: action_reset_slots
+  - intent: search_book
+  - action: action_reset_slots
+  - action: utter_search_book_greet
+  - action: search_book_form
+  - active_loop: search_book_form
+  - slot_was_set:
+    - book_title: null
+  - slot_was_set:
+    - wrong_author_names: []
+  - slot_was_set:
+    - book_authors: null
+  - slot_was_set:
+    - requested_slot: book_title
+  - slot_was_set:
+    - book_title: the book michael jordan the life
+  - slot_was_set:
+    - wrong_author_names:
+      - michael jordan
+  - slot_was_set:
+    - book_authors: null
+  - slot_was_set:
+    - requested_slot: book_authors
+  - slot_was_set:
+    - book_authors:
+      - roland lazenby
+  - slot_was_set:
+    - book_title: the book michael jordan the life
+  - slot_was_set:
+    - requested_slot: null
+  - slot_was_set:
+    - requested_slot: null
+  - active_loop: null
+  - action: action_search_book
+  - slot_was_set:
+    - book_title: null
+  - slot_was_set:
+    - book_authors: null
+  - slot_was_set:
+    - wrong_author_names: null
+  - slot_was_set:
+    - book_info_prefilled: false
+  - slot_was_set:
+    - found_books: null
+  - slot_was_set:
+    - selected_list_index: null
+  - slot_was_set:
+    - has_found_book: false
+  - slot_was_set:
+    - has_list_selection: false
+
+- story: search_book author one match borrow -> search_book cancel at confirm borrowing
+  steps:
+  - intent: search_book
+  - action: action_reset_slots
+  - action: utter_search_book_greet
+  - action: search_book_form
+  - active_loop: search_book_form
+  - slot_was_set:
+    - book_title: null
+  - slot_was_set:
+    - wrong_author_names: []
+  - slot_was_set:
+    - book_authors: null
+  - slot_was_set:
+    - requested_slot: book_title
+  - slot_was_set:
+    - book_title: skip
+  - slot_was_set:
+    - book_authors: null
+  - slot_was_set:
+    - requested_slot: book_authors
+  - slot_was_set:
+    - book_authors:
+      - marco livingstone
+  - slot_was_set:
+    - book_title: skip
+  - slot_was_set:
+    - requested_slot: null
+  - slot_was_set:
+    - requested_slot: null
+  - active_loop: null
+  - action: action_search_book
+  - slot_was_set:
+    - book_title: null
+  - slot_was_set:
+    - book_authors: null
+  - slot_was_set:
+    - wrong_author_names: null
+  - slot_was_set:
+    - book_info_prefilled: false
+  - slot_was_set:
+    - found_books:
+      - - 13351612
+        - 'David Hockney: A Bigger Picture'
+        - - 323789
+        - - Marco Livingstone
+  - slot_was_set:
+    - selected_list_index: 0
+  - slot_was_set:
+    - has_found_book: true
+  - slot_was_set:
+    - has_list_selection: false
+  - action: utter_confirm_to_borrow
+  - intent: affirm
+  - action: action_perform_borrow
+  - action: action_reset_slots
+  - intent: search_book
+  - action: action_reset_slots
+  - action: utter_search_book_greet
+  - action: search_book_form
+  - active_loop: search_book_form
+  - slot_was_set:
+    - book_title: null
+  - slot_was_set:
+    - wrong_author_names: []
+  - slot_was_set:
+    - book_authors: null
+  - slot_was_set:
+    - requested_slot: book_title
+  - slot_was_set:
+    - book_title: skip
+  - slot_was_set:
+    - book_authors: null
+  - slot_was_set:
+    - requested_slot: book_authors
+  - slot_was_set:
+    - book_authors:
+      - peggy mckee
+  - slot_was_set:
+    - book_title: skip
+  - slot_was_set:
+    - requested_slot: null
+  - slot_was_set:
+    - requested_slot: null
+  - active_loop: null
+  - action: action_search_book
+  - slot_was_set:
+    - book_title: null
+  - slot_was_set:
+    - book_authors: null
+  - slot_was_set:
+    - wrong_author_names: null
+  - slot_was_set:
+    - book_info_prefilled: false
+  - slot_was_set:
+    - found_books:
+      - - 18298213
+        - How to Answer Interview Questions
+        - - 7104732
+        - - Peggy McKee
+  - slot_was_set:
+    - selected_list_index: 0
+  - slot_was_set:
+    - has_found_book: true
+  - slot_was_set:
+    - has_list_selection: false
+  - action: utter_confirm_to_borrow
+  - intent: terminate_conversation
+  - action: utter_ok
+  - action: action_reset_slots
+
+- story: search_book title twice invalid -> inform_book_info cancel at confirm borrowing
+  steps:
+  - intent: search_book
+  - action: action_reset_slots
+  - action: utter_search_book_greet
+  - action: search_book_form
+  - active_loop: search_book_form
+  - slot_was_set:
+    - book_title: null
+  - slot_was_set:
+    - wrong_author_names: []
+  - slot_was_set:
+    - book_authors: null
+  - slot_was_set:
+    - requested_slot: book_title
+  - slot_was_set:
+    - book_title: crazy rich asian
+  - slot_was_set:
+    - wrong_author_names: []
+  - slot_was_set:
+    - book_authors: null
+  - slot_was_set:
+    - requested_slot: book_authors
+  - slot_was_set:
+    - book_authors:
+      - skip
+  - slot_was_set:
+    - book_title: crazy rich asian
+  - slot_was_set:
+    - requested_slot: null
+  - slot_was_set:
+    - requested_slot: null
+  - active_loop: null
+  - action: action_search_book
+  - slot_was_set:
+    - book_title: null
+  - slot_was_set:
+    - book_authors: null
+  - slot_was_set:
+    - wrong_author_names: null
+  - slot_was_set:
+    - book_info_prefilled: false
+  - slot_was_set:
+    - found_books: null
+  - slot_was_set:
+    - selected_list_index: null
+  - slot_was_set:
+    - has_found_book: false
+  - slot_was_set:
+    - has_list_selection: false
+  - intent: inform_book_info
+    entities:
+    - book_title: harry potter
+    - PERSON: harry potter
+  - action: action_assign_book_info_to_form
+  - slot_was_set:
+    - book_authors:
+      - harry potter
+  - slot_was_set:
+    - book_title: harry potter
+  - slot_was_set:
+    - book_info_prefilled: true
+  - action: search_book_form
+  - active_loop: search_book_form
+  - slot_was_set:
+    - book_title: harry potter
+  - slot_was_set:
+    - book_authors:
+      - harry potter
+  - slot_was_set:
+    - requested_slot: null
+  - active_loop: null
+  - action: action_search_book
+  - slot_was_set:
+    - book_title: null
+  - slot_was_set:
+    - book_authors: null
+  - slot_was_set:
+    - wrong_author_names: null
+  - slot_was_set:
+    - book_info_prefilled: false
+  - slot_was_set:
+    - found_books: null
+  - slot_was_set:
+    - selected_list_index: null
+  - slot_was_set:
+    - has_found_book: false
+  - slot_was_set:
+    - has_list_selection: false
+  - intent: inform_book_info
+    entities:
+    - book_title: power dads
+  - action: action_assign_book_info_to_form
+  - slot_was_set:
+    - book_authors: []
+  - slot_was_set:
+    - book_title: power dads
+  - slot_was_set:
+    - book_info_prefilled: true
+  - action: search_book_form
+  - active_loop: search_book_form
+  - slot_was_set:
+    - book_title: power dads
+  - slot_was_set:
+    - book_title: power dads
+  - slot_was_set:
+    - requested_slot: null
+  - active_loop: null
+  - action: action_search_book
+  - slot_was_set:
+    - book_title: null
+  - slot_was_set:
+    - book_authors: null
+  - slot_was_set:
+    - wrong_author_names: null
+  - slot_was_set:
+    - book_info_prefilled: false
+  - slot_was_set:
+    - found_books:
+      - - 25100676
+        - Power Dads
+        - - 4012795
+        - - Wayne Parker
+  - slot_was_set:
+    - selected_list_index: 0
+  - slot_was_set:
+    - has_found_book: true
+  - slot_was_set:
+    - has_list_selection: false
+  - action: utter_confirm_to_borrow
+  - intent: terminate_conversation
+  - action: utter_ok
+  - action: action_reset_slots
+
+- story: inform_book_info cancel at confirm borrow -> search_book author first selection borrow 
+  steps:
+  - intent: inform_book_info
+    entities:
+    - book_title: life of pie
+  - action: action_assign_book_info_to_form
+  - slot_was_set:
+    - book_authors: []
+  - slot_was_set:
+    - book_title: life of pie
+  - slot_was_set:
+    - book_info_prefilled: true
+  - action: search_book_form
+  - active_loop: search_book_form
+  - slot_was_set:
+    - book_title: life of pie
+  - slot_was_set:
+    - book_title: life of pie
+  - slot_was_set:
+    - requested_slot: null
+  - active_loop: null
+  - action: action_search_book
+  - slot_was_set:
+    - book_title: null
+  - slot_was_set:
+    - book_authors: null
+  - slot_was_set:
+    - wrong_author_names: null
+  - slot_was_set:
+    - book_info_prefilled: false
+  - slot_was_set:
+    - found_books:
+      - - 18498559
+        - 'Tibetan Peach Pie: A True Account of an Imaginative Life'
+        - - 197
+        - - Tom Robbins
+  - slot_was_set:
+    - selected_list_index: 0
+  - slot_was_set:
+    - has_found_book: true
+  - slot_was_set:
+    - has_list_selection: false
+  - action: utter_confirm_to_borrow
+  - intent: terminate_conversation
+  - action: utter_ok
+  - action: action_reset_slots
+  - intent: search_book
+  - action: action_reset_slots
+  - action: utter_search_book_greet
+  - action: search_book_form
+  - active_loop: search_book_form
+  - slot_was_set:
+    - book_title: null
+  - slot_was_set:
+    - wrong_author_names: []
+  - slot_was_set:
+    - book_authors: null
+  - slot_was_set:
+    - requested_slot: book_title
+  - slot_was_set:
+    - book_title: skip
+  - slot_was_set:
+    - book_authors: null
+  - slot_was_set:
+    - requested_slot: book_authors
+  - slot_was_set:
+    - book_authors:
+      - j k rowling
+  - slot_was_set:
+    - book_title: skip
+  - slot_was_set:
+    - requested_slot: null
+  - slot_was_set:
+    - requested_slot: null
+  - active_loop: null
+  - action: action_search_book
+  - slot_was_set:
+    - book_title: null
+  - slot_was_set:
+    - book_authors: null
+  - slot_was_set:
+    - wrong_author_names: null
+  - slot_was_set:
+    - book_info_prefilled: false
+  - slot_was_set:
+    - found_books:
+      - - 615204
+        - 'Harry Potter and the Chamber of Secrets (Harry Potter, #2)'
+        - - 1077326
+        - - J.K. Rowling
+      - - 666456
+        - 'Harry Potter Boxed Set (Harry Potter, #1-4)'
+        - - 1077326
+        - - J.K. Rowling
+      - - 27205142
+        - 'Harry Potter and the Chamber of Secrets (Harry Potter #2)'
+        - - 1077326
+        - - J.K. Rowling
+      - - 18684165
+        - The Tales of Beedle the Bard
+        - - 1077326
+        - - J.K. Rowling
+  - slot_was_set:
+    - selected_list_index: null
+  - slot_was_set:
+    - has_found_book: true
+  - slot_was_set:
+    - has_list_selection: true
+  - action: utter_ask_list_have_desired #
+  - intent: affirm #
+  - action: select_from_list_form
+  - active_loop: select_from_list_form
+  - slot_was_set:
+    - form_flag: false
+  - slot_was_set:
+    - selected_list_index: null
+  - slot_was_set:
+    - is_ambiguous: false
+  - slot_was_set:
+    - narrowed_found_books: []
+  - slot_was_set:
+    - has_list_selection: true
+  - slot_was_set:
+    - requested_slot: selected_list_index
+  - slot_was_set:
+    - selected_list_index: 0
+  - slot_was_set:
+    - is_ambiguous: false
+  - slot_was_set:
+    - narrowed_found_books: []
+  - slot_was_set:
+    - has_list_selection: false
+  - slot_was_set:
+    - requested_slot: null
+  - active_loop: null
+  - action: utter_confirm_to_borrow
+  - intent: affirm
+  - action: action_perform_borrow
+  - action: action_reset_slots
+
+- story: inform_book_info list borrow -> inform_book_info cancel at list selection
+  steps:
+  - intent: user_inventory_check_current_borrowing
+  - action: action_user_inventory
+  - intent: inform_book_info
+    entities:
+    - book_title: a short history of nearly everything
+    - PERSON: bill bryson
+  - action: action_assign_book_info_to_form
+  - slot_was_set:
+    - book_authors:
+      - bill bryson
+  - slot_was_set:
+    - book_title: a short history of nearly everything
+  - slot_was_set:
+    - book_info_prefilled: true
+  - action: search_book_form
+  - active_loop: search_book_form
+  - slot_was_set:
+    - book_title: a short history of nearly everything
+  - slot_was_set:
+    - book_authors:
+      - bill bryson
+  - slot_was_set:
+    - requested_slot: null
+  - active_loop: null
+  - action: action_search_book
+  - slot_was_set:
+    - book_title: null
+  - slot_was_set:
+    - book_authors: null
+  - slot_was_set:
+    - wrong_author_names: null
+  - slot_was_set:
+    - book_info_prefilled: false
+  - slot_was_set:
+    - found_books:
+      - - 21
+        - A Short History of Nearly Everything
+        - - 7
+        - - Bill Bryson
+      - - 18112262
+        - A Short History of Nearly Everything
+        - - 7
+          - 249372
+        - - Bill Bryson
+          - Richard Matthews
+  - slot_was_set:
+    - selected_list_index: null
+  - slot_was_set:
+    - has_found_book: true
+  - slot_was_set:
+    - has_list_selection: true
+  - action: utter_ask_list_have_desired #
+  - intent: affirm #
+  - action: select_from_list_form
+  - active_loop: select_from_list_form
+  - slot_was_set:
+    - form_flag: false
+  - slot_was_set:
+    - selected_list_index: null
+  - slot_was_set:
+    - is_ambiguous: false
+  - slot_was_set:
+    - narrowed_found_books: []
+  - slot_was_set:
+    - has_list_selection: true
+  - slot_was_set:
+    - requested_slot: selected_list_index
+  - slot_was_set:
+    - selected_list_index: 0
+  - slot_was_set:
+    - is_ambiguous: false
+  - slot_was_set:
+    - narrowed_found_books: []
+  - slot_was_set:
+    - has_list_selection: false
+  - slot_was_set:
+    - requested_slot: null
+  - active_loop: null
+  - action: utter_confirm_to_borrow
+  - intent: affirm
+  - action: action_perform_borrow
+  - action: action_reset_slots
+  - intent: inform_book_info
+    entities:
+    - book_title: the great gatsby
+  - action: action_assign_book_info_to_form
+  - slot_was_set:
+    - book_authors: []
+  - slot_was_set:
+    - book_title: the great gatsby
+  - slot_was_set:
+    - book_info_prefilled: true
+  - action: search_book_form
+  - active_loop: search_book_form
+  - slot_was_set:
+    - book_title: the great gatsby
+  - slot_was_set:
+    - book_title: the great gatsby
+  - slot_was_set:
+    - requested_slot: null
+  - active_loop: null
+  - action: action_search_book
+  - slot_was_set:
+    - book_title: null
+  - slot_was_set:
+    - book_authors: null
+  - slot_was_set:
+    - wrong_author_names: null
+  - slot_was_set:
+    - book_info_prefilled: false
+  - slot_was_set:
+    - found_books:
+      - - 4672
+        - The Great Gatsby
+        - - 3190
+        - - F. Scott Fitzgerald
+      - - 4673
+        - The Great Gatsby
+        - - 25821
+          - 3190
+        - - Kathleen Parkinson
+          - F. Scott Fitzgerald
+      - - 27451
+        - The Great Gatsby
+        - - 3190
+          - 7222053
+        - - F. Scott Fitzgerald
+          - Matthew J. Bruccoli
+      - - 529730
+        - The Great Gatsby
+        - - 750072
+          - 3190
+        - - Katherine Mattock
+          - F. Scott Fitzgerald
+  - slot_was_set:
+    - selected_list_index: null
+  - slot_was_set:
+    - has_found_book: true
+  - slot_was_set:
+    - has_list_selection: true
+  - action: utter_ask_list_have_desired #
+  - intent: affirm #
+  - action: select_from_list_form
+  - active_loop: select_from_list_form
+  - slot_was_set:
+    - form_flag: false
+  - slot_was_set:
+    - selected_list_index: null
+  - slot_was_set:
+    - is_ambiguous: false
+  - slot_was_set:
+    - narrowed_found_books: []
+  - slot_was_set:
+    - has_list_selection: true
+  - slot_was_set:
+    - requested_slot: selected_list_index
+  - intent: terminate_conversation
+  - action: utter_ok
+  - action: action_deactivate_loop
+  - active_loop: null
+  - slot_was_set:
+    - requested_slot: null
+  - action: action_reset_slots
+
+#########################################################
+- story: inform_book_info - list selection no desired deny
+  steps:
+  - intent: inform_book_info
+    entities:
+    - PERSON: john snow
+  - action: action_assign_book_info_to_form
+  - slot_was_set:
+    - book_authors: john snow
+  - slot_was_set:
+    - book_title: ''
+  - slot_was_set:
+    - book_info_prefilled: true
+  - action: search_book_form
+  - active_loop: search_book_form
+  - slot_was_set:
+    - book_title: ''
+  - slot_was_set:
+    - book_authors:
+      - john snow
+  - slot_was_set:
+    - requested_slot: null
+  - active_loop: null
+  - action: action_search_book
+  - slot_was_set:
+    - book_title: null
+  - slot_was_set:
+    - book_authors: null
+  - slot_was_set:
+    - wrong_author_names: null
+  - slot_was_set:
+    - book_info_prefilled: false
+  - slot_was_set:
+    - found_books:
+      - - 5424863
+        - On the Mode of Communication of Cholera
+        - - 7577883
+        - - John Snow
+      - - 29607871
+        - 'The Bitch Queen (The Viking #4)'
+        - - 7092025
+        - - John Snow
+      - - 17926281
+        - 'The Slayer Rune (The Viking #1)'
+        - - 7092025
+        - - John Snow
+  - slot_was_set:
+    - selected_list_index: null
+  - slot_was_set:
+    - has_found_book: true
+  - slot_was_set:
+    - has_list_selection: true
+  - action: utter_ask_list_have_desired #
+  - intent: deny #
+  - action: utter_sorry_to_hear_that #
+  - action: action_reset_slots
+
+- story: search_book - list selection no desired deny 
+  steps:
+  - intent: search_book
+  - action: action_reset_slots
+  - action: utter_search_book_greet
+  - action: search_book_form
+  - active_loop: search_book_form
+  - slot_was_set:
+    - book_title: null
+  - slot_was_set:
+    - wrong_author_names: []
+  - slot_was_set:
+    - book_authors: null
+  - slot_was_set:
+    - requested_slot: book_title
+  - slot_was_set:
+    - book_title: skip
+  - slot_was_set:
+    - book_authors: null
+  - slot_was_set:
+    - requested_slot: book_authors
+  - slot_was_set:
+    - book_authors:
+      - arthur b. reeve
+  - slot_was_set:
+    - book_title: skip
+  - slot_was_set:
+    - requested_slot: null
+  - slot_was_set:
+    - requested_slot: null
+  - active_loop: null
+  - action: action_search_book
+  - slot_was_set:
+    - book_title: null
+  - slot_was_set:
+    - book_authors: null
+  - slot_was_set:
+    - wrong_author_names: null
+  - slot_was_set:
+    - book_info_prefilled: false
+  - slot_was_set:
+    - found_books:
+      - - 28092227
+        - The Silent Bullet
+        - - 17280033
+        - - Arthur B. Reeve
+      - - 18895013
+        - 'Craig Kennedy, Scientific Detective Collection: 13 Complete Novels (Unexpurgated Edition)'
+        - - 17280033
+        - - Arthur B. Reeve
+  - slot_was_set:
+    - selected_list_index: null
+  - slot_was_set:
+    - has_found_book: true
+  - slot_was_set:
+    - has_list_selection: true
+  - action: utter_ask_list_have_desired #
+  - intent: deny #
+  - action: utter_sorry_to_hear_that #
+  - action: action_reset_slots
+
+- story: inform_book_info - title cancel
+  steps:
+  - intent: inform_book_info
+    entities:
+    - book_title: jungle book
+  - action: action_assign_book_info_to_form
+  - slot_was_set:
+    - book_authors: []
+  - slot_was_set:
+    - book_title: jungle book
+  - slot_was_set:
+    - book_info_prefilled: true
+  - action: search_book_form
+  - active_loop: search_book_form
+  - slot_was_set:
+    - book_title: jungle book
+  - slot_was_set:
+    - book_title: jungle book
+  - slot_was_set:
+    - requested_slot: null
+  - active_loop: null
+  - action: action_search_book
+  - slot_was_set:
+    - book_title: null
+  - slot_was_set:
+    - book_authors: null
+  - slot_was_set:
+    - wrong_author_names: null
+  - slot_was_set:
+    - book_info_prefilled: false
+  - slot_was_set:
+    - found_books:
+      - - 128518
+        - The Second Jungle Book
+        - - 6989
+        - - Rudyard Kipling
+      - - 973037
+        - The Jungle Book
+        - - 6989
+          - 4055248
+        - - Rudyard Kipling
+          - Robert Ingpen
+      - - 1150470
+        - The Jungle Book
+        - - 6989
+        - - Rudyard Kipling
+      - - 1851459
+        - The Jungle Book
+        - - 354605
+        - - Dan Johnson
+  - slot_was_set:
+    - selected_list_index: null
+  - slot_was_set:
+    - has_found_book: true
+  - slot_was_set:
+    - has_list_selection: true
+  - action: utter_ask_list_have_desired
+  - intent: deny
+  - action: utter_sorry_to_hear_that
+  - action: action_reset_slots
+
+- story: interactive_story_1
+  steps:
+  - intent: search_book
+  - action: action_reset_slots
+  - action: utter_search_book_greet
+  - action: search_book_form
+  - active_loop: search_book_form
+  - slot_was_set:
+    - book_title: null
+  - slot_was_set:
+    - wrong_author_names: []
+  - slot_was_set:
+    - book_authors: null
+  - slot_was_set:
+    - requested_slot: book_title
+  - intent: terminate_conversation
+  - action: utter_ok
+  - action: action_deactivate_loop
+  - active_loop: null
+  - slot_was_set:
+    - requested_slot: null
+  - action: action_reset_slots
+  - intent: contact_library
+  - action: contact_form
+  - active_loop: contact_form
+  - slot_was_set:
+    - contact_type: null
+  - slot_was_set:
+    - form_flag: false
+  - slot_was_set:
+    - requested_slot: contact_type
+  - intent: terminate_conversation
+  - action: utter_ok
+  - action: action_deactivate_loop
+  - active_loop: null
+  - slot_was_set:
+    - requested_slot: null
+  - action: action_reset_slots
+
+- story: interactive_story_3
+  steps:
+  - intent: inform_book_info
+    entities:
+    - book_title: Harry potter
+    - PERSON: Harry potter
+  - action: action_assign_book_info_to_form
+  - slot_was_set:
+    - book_authors: []
+  - slot_was_set:
+    - book_title: Harry potter
+  - slot_was_set:
+    - book_info_prefilled: true
+  - action: search_book_form
+  - active_loop: search_book_form
+  - slot_was_set:
+    - book_title: Harry potter
+  - slot_was_set:
+    - book_title: Harry potter
+  - slot_was_set:
+    - requested_slot: null
+  - active_loop: null
+  - action: action_search_book
+  - slot_was_set:
+    - book_title: null
+  - slot_was_set:
+    - book_authors: null
+  - slot_was_set:
+    - wrong_author_names: null
+  - slot_was_set:
+    - book_info_prefilled: false
+  - slot_was_set:
+    - found_books:
+      - - 49130
+        - 'Harry Potter and the Goblet of Fire (Harry Potter, #4)'
+        - - 1077326
+          - 2927
+        - - J.K. Rowling
+          - Mary GrandPre
+      - - 49810
+        - "Harry Potter and the Philosopher's Stone (Harry Potter, #1)"
+        - - 1077326
+        - - J.K. Rowling
+      - - 49835
+        - 'Harry Potter and the Goblet of Fire (Harry Potter, #4)'
+        - - 1077326
+          - 10917
+        - - J.K. Rowling
+          - Stephen Fry
+      - - 110932
+        - 'Harry Potter and the Order of the Phoenix (Harry Potter, #5)'
+        - - 1077326
+        - - J.K. Rowling
+  - slot_was_set:
+    - selected_list_index: null
+  - slot_was_set:
+    - has_found_book: true
+  - slot_was_set:
+    - has_list_selection: true
+  - action: utter_ask_list_have_desired
+  - intent: affirm
+  - action: select_from_list_form
+  - active_loop: select_from_list_form
+  - slot_was_set:
+    - form_flag: false
+  - slot_was_set:
+    - selected_list_index: null
+  - slot_was_set:
+    - is_ambiguous: false
+  - slot_was_set:
+    - narrowed_found_books: []
+  - slot_was_set:
+    - has_list_selection: true
+  - slot_was_set:
+    - requested_slot: selected_list_index
+  - slot_was_set:
+    - selected_list_index: 0
+  - slot_was_set:
+    - is_ambiguous: false
+  - slot_was_set:
+    - narrowed_found_books: []
+  - slot_was_set:
+    - has_list_selection: false
+  - slot_was_set:
+    - requested_slot: null
+  - active_loop: null
+  - action: utter_confirm_to_borrow
+  - intent: affirm
+  - action: action_perform_borrow
+  - action: action_reset_slots

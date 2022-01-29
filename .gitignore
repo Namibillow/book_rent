@@ -7,7 +7,7 @@ models
 node_modules
 credentials.yml
 package-lock.json
-__pycache__
+__pycache__/
 *.dot
 action.json
 credentials.yml 
@@ -17,3 +17,6 @@ gactions
 ngrok
 endpoints.yml
 .DS_Store
+*.pyc
+utils/data_augment/output/*
+utils/data_augment/*.txt

@@ -177,7 +177,7 @@ class ActionTellTime(Action):
                     relative_time = names[future]
 
             verb_open = "open" if future else "opened"
-            be_tense = "are" if future else "were"
+            be_tense = "is" if future else "was"
             logger.debug(f"naamtokyam: action_tell_opentime: verb_open is {verb_open}, be_tense is {be_tense}")
             logger.debug(f"naamtokyam: action_tell_opentime: relative day is set as {relative_time}")
 
@@ -276,18 +276,30 @@ class ActionTellContactInfo(Action):
         slot_value = tracker.get_slot("contact_type")
 
         logger.debug(f"naamtokyam: action_tell_contact_info is called.")
-
         if slot_value == "phone":
             dispatcher.utter_message(response="utter_library_phone")
-        else:
+        elif slot_value == "email":
             dispatcher.utter_message(response="utter_library_email")
 
-        return [SlotSet("contact_type", None)]
+        return [SlotSet("contact_type", None), SlotSet("form_flag", True)]
 
 class ValidateContactForm(FormValidationAction):
     """Validates slots of the validate_contact_form."""
     def name(self) -> Text:
         return "validate_contact_form"
+
+    async def required_slots(
+        self,
+        slots_mapped_in_domain: List[Text],
+        dispatcher: "CollectingDispatcher",
+        tracker: "Tracker",
+        domain: "DomainDict") -> Optional[List[Text]]:
+
+        if tracker.get_intent_of_latest_message() == "terminate_conversation":
+            logger.debug(f"naamyamtok: validate_contact_form hit the terminate_conversation")
+            return []
+
+        return slots_mapped_in_domain
 
     def validate_contact_type(
             self,
@@ -297,12 +309,26 @@ class ValidateContactForm(FormValidationAction):
             domain: DomainDict) -> Dict[Text, Any]:
         logger.debug(
             f"naamtokyam: validate_contact_form is called. slot_value is {slot_value}")
-        if slot_value not in ["email", "phone"]:
+
+        if tracker.get_intent_of_latest_message() == "repeat_again": # slot_value should be None as only one message is followed before.
+            dispatcher.utter_message(text="sure.")
+        elif slot_value not in ["email", "phone"] and not tracker.get_slot("form_flag"):
             dispatcher.utter_message(
                 text=f"Hmm I don't have that option... Could you say it again?")
             slot_value = None
-        return {"contact_type": ans}
+        return {"contact_type": slot_value, "form_flag": False}
 
+    # having this seem to prevent other intents to get triggered as i want to handle invalid input by the form and not trigger other intents
+    async def extract_contact_type(
+        self, dispatcher: CollectingDispatcher,
+        tracker: Tracker,
+        domain: Dict) -> Dict[Text, Any]:
+        slot_value = tracker.get_slot("contact_type")
+        logger.debug(
+            f"naamtokyam: extract_contact_type is called. slot_value is {slot_value}")
+
+        return {"contact_type" : slot_value}  
+        
 class ActionUserInventory(Action):
     """Check user inventory."""
     def name(self):
@@ -317,15 +343,17 @@ class ActionUserInventory(Action):
         book_authors = []
         book_authors_indexes = []
         book_titles = []
-        book_title_index = []
+        book_title_index = ()
         # extract required entities (not using slots_mapping)
         for entity in entities:
             name = entity["entity"]
             value = entity["value"]
             if name == "PERSON":
                 book_authors.append(value)
+                book_authors_indexes.append((entity["start"], entity["end"]))
             elif name == "book_title":
                 book_titles.append(value)
+                book_title_index = (entity["start"], entity["end"])
 
         logger.debug(f"naamtokyam: action_user_inventory: Getting the info from entities: book_titles = {book_titles}, book_authors = {book_authors}")
         overlapped_authors = get_overlapped_names(book_title_index, book_authors_indexes, book_authors)
@@ -340,7 +368,7 @@ class ActionUserInventory(Action):
         if not book_titles and book_authors:
             logger.debug(f"naamtokyam: action_user_inventory: missing book title and only author is provided.")
 
-        if book_authors and not book_titles:
+        if book_titles and not book_authors:
             logger.debug(f"naamtokyam: action_user_inventory: missing author and only book title is provided.")
 
         if len(book_titles) > 1:
@@ -428,7 +456,7 @@ class ActionUserInventory(Action):
                 book_id = row[0]
                 book_title = book_fts.search_by_rowid(book_id)[0]
                 books_info_str += book_title + " by "
-
+                logger.debug(f"naamyamtok: book_title is {book_title}")
                 # get all authors' ids
                 c.execute(
                     "SELECT author_id FROM book_authors WHERE book_id=?", (book_id,))
@@ -487,7 +515,7 @@ class ActionUserInventory(Action):
                 else:
                     dispatcher.utter_message(
                         response="utter_borrowed_book_no_match")
-            else:
+            elif found_count==0:
                 dispatcher.utter_message(response="utter_user_inventory_tell_current_borrowing", num_books=str(
                     count), books_info=books_info_str)
         else:
@@ -539,7 +567,7 @@ class ActionUserInventory(Action):
                 # get book information
                 book_id = row[0]
                 book_title = book_fts.search_by_rowid(book_id)[0]
-
+                logger.debug(f"naamyamtok: book_title is {book_title}")
                 # get all author's ids
                 c.execute(
                     "SELECT author_id FROM book_authors WHERE book_id=?", (book_id,))
@@ -577,6 +605,8 @@ class ActionUserInventory(Action):
                     global_book_info_by_author.append(book_return_str)
 
                 if (book_id_match and author_id_match) or (book_id_match and not book_authors_wanted) or (author_id_match and not book_title_wanted):
+                    logger.debug(f"naamyamtok: run twice")
+                    logger.debug(f"{book_id_match} - {author_id_match}")
                     if found_count == 0:
                         dispatcher.utter_message(response="utter_return_by")
                     dispatcher.utter_message(
@@ -588,7 +618,7 @@ class ActionUserInventory(Action):
                 if len(rows) > 1:
                     books_return_dates += ", "
 
-            if book_authors_wanted or book_title_wanted and found_count == 0:
+            if (book_authors_wanted or book_title_wanted) and found_count == 0:
                 # for the case if book title and author name were provided and one of them were no match 
                 if global_book_info_by_title or global_book_info_by_author:
                     dispatcher.utter_message(response="utter_return_by")
@@ -605,7 +635,7 @@ class ActionUserInventory(Action):
                 else: # nothing in inventory that matched
                     dispatcher.utter_message(
                         response="utter_borrowed_book_no_match")
-            else: # return all the books info
+            elif found_count==0: # return all the books info
                 dispatcher.utter_message(response="utter_return_by")
                 dispatcher.utter_message(
                     response="utter_user_inventory_tell_return", books_return_dates=books_return_dates)
@@ -668,7 +698,7 @@ class ActionPerformBorrow(Action):
             try:
                 logger.debug("naamtokyam: action_perform_borrow: inserting to the database!")
                 c.execute("""INSERT INTO user_book (user_id, book_id, return_date, is_returned) VALUES (?,?,?,?)""",
-                          (config.USER_ID, selected_book[0], return_date.strftime("%m/%d/%y"), 0))
+                          (config.USER_ID, selected_book[0], return_date.strftime("%m/%d/%Y"), 0))
                 db.commit()
             except sqlite3.Error as er:
                 logger.debug('SQLite error: %s' % (' '.join(er.args)))
@@ -686,6 +716,19 @@ class ValidateSelectFromList(FormValidationAction):
     """Ask user to select one book from multiple results """
     def name(self) -> Text:
         return "validate_select_from_list_form"
+
+    async def required_slots(
+        self,
+        slots_mapped_in_domain: List[Text],
+        dispatcher: "CollectingDispatcher",
+        tracker: "Tracker",
+        domain: "DomainDict") -> Optional[List[Text]]:
+
+        if tracker.get_intent_of_latest_message() == "terminate_conversation":
+            logger.debug(f"naamyamtok: validate_select_from_list_form hit the terminate_conversation")
+            return []
+
+        return slots_mapped_in_domain
 
     def validate_selected_list_index(self,
                                      slot_value: Any,
@@ -706,11 +749,12 @@ class ValidateSelectFromList(FormValidationAction):
             selected_list_index = None 
         elif selected_list_index < 0 or selected_list_index >= len(found_books):
             selected_list_index = None
-            if not tracker.get_slot("is_ambiguous"): # wrong ordinal, no mathced title/author names
-                dispatcher.utter_message(response="utter_invalid_list_index")
-            else: # umbiguous answer (same title name etc.)
-                logger.debug(f"naamtokyam: validate_select_from_list_form: validate_selected_list_index (narrowed_found_books = {tracker.get_slot('narrowed_found_books')}")
-                dispatcher.utter_message(response="utter_ambiguous_result")
+            if tracker.get_intent_of_latest_message() != "repeat_again":  
+                if not tracker.get_slot("is_ambiguous"): # wrong ordinal, no mathced title/author names
+                    dispatcher.utter_message(response="utter_invalid_list_index")
+                else: # umbiguous answer (same title name etc.)
+                    logger.debug(f"naamtokyam: validate_select_from_list_form: validate_selected_list_index (narrowed_found_books = {tracker.get_slot('narrowed_found_books')}")
+                    dispatcher.utter_message(response="utter_ambiguous_result")
 
             multiple_books_info = ""
             for i, record in enumerate(found_books):
@@ -718,7 +762,7 @@ class ValidateSelectFromList(FormValidationAction):
                     multiple_books_info += " and "
                 multiple_books_info += record[1] + " written by " + ",".join(record[-1]) + ", "
             dispatcher.utter_message(
-                response="utter_found_multiple_book", multiple_books_info=multiple_books_info)
+                response="utter_found_multiple_book", num_books=len(found_books), multiple_books_info=multiple_books_info)
         else: # valid index
             has_list_selection = False
 
@@ -769,6 +813,9 @@ class ValidateSelectFromList(FormValidationAction):
         narrowed_found_books = []
 
         extracted_slots = dict()
+        found_books = tracker.get_slot("found_books")
+        if tracker.get_slot("is_ambiguous"):
+            found_books = tracker.get_slot("narrowed_found_books")
         # book_authors and book_title has precedence over ordinal
         if tracker.get_slot("form_flag"): # denotes as first step is running for this form
             logger.debug(f"naamtokyam: validate_select_from_list_form: extract_selected_list_index: first time running this function!!")
@@ -780,9 +827,6 @@ class ValidateSelectFromList(FormValidationAction):
             author_fts = search.FTS4SpellfixSearch(db, './spellfix', table_name="fts4_author")
 
             logger.debug(f"naamtokyam: validate_select_from_list_form: extract_selected_list_index: found (book_authors = {book_authors}), (book_title = {book_title})")
-            found_books = tracker.get_slot("found_books")
-            if tracker.get_slot("is_ambiguous"):
-                found_books = tracker.get_slot("narrowed_found_books")
 
             book_wanted = book_fts.search(book_title)["results"]
             book_wanted_title = book_wanted[0][1] if book_wanted else ""
@@ -828,8 +872,10 @@ class ValidateSelectFromList(FormValidationAction):
 
             # else: book_authors or book_title is not existing at all in the found_books then set -1
         elif ordinal != -1:
-            ordinal_maps = {"first": 0, "second": 1, "third": 2, "fourth": 3, "fifth": 4, "sixth": 5, "seventh": 6, "eighth": 7, "nineth": 8, "tenth": 9}
-            if type(ordinal) == str:
+            ordinal_maps = {"first": 0, "second": 1, "third": 2, "fourth": 3, "fifth": 4, "sixth": 5, "seventh": 6, "eighth": 7, "nineth": 8, "tenth": 9, "1st": 0, "2nd":1, "3rd":2, "4th":3, "5th":4, "6th":5, "7th": 6, "8th":7, "9th":8}
+            if ordinal == "last":
+                selected_list_index = len(found_books) - 1
+            elif type(ordinal) == str:
                 selected_list_index = ordinal_maps.get(ordinal, -1)
             else:
                 selected_list_index = ordinal - 1 # shift by one
@@ -849,7 +895,7 @@ class ActionSearchBook(Action):
     def name(self) -> Text:
         return "action_search_book"
 
-    def utter_found_no_book(self, book_title_wanted, author_names_wanted):
+    def utter_found_no_book(self, dispatcher, book_title_wanted, author_names_wanted):
         """Tell user as no matched book existed in the library database.
         :params
             book_title_wanted: str 
@@ -898,9 +944,13 @@ class ActionSearchBook(Action):
                 author_ids.append(a[0])
             if author_ids:
                 authors_wanted_ids.append(author_ids)
+        logger.debug(
+            f"naamtokyam: action_search_book: authors_wanted_ids = {authors_wanted_ids}, len(authors_wanted_ids) = {len(authors_wanted_ids)}")
         if len(authors_wanted_ids) > 1:
             # list of tuples of all possible combinations
             authors_wanted_ids = list(itertools.product(*authors_wanted_ids))
+        elif authors_wanted_ids:
+            authors_wanted_ids = [[aid] for aid in authors_wanted_ids[0]]
 
         logger.debug(
             f"naamtokyam: action_search_book: book_title_ids = {book_title_ids}, authors_wanted_ids = {authors_wanted_ids}")
@@ -916,8 +966,8 @@ class ActionSearchBook(Action):
         
         if book_title_wanted and author_names_wanted and (not book_title_ids or not authors_wanted_ids):
             # both fields were provided but either one was not found from our database
-            logger.debug(f"naamtokyam: action_search_book: no found books for a given search query")
-            self.utter_found_no_book(book_title_wanted,author_names_wanted)
+            logger.debug(f"naamtokyam: action_search_book: no found books for a given search query even though ")
+            pass
         elif book_title_ids:  # book_title_ids given
             logger.debug(
                 f"naamtokyam: action_search_book: book_title_ids were given (not skip)")
@@ -1003,21 +1053,18 @@ class ActionSearchBook(Action):
                     if set(pair).issubset(aids):  # if exact author ids match
                         found_books.append(BookRecord(
                             *(list(vs[0][:-2]) + [list(aids), list(anames)])))
-
             logger.debug(
                 f"naamtokyam: action_search_book: len(found_books) = {len(found_books)}")
-        else:  # either field was skipped and provided slot has no found books from the database
-            logger.debug(f"naamtokyam: no found books for a given search query")
-            self.utter_found_no_book(book_title_wanted,author_names_wanted)
+
         # utter a result if any
         if found_books:
             # TODO(naamtokyam): Better way to handle resulst more than 4
-            found_books = random.sample(found_books, min(len(found_books), 4))
+            found_books = found_books[:min(len(found_books), 4)]
             logger.debug(f"naamtokyam: action_search_book: found some results!")
             if len(found_books) == 1:  # only one match
                 logger.debug(f"naamtokyam: action_search_book: only one found_books result!")
                 name_str = self.format_author_names_str(found_books[0].author_names)
-                book_info = found_books[0].title + " written by " + \
+                book_info =  found_books[0].title + " written by " + \
                     name_str
                 dispatcher.utter_message(
                     response="utter_found_one_book", book_info=book_info)
@@ -1031,9 +1078,11 @@ class ActionSearchBook(Action):
                     multiple_books_info += record.title + " written by " + \
                         name_str + ", "
                 dispatcher.utter_message(
-                    response="utter_found_multiple_book", multiple_books_info=multiple_books_info)
+                    response="utter_found_multiple_book", num_books=len(found_books), multiple_books_info=multiple_books_info)
         else:
             found_books = None
+            logger.debug(f"naamtokyam: no found books for a given search query")
+            self.utter_found_no_book(dispatcher, book_title_wanted,author_names_wanted)
 
         num_found_books = len(found_books) if found_books else 0
         reset_slots = [SlotSet("book_title", None), SlotSet("book_authors", None), SlotSet(
@@ -1043,10 +1092,6 @@ class ActionSearchBook(Action):
         has_found_book = num_found_books > 0
         has_list_selection = num_found_books > 1
 
-        # TODO(akazawan): rule should catch by condition to know trigger select_from_list_form but not working
-        # addtional_actions = []
-        # if has_list_selection:
-        #     addtional_actions.append([FollowupAction("select_from_list_form")])
         return reset_slots + [SlotSet("found_books", found_books), SlotSet("selected_list_index", selected_list_index), SlotSet("has_found_book", has_found_book), SlotSet("has_list_selection", has_list_selection)] #+ addtional_actions
 
     def format_author_names_str(self, names):
@@ -1074,6 +1119,10 @@ class ValidateSearchBookForm(FormValidationAction):
                              ) -> List[Text]:
         logger.debug(f"naamtokyam: validate_search_book_form: required_slots function is called")
 
+        if tracker.get_intent_of_latest_message() == "terminate_conversation":
+            logger.debug(f"naamyamtok: validate_search_book_form hit the terminate_conversation")
+            return []
+        
         required_slots = []
         # if the user provided book info in the triggered utterance for the intent, then we only need provided slot(s) as required
         logger.debug(f"naamtokyam: validate_search_book_form: required_slots (book_info_prefilled : {tracker.get_slot('book_info_prefilled')})")
@@ -1249,7 +1298,6 @@ class ActionResetSlots(Action):
 
         return [AllSlotsReset()]
 
-# ref: https://forum.rasa.com/t/how-to-repeat-the-last-bot-utterance/4743
 class ActionRepeat(Action):
     """Repeat the last bot utterance."""
     def name(self):
@@ -1289,4 +1337,29 @@ class ActionAssignBookInfoToForm(Action):
             domain: Dict[Text, Any]) -> List[Dict[Text, Any]]:
         logger.debug(f"naamtokyam: action_assign_book_info_to_form")
 
-        return [FollowupAction("action_reset_slots"), FollowupAction("search_book_form"), SlotSet("book_info_prefilled", True)]
+        entities = tracker.latest_message['entities']
+        book_authors = []
+        book_authors_indexes = []
+        book_title_index = ()
+        # extract required entities (not using slots_mapping)
+        for entity in entities:
+            name = entity["entity"]
+            value = entity["value"]
+            if name == "PERSON":
+                book_authors.append(value)
+                book_authors_indexes.append((entity["start"], entity["end"]))
+            elif name == "book_title":
+                book_title_index = (entity["start"], entity["end"])
+        overlapped_authors = get_overlapped_names(book_title_index, book_authors_indexes, book_authors)
+        if overlapped_authors:
+            new_book_authors = []
+            for name in book_authors:
+                if name not in overlapped_authors:
+                    new_book_authors.append(entity["value"])
+            book_authors = new_book_authors
+
+        return [SlotSet("book_authors", book_authors), 
+                SlotSet("book_title", next(tracker.get_latest_entity_values('book_title'), "")), 
+                SlotSet("book_info_prefilled", True),
+                FollowupAction("search_book_form")
+                ]

@@ -1,0 +1,189 @@
+
+version: "2.0"
+stories:
+- story: contact_library - first wrong input -> second phone 
+  steps:
+  - intent: contact_library
+  - action: contact_form
+  - active_loop: contact_form
+  - slot_was_set:
+    - contact_type: null
+  - slot_was_set:
+    - form_flag: false
+  - slot_was_set:
+    - requested_slot: contact_type
+  - slot_was_set:
+    - contact_type: null
+  - slot_was_set:
+    - form_flag: false
+  - slot_was_set:
+    - requested_slot: contact_type
+  - slot_was_set:
+    - contact_type: phone
+  - slot_was_set:
+    - contact_type: phone
+  - slot_was_set:
+    - form_flag: false
+  - slot_was_set:
+    - requested_slot: null
+  - active_loop: null
+  - action: action_tell_contact_info
+  - slot_was_set:
+    - contact_type: null
+  - slot_was_set:
+    - form_flag: true
+
+- story: interactive_story_1
+  steps:
+  - intent: contact_library
+  - action: contact_form
+  - active_loop: contact_form
+  - slot_was_set:
+    - contact_type: null
+  - slot_was_set:
+    - form_flag: false
+  - slot_was_set:
+    - requested_slot: contact_type
+  - slot_was_set:
+    - contact_type: fax
+  - slot_was_set:
+    - contact_type: null
+  - slot_was_set:
+    - form_flag: false
+  - slot_was_set:
+    - requested_slot: contact_type
+  - intent: terminate_conversation
+  - action: utter_ok
+  - action: action_deactivate_loop
+  - active_loop: null
+  - slot_was_set:
+    - requested_slot: null
+  - action: action_reset_slots
+  - intent: contact_library
+  - action: contact_form
+  - active_loop: contact_form
+  - slot_was_set:
+    - contact_type: null
+  - slot_was_set:
+    - form_flag: false
+  - slot_was_set:
+    - requested_slot: contact_type
+  - slot_was_set:
+    - contact_type: null
+  - slot_was_set:
+    - form_flag: false
+  - slot_was_set:
+    - requested_slot: contact_type
+  - intent: terminate_conversation
+  - action: utter_ok
+  - action: action_deactivate_loop
+  - active_loop: null
+  - slot_was_set:
+    - requested_slot: null
+  - action: action_reset_slots
+
+- story: contact library - deactivate form
+  steps:
+  - intent: contact_library
+  - action: contact_form
+  - active_loop: contact_form
+  - slot_was_set:
+    - contact_type: null
+  - slot_was_set:
+    - form_flag: false
+  - slot_was_set:
+    - requested_slot: contact_type
+  - intent: terminate_conversation
+  - action: utter_ok
+  - action: action_deactivate_loop
+  - active_loop: null
+  - slot_was_set:
+    - requested_slot: null
+  - action: action_reset_slots
+
+- story: contact form - email 
+  steps:
+  - intent: contact_library
+  - action: contact_form
+  - active_loop: contact_form
+  - slot_was_set:
+    - contact_type: null
+  - slot_was_set:
+    - form_flag: false
+  - slot_was_set:
+    - requested_slot: contact_type
+  - slot_was_set:
+    - contact_type: email
+  - slot_was_set:
+    - contact_type: email
+  - slot_was_set:
+    - form_flag: false
+  - slot_was_set:
+    - requested_slot: null
+  - active_loop: null
+  - action: action_tell_contact_info
+  - slot_was_set:
+    - contact_type: null
+  - slot_was_set:
+    - form_flag: true
+
+- story: contact form - phone 
+  steps:
+  - intent: contact_library
+  - action: contact_form
+  - active_loop: contact_form
+  - slot_was_set:
+    - contact_type: null
+  - slot_was_set:
+    - form_flag: false
+  - slot_was_set:
+    - requested_slot: contact_type
+  - slot_was_set:
+    - contact_type: phone
+  - slot_was_set:
+    - contact_type: phone
+  - slot_was_set:
+    - form_flag: false
+  - slot_was_set:
+    - requested_slot: null
+  - active_loop: null
+  - action: action_tell_contact_info
+  - slot_was_set:
+    - contact_type: null
+  - slot_was_set:
+    - form_flag: true
+
+- story: contact form - repeat then select email
+  steps:
+  - intent: contact_library
+  - action: contact_form
+  - active_loop: contact_form
+  - slot_was_set:
+    - contact_type: null
+  - slot_was_set:
+    - form_flag: false
+  - slot_was_set:
+    - requested_slot: contact_type
+  - intent: repeat_again
+  - action: action_repeat
+  - action: contact_form
+  - slot_was_set:
+    - contact_type: null
+  - slot_was_set:
+    - form_flag: false
+  - slot_was_set:
+    - requested_slot: contact_type
+  - slot_was_set:
+    - contact_type: email
+  - slot_was_set:
+    - contact_type: email
+  - slot_was_set:
+    - form_flag: false
+  - slot_was_set:
+    - requested_slot: null
+  - active_loop: null
+  - action: action_tell_contact_info
+  - slot_was_set:
+    - contact_type: null
+  - slot_was_set:
+    - form_flag: true

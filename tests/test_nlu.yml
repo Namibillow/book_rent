@@ -1,0 +1,752 @@
+version: "2.0"
+nlu:
+- intent: goodbye
+  examples: |
+    - talk to you tomorrow
+    - see you
+    - talk to you later
+    - chat you later 
+    - chitchat later 
+- intent: terminate_conversation
+  examples: |
+    - quit this conversation please
+    - quit
+    - cancel this 
+- intent: thanks
+  examples: |
+    - thanks so much
+    - i appriciate your help
+    - thank you for your service
+    - i appreciate your service 
+- intent: deny
+  examples: |
+    - i don't like that
+    - i don't want to read it
+    - not anymore
+    - i reject 
+    - not affirmative 
+    - i dissapprove 
+    - i reject 
+- intent: repeat_again
+  examples: |
+    - what again?
+    - repeat that
+    - i didn't get what you said
+- intent: greet
+  examples: |
+    - good morning
+    - good afternoon
+    - what's up
+    - yo 
+    - heyo 
+    - heya
+    - sup 
+    - wassaup
+    - hey bot 
+- intent: help
+  examples: |
+    - what are the things i can do?
+    - can you explain to me what i can do with you?
+    - what do you offer
+    - list the services you provide
+    - list me your services 
+    - what services can you offer
+- intent: bot_challenge
+  examples: |
+    - aren't you a bot
+    - are you a human or a bot?
+    - are you virtual?
+    - are you a robot
+- intent: affirm
+  examples: |
+    - yes
+    - that would be great
+    - go borrow it
+    - approved 
+    - affirmative
+    - yes, i accept
+    - yeah sure
+    - yes please
+    - i wanna read 
+    - i want to 
+    - positive 
+- intent: user_inventory_check_remaining
+  examples: |
+    - can you tell me how many books i can still rent from you from the library?
+    - could you tell me how many books i can book tho?
+    - what's the number of books i can still borrow?
+    - how many books can i still borrow?
+    - how many books i could still borrow?
+    - gimme the number of total books i can still rent.
+    - i want to know total number of books I can still borrow?
+    - i need to know how many books i can still borrow 
+    - i woud like to know how many remaining books i can borrow 
+    - you know how many books i can still borrow from ya?
+- intent: out_of_scope
+  examples: |
+    - tell me the weather
+    - do you have a print service 
+    - can i make a copy 
+    - Can you give me your datacenter's password
+    - i wanna party
+    - i am a student by the way
+    - set me a reminder
+    - can i print something 
+    - Can you please send me an uber
+    - do you offer some special deals?
+    - what
+    - do you have a bending machine 
+    - are you blind friendly 
+    - do you offer braille books?
+    - tell me a joke
+    - hows the weather
+    - is your door automatic 
+    - i want to rent a car 
+    - do you have elevator to go second floor 
+    - i need a phone charger 
+    - is there a plug i can use to charge my phone?
+    - connect me to my amazon account 
+    - should i get nissan or toyota for the car?
+    - can you do calculus homework for me?
+- intent: faq_check_location
+  examples: |
+    - where exactly are you located at?
+    - may i have your address please?
+    - may i have your physcial address?
+    - can i have your location
+    - is your address the same?
+    - where can i go to borrow the book? 
+    - where is the location for me to borrow the book? 
+    - where is the address so i can go get books?
+    - i would really love to know your adress. 
+    - i would really appriciated if you can tell me your address.
+    - i want to check out your place so i can actually go there in person. 
+- intent: search_book
+  examples: |
+    - i really want to read
+    - start finding a book by its title
+    - help look for me a non-fiction
+    - i need your help to find a book
+    - help me find a book
+    - i want to find a book
+    - i need to borrow books
+    - find me a novel 
+    - i would like to ask for a book
+    - find me a hardcover book 
+    - need to read something
+    - can i look up something
+    - looking for a book.
+    - find me a magazine 
+    - i want to read this book.
+    - find me a journal 
+    - help me find a book.
+    - i'm thinking to borrow some books from you.
+    - i feel like reading something.
+    - excuse me, but can you help me to look something? 
+    - i want to check out some books 
+    - i have a specific book in my mind 
+    - find me this specific book 
+    - find me a softcover 
+    - find me a newspaper 
+    - do you by chance have this rare book?
+    - do you have some interesting book 
+- intent: select_from_list
+  examples: |
+    - get me sixth one
+    - the [third](ordinal) one
+    - i would like to borrow the [second](ordinal) one
+    - borrow first one
+    - [last](ordinal) one
+    - i would like to borrow the [first](ordinal) one
+    - fouth book
+    - borrow the [last](ordinal) one
+    - get me tenth one
+    - i want the [first](ordinal) one please
+    - get me the [last](ordinal) one
+    - i wanna take the [fourth](ordinal) one
+    - the [sixth](ordinal) book
+    - the [last](ordinal) one is the correct one
+    - the [first](ordinal) one from the list 
+    - its the [tenth](ordinal) one 
+    - index is sixth
+    - 1st 1 please 
+    - seventh index 
+    - ordinal is first 
+    - [last](ordinal) index please 
+    - i want the [second](ordinal) index one 
+    - i want the one in the [last](ordinal)
+- intent: faq_check_open
+  examples: |
+    - will you open October twentieth?
+    - i need your opening time.
+    - are you opened next Sunday?
+    - will the library open at ten am?
+    - what's your openings look like?
+    - i want to know if you will be open on June third.
+    - i need to return a book today. Are you open right now?
+    - open timings
+    - i would like to know when do you open today.
+    - i would like to go to the library on Thursday. Are you open?
+    - what hours are you open?
+    - do you open first day of next year?
+    - opening date and time please.
+    - are you open November fifth?
+    - do you open today?
+    - are you open on eleven fifty pm?
+    - are you open on new year's eve
+    - what is the schedule for next next monday?
+    - will you be open on two weeks after today?
+    - how is your opening schedule look like.
+- intent: faq_total_allowance
+  examples: |
+    - could you tell me the overall number of books one could borrow?
+    - how many books can i borrow in total?
+    - what's the maximum limit one can borrow from the library?
+    - what's the maximum limit people can borrow from the library?
+    - how many books in general can i borrow?
+    - can you tell me the number of books one can borrow in general?
+    - do you know the total number of books i can borrow?
+    - could you tell me the total number of books i could borrow?
+    - what are the limits in terms of number books one can borrow?
+    - tell me how many books i can borrow.
+    - how many books in total can i borrow?
+    - how many books can i borrow from the library in total?
+    - what's the maximum limit i can borrow from you?
+    - do you know what's the number of books one can borrow in general?
+    - i want to know how many books one can borrow in total
+    - can you tell me how many books one can borrow in total?
+    - how many books can i borrow overall?
+- intent: contact_library
+  examples: |
+    - perhaps, can i get your [telephone number](contact_type)?
+    - i want to send you an [email](contact_type)
+    - would you mind to give me your [email address](contact_type)
+    - is there a [number](contact_type) i can call you?
+    - i want to give you a [call](contact_type)
+    - i want to talk someone from the library 
+    - i want to ask question to the real person 
+    - what is the library [number](contact_type)? 
+    - give me your [telephone number](contact_type) please.
+    - may i get your [call number](contact_type)
+    - i want to send you a message 
+    - what's your [telephone](contact_type)?
+    - i wanna get the [phone number](contact_type) of the library.
+    - what's the contact [email address](contact_type)
+    - i want to [call number](contact_type) the library.
+    - i need to contact real person about something 
+    - i want to [email address](contact_type) the library.
+    - can I get your [call number](contact_type)
+    - can i [email account](contact_type) you?
+    - do you know the [phone number](contact_type) of the library i can call?
+    - what's [telephone](contact_type) i can call to the library?
+    - give me your [email address](contact_type) please.
+    - give me the [tell](contact_type) of the library please.
+    - what's the contact [telephone number](contact_type)
+    - how can i contact you?
+    - give me the [phone number](contact_type) of the library please.
+    - what is your [electric mail address](contact_type)?
+    - do you know the [email address](contact_type) of the library i can call?
+    - what's [call](contact_type) i can call to the library?
+    - what's your [call](contact_type)?
+    - give me the [telephone](contact_type) of the library please.
+    - what is the [number](contact_type) of the library?
+    - can i contact you by [call number](contact_type)
+    - what's your [email account](contact_type)?
+    - i wanna get the [tell number](contact_type) of the library.
+    - can I get your [tell number](contact_type)
+    - what is your [email account](contact_type)?
+    - do you know the [telephone](contact_type) of the library i can call?
+    - can i [number](contact_type) you?
+    - what is your [telephone](contact_type)?
+    - what's the contact [call number](contact_type)
+    - may i get your [tell](contact_type)
+    - what is the available contact information?
+    - give me the [email address](contact_type) of the library please.
+    - what's [tell](contact_type) i can call to the library?
+    - i wanna get the [telephone number](contact_type) of the library.
+    - i want to [tell](contact_type) the library.
+    - give me your [tell number](contact_type) please.
+    - give me the [email account](contact_type) of the library.
+    - contact info pleaze
+    - i want to [email account](contact_type) the library.
+    - can i contact you by [email address](contact_type)
+- intent: user_inventory_check_return
+  examples: |
+    - i need an information about return dates 
+    - i need an information about return date of [Ace Lacewing, Bug Detective The Big Swat](book_title) by Mike Aulby and Sybil. Leek
+    - i had [All's Fairy in Love and War (Avalon Web of Magic, number 8)](book_title) for a while but forgot when to return?
+    - help me check my return status 
+    - i need an info about return dates 
+    - i wanna be aware of when are the return dates 
+    - i had [Answer to the Moon](book_title) for a while but forgot when to return?
+    - i need an info about return date of [The Strange Quest of Nurse Anne](book_title)
+    - can i get info about return dates
+    - what are the dates of my borrowing books' return dates?
+    - return date for my borrowing books?
+    - can you please update me with the return dates for the books i'm borrowing
+    - i need an info about return date of [The R Word](book_title)
+    - i need an info about return date of [Ut n. 4 Gli uomini se ne vanno gli arrabbiati restano](book_title)
+    - i need an information about return date of [Call After Midnight](book_title) by David R. Reiser and Elizabeth Evans
+    - can you update me with the return dates for the books i'm borrowing
+    - i had [American Sniper The Autobiography of the Most Lethal Sniper in U.S. Military History](book_title) for a while but forgot when to return?
+    - i had [Bloodlines (Irene Kelly number 9)](book_title) for a while but forgot when to return?
+    - i had [Healer's Touch (Hearts And Thrones, number 4)](book_title) for a while but forgot when to return?
+    - i have Stephen King's [The Cocktail Party](book_title) but when do i need to return it?
+    - i had [Passion (Passion, number 1)](book_title) for a while but forgot when to return?
+    - i had [Superior Spider-Man Team-Up Superiority Complex](book_title) for a while but forgot when to return?
+    - i had [The Case of the Missing Books (Mobile Library Mystery number 1)](book_title) for a while but forgot when to return?
+    - i need an information about return date of [A Man to Call My Own](book_title)
+    - i had [The Lake of Dreams](book_title) for a while but forgot when to return?
+    - i had [The Rock & Roll Film Encyclopedia](book_title) for a while but forgot when to return?
+    - i had [Weddings of the Times](book_title) for a while but forgot when to return?
+    - i have Amy Gash's [NPR Road Trips Roadside Attractions Stories That Take You Away...](book_title) but when do i need to return it?
+    - i want to be awared of when to return the books
+    - i had [Lugas](book_title) for a while but forgot when to return?
+    - i want to get info about return dates of current borrowing 
+    - i have Jerry Siegel's [Character Sketches, Volume 2](book_title) but when do i need to return it?
+    - i have Kathleen Bryan's [Wayang dan Panggilan Manusia](book_title) but when do i need to return it?
+    - i have Piers Platt's [Without Warning](book_title) but when do i need to return it?
+    - i have Zhang Yun's [Bloodworth's Bride](book_title) but when do i need to return it?
+    - i have cchiichiw's [Street Soldier](book_title) but when do i need to return it?
+    - i need an info about return date of [A Bite to Remember (Argeneau number 5)](book_title)
+    - i need an info about return date of [Almost Married A Novel about Love, Longing, and Last Hurrahs](book_title) by Susan J. Pennington
+    - i need an info about return date of [Christmastime](book_title) by Simon Blackburn
+    - i need an info about return date of [Circles of Hell](book_title) by Clemence
+    - i need an info about return date of [Only One](book_title) by Janet Lorimer and Joann McCaig
+    - i need an info about return date of [Our Tree Named Steve](book_title)
+    - i need an info about return date of [The Dragonfly, A Bury St. Edmunds Historical Time-Travel Novel](book_title) by Kenichi Sonoda
+    - i need an info about return date of [The Monkey and the Panda](book_title)
+    - i need an information about return date of [Into Temptation](book_title)
+    - i need an information about return date of [JB](book_title) by Jurgen Lemke and G.K. Chesterton
+    - i need an information about return date of [Krysta's Curse (Whispers, number 3)](book_title)
+    - i need an information about return date of [Murmurs Gathered Stories Vol. One](book_title)
+    - i need an information about return date of [Nature and Grace in Flannery O'Connor's Fiction (Studies in Art and Religious Interpretation](book_title)
+    - i need an information about return date of [The Burden A Family Saga](book_title) by Heather Webber
+    - i need an information about return date of [Vagamundo y otros relatos](book_title) by Gero von Boehm and John McLeod
+    - inform me when to return [A Room with a View](book_title)
+    - inform me when to return [A Winter Wedding (Whiskey Creek, number 9)](book_title)
+    - inform me when to return [Chicago's Nelson Algren](book_title)
+    - inform me when to return [Germany Unraveling an Enigma](book_title)
+    - inform me when to return [Parisian Chic A Style Guide](book_title)
+    - inform me when to return [Princess of Fire (Fire, number 1)](book_title)
+    - inform me when to return [Rule of Law](book_title)
+    - inform me when to return [Say It in Polish](book_title) by Jennifer Donnelly
+    - inform me when to return [Uncanny X-Men by Kieron Gillen, Vol. 4](book_title) by Edgar Rice Burroughs
+    - please inform me when to return [Anno's Math Games II](book_title) by David Shipley
+    - please inform me when to return [Connecting to the Legacy! Learn the Ethical and Spiritual Concerns of Jesus and His Disciples](book_title) by Robert Burleigh
+    - tell me when to return [The Forgetting Curve (Memento Nora, number 2)](book_title)
+    - tell me when to return [Ultimate Comics Spider-Man, by Brian Michael Bendis, Volume 4](book_title)
+    - what date to return [Color Transform Your Home](book_title)
+    - what date to return [If Only for a Moment](book_title) by slmn hrty
+    - what date to return [List do nienarodzonego dziecka](book_title) by John Brunner
+    - what date to return [Say It in Polish](book_title) by Cali
+    - please inform me when to return [First X-Men](book_title)
+    - please inform me when to return [OCHO number 6](book_title) by Diana Preston
+    - please inform me when to return [Propensity For Love (A Brooks' Family Values Series Book 3)](book_title)
+    - please inform me when to return [REMEMBER](book_title)
+    - tell me when to return [100 Buildings 100 Years](book_title) by Tanya Anne Crosby
+    - tell me when to return [Crude World The Violent Twilight of Oil](book_title) by Gregory Gerard
+    - tell me when to return [Drina's Dancing Year (Drina, number 2)](book_title)
+    - tell me when to return [Gratitude Challenge For Inspired Women 10 Days of Affirmations and Challenges for a Happier Life](book_title)
+    - tell me when to return [I'm with Stupid](book_title) by Max Sarin
+    - tell me when to return [Labor and Desire Women's Revolutionary Fiction in Depression America](book_title) by Gray Jacobik
+    - tell me when to return [Last Exit to Utopia The Survival of Socialism in a Post-Soviet Era](book_title) by Kathleen Bryan
+    - tell me when to return [Reel Life Starring Us](book_title) by Gordon Van Gelder
+    - tell me when to return [Sherlock Holmes tutti i romanzi](book_title)
+    - tell me when to return [The Complete Science Fiction Treasury of H.G. Wells](book_title)
+    - what date to return [Seven Wicked Nights (Turner, number 1.5](book_title)
+    - what date to return [Shameless (Banning Sisters, number 3)](book_title)
+    - what date to return [The Final Service](book_title) by Errol Le Cain
+    - what date to return [The Predator Part Two](book_title)
+    - what date to return [The Skull Collector](book_title)
+    - what date to return [The Wimpy Kid Movie Diary, How Greg Heffley Went Hollywood, The Story of all Three Movies](book_title)
+    - what date to return [Three Days and a Life](book_title) by David Marquez
+    - what date to return [Yo, Simon, Homo Sapiens](book_title) by Brandon Sanderson
+    - when to return [A Field Guide to the Birds of Hawaii and the Tropical Pacific](book_title)
+    - when to return [Body Actions](book_title)
+    - when to return [Chuck's Zimmer. Gedichte - Lieder.](book_title)
+    - when to return [Graveyard Games](book_title) by Debbie Cairo
+    - when to return [Growltiger's Last Stand and Other Poems](book_title)
+    - when to return [L'isola dell'amore proibito](book_title) by Sloan Parker
+    - when to return [Men In Black](book_title) by Ida Neverdahl
+    - when to return [Sir Chocolate and the sugar dough bees story and cookbook](book_title) by Joe Casey
+    - when to return [Skynappers](book_title) by Max Brand
+    - when to return [Sleuthing at Sweet Springs (Sleuth Sisters number 4)](book_title)
+    - when to return [Surviving Heroin Interviews with Women in Methadone Clinics](book_title) by Robert Louis Stevenson
+    - when to return [Switched (Trylle Trilogy, number 1)](book_title) by Fabian Nicieza
+    - when was the return date of [Catkin](book_title)
+    - when was the return date of [First X-Men](book_title) by Massimo Romagnoli
+    - when was the return date of [Goodness Gracious Green (Green number 2)](book_title)
+    - when was the return date of [Hard Fall](book_title)
+    - when was the return date of [Leaving Fundamentalism Personal Stories](book_title)
+    - which date to return [Into the Realm The Call of the Rose](book_title)
+    - which date to return [Island Unknown](book_title)
+    - which date to return [Mein Kampf](book_title) by Daniel Parkins
+    - which date to return [Not Quite Juliet (Silver Soul number 1, Club Imperial number 3)](book_title)
+    - which date to return [Our Tree Named Steve](book_title)
+    - when was the return date of [Midnight Rescue (Killer Instincts, number 1)](book_title)
+    - when was the return date of [Missionary Methods St. Paul's or Ours?](book_title)
+    - when to return [Fear the Darkness](book_title)
+    - when to return [Fire and Sword](book_title) by Amy Raby
+    - when to return [Gelignite](book_title)
+    - when was the return date of [My Dark Highlander (Kilted Athletes Through Time, number 2)](book_title) by Patrick Ness
+    - when was the return date of [Oliver's Landing](book_title)
+    - when was the return date of [Raven On The Wing (Hagen Series number 2)](book_title)
+    - when was the return date of [Shameless Embraces (Bound Hearts, number 6-7)](book_title)
+    - which date to return [As Black As Ebony (Snow White Trilogy)](book_title)
+    - which date to return [Desejo Subtil (Wallflowers, number 1)](book_title)
+    - which date to return [Get the Best from Yourself](book_title)
+    - which date to return [God in Neon](book_title) by Vasile Savin
+    - which date to return [Princess of Fire (Fire, number 1)](book_title)
+    - which date to return [Raising Emotionally Intelligent Teenagers Guiding the Way for Compassionate, Committed, Courageous Adults](book_title)
+    - which date to return [The Lost Codex (OPSIG Team Black number 3)](book_title)
+    - which date to return [The Wimpy Kid Movie Diary, How Greg Heffley Went Hollywood, The Story of all Three Movies](book_title) by Phyllis Zimbler Miller
+- intent: user_inventory_check_current_borrowing
+  examples: |
+    - help me check my renting status 
+    - i wanna be aware of what i am borrowing 
+    - i want to be awared of books i am borrowing from you 
+    - can you update me with what am i borrowing 
+    - i want to get info about my current borrowing 
+    - can i get info about books i am borrowing 
+    - can i get information aout borrowing books?
+    - what are my borrowing books?
+    - all information about my borrowing books?
+    - am i owning [Botham's Book of the Ashes A Lifetime Love Affair with Cricket's Greatest Rivalry](book_title) by Reto Sorg
+    - am i owning [Deadly Coast (Tom Dugan, number 2)](book_title)
+    - am i owning [Death Minus Zero (Sam Turner, number 2)](book_title)
+    - am i owning [One for the Money (Night Huntress number 4.5)](book_title) by Alan Jacobson
+    - am i owning [Wylding Hall](book_title)
+    - am i owning a book called [Nu ser du mig (Lacey Flint, number 1)](book_title) by Sax Rohmer
+    - am i owning a book called [People Will Talk The Surprising Science of Reputation](book_title) by Judith Evans
+    - am i owning a book called [Pornucopia (Pornucopia, number 1)](book_title)
+    - am i owning a book called [The Shakespeare Authorship Debate and Historical Responsibility The text of a lecture delivered in the Chapter House of Exeter Cathedral on Thursday 23 April 2015](book_title) by Fiona Buckley
+    - am i still borrowing [Ace Lacewing, Bug Detective The Big Swat](book_title) by City Lights Historical Library
+    - am i still borrowing [Bootsie Barker Bites](book_title)
+    - am i still borrowing [Character Sketches, Volume 2](book_title) by Jonathan Hickman
+    - am i still borrowing [De dochters van de beul](book_title) by Dan Klein
+    - am i still borrowing [De greppel](book_title) by John Langan
+    - am i still borrowing [Independence Lost Lives on the Edge of the American Revolution](book_title) by Geoffrey Neil
+    - am i still borrowing [L'isola dell'amore proibito](book_title) by Kate Proctor
+    - am i still borrowing [Memphis Lights (Country Star, number 1)](book_title)
+    - am i still borrowing [Reversal](book_title)
+    - am i still borrowing [Spirit Lake - Die Legende des Wendigo](book_title)
+    - am i still borrowing [The Sea Watch](book_title)
+    - am i still keeping [Dark Visions A Collection of Modern Horror - Volume Two](book_title)
+    - am i still keeping [Deadly Coast (Tom Dugan, number 2)](book_title) by Kevin Trout
+    - am i still keeping [Elena Undone](book_title) by John Williams
+    - am i still keeping [Eren's Play](book_title)
+    - am i still keeping [Infinity Man and the Forever People number 1 (The New 52)](book_title)
+    - am i still keeping [Jurassic Park (Jurassic Park, number 1)](book_title) by Jp Jones
+    - am i still keeping [Nasty Women](book_title) by Andre Dubus
+    - am i still keeping [The Happy Journey to Trenton and Camden](book_title) by Kate White
+    - am i still keeping [Vampires and Vixens (Psy-Vamp number 1)](book_title)
+    - aren't i keeping [101 Family Meal-Time Devotions](book_title) by Cy Cylkowski
+    - aren't i keeping [Badortsmysteriet (Hercule Poirot, number 8)](book_title) by Jojo Moyes
+    - aren't i keeping [Checkmate (Noughts & Crosses, number 3)](book_title)
+    - aren't i keeping [Detective Camp (A to Z Mysteries Super Edition, number 1)](book_title)
+    - aren't i keeping [Mr. Majeika](book_title)
+    - aren't i keeping [War Stories, Volume 4](book_title) by Allan Ahlberg
+    - can you confirm if i am borrowing [Dancer](book_title) by Joseph C. Martin
+    - can you confirm if i am borrowing [Dog Heaven](book_title) by Seth Godin
+    - can you confirm if i am borrowing [How To Create A High Value Lead Magnet To Quickly Grow Your Email List Strategic Email Marketing](book_title)
+    - can you confirm if i am borrowing [Monkeewrench](book_title)
+    - can you confirm if i am borrowing [Perfect on Paper](book_title)
+    - can you confirm if i am borrowing [Tangled in Time (Project Enterprise, number 3)](book_title) by Edward Lavitt
+    - can you confirm if i am borrowing [The Longest Afternoon The 400 Men Who Decided the Battle of Waterloo](book_title) by Mark Bunting and Simon Mugford
+    - can you confirm with me if i am borrowing [Botham's Book of the Ashes A Lifetime Love Affair with Cricket's Greatest Rivalry](book_title)
+    - can you confirm with me if i am borrowing [Colmillo](book_title) by Jason D. Baker and Anne Thurston
+    - can you confirm with me if i am borrowing [Mrs. Dalloway (Annotated)](book_title)
+    - can you confirm with me if i am borrowing [The More Loving One](book_title) by Carol Belanger. Grafton and Warwick Collins
+    - can you please confirm if i am borrowing [A Simple Soul](book_title)
+    - can you please confirm with me if i am borrowing [Endeavour of Will](book_title)
+    - can you please confirm with me if i am borrowing [Gator Girl The Answers (Gator Girl number 4)](book_title) by Primo Levi and Robert Travers
+    - can you please confirm with me if i am borrowing [Kemik](book_title)
+    - can you please confirm with me if i am borrowing [Nu ser du mig (Lacey Flint, number 1)](book_title) by Bndicte deBoysson-Bardies
+    - can you please confirm with me if i am borrowing [Soundtrack](book_title)
+    - can you please verify if i am borrowing [Creative Coloring Flowers Art Activity Pages to Relax and Enjoy!](book_title) by Willard Young and Joyce Jones
+    - can you please verify if i am borrowing [SMS Uprising Mobile Activism in Africa](book_title) by Marilyn F. Daniel
+    - can you please verify if i am borrowing [The Pre-Raphaelites](book_title)
+    - can you please verify with me if i am borrowing [Apocalypse (The Days of Elijah number 1)](book_title)
+    - can you please verify with me if i am borrowing [Hot Wacks Book XV The Last Wacks (Hot Whack Books)](book_title) by Lenny Bruce and John P. Wiley
+    - can you please verify with me if i am borrowing [Lockout The Story of the Homestead Strike of 1892](book_title)
+    - can you please verify with me if i am borrowing [The Devil's Notebook](book_title) by GARY KRIST and Roselee Goldberg
+    - can you verify if i am borrowing [Farmer in the Sky](book_title) by Larry Guarino
+    - can you verify if i am borrowing [My Life in Middlemarch](book_title)
+    - can you verify if i am borrowing [Secret Society Of The Left Hand](book_title) by Neil Postman
+    - can you verify if i am borrowing [Tales of Hans Christian Anderson](book_title)
+    - can you verify if i am borrowing [What If Everybody Did That?](book_title)
+    - can you verify with me if i am borrowing [Destination Chile](book_title)
+    - can you verify with me if i am borrowing [The Norton Anthology of English Literature, Vol. A Middle Ages](book_title)
+    - do i still have [A Taste of Candy](book_title) by Reet Tine from the library
+    - do i still have [Creative Is a Verb If You're Alive, You're Creative](book_title) by Holter Graham from the library
+    - do i still have [Gator Girl The Answers (Gator Girl number 4)](book_title) by Joseph Brodsky from the library
+    - do i still have [Ghost Warrior](book_title) by Elizabeth Guizzetti from the library
+    - do i still have [Having Patience](book_title) by Bruce Fife from the library
+    - do i still have [Kept from You (Tear Asunder, number 4)](book_title) by Francesco Bertolino from the library
+    - do i still have [Out of Order (The Survivor's Club, number 1)](book_title) by John La Plante from the library
+    - do i still have [The Afrikaans](book_title) from the library
+    - do i still have [The Alexandria Link (Cotton Malone, number 2)](book_title) from the library
+    - do i still have [The Jedi Circle Jedi Philosophy for Everyday Life (The Jedi Academy Online Presents Book 2)](book_title) from the library
+    - do i still have [The Librarian from the Black Lagoon (Black Lagoon, number 5)](book_title) by Glenn Jackson from the library
+    - do i still have [The Way of Fire](book_title) by Paul Bishop from the library
+    - do i still have [The Worst Day of My Life So Far My Mother, Alzheimer's and Me](book_title) by Cassia Leo from the library
+    - don't i have been borrowing [Best Of Friends](book_title) by Gerard Lelarge ?
+    - don't i have been borrowing [Death Minus Zero (Sam Turner, number 2)](book_title) by Heidi McLaughlin ?
+    - don't i have been borrowing [Ghost in His Eyes](book_title) ?
+    - don't i have been borrowing [Hug](book_title) ?
+    - don't i have been borrowing [Inherit the Wind](book_title) by Lori Foster ?
+    - don't i have been borrowing [Merry Christmas, Baby (Nightshade number 4.5)](book_title) ?
+    - don't i have been borrowing [Minibijbel Motoren](book_title) by Christopher Yost ?
+    - don't i have been borrowing [Naaburger](book_title) by Ilona Andrews ?
+    - don't i have been borrowing [Personal Demon (Women of the Otherworld number 8)](book_title) by George Perez ?
+    - don't i have been borrowing [Petropolis](book_title) by Andy Cutbill ?
+    - don't i have been borrowing [Reverse Heart Disease Now Stop Deadly Cardiovascular Plaque Before It's Too Late](book_title) by Maria do Carmo Figueira ?
+    - don't i have been borrowing [Riding on a Beam of Light](book_title) ?
+    - don't i have been borrowing [The Crystal Fountain & Other Stories](book_title) by Matthew Johnson ?
+    - don't i have been borrowing [The Templar (Templars, number 1)](book_title) by Jenika Snow ?
+    - i need an info about borrowing [Earthquakes in Human History The Far-Reaching Effects of Seismic Disruptions](book_title)
+    - i need an info about borrowing [Into the Realm The Call of the Rose](book_title)
+    - i need an info about borrowing [Katie Woo Celebrates (Katie Woo](book_title)
+    - i need an info about borrowing [Mrs. Dalloway (Annotated)](book_title)
+    - i need an info about borrowing [Sebastian Cork Forget Me Not](book_title)
+    - i need an info about borrowing [The Untamed](book_title)
+    - i need an info about borrowing [This Shattered World (Starbound, number 2)](book_title)
+    - i need an information about borrowing [Gabriel's Christmas Wish (A Regency Christmas Summons Novella)](book_title)
+    - i need an information about borrowing [Hyrum](book_title)
+    - i need an information about borrowing [Murder by the Seaside](book_title)
+    - i think i have [Eye Q And The Efficient Learner](book_title) by Debby Sly from your library
+    - i think i have [Faust A Tragedy, Part 1](book_title) by Therese Walsh from your library
+    - i think i have [First Love A Steamy Billionaire Romance about first times (The Scientist & the CEO Book 4)](book_title) from your library
+    - i think i have [Practical Genius](book_title) from your library
+    - i think i have [The Bride Sale](book_title) from your library
+    - i think i have [The Complete Idiot's Guide to Writing a Novel](book_title) from your library
+    - i think i have [The Devil's Own](book_title) by Sharon Ashwood from your library
+    - i think i have [The Possession of Lawrence Eugene Davis](book_title) by Pablo Rumel from your library
+    - i think i have [The Rose and the Thorn (The Riyria Chronicles number 2)](book_title) from your library
+    - i think i have [This Shattered World (Starbound, number 2)](book_title) by Don Piper from your library
+    - i think i have [Vampirism And You! (Guidebook 01)](book_title) from your library
+    - i think i own a copy of [Connecting to the Legacy! Learn the Ethical and Spiritual Concerns of Jesus and His Disciples](book_title) from the library
+    - i think i own a copy of [Een meisjesleven](book_title) by Nicole Rollender from the library
+    - i think i own a copy of [One of These Things First](book_title) from the library
+    - i think i own a copy of [Romancing the Duke (Castles Ever After, number 1)](book_title) by Billy Cowie from the library
+    - i think i own a copy of [Silken Eyes](book_title) by Garth Ennis from the library
+    - i think i own a copy of [When Kat's Away](book_title) from the library
+- intent: inform_book_info
+  examples: |
+    - Anya Ulinich
+    - [Books and Characters French & English](book_title) by Christopher McDougall
+    - Brantwijn Serrah
+    - [Brilliant](book_title)
+    - Cesare Casella
+    - [Creative Coloring Flowers Art Activity Pages to Relax and Enjoy!](book_title) by Edith Jones
+    - Dale Cameron and Meryl Streep
+    - [Dian Dincin Buchmans Herbal Medicine Natural Way to Get Well and Stay Well](book_title)
+    - Diarmid Cammell
+    - Edith Jones
+    - [Every Dead Thing (Charlie Parker, number 1)](book_title)
+    - [Farangi Girl](book_title)
+    - [Grendel](book_title)
+    - [Guppies for Tea](book_title)
+    - Helen Hardt and Mina Fisher
+    - [Jazz, Perfume & the Incident](book_title) by James Russell Lowell
+    - Jhankar Mahbub and Julie Anne Lindsey
+    - John McNally
+    - Julian Darius and Margreet Dietz
+    - Karen Hawkins and Fern Marshall Bradley
+    - Kate Millett
+    - Lauren Kate
+    - Mary Fox and Leon Wolff
+    - [Mr. Majeika](book_title) by Anna Skaidrite Gailite
+    - PERSON3's name is Edward Herrmann
+    - PERSON3's name is Freddy Jackson Brown
+    - PERSON3's name is Fyodor Dostoyevsky
+    - PERSON3's name is Stan Tekiela
+    - PERSON3's name is Susanna Murray Highsmith
+    - PERSON3's name is Vahur Kersna
+    - Samuel Hynes and Andreas Fohr
+    - [The Complete Science Fiction Treasury of H.G. Wells](book_title) by Michael Forcier
+    - [The Year's Best Science Fiction and Fantasy, 2011 Edition](book_title)
+    - Timothy Callahan
+    - [To Have and Have Not](book_title)
+    - book name is [Nemesis (Southern Comfort, 4)](book_title)
+    - book name is called [Eren's Play](book_title)
+    - can you do a search for [All's Fairy in Love and War (Avalon Web of Magic, number 8)](book_title)
+    - can you do a search for [Canadian Folk Portraits of Remarkable Lives](book_title)
+    - can you do a search for [On Fire (Elemental Short Stories Book, number 1)](book_title)
+    - can you do a search for [Purple Hearts](book_title)
+    - can you do a search for [To Have and Have Not](book_title)
+    - can you get me [Beautifully Decadent (Beautifully Damaged, number 3)](book_title)
+    - can you get me [Neptune's Brood](book_title) by Jim Bakker
+    - can you get me [No Ordinary Girl (Love at First Sight Book 1)](book_title) by Annette Mori
+    - can you get me [Rule of Law](book_title)
+    - can you get me [The Recipe Box](book_title) by bwb wwdwrd
+    - can you have a look at book by Christina Savage and Glenda Bendure
+    - can you have a look at book by Eugene Dabit and Trixie Whitmore
+    - can you have a look at book by Heather Valencia
+    - can you have a look at book by Luz Maria Ibarra
+    - can you have a look at book by RITA MAE BROWN and Pierre Jean Cousin
+    - can you have a look at book written by Anne Kelleher
+    - can you have a look at book written by Kristi Lorene and Cornelia Franz
+    - could you get me [450 From Paddington](book_title) by Lauren Kate
+    - could you get me [Beyond Black](book_title)
+    - could you get me [Electoral Competition in Ireland Since 1987 The Politics of Triumph and Despair](book_title)
+    - could you get me [The Complete Idiot's Guide to Writing a Novel](book_title)
+    - could you get me [The Great Diamond Hoax of 1872 The History of 19th Century America's Most Notorious Fraud](book_title)
+    - do you have Angie Smibert's [They Cage the Animals at Night](book_title)
+    - do you have Ari Harper's [Arlo Finch in the Valley of Fire](book_title)
+    - do you have Katelyn Skye's [El Socialista Sentimental](book_title)
+    - do you have Leslie Kelly's [All's Fairy in Love and War (Avalon Web of Magic, number 8)](book_title)
+    - do you have Milan Watson's [Surprised by God How I Learned to Stop Worrying and Love Religion](book_title)
+    - do you have Stephen Baxter's [Il verde mi dona](book_title)
+    - do you have Tim Weaver's [Huber Hill and the Brotherhood of Coronado (Huber Hill, number 2)](book_title)
+    - do you have one by Angus Fletcher
+    - do you have one by Margaret Yorke
+    - do you have one by Patrick Benson
+    - do you have one by Samantha Peale
+    - do you have one called [Arsene Wenger The Inside Story of Arsenal Under Wenger](book_title)
+    - do you have one called [Destination Chile](book_title)
+    - do you have one called [Empire](book_title) by Lynsay Sands
+    - do you have one called [Rambuku - Skuggar to skodespel](book_title) by Aracy Balabanian
+    - do you have one called [Seiyuu-ka! 12](book_title) by Mark Fried
+    - do you have one called [The Blood of Strangers Stories from Emergency Medicine](book_title) by Tim Turner
+    - do you have one called [Vagamundo y otros relatos](book_title) by Nancy McCormick Rambusch
+    - do you own a [Anno's Medieval World GB](book_title) in your library?
+    - do you own a [Black Liquor Poems](book_title) in your library?
+    - do you own a [Piacere, io sono Gauss](book_title) in your library?
+    - do you own a [Taken by the Shifters The Collection (Taken by the Shifters number 1-3)](book_title) in your library?
+    - do you own a [The Congressman Who Loved Flaubert 21 Stories and Novellas](book_title) in your library?
+    - do you own a [The Norton Anthology of English Literature, Vol. A Middle Ages](book_title) in your library?
+    - do you own a [To Have and Have Not](book_title) in your library?
+    - do you own a [Where the Dead Live](book_title) in your library?
+    - find [A Practitioner's Guide to Account-Based Marketing Accelerating Growth in Strategic Accounts](book_title) by Colleen Carroll Campbell
+    - find [Collide (Collide, number 1)](book_title) by Spike Brown
+    - find [Hope's Daughter](book_title)
+    - i am looking for something like [Love Means... Patience](book_title)
+    - i am looking for something like [Midnight Rescue (Killer Instincts, number 1)](book_title)
+    - i am looking for something like [Raising An Emotionally Intelligent Child](book_title)
+    - i am looking for something like [Rumic Theater One Or Double](book_title)
+    - i am searching for [Every Bitter Thing (Chief Inspector Mario Silva number 4)](book_title) by Paco Medina
+    - i am searching for [Having Patience](book_title) by Catherine McKenzie
+    - i am searching for [Meeting Your Half-Orange An Utterly Upbeat Guide to Using Dating Optimism to Find Your Perfect Match](book_title)
+    - i am searching for [My Dark Highlander (Kilted Athletes Through Time, number 2)](book_title)
+    - i am searching for [Tell Me No Lies](book_title) by Lydia Dare
+    - i am searching for [The Millionaire Maker](book_title)
+    - i am seeking for [Black Anthology Adult Adoptees Claim Their Space](book_title)
+    - i am seeking for [Blame](book_title)
+    - i am seeking for [Captive Queen A Novel of Eleanor of Aquitaine](book_title) by Daniel Pinkwater and Nevil Shute
+    - i am seeking for [Das Schlimmste kommt noch oder Fast eine Jugend](book_title)
+    - i am seeking for [Fearless (Ruin, number 2.5)](book_title)
+    - i am seeking for [La primavera dei maimorti](book_title) by Andrea Tezumo and Anya Howard
+    - i am seeking for [Lucifer's Children](book_title) by Constance Garnett and Ellen Raskin
+    - i am seeking for [Techniques of Jewelry Illustration and Color Rendering](book_title)
+    - i am seeking for [The Affair](book_title)
+    - i am seeking for [The Forgetting Curve (Memento Nora, number 2)](book_title) by Giannes Ioannides and John Steven Gurney
+    - i am seeking for [Welcome Home Travels in Smalltown Canada](book_title) by Becky Masterman and Masami Kurumada
+    - i demand [Jukebox](book_title)
+    - i demand [Lugas](book_title)
+    - i demand [Pursuit](book_title)
+    - i demand [The Devil in Maryvale (Maryvale number 1)](book_title) by Faye Kellerman
+    - i demand [When God Doesn't Fix It Lessons You Never Wanted to Learn, Truths You Can't Live Without](book_title)
+    - i demand a book called [Kate's House](book_title) by Michel Bonnefoy
+    - i request [Best Served Cold](book_title) by Margaret Blake
+    - i request [The Visitor](book_title)
+    - i request a book called [Drina's Dancing Year (Drina, number 2)](book_title)
+    - i request a book called [SEALed and Delivered (SEAL, number 1)](book_title)
+    - name of the author is Alexandra Marinina
+    - name of the author is Benjamin Kane Ethridge
+    - name of the author is David Anthony Durham
+    - name of the author is Ji Qiu
+    - name of the author is Kashmira Sheth
+    - name of the author is Kate Reading
+    - name of the author is Vicki Pettersson
+    - name of the book is called [100 Buildings 100 Years](book_title)
+    - name of the book is called [Bless This Love](book_title)
+    - name of the book is called [Just a Summer Fling](book_title)
+    - name of the book is called [The Passion of Mademoiselle S. Letters to a Lover](book_title)
+    - please find [A Girl Named Mary](book_title) by Melissa Scott
+    - please find [Beyond Black](book_title) by Carlos Perez Casas
+    - please find [Character Sketches, Volume 1](book_title) by Debra Coleman Jeter
+    - please find [Christmas in Venice](book_title) by Nancy McCormick Rambusch
+    - please find [Death Minus Zero (Sam Turner, number 2)](book_title) by Marcel Proust
+    - please find [I Won't Comb My Hair](book_title)
+    - please find [Judge Dredd, Vol. 6](book_title)
+    - please find [N.P](book_title) by Debby Sly
+    - please find [Peacemaking in Early Modern Europe Cardinal Mazarin and the Congress of Westphalia, 1643-1648](book_title)
+    - please find [Shattered (Open Heart number 2)](book_title)
+    - please find [The White Hairs](book_title) by Claire Smith
+    - searching for [Can Such Things Be?](book_title) by Cassandra Chandler
+    - searching for [Safe by His Side (Colby Agency number 1)](book_title) by N Gray
+    - searching for [Sun King](book_title)
+    - searching for [The Mountain Between Us](book_title) by Anna Gavalda
+    - searching for [The Southwest Inside Out An Illustrated Guide to the Land and Its History](book_title)
+    - searching for a book by Daniel Acuna and Alex Hernandez
+    - searching for a book by James Reichmuth and Thomas LeMay
+    - searching for a book by Milan Watson and Liudmila Kostova
+    - searching for a book by Paola Grimaldi and Laural Merlington
+    - searching for a book by Tom Spanbauer and Carlos Franz
+    - searching for a book called [A Smell of Burning The Story of Epilepsy](book_title) by Kieron Gillen
+    - searching for a book called [The Art of Seduction](book_title)
+    - searching for a book written by Ethan Stone
+    - searching for a book written by Sean Kissane and Nevil Shute
+    - slmn hrty and Glenn Danzig
+    - that one by Brenda Tetreault
+    - that one by Ian Fleming
+    - that one by James Dunwoody Bulloch
+    - that one by Jude Watson
+    - that one by Katsura Hoshino
+    - that one by Kelley Armstrong
+    - that one by Maryse Holder
+    - that one by Savanna Fox
+    - that one by cchiichiw
+    - that was by Adila Suwarmo and Max Allan Collins
+    - that was by Arabella Kurtz and David Sedaris
+    - that was by David Williams and Faye Harnest
+    - that was by Heli Kalliolevo and Flora Dare
+    - that was by Joel Miller and Ortayl
+    - that was by Olivier Zunz
+    - that was by Oto Havrila
+    - that was by Piero Chiara and Carrie Aarons
+    - that was by Reto Sorg
+    - the name of the author should be something like Bingo Marasigan
+    - the name of the author should be something like Nicole Conn
+    - the name of the author should be something similar to Elizabeth Loraine
+    - the name of the author should be something similar to Jacque Stevens
+    - the name of the author should be something similar to Lena Brown
+    - the one with [Entice (The Embrace Series, number 2)](book_title)
+    - the one with [Price of Justice](book_title)
+    - the one with [Rite of Conquest (William the Conqueror, number 1)](book_title)
+    - the one with [Spain A Unique History](book_title)
+    - the one with [Sweetwater (The Kihn number 1)](book_title)
+    - the one with [The Dead City Rollers](book_title)
+    - the one with [The Devil in Maryvale (Maryvale number 1)](book_title)
+    - the one with [Wolf Hall](book_title)
+    - the title was something like [An Isolated Incident](book_title)
+    - the title was something like [Beyond Denial (Beyond, number 2.5)](book_title)
+    - the title was something like [Eunica](book_title)
+    - the title was something like [Open Your Eyes (The Missing number 1)](book_title)
+    - the title was something like [Perdida en la realidad](book_title)
+    - the title was something like [The Alexandria Link (Cotton Malone, number 2)](book_title)
+    - you have [Breakup Formula](book_title) ?
+    - you have [Communiceren in the New Normal](book_title) ?
+    - you have [In A Corner Darkly](book_title) by Ashley Dartnell ?
+    - you have [Saving the Bride A Mail Order Bride Historical Western Romance](book_title) ?
+    - you have [The Forgetting Curve (Memento Nora, number 2)](book_title) ?
+    - you have [The Kidnapped King (A to Z Mysteries, number 11)](book_title) ?
+    - you have [Wisteria Cottage](book_title) ?
+- synonym: email
+  examples: |
+    - email address
+    - electric mail address
+    - email account
+- synonym: phone
+  examples: |
+    - phone number
+    - number
+    - telephone
+    - telephone number
+    - call
+    - call number
+    - tell
+    - phone call
+    - tell number

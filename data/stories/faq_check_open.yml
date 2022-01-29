@@ -1,0 +1,49 @@
+
+version: "2.0"
+stories:
+- story: check opening - general 
+  steps:
+  - intent: faq_check_open
+  - action: action_tell_opentime
+
+- story: check opening - today
+  steps:
+  - intent: faq_check_open
+    entities:
+    - time: '2022-01-24T00:00:00.000-08:00'
+  - action: action_tell_opentime
+
+- story: check opening - right now
+  steps:
+  - intent: faq_check_open
+    entities:
+    - time: '2022-01-24T05:04:34.000-08:00'
+  - action: action_tell_opentime
+
+- story: check opening - tomorrow
+  steps:
+  - intent: faq_check_open
+    entities:
+    - time: '2022-01-25T00:00:00.000-08:00'
+  - action: action_tell_opentime
+
+- story: check opening - yesterday
+  steps:
+  - intent: faq_check_open
+    entities:
+    - time: '2022-01-23T00:00:00.000-08:00'
+  - action: action_tell_opentime
+
+- story: check opening - Dec 25th
+  steps:
+  - intent: faq_check_open
+    entities:
+    - time: '2022-12-25T00:00:00.000-08:00'
+  - action: action_tell_opentime
+
+- story: check opening - today 23 50pm
+  steps:
+  - intent: faq_check_open
+    entities:
+    - time: '2022-01-24T23:50:00.000-08:00'
+  - action: action_tell_opentime
