@@ -1,0 +1,22 @@
+%[select_from_list](750)
+    [I want?] @[book_title] ~[by] ~[PERSON] [and?another_author] ~[PERSON2?another_author]
+    [I want?] @[book_title]
+    ~[PERSON]
+    I ~[want] ~[read] @[book_title]
+    I ~[want] ~[read] @[book_title] ~[by] ~[PERSON] [and?another_author] ~[PERSON2?another_author]
+
+~[by]
+    written by 
+    by
+
+~[read]
+    borrow 
+    read 
+
+~[want]
+    would like to 
+    want to
+
+|book_author.txt
+|book_author2.txt
+|book_title.txt

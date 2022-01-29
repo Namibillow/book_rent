@@ -1,0 +1,64 @@
+%[inform_book_info](200)
+    @[book_title2]
+    ~[PERSON3] and ~[PERSON4]
+    ~[PERSON3]
+    @[book_title2] by ~[PERSON3]
+    the one with @[book_title2]
+    that one by ~[PERSON3]
+    searching for [a book called?] @[book_title2] [by?atn] ~[PERSON3?atn]
+    searching for a book [written by|by] ~[PERSON3] [and?atn] ~[PERSON4?atn]
+    name of the author is ~[PERSON3]
+    name of the book is called @[book_title2]
+    book name is [called?] @[book_title2]
+    PERSON3's name is ~[PERSON3]
+    [please?] find @[book_title2] [by?atn] ~[PERSON3?atn]
+    [please?] find @[book_title2] [by?atn] ~[PERSON3?atn]
+    do you have one by ~[PERSON3]
+    do you have one called @[book_title2] [by?atn] ~[PERSON3?atn]
+    [can|could] you get me @[book_title2] [by?atn] ~[PERSON3?atn]
+    do you have ~[PERSON3]'s @[book_title2]
+    do you own a @[book_title2] in your library?
+    you have @[book_title2] [by?atn] ~[PERSON3?atn] ?
+    i am searching for @[book_title2] [by?atn] ~[PERSON3?atn]
+    i am seeking for @[book_title2] 
+    i am seeking for @[book_title2] by ~[PERSON3] [and?atn] ~[PERSON4?atn]
+    i demand [a book called?] @[book_title2] [by?atn] ~[PERSON3?atn]
+    i request [a book called?] @[book_title2] [by?atn] ~[PERSON3?atn]
+    i am looking for something like @[book_title2] 
+    the title was something like @[book_title2] 
+    the name of the author should be something [like|similar to] ~[PERSON3]
+    that was y ~[PERSON3] [and?atn] ~[PERSON4?atn]
+    can you have a look at book [written?] by ~[PERSON] [and?atn] ~[PERSON2?atn]
+    can you do a search for @[book_title2] 
+
+%[user_inventory_check_current_borrowing](120)
+    i need an [information|info] about borrowing @[book_title2]
+    am i owning [a book called?] @[book_title2] [by?atn] ~[PERSON3?atn]
+    do i still have @[book_title2] [by?atn] ~[PERSON3?atn] from the library 
+    am i still keeping @[book_title2] [by?atn] ~[PERSON3?atn] 
+    am i still borrowing @[book_title2] [by?atn] ~[PERSON3?atn] 
+    i think i have @[book_title2] [by?atn] ~[PERSON3?atn] from your library 
+    don't i have been borrowing @[book_title2] [by?atn] ~[PERSON3?atn] ?
+    aren't i keeping @[book_title2] [by?atn] ~[PERSON3?atn] 
+    can you [please?] verify [with me?] if i am borrowing @[book_title2]
+    can you [please?] verify [with me?] if i am borrowing @[book_title2] by ~[PERSON] [and?atn] ~[PERSON2?atn]
+    can you [please?] confirm [with me?] if i am borrowing @[book_title2]
+    can you [please?] confirm [with me?] if i am borrowing @[book_title2] by ~[PERSON] [and?atn] ~[PERSON2?atn]
+    i think i own a copy of @[book_title2] [by?atn] ~[PERSON3?atn] from the library
+
+%[user_inventory_check_return](120)
+    when was the return date of @[book_title2] [by?atn] ~[PERSON3?atn]
+    i need an [information|info] about return date of @[book_title2] 
+    when to return @[book_title2] [by?atn] ~[PERSON3?atn] 
+    what date to return @[book_title2] [by?atn] ~[PERSON3?atn] 
+    which date to return @[book_title2] [by?atn] ~[PERSON3?atn] 
+    i have ~[PERSON3]'s @[book_title2] but when do i need to return it?
+    i had @[book_title2] for a while but forgot when to return?
+    can you [please?] update me with the return dates for the books i'm borrowing 
+    tell me when to return @[book_title2] [by?atn] ~[PERSON3?atn] 
+    [please?] inform me when to return @[book_title2] [by?atn] ~[PERSON3?atn] 
+    i need an [information|info] about return date of @[book_title2] by ~[PERSON] [and?atn] ~[PERSON2?atn]
+
+|book_authors3.txt
+|book_authors4.txt
+|book_title2.txt

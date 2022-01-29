@@ -1,0 +1,222 @@
+%[user_inventory_check_current_borrowing](1500)
+    am i borrowing [a book called?] @[book_title] [right now?] [from ~[library]?] \?
+    am i borrowing [a book called?] @[book_title] ~[by] ~[PERSON] [and?another_author] ~[PERSON2?another_author] [right now?] [from ~[library]?] \?
+    am i borrowing any books ~[by] ~[PERSON] [and?another_author] ~[PERSON2?another_author] [right now?] [from ~[library]?] \?
+    am i borrowing a book ~[by] ~[PERSON] [and?another_author] ~[PERSON2?another_author] called @[book_title] [right now?] [from ~[library]?] \?
+    
+    i am borrowing @[book_title] [from ~[library]\??] [,right\??]
+    i am borrowing @[book_title] ~[by] ~[PERSON] [and?another_author] ~[PERSON2?another_author] [from ~[library]\??] [,right\??]
+    i am borrowing [a book | any books | books] ~[by] ~[PERSON] [and?another_author] ~[PERSON2?another_author] [from ~[library]\??] [,right\??]
+    
+    ~[can you?] ~[tell] me [that?] if i am borrowing [a book called?] @[book_title] [from ~[library]?] [please?] 
+    ~[can you?] ~[tell] me [that?] if i am borrowing [a book called?] @[book_title] ~[by] ~[PERSON] [and?another_author] ~[PERSON2?another_author] [from ~[library]?] [please?] 
+    ~[can you?] ~[tell] me [that?] if i am borrowing [a book | any books | books] ~[by] ~[PERSON] [and?another_author] ~[PERSON2?another_author] [from ~[library]?] [please?] 
+    
+    [by the way,?] i ~[want to] ~[make sure] if i am borrowing @[book_title] [from ~[library]?]
+    [by the way,?] i ~[want to] ~[make sure] if i am borrowing @[book_title] ~[by] ~[PERSON] [and?another_author] ~[PERSON2?another_author] [from ~[library]?]
+    [by the way,?] i ~[want to] ~[make sure] if i am borrowing [a book | any books | books] ~[by] ~[PERSON] [and?another_author] ~[PERSON2?another_author] [from ~[library]?]
+
+    i ~[want to] ~[make sure] if i am borrowing @[book_title] [from ~[library]?] .
+    i ~[want to] ~[make sure] if i am borrowing @[book_title] ~[by] ~[PERSON] [and?another_author] ~[PERSON2?another_author] [from ~[library]?] .
+    i ~[want to] ~[make sure] if i am borrowing [a book | any books | books] ~[by] ~[PERSON] [and?another_author] ~[PERSON2?another_author] [from ~[library]?] .
+    
+    ~[can you] do me a favor to check if i am borrowing @[book_title] [from ~[library]?]\?
+    ~[can you] do me a favor to check if i am borrowing @[book_title] ~[by] ~[PERSON] [and?another_author] ~[PERSON2?another_author] [from ~[library]?]\?
+    ~[can you] do me a favor to check if i am borrowing [a book | any books | books] ~[by] ~[PERSON] [and?another_author] ~[PERSON2?another_author] [from ~[library]?]\?
+    
+    i think i am borrowing a book called @[book_title] [from ~[library]?] \?
+    i think i am borrowing a book ~[by] ~[PERSON] [and?another_author] ~[PERSON2?another_author] called @[book_title] [from ~[library]?] \?
+    i think i am borrowing a book ~[by] ~[PERSON] [and?another_author] ~[PERSON2?another_author] [from ~[library]?] \?
+
+    ~[can you?] check if i am borrowing a book called @[book_title] [from ~[library]?] \?
+    ~[can you?] check if i am borrowing a book ~[by] ~[PERSON] [and?another_author] ~[PERSON2?another_author] called @[book_title] [from ~[library]?] \?
+
+    i feel like i've borrowed books a book called @[book_title] ~[by] ~[PERSON] [and?another_author] ~[PERSON2?another_author] [from ~[library]?], but ~[can you] check for me?
+    i feel like i've borrowed books ~[by] ~[PERSON] [and?another_author] ~[PERSON2?another_author] [from ~[library]?], but ~[can you] check for me?
+    i feel like i've borrowed books ~[by] ~[PERSON] [and?another_author] ~[PERSON2?another_author] [from ~[library]?], but ~[can you] check for me?
+
+%[user_inventory_check_return](1500)
+    ~[when] do i need to [return|give back] @[book_title] \?
+    i ~[forgot] when to return @[book_title] .
+    ~[can you] ~[tell] me [about?] when to return @[book_title] [please?] \?
+    i am [currently?] borrowing @[book_title] but I ~[forgot] when to [return it| give it back] .
+    i ~[want to] know when to return [the book?] @[book_title] .
+    i have [a book called?] @[book_title] borrowed from ~[library] and i ~[want to] know ~[when] i need to return them.
+    [return date of|deadline to return] @[book_title] [please?] \?
+    ~[can i] know ~[when] to know return @[book_title] \?
+    [information|info] about the return date of ~[a book called] @[book_title] .
+    ~[when] is the rental [deadline|date] for @[book_title] .
+    ~[can you] ~[tell] me [about?] ~[when] is the rental [deadline|date] for @[book_title] .
+    [please?] ~[tell] me ~[when] to [return|give back] @[book_title] .
+
+    ~[when] do i need to [return|give back] @[book_title] ~[by] ~[PERSON] [and?another_author] ~[PERSON2?another_author] \?
+    i ~[forgot] when to return @[book_title] ~[by] ~[PERSON] [and?another_author] ~[PERSON2?another_author] .
+    ~[can you] ~[tell] me [about?] when to return @[book_title] ~[by] ~[PERSON] [and?another_author] ~[PERSON2?another_author] [please?] \?
+    i am [currently?] borrowing @[book_title] ~[by] ~[PERSON] [and?another_author] ~[PERSON2?another_author] but I ~[forgot] when to [return it| give it back] .
+    i ~[want to] know when to return [the book?] @[book_title] ~[by] ~[PERSON] [and?another_author] ~[PERSON2?another_author] .
+    i have [a book called?] @[book_title] ~[by] ~[PERSON] [and?another_author] ~[PERSON2?another_author] borrowed from ~[library] and i ~[want to] know ~[when] i need to return them.
+    [return date of|deadline to return] @[book_title] ~[by] ~[PERSON] [and?another_author] ~[PERSON2?another_author] [please?] \?
+    ~[can i] know ~[when] to know return @[book_title] ~[by] ~[PERSON] [and?another_author] ~[PERSON2?another_author] \?
+    [information|info] about the return date of ~[a book called] @[book_title] ~[by] ~[PERSON] [and?another_author] ~[PERSON2?another_author]  .
+    ~[when] is the rental [deadline|date] for @[book_title] ~[by] ~[PERSON] [and?another_author] ~[PERSON2?another_author] .
+    ~[can you] ~[tell] me [about?] ~[when] is the rental [deadline|date] for @[book_title] ~[by] ~[PERSON] [and?another_author] ~[PERSON2?another_author] .
+    [please?] ~[tell] me ~[when] to [return|give back] @[book_title] ~[by] ~[PERSON] [and?another_author] ~[PERSON2?another_author] .
+
+    ~[when] do i need to [return|give back] [the book|books] ~[by] ~[PERSON] [and?another_author] ~[PERSON2?another_author] \?
+    i ~[forgot] when to return [the book|books] ~[by] ~[PERSON] [and?another_author] ~[PERSON2?another_author] .
+    ~[can you] ~[tell] me [about?] when to return [the book|books] ~[by] ~[PERSON] [and?another_author] ~[PERSON2?another_author] [please?] \?
+    i am [currently?] borrowing [the book|books] ~[by] ~[PERSON] [and?another_author] ~[PERSON2?another_author] but I ~[forgot] when to [return it| give it back] .
+    i ~[want to] know when to return [the book|books] ~[by] ~[PERSON] [and?another_author] ~[PERSON2?another_author] .
+    i have [a book|books] ~[by] ~[PERSON] [and?another_author] ~[PERSON2?another_author] borrowed from ~[library] and i ~[want to] know ~[when] i need to return them.
+    [return date of|deadline to return] [the book|books] ~[by] ~[PERSON] [and?another_author] ~[PERSON2?another_author] [please?] \?
+    ~[can i] know ~[when] to know return [the book|books] ~[by] ~[PERSON] [and?another_author] ~[PERSON2?another_author] \?
+    [information|info] about the return date of [the book|books] ~[by] ~[PERSON] [and?another_author] ~[PERSON2?another_author]  .
+    ~[when] is the rental [deadline|date] for [the book|books] ~[by] ~[PERSON] [and?another_author] ~[PERSON2?another_author] .
+    ~[can you] ~[tell] me [about?] ~[when] is the rental [deadline|date] for [the book|books] ~[by] ~[PERSON] [and?another_author] ~[PERSON2?another_author] .
+    [please?] ~[tell] me ~[when] to [return|give back] [the book|books] ~[by] ~[PERSON] [and?another_author] ~[PERSON2?another_author] .
+
+%[inform_book_info](1500)
+    [i?] ~[want to] ~[verb_borrow] ~[a book called?] @[book_title] .
+    [find me?] @[book_title] [please?] .
+    ~[can you] ~[find] for me @[book_title] .
+    do you have @[book_title] [by?atn] ~[PERSON?atn]
+    i want [to read?] ~[PERSON]'s @[book_title]
+    can you search for @[book_title] 
+    it was [written?] by ~[PERSON] [and?atn] ~[PERSON2?atn]
+    can you search for @[book_title] by ~[PERSON] [and?atn] ~[PERSON2?atn]
+    [book called?] @[book_title] .
+    [by chance,?] you got @[book_title] \?
+    have you got @[book_title] \?
+    do you ~[verb_have] ~[a book called?] @[book_title] \?
+    ~[can you?] help me ~[find] @[book_title] .
+    looking for a book with title of @[book_title] [that is] .
+    the title of a book [is|is called] @[book_title] .
+    do you know @[book_title] \?
+    do you know if @[book_title] is ~[is available] to ~[verb_borrow] \?
+    ~[can i] ~[verb_borrow] @[book_title] \?
+    do you [by any change?] ~[verb_have] a book @[book_title?] \?
+    i ~[want to] ~[verb_borrow] a book such as @[book_title] \?
+    ~[can i] ask [you?] to ~[find] for me a book [called?book] @[book_title?book] \?
+    have a book [called?] @[book_title] \?
+    [got?] @[book_title] \?
+    [the?] title of the book is @[book_title]
+    title is [called?] @[book_title]
+    name of the book is @[book_title]
+    name is @[book_title]
+    [it is|it's] called @[book_title]
+    the book is called @[book_title]
+
+    [the?] author is ~[PERSON]
+    [the?] authors are ~[PERSON] and ~[PERSON2]
+
+
+    [Book?book_by] ~[by?book_by] ~[PERSON] [and?another_author] ~[PERSON2?another_author] [please?] .
+    Book with author ~[PERSON] [and?another_author] ~[PERSON2?another_author] [please?] 
+    i ~[want to] ~[verb_borrow] ~[a book called?] @[book_title] ~[by] ~[PERSON] [and?another_author] ~[PERSON2?another_author] .
+    find me @[book_title] ~[by] ~[PERSON] [and?another_author] ~[PERSON2?another_author] [please?] .
+    ~[can you] ~[find] for me @[book_title] ~[by] ~[PERSON] [and?another_author] ~[PERSON2?another_author] .
+    [book called?] @[book_title] @[book_title] ~[by] ~[PERSON] [and?another_author] ~[PERSON2?another_author] .
+    [by chance,?] you got @[book_title] ~[by] ~[PERSON] [and?another_author] ~[PERSON2?another_author] \?
+    have you got @[book_title] ~[by] ~[PERSON] [and?another_author] ~[PERSON2?another_author] \?
+    do you ~[verb_have] ~[a book called?] @[book_title] ~[by] ~[PERSON] [and?another_author] ~[PERSON2?another_author] \?
+    ~[can you?] help me ~[find] @[book_title] ~[by] ~[PERSON] [and?another_author] ~[PERSON2?another_author] .
+    looking for a book with title of @[book_title] [that is] ~[by] ~[PERSON] [and?another_author] ~[PERSON2?another_author] .
+    the title of a book [is|is called] @[book_title] ~[by] ~[PERSON] [and?another_author] ~[PERSON2?another_author] .
+    do you know @[book_title] ~[by] ~[PERSON] [and?another_author] ~[PERSON2?another_author] \?
+    do you know if @[book_title] ~[by] ~[PERSON] [and?another_author] ~[PERSON2?another_author] is ~[is available] to ~[verb_borrow] \?
+    ~[can i] ~[verb_borrow] @[book_title] ~[by] ~[PERSON] [and?another_author] ~[PERSON2?another_author] \?
+    do you [by any change?] ~[verb_have] a book @[book_title?] ~[by] ~[PERSON] [and?another_author] ~[PERSON2?another_author] \?
+    [got?] @[book_title] ~[by] ~[PERSON] [and?another_author] ~[PERSON2?another_author] \?
+    [got?] any book ~[by] ~[PERSON] [and?another_author] ~[PERSON2?another_author] \?
+    do you ~[verb_have] books whos author is ~[PERSON] [and?another_author] ~[PERSON2?another_author] \?
+    i ~[want to] ~[verb_borrow] a book ~[by] ~[PERSON] [and?another_author] ~[PERSON2?another_author] such as @[book_title] \?
+    ~[can i] ask [you?] to ~[find] for me a book [called?book] @[book_title?book] ~[by] ~[PERSON] [and?another_author] ~[PERSON2?another_author] \?
+    have a book [called?] @[book_title] ~[by] ~[PERSON] [and?another_author] ~[PERSON2?another_author] \?
+
+~[make sure]
+    make sure 
+    check 
+    know
+
+~[tell]
+    remind
+    check for
+    tell 
+
+~[find]
+    find 
+    look 
+    check
+
+~[library]
+    you 
+    the library 
+    your library 
+    library 
+
+~[by]
+    written by 
+    by
+
+~[a book called]
+    a book called 
+    a book 
+    a book titled as 
+    a book titled
+    a book with title 
+    a copy of 
+
+~[can i]
+    can i 
+    may i 
+    would it be possible to 
+    would it be possible for me to
+
+~[is available]
+    free 
+    available 
+
+~[want to]
+    [really?] want to 
+    [really?] need to 
+    [really?] wanna 
+    would [really?] [like|love] to 
+    would [really?] [need|want] to 
+    'd [really?] [like|love] to 
+
+~[can you]
+    can you 
+    could you 
+    would you 
+
+~[verb_have]
+    own
+    have 
+
+~[verb_borrow]
+    borrow
+    rent
+    read
+    take 
+    get 
+
+~[when]
+    what date 
+    which date 
+    when exactly 
+    when 
+    by when
+    to which date 
+
+~[forgot]
+    forgot to 
+    cannot remember 
+    can't remember
+    don't remember 
+    kinda can't remember 
+    kinda don't remember
+    kinda forgot to
+
+|book_author.txt
+|book_author2.txt
+|book_title.txt
