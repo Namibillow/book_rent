@@ -7,8 +7,6 @@ pipeline:
     case_sensitive: False
   - name: SpacyTokenizer
   - name: SpacyFeaturizer
-  - name: RegexFeaturizer
-    case_sensitive: False
   - name: LexicalSyntacticFeaturizer
   - name: CountVectorsFeaturizer
   - name: CountVectorsFeaturizer
@@ -16,7 +14,7 @@ pipeline:
     min_ngram: 1
     max_ngram: 4
   - name: DIETClassifier
-    batch_strategy: sequence
+    batch_strategy: balanced
     BILOU_flag: true
     epochs: 100
     model_confidence: softmax

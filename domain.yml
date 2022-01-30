@@ -185,8 +185,8 @@ responses:
   - text: Seems like you are borrowing this book already!
   - text: Looks like you are borrowing this book right now!
   utter_borrow_complete:
-  - text: Done! You are now borrowing {book_info}. Please return it by {return_date}.
-  - text: Completed! You are now borrowing {book_info}. Please return it by {return_date}.
+  - text: Done! You are now borrowing {book_info}. Please return it by {return_date}. We will email you once the book is ready for the pick up!
+  - text: Completed! You are now borrowing {book_info}. Please return it by {return_date}. We will send you an email once the book is ready for the pick up!
   utter_invalid_list_index:
   - text: Seems like not a valid index. Please select again. As for the search result,
   utter_ambiguous_result:

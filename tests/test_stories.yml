@@ -591,6 +591,703 @@ stories:
   - action: action_user_inventory
 
 ############ rasa x ############
+- story: Story from Conversation ID c9b187c8597b443f92fca7a4837a7e6c
+  steps:
+  - intent: inform_book_info
+    user: |-
+      hey is [the before the coffee gets cold](book_title) available in the library
+  - action: action_assign_book_info_to_form
+  - slot_was_set:
+    - book_authors: []
+  - slot_was_set:
+    - book_title: the before the coffee gets cold
+  - slot_was_set:
+    - book_info_prefilled: true
+  - action: search_book_form
+  - active_loop: search_book_form
+  - slot_was_set:
+    - book_title: the before the coffee gets cold
+  - slot_was_set:
+    - book_title: the before the coffee gets cold
+  - slot_was_set:
+    - requested_slot: null
+  - active_loop: null
+  - action: action_search_book
+  - slot_was_set:
+    - book_title: null
+  - slot_was_set:
+    - book_authors: null
+  - slot_was_set:
+    - wrong_author_names: null
+  - slot_was_set:
+    - book_info_prefilled: false
+  - slot_was_set:
+    - found_books: null
+  - slot_was_set:
+    - selected_list_index: null
+  - slot_was_set:
+    - has_found_book: false
+  - slot_was_set:
+    - has_list_selection: false
+  - intent: inform_book_info
+    user: |-
+      is [lord of the rings](book_title) available in the library
+  - action: action_assign_book_info_to_form
+  - slot_was_set:
+    - book_authors: []
+  - slot_was_set:
+    - book_title: lord of the rings
+  - slot_was_set:
+    - book_info_prefilled: true
+  - action: search_book_form
+  - active_loop: search_book_form
+  - slot_was_set:
+    - book_title: lord of the rings
+  - slot_was_set:
+    - book_title: lord of the rings
+  - slot_was_set:
+    - requested_slot: null
+  - active_loop: null
+  - action: action_search_book
+  - slot_was_set:
+    - book_title: null
+  - slot_was_set:
+    - book_authors: null
+  - slot_was_set:
+    - wrong_author_names: null
+  - slot_was_set:
+    - book_info_prefilled: false
+  - slot_was_set:
+    - found_books:
+      - - 31
+        - 'The Lord of the Rings (The Lord of the Rings, #1-3)'
+        - - 656983
+        - - J.R.R. Tolkien
+      - - 34
+        - 'The Fellowship of the Ring (The Lord of the Rings, #1)'
+        - - 656983
+        - - J.R.R. Tolkien
+      - - 35
+        - 'The Lord of the Rings (The Lord of the Rings, #1-3)'
+        - - 656983
+          - 9545
+        - - J.R.R. Tolkien
+          - Alan Lee
+      - - 15239
+        - 'The Lord of the Rings: Official Movie Guide'
+        - - 4941
+        - - Brian Sibley
+  - slot_was_set:
+    - selected_list_index: null
+  - slot_was_set:
+    - has_found_book: true
+  - slot_was_set:
+    - has_list_selection: true
+  - action: utter_ask_list_have_desired
+  - intent: affirm
+    user: |-
+      yes
+  - action: select_from_list_form
+  - active_loop: select_from_list_form
+  - slot_was_set:
+    - form_flag: false
+  - slot_was_set:
+    - selected_list_index: null
+  - slot_was_set:
+    - is_ambiguous: false
+  - slot_was_set:
+    - narrowed_found_books: []
+  - slot_was_set:
+    - has_list_selection: true
+  - slot_was_set:
+    - requested_slot: selected_list_index
+  - intent: inform_book_info
+    user: |-
+      the fellowship of [the ring](book_title)
+  - action: select_from_list_form
+  - slot_was_set:
+    - selected_list_index: 1
+  - slot_was_set:
+    - is_ambiguous: false
+  - slot_was_set:
+    - narrowed_found_books: []
+  - slot_was_set:
+    - has_list_selection: false
+  - slot_was_set:
+    - requested_slot: null
+  - active_loop: null
+  - action: utter_confirm_to_borrow
+  - intent: affirm
+    user: |-
+      yes
+  - action: action_perform_borrow
+  - action: action_reset_slots
+  - intent: inform_book_info
+    user: |-
+      do you have any books by [osamu dasai](PERSON)
+  - action: action_assign_book_info_to_form
+  - slot_was_set:
+    - book_authors:
+      - osamu dasai
+  - slot_was_set:
+    - book_title: ''
+  - slot_was_set:
+    - book_info_prefilled: true
+  - action: search_book_form
+  - active_loop: search_book_form
+  - slot_was_set:
+    - book_title: ''
+  - slot_was_set:
+    - book_authors:
+      - osamu dasai
+  - slot_was_set:
+    - requested_slot: null
+  - active_loop: null
+  - action: action_search_book
+  - slot_was_set:
+    - book_title: null
+  - slot_was_set:
+    - book_authors: null
+  - slot_was_set:
+    - wrong_author_names: null
+  - slot_was_set:
+    - book_info_prefilled: false
+  - slot_was_set:
+    - found_books: null
+  - slot_was_set:
+    - selected_list_index: null
+  - slot_was_set:
+    - has_found_book: false
+  - slot_was_set:
+    - has_list_selection: false
+  - intent: inform_book_info
+    user: |-
+      what books do [we have](book_title) by [j k rowling](PERSON)
+  - action: action_assign_book_info_to_form
+  - slot_was_set:
+    - book_authors:
+      - j k rowling
+  - slot_was_set:
+    - book_title: we have
+  - slot_was_set:
+    - book_info_prefilled: true
+  - action: search_book_form
+  - active_loop: search_book_form
+  - slot_was_set:
+    - book_title: we have
+  - slot_was_set:
+    - book_authors:
+      - j k rowling
+  - slot_was_set:
+    - requested_slot: null
+  - active_loop: null
+  - action: action_search_book
+  - slot_was_set:
+    - book_title: null
+  - slot_was_set:
+    - book_authors: null
+  - slot_was_set:
+    - wrong_author_names: null
+  - slot_was_set:
+    - book_info_prefilled: false
+  - slot_was_set:
+    - found_books: null
+  - slot_was_set:
+    - selected_list_index: null
+  - slot_was_set:
+    - has_found_book: false
+  - slot_was_set:
+    - has_list_selection: false
+  - intent: inform_book_info
+    user: |-
+      how many books by the author [j k rowling](PERSON)
+  - action: action_assign_book_info_to_form
+  - slot_was_set:
+    - book_authors:
+      - j k rowling
+  - slot_was_set:
+    - book_title: ''
+  - slot_was_set:
+    - book_info_prefilled: true
+  - action: search_book_form
+  - active_loop: search_book_form
+  - slot_was_set:
+    - book_title: ''
+  - slot_was_set:
+    - book_authors:
+      - j k rowling
+  - slot_was_set:
+    - requested_slot: null
+  - active_loop: null
+  - action: action_search_book
+  - slot_was_set:
+    - book_title: null
+  - slot_was_set:
+    - book_authors: null
+  - slot_was_set:
+    - wrong_author_names: null
+  - slot_was_set:
+    - book_info_prefilled: false
+  - slot_was_set:
+    - found_books:
+      - - 615204
+        - 'Harry Potter and the Chamber of Secrets (Harry Potter, #2)'
+        - - 1077326
+        - - J.K. Rowling
+      - - 666456
+        - 'Harry Potter Boxed Set (Harry Potter, #1-4)'
+        - - 1077326
+        - - J.K. Rowling
+      - - 27205142
+        - 'Harry Potter and the Chamber of Secrets (Harry Potter #2)'
+        - - 1077326
+        - - J.K. Rowling
+      - - 18684165
+        - The Tales of Beedle the Bard
+        - - 1077326
+        - - J.K. Rowling
+  - slot_was_set:
+    - selected_list_index: null
+  - slot_was_set:
+    - has_found_book: true
+  - slot_was_set:
+    - has_list_selection: true
+  - action: utter_ask_list_have_desired
+  - intent: affirm
+    user: |-
+      yes
+  - action: select_from_list_form
+  - active_loop: select_from_list_form
+  - slot_was_set:
+    - form_flag: false
+  - slot_was_set:
+    - selected_list_index: null
+  - slot_was_set:
+    - is_ambiguous: false
+  - slot_was_set:
+    - narrowed_found_books: []
+  - slot_was_set:
+    - has_list_selection: true
+  - slot_was_set:
+    - requested_slot: selected_list_index
+  - intent: inform_book_info
+    user: |-
+      [the tales of beedle the bard](book_title)
+  - action: select_from_list_form
+  - slot_was_set:
+    - selected_list_index: 3
+  - slot_was_set:
+    - is_ambiguous: false
+  - slot_was_set:
+    - narrowed_found_books: []
+  - slot_was_set:
+    - has_list_selection: false
+  - slot_was_set:
+    - requested_slot: null
+  - active_loop: null
+  - action: utter_confirm_to_borrow
+  - intent: deny
+    user: |-
+      no
+  - action: utter_ok
+  - action: action_reset_slots
+  - intent: inform_book_info
+    user: |-
+      who is the author of [the harry potter and sorcery of the stone](book_title)
+  - action: action_assign_book_info_to_form
+  - slot_was_set:
+    - book_authors: []
+  - slot_was_set:
+    - book_title: the harry potter and sorcery of the stone
+  - slot_was_set:
+    - book_info_prefilled: true
+  - action: search_book_form
+  - active_loop: search_book_form
+  - slot_was_set:
+    - book_title: the harry potter and sorcery of the stone
+  - slot_was_set:
+    - book_title: the harry potter and sorcery of the stone
+  - slot_was_set:
+    - requested_slot: null
+  - active_loop: null
+  - action: action_search_book
+  - slot_was_set:
+    - book_title: null
+  - slot_was_set:
+    - book_authors: null
+  - slot_was_set:
+    - wrong_author_names: null
+  - slot_was_set:
+    - book_info_prefilled: false
+  - slot_was_set:
+    - found_books: null
+  - slot_was_set:
+    - selected_list_index: null
+  - slot_was_set:
+    - has_found_book: false
+  - slot_was_set:
+    - has_list_selection: false
+  - intent: inform_book_info
+    user: |-
+      who is the author of [the harry potter and sorcerer of the stone](book_title)
+  - action: action_assign_book_info_to_form
+  - slot_was_set:
+    - book_authors: []
+  - slot_was_set:
+    - book_title: the harry potter and sorcerer of the stone
+  - slot_was_set:
+    - book_info_prefilled: true
+  - action: search_book_form
+  - active_loop: search_book_form
+  - slot_was_set:
+    - book_title: the harry potter and sorcerer of the stone
+  - slot_was_set:
+    - book_title: the harry potter and sorcerer of the stone
+  - slot_was_set:
+    - requested_slot: null
+  - active_loop: null
+  - action: action_search_book
+  - slot_was_set:
+    - book_title: null
+  - slot_was_set:
+    - book_authors: null
+  - slot_was_set:
+    - wrong_author_names: null
+  - slot_was_set:
+    - book_info_prefilled: false
+  - slot_was_set:
+    - found_books: null
+  - slot_was_set:
+    - selected_list_index: null
+  - slot_was_set:
+    - has_found_book: false
+  - slot_was_set:
+    - has_list_selection: false
+  - intent: inform_book_info
+    user: |-
+      who is the author of [the harry potter and chamber of secrets](book_title)
+  - action: action_assign_book_info_to_form
+  - slot_was_set:
+    - book_authors: []
+  - slot_was_set:
+    - book_title: the harry potter and chamber of secrets
+  - slot_was_set:
+    - book_info_prefilled: true
+  - action: search_book_form
+  - active_loop: search_book_form
+  - slot_was_set:
+    - book_title: the harry potter and chamber of secrets
+  - slot_was_set:
+    - book_title: the harry potter and chamber of secrets
+  - slot_was_set:
+    - requested_slot: null
+  - active_loop: null
+  - action: action_search_book
+  - slot_was_set:
+    - book_title: null
+  - slot_was_set:
+    - book_authors: null
+  - slot_was_set:
+    - wrong_author_names: null
+  - slot_was_set:
+    - book_info_prefilled: false
+  - slot_was_set:
+    - found_books:
+      - - 615204
+        - 'Harry Potter and the Chamber of Secrets (Harry Potter, #2)'
+        - - 1077326
+        - - J.K. Rowling
+      - - 17347384
+        - 'Harry Potter and the Chamber of Secrets (Harry Potter, #2)'
+        - - 1077326
+          - 27372
+          - 2927
+        - - J.K. Rowling
+          - Kazu Kibuishi
+          - Mary GrandPre
+      - - 27205142
+        - 'Harry Potter and the Chamber of Secrets (Harry Potter #2)'
+        - - 1077326
+        - - J.K. Rowling
+  - slot_was_set:
+    - selected_list_index: null
+  - slot_was_set:
+    - has_found_book: true
+  - slot_was_set:
+    - has_list_selection: true
+  - action: utter_ask_list_have_desired
+  - intent: affirm
+    user: |-
+      yes
+  - action: select_from_list_form
+  - active_loop: select_from_list_form
+  - slot_was_set:
+    - form_flag: false
+  - slot_was_set:
+    - selected_list_index: null
+  - slot_was_set:
+    - is_ambiguous: false
+  - slot_was_set:
+    - narrowed_found_books: []
+  - slot_was_set:
+    - has_list_selection: true
+  - slot_was_set:
+    - requested_slot: selected_list_index
+  - intent: deny
+    user: |-
+      nah
+  - action: select_from_list_form
+  - slot_was_set:
+    - selected_list_index: null
+  - slot_was_set:
+    - is_ambiguous: false
+  - slot_was_set:
+    - narrowed_found_books: []
+  - slot_was_set:
+    - has_list_selection: true
+  - slot_was_set:
+    - requested_slot: selected_list_index
+  - intent: terminate_conversation
+    user: |-
+      cancel
+  - action: utter_ok
+  - action: action_deactivate_loop
+  - active_loop: null
+  - slot_was_set:
+    - requested_slot: null
+  - action: action_reset_slots
+  - intent: inform_book_info
+    user: |-
+      what are the books written by c s lewis
+  - action: action_assign_book_info_to_form
+  - slot_was_set:
+    - book_authors: []
+  - slot_was_set:
+    - book_title: ''
+  - slot_was_set:
+    - book_info_prefilled: true
+  - action: search_book_form
+  - active_loop: search_book_form
+  - slot_was_set:
+    - book_title: ''
+  - slot_was_set:
+    - requested_slot: null
+  - active_loop: null
+  - action: action_search_book
+  - slot_was_set:
+    - book_title: null
+  - slot_was_set:
+    - book_authors: null
+  - slot_was_set:
+    - wrong_author_names: null
+  - slot_was_set:
+    - book_info_prefilled: false
+  - slot_was_set:
+    - found_books: null
+  - slot_was_set:
+    - selected_list_index: null
+  - slot_was_set:
+    - has_found_book: false
+  - slot_was_set:
+    - has_list_selection: false
+  - intent: inform_book_info
+    user: |-
+      what are the books written by cs lewis
+  - action: action_assign_book_info_to_form
+  - slot_was_set:
+    - book_authors: []
+  - slot_was_set:
+    - book_title: ''
+  - slot_was_set:
+    - book_info_prefilled: true
+  - action: search_book_form
+  - active_loop: search_book_form
+  - slot_was_set:
+    - book_title: ''
+  - slot_was_set:
+    - requested_slot: null
+  - active_loop: null
+  - action: action_search_book
+  - slot_was_set:
+    - book_title: null
+  - slot_was_set:
+    - book_authors: null
+  - slot_was_set:
+    - wrong_author_names: null
+  - slot_was_set:
+    - book_info_prefilled: false
+  - slot_was_set:
+    - found_books: null
+  - slot_was_set:
+    - selected_list_index: null
+  - slot_was_set:
+    - has_found_book: false
+  - slot_was_set:
+    - has_list_selection: false
+  - intent: out_of_scope
+    user: |-
+      what are the recommendation of the books
+  - action: utter_out_of_scope
+  - intent: search_book
+    user: |-
+      what are the most popular fiction books
+  - action: action_reset_slots
+  - action: utter_search_book_greet
+  - action: search_book_form
+  - active_loop: search_book_form
+  - slot_was_set:
+    - book_title: null
+  - slot_was_set:
+    - wrong_author_names: []
+  - slot_was_set:
+    - book_authors: null
+  - slot_was_set:
+    - requested_slot: book_title
+  - intent: inform_book_info
+    user: |-
+      skip
+  - action: search_book_form
+  - slot_was_set:
+    - book_title: skip
+  - slot_was_set:
+    - book_authors: null
+  - slot_was_set:
+    - requested_slot: book_authors
+  - intent: inform_book_info
+    user: |-
+      [stephen king](PERSON)
+  - action: search_book_form
+  - slot_was_set:
+    - book_authors:
+      - stephen king
+  - slot_was_set:
+    - book_title: skip
+  - slot_was_set:
+    - requested_slot: null
+  - slot_was_set:
+    - requested_slot: null
+  - active_loop: null
+  - action: action_search_book
+  - slot_was_set:
+    - book_title: null
+  - slot_was_set:
+    - book_authors: null
+  - slot_was_set:
+    - wrong_author_names: null
+  - slot_was_set:
+    - book_info_prefilled: false
+  - slot_was_set:
+    - found_books:
+      - - 15832782
+        - The Running Man
+        - - 3389
+        - - Stephen King
+      - - 36320
+        - Tales of the Cthulhu Mythos
+        - - 3389
+        - - Stephen King
+      - - 19197783
+        - Ojos de fuego
+        - - 3389
+        - - Stephen King
+      - - 6289689
+        - Sorry, Right Number, and Other Stories
+        - - 3389
+        - - Stephen King
+  - slot_was_set:
+    - selected_list_index: null
+  - slot_was_set:
+    - has_found_book: true
+  - slot_was_set:
+    - has_list_selection: true
+  - action: utter_ask_list_have_desired
+  - intent: affirm
+    user: |-
+      yes
+  - action: select_from_list_form
+  - active_loop: select_from_list_form
+  - slot_was_set:
+    - form_flag: false
+  - slot_was_set:
+    - selected_list_index: null
+  - slot_was_set:
+    - is_ambiguous: false
+  - slot_was_set:
+    - narrowed_found_books: []
+  - slot_was_set:
+    - has_list_selection: true
+  - slot_was_set:
+    - requested_slot: selected_list_index
+  - intent: inform_book_info
+    user: |-
+      the one called [Tales of the Cthulhu Mythos](book_title)
+  - action: select_from_list_form
+  - slot_was_set:
+    - selected_list_index: 1
+  - slot_was_set:
+    - is_ambiguous: false
+  - slot_was_set:
+    - narrowed_found_books: []
+  - slot_was_set:
+    - has_list_selection: false
+  - slot_was_set:
+    - requested_slot: null
+  - active_loop: null
+  - action: utter_confirm_to_borrow
+  - intent: affirm
+    user: |-
+      yes absolutely
+  - action: action_perform_borrow
+  - action: action_reset_slots
+  - intent: user_inventory_check_return
+    user: |-
+      do i have any books that i need to return
+  - action: action_user_inventory
+  - intent: user_inventory_check_remaining
+    user: |-
+      how many books can i still check out
+  - action: action_user_inventory
+  - intent: faq_check_open
+    user: |-
+      when does the library open
+  - action: action_tell_opentime
+  - intent: inform_book_info
+    user: |-
+      how many copies of [the hobbit do we](book_title) have
+  - action: action_assign_book_info_to_form
+  - slot_was_set:
+    - book_authors: []
+  - slot_was_set:
+    - book_title: the hobbit do we
+  - slot_was_set:
+    - book_info_prefilled: true
+  - action: search_book_form
+  - active_loop: search_book_form
+  - slot_was_set:
+    - book_title: the hobbit do we
+  - slot_was_set:
+    - book_title: the hobbit do we
+  - slot_was_set:
+    - requested_slot: null
+  - active_loop: null
+  - action: action_search_book
+  - slot_was_set:
+    - book_title: null
+  - slot_was_set:
+    - book_authors: null
+  - slot_was_set:
+    - wrong_author_names: null
+  - slot_was_set:
+    - book_info_prefilled: false
+  - slot_was_set:
+    - found_books: null
+  - slot_was_set:
+    - selected_list_index: null
+  - slot_was_set:
+    - has_found_book: false
+  - slot_was_set:
+    - has_list_selection: false
+    
 - story: Story from Conversation ID fe51645fc0b4422f9ad044f809dda0db
   steps:
   - intent: greet
