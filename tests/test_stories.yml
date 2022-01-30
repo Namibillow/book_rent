@@ -1,4 +1,5 @@
 ########## basics ######################
+version: "2.0"
 stories:
 - story: greet and bye 
   steps:
@@ -11,6 +12,19 @@ stories:
       bye
     intent: goodbye
   - action: utter_goodbye
+  - action: action_restart
+
+- story: greet and greet 
+  steps:
+  - user: |
+      hello there!
+    intent: greet
+  - action: utter_greet
+  - action: utter_help
+  - user: |
+      hey 
+    intent: greet
+  - action: utter_greet
 
 - story: greet, ask for help then bye
   steps: 
@@ -27,6 +41,7 @@ stories:
       see ya
     intent: goodbye
   - action: utter_goodbye
+  - action: action_restart
 
 - story: greet, repeat, thanks then bye
   steps: 
@@ -36,7 +51,7 @@ stories:
   - action: utter_greet 
   - action: utter_help 
   - user: |
-      repeat again 
+      repeat it 
     intent: repeat_again
   - action: action_repeat
   - user: |
@@ -47,6 +62,7 @@ stories:
       chat you tomorrow
     intent: goodbye
   - action: utter_goodbye
+  - action: action_restart
 
 - story: greet, ask bot challenge then bye
   steps: 
@@ -60,11 +76,12 @@ stories:
     intent: bot_challenge
   - action: utter_iamabot 
   - user: | 
-      Oh ok, bye 
+      Oh haha ok, bye 
     intent: goodbye
   - action: utter_goodbye
+  - action: action_restart
 
-- story: greet, ask location, thanks
+- story: greet, ask location, repeat, thanks
   steps: 
   - user: | 
       hey 
@@ -76,11 +93,41 @@ stories:
     intent: faq_check_location
   - action: utter_library_location
   - user: | 
+      could you repeat that 
+    intent: repeat_again
+  - action: action_repeat
+  - user: | 
       got it, thanks 
     intent: thanks 
   - action: utter_yourwelcome
 
-- story: greet, out of scope then bye
+- story: greet, cancel 
+  steps:
+  - user: |
+      hello there!
+    intent: greet
+  - action: utter_greet
+  - action: utter_help
+  - user: |
+      nevermind
+    intent: terminate_conversation
+  - action: utter_ok
+  - action: action_reset_slots
+
+- story: greet, check total 
+  steps: 
+  - user: | 
+      hey 
+    intent: greet 
+  - action: utter_greet 
+  - action: utter_help 
+  - user: |
+      how many books can i borrow in total 
+    intent: faq_total_allowance
+  - action: utter_total_allowance
+
+########### out of scope ##############
+- story: greet, out of scope 1 bye
   steps: 
   - user: | 
       hey 
@@ -88,6 +135,1722 @@ stories:
   - action: utter_greet 
   - action: utter_help 
   - user:  | 
-      i want to return my books 
-    intent: 
-      
+      i want to extend the return dates of my books i am borrowing 
+    intent: out_of_scope
+  - action: utter_out_of_scope
+  - user: | 
+      well, bye then 
+    intent: goodbye
+  - action: utter_goodbye
+  - action: action_restart
+
+- story: greet, out of scope 2
+  steps: 
+  - user: | 
+      whassup 
+    intent: greet 
+  - action: utter_greet 
+  - action: utter_help 
+  - user:  | 
+      actually, undo the last action and redo again 
+    intent: out_of_scope
+  - action: utter_out_of_scope
+
+- story: greet, out of scope 3
+  steps: 
+  - user: | 
+      hello  
+    intent: greet 
+  - action: utter_greet 
+  - action: utter_help 
+  - user:  | 
+      what kind of security do you have
+    intent: out_of_scope
+  - action: utter_out_of_scope
+
+- story: greet, out of scope 4
+  steps: 
+  - user: | 
+      hey 
+    intent: greet 
+  - action: utter_greet 
+  - action: utter_help 
+  - user:  | 
+      do you have a printer i can use?
+    intent: out_of_scope
+  - action: utter_out_of_scope
+
+########### open time ###############
+- story: greet, ask open 1
+  steps: 
+  - user: | 
+      hey 
+    intent: greet 
+  - action: utter_greet 
+  - action: utter_help 
+  - user:  | 
+      are you open during the covid
+    intent: faq_check_open
+  - action: action_tell_opentime
+
+- story: greet, ask open 2
+  steps: 
+  - user: | 
+      hey 
+    intent: greet 
+  - action: utter_greet 
+  - action: utter_help 
+  - user:  | 
+      are you open today
+    intent: faq_check_open
+  - action: action_tell_opentime
+
+- story: greet, ask open 3
+  steps: 
+  - user: | 
+      hey 
+    intent: greet 
+  - action: utter_greet 
+  - action: utter_help 
+  - user:  | 
+      what time do you open on december thirty first 
+    intent: faq_check_open
+  - action: action_tell_opentime
+
+- story: greet, ask open 4, thanks 
+  steps: 
+  - user: | 
+      hey 
+    intent: greet 
+  - action: utter_greet 
+  - action: utter_help 
+  - user:  | 
+      do you open tomorrow feburary first 
+    intent: faq_check_open
+  - action: action_tell_opentime
+  - user: | 
+      thanks, good to know 
+    intent: thanks 
+  - action: utter_yourwelcome
+
+- story: ask open 5, thanks 
+  steps: 
+  - user:  | 
+      will you be open next year january fourth 
+    intent: faq_check_open
+  - action: action_tell_opentime
+  - user: | 
+      thanks, good to know 
+    intent: thanks 
+  - action: utter_yourwelcome
+
+- story: ask open 6
+  steps: 
+  - user:  | 
+      are you gonna open the library this end of month  
+    intent: faq_check_open
+  - action: action_tell_opentime
+
+- story: ask open 7
+  steps: 
+  - user:  | 
+      do you open six in the morning
+    intent: faq_check_open
+  - action: action_tell_opentime
+
+########## ask contact info ######
+- story: greet, ask contact thanks 1
+  steps: 
+  - user: | 
+      hey 
+    intent: greet 
+  - action: utter_greet 
+  - action: utter_help 
+  - user:  | 
+      do you have any contact  
+    intent: contact_library
+  - action: contact_form
+  - active_loop: contact_form
+  - user: |
+      [email](contact_type)
+    intent: contact_library
+  - action: contact_form
+  - active_loop: contact_form
+  - slot_was_set:
+    - contact_type: email
+  - active_loop: null
+  - action: action_tell_contact_info
+  - user: |
+      cool, thanks
+    intent: thanks
+  - action: utter_yourwelcome
+
+- story: greet, ask contact thanks 2
+  steps: 
+  - user: | 
+      hey 
+    intent: greet 
+  - action: utter_greet 
+  - action: utter_help 
+  - user:  | 
+      do you have any contact  
+    intent: contact_library
+  - action: contact_form
+  - active_loop: contact_form
+  - user: |
+      [phone number](contact_type)
+    intent: contact_library
+  - action: contact_form
+  - active_loop: contact_form
+  - slot_was_set:
+    - contact_type: phone
+  - active_loop: null
+  - action: action_tell_contact_info
+  - user: |
+      nice, thanks so much 
+    intent: thanks
+  - action: utter_yourwelcome
+
+- story: greet, ask contact repeat thanks 3
+  steps: 
+  - user: | 
+      hey 
+    intent: greet 
+  - action: utter_greet 
+  - action: utter_help 
+  - user:  | 
+      can you tell me how i can contact you  
+    intent: contact_library
+  - action: contact_form
+  - active_loop: contact_form
+  - user: |
+      say again the options
+    intent: repeat_again
+  - action: contact_form
+  - active_loop: contact_form
+  - user: | 
+      oh ok, i want [email](contact_type) 
+    intent: contact_library
+  - action: contact_form
+  - active_loop: contact_form
+  - slot_was_set:
+    - contact_type: email
+  - active_loop: null
+  - action: action_tell_contact_info
+  - user: |
+      nice, thanks so much 
+    intent: thanks
+  - action: utter_yourwelcome
+
+- story: greet, ask contact invalid 4
+  steps: 
+  - user: | 
+      hey 
+    intent: greet 
+  - action: utter_greet 
+  - action: utter_help 
+  - user:  | 
+      could you tell me how i can contact you  
+    intent: contact_library
+  - action: contact_form
+  - active_loop: contact_form
+  - user: |
+      i want pizza 
+    intent: out_of_scope
+  - action: contact_form
+  - active_loop: contact_form
+  - user: | 
+      [phone](contact_type) 
+    intent: contact_library
+  - action: contact_form
+  - active_loop: contact_form
+  - slot_was_set:
+    - contact_type: phone
+  - active_loop: null
+  - action: action_tell_contact_info
+
+- story: ask contact cancel 5 
+  steps:
+  - user:  | 
+      could you tell me how i can contact you  
+    intent: contact_library
+  - action: contact_form
+  - active_loop: contact_form
+  - user: |
+      i want pizza 
+    intent: out_of_scope
+  - action: contact_form
+  - active_loop: contact_form
+  - user: | 
+      quit 
+    intent: terminate_conversation
+  - action: utter_ok
+  - action: action_deactivate_loop
+  - active_loop: null
+  - action: action_reset_slots
+
+- story: greet, ask email
+  steps: 
+  - user: | 
+      hey 
+    intent: greet 
+  - action: utter_greet 
+  - action: utter_help 
+  - user:  | 
+      do you have an [email address](email)
+    intent: contact_library
+    entities: 
+      - contact_type: email 
+  - slot_was_set:
+    - contact_type: email
+  - action: utter_library_email
+
+- story: greet, ask phone  
+  steps: 
+  - user: | 
+      hey 
+    intent: greet 
+  - action: utter_greet 
+  - action: utter_help 
+  - user:  | 
+      do you have a [phone number](phone)
+    intent: contact_library
+    entities: 
+      - contact_type: phone 
+  - slot_was_set:
+    - contact_type: phone
+  - action: utter_library_phone
+
+########### user_inventory_check_remaining #######
+- story: check remaining 
+  steps: 
+  - user: | 
+      hello 
+    intent: greet 
+  - action: utter_greet 
+  - action: utter_help 
+  - user:  | 
+      how many books can i still borrow 
+    intent: user_inventory_check_remaining
+  - action: action_user_inventory 
+  - user: |
+      nice, thanks so much 
+    intent: thanks
+  - action: utter_yourwelcome
+
+- story: check remaining repeat
+  steps: 
+  - user: | 
+      hello 
+    intent: greet 
+  - action: utter_greet 
+  - action: utter_help 
+  - user:  | 
+      what's the remaining number of books i can get
+    intent: user_inventory_check_remaining
+  - action: action_user_inventory 
+  - user: | 
+      what's that again 
+    intent: repeat_again
+  - action: action_repeat
+    
+########## user_inventory_check_current_borrowing ######
+- story: check borrowing 
+  steps: 
+  - user: | 
+      may i know how many books am i borrowing 
+    intent: user_inventory_check_current_borrowing
+  - action: action_user_inventory
+
+- story: check borrowing repeat 
+  steps: 
+  - user: | 
+      may i know how many books am i borrowing 
+    intent: user_inventory_check_current_borrowing
+  - action: action_user_inventory
+  - user: | 
+      can you repeat
+    intent: repeat_again
+  - action: action_repeat
+
+- story: check borrowing title 
+  steps: 
+  - user: | 
+      am i borrowing [life of pie](book_title)
+    entities: 
+      - book_title: life of pie 
+    intent: user_inventory_check_current_borrowing
+  - action: action_user_inventory
+
+- story: check borrowing author 
+  steps: 
+  - user: | 
+      am i borrowing book by john doe
+    entities:
+      - PERSON: john doe 
+    intent: user_inventory_check_current_borrowing
+  - action: action_user_inventory
+
+- story: check borrowing authors
+  steps: 
+  - user: | 
+      am i borrowing book by adam lambard and jessica green
+    entities:
+    - PERSON: adam lambard
+    - PERSON: jessica green
+    intent: user_inventory_check_current_borrowing
+  - action: action_user_inventory
+
+- story: check borrowing title and author
+  steps: 
+  - user: | 
+      do you know if i'm borrowing [jurrassic world](book_title) by john mayer
+    entities:
+    - book_title: jurrassic world
+    - PERSON: john mayer
+    intent: user_inventory_check_current_borrowing
+  - action: action_user_inventory
+
+- story: check borrowing title and authors  
+  steps: 
+  - user: | 
+      can you check if i am borrowing a book called [tiny pretty things](book_title) by sona charaipotra and dhonielle clayton
+    entities:
+    - book_title: tiny pretty things
+    - PERSON: sona charaipotra
+    - PERSON: dhonielle clayton
+    intent: user_inventory_check_current_borrowing
+  - action: action_user_inventory
+
+########## user_inventory_check_return ######
+- story: check return 
+  steps: 
+  - user: | 
+      when do i need to return the books i'm borrowing right now
+    intent: user_inventory_check_return
+  - action: action_user_inventory
+
+- story: check return repeat 
+  steps: 
+  - user: | 
+      when are the return dates for the books
+    intent: user_inventory_check_return
+  - action: action_user_inventory
+  - user: | 
+      can you repeat again please
+    intent: repeat_again
+  - action: action_repeat
+
+- story: check return title 
+  steps: 
+  - user: | 
+      when do i need to return [life of pie](book_title)
+    entities: 
+      - book_title: life of pie 
+    intent: user_inventory_check_return
+  - action: action_user_inventory
+
+- story: check return author 
+  steps: 
+  - user: | 
+      can you check when i need to return the book by john doe
+    entities:
+      - PERSON: john doe 
+    intent: user_inventory_check_return
+  - action: action_user_inventory
+
+- story: check return authors
+  steps: 
+  - user: | 
+      by the way, do you know when to return a book by adam lambard and jessica green
+    entities:
+    - PERSON: adam lambard
+    - PERSON: jessica green
+    intent: user_inventory_check_return
+  - action: action_user_inventory
+
+- story: check return title and author 
+  steps: 
+  - user: | 
+      i would like to know the return date of [jurrassic world](book_title) by john mayer
+    entities:
+    - book_title: jurrassic world
+    - PERSON: john mayer
+    intent: user_inventory_check_return
+  - action: action_user_inventory
+
+- story: check return title and authors  
+  steps: 
+  - user: | 
+      can you check when to return a book called [tiny pretty things](book_title) by sona charaipotra and dhonielle clayton
+    entities:
+    - book_title: tiny pretty things
+    - PERSON: sona charaipotra
+    - PERSON: dhonielle clayton
+    intent: user_inventory_check_return
+  - action: action_user_inventory
+
+############ rasa x ############
+- story: Story from Conversation ID fe51645fc0b4422f9ad044f809dda0db
+  steps:
+  - intent: greet
+    user: |-
+      hello there
+  - action: utter_greet
+  - action: utter_help
+  - intent: goodbye
+    user: |-
+      bye
+  - action: utter_goodbye
+  - action: action_restart
+
+- story: Story from Conversation ID fe51645fc0b4422f9ad044f809dda0db
+  steps:
+  - intent: out_of_scope
+    user: |-
+      i want to extend the return dates of my books i am borrowing
+  - action: utter_out_of_scope
+  - intent: contact_library
+    user: |-
+      do you have an [email address]{"entity": "contact_type", "value": "email"}
+  - slot_was_set:
+    - contact_type: email
+  - action: utter_library_email
+
+- story: Story from Conversation ID 05a44a328e47438d972afc2dcfb21663
+  steps:
+  - intent: user_inventory_check_current_borrowing
+    user: |-
+      can you check if i am borrowing [the great gatsby](book_title)
+  - action: action_user_inventory
+  - intent: user_inventory_check_return
+    user: |-
+      could you tell me when do i need to return [the great gatsby](book_title) by [f scott fitzgerald](PERSON)
+  - action: action_user_inventory
+
+- story: Story from Conversation ID d97186211c824e178c07528362e67866
+  steps:
+  - intent: greet
+    user: |-
+      how are you
+  - action: utter_greet
+  - action: utter_help
+  - intent: user_inventory_check_remaining
+    user: |-
+      how many books can one borrow
+  - action: action_user_inventory
+  - intent: faq_total_allowance
+    user: |-
+      how many books can one person [bollow](PERSON) in total
+  - action: utter_total_allowance
+  - intent: search_book
+    user: |-
+      start search
+  - action: action_reset_slots
+  - action: utter_search_book_greet
+  - action: search_book_form
+  - active_loop: search_book_form
+  - slot_was_set:
+    - book_title: null
+  - slot_was_set:
+    - wrong_author_names: []
+  - slot_was_set:
+    - book_authors: null
+  - slot_was_set:
+    - requested_slot: book_title
+  - intent: inform_book_info
+    user: |-
+      [1986](book_title)
+  - action: search_book_form
+  - slot_was_set:
+    - book_title: '1986'
+  - slot_was_set:
+    - wrong_author_names: []
+  - slot_was_set:
+    - book_authors: null
+  - slot_was_set:
+    - requested_slot: book_authors
+  - intent: inform_book_info
+    user: |-
+      george
+  - action: search_book_form
+  - slot_was_set:
+    - book_authors: null
+  - slot_was_set:
+    - book_title: '1986'
+  - slot_was_set:
+    - requested_slot: book_authors
+  - intent: inform_book_info
+    user: |-
+      [george orwell](book_title)[george orwell](PERSON)
+  - action: search_book_form
+  - slot_was_set:
+    - book_authors:
+      - george orwell
+  - slot_was_set:
+    - book_title: '1986'
+  - slot_was_set:
+    - requested_slot: null
+  - slot_was_set:
+    - requested_slot: null
+  - active_loop: null
+  - action: action_search_book
+  - slot_was_set:
+    - book_title: null
+  - slot_was_set:
+    - book_authors: null
+  - slot_was_set:
+    - wrong_author_names: null
+  - slot_was_set:
+    - book_info_prefilled: false
+  - slot_was_set:
+    - found_books: null
+  - slot_was_set:
+    - selected_list_index: null
+  - slot_was_set:
+    - has_found_book: false
+  - slot_was_set:
+    - has_list_selection: false
+  - intent: inform_book_info
+    user: |-
+      find me a book titled [1986](book_title)
+  - action: action_assign_book_info_to_form
+  - slot_was_set:
+    - book_authors: []
+  - slot_was_set:
+    - book_title: '1986'
+  - slot_was_set:
+    - book_info_prefilled: true
+  - action: search_book_form
+  - active_loop: search_book_form
+  - slot_was_set:
+    - book_title: '1986'
+  - slot_was_set:
+    - book_title: '1986'
+  - slot_was_set:
+    - requested_slot: null
+  - active_loop: null
+  - action: action_search_book
+  - slot_was_set:
+    - book_title: null
+  - slot_was_set:
+    - book_authors: null
+  - slot_was_set:
+    - wrong_author_names: null
+  - slot_was_set:
+    - book_info_prefilled: false
+  - slot_was_set:
+    - found_books:
+      - - 7554
+        - The Acme Novelty Datebook, Vol. 1, 1986-1995
+        - - 5112
+        - - Chris Ware
+      - - 22028909
+        - NAHC Wild Game Cookbook, 1986
+        - - 8184197
+          - 8184198
+          - 4612655
+        - - Mark LaBarbera
+          - Valerie Waldron
+          - Jane Obern
+      - - 22852949
+        - 'The Abstractions of Augustus Vincent Tack (1870-1949) : November 5 - December 4, 1986 : In collaboration with The Phillips Collection, Washington, D.C.'
+        - - 5770431
+        - - Robert Rosenblum
+  - slot_was_set:
+    - selected_list_index: null
+  - slot_was_set:
+    - has_found_book: true
+  - slot_was_set:
+    - has_list_selection: true
+  - action: utter_ask_list_have_desired
+  - intent: denu
+    user: |-
+      noo
+  - action: utter_ok
+  - action: action_reset_slots
+
+- story: Story from Conversation ID d97186211c824e178c07528362e67866
+  steps:
+  - intent: greet
+    user: |-
+      hey
+  - action: utter_greet
+  - action: utter_help
+  - intent: inform_book_info
+    user: |-
+      find me a book called [jungle rock blues](book_title)
+  - action: action_assign_book_info_to_form
+  - slot_was_set:
+    - book_authors: []
+  - slot_was_set:
+    - book_title: jungle rock blues
+  - slot_was_set:
+    - book_info_prefilled: true
+  - action: search_book_form
+  - active_loop: search_book_form
+  - slot_was_set:
+    - book_title: jungle rock blues
+  - slot_was_set:
+    - book_title: jungle rock blues
+  - slot_was_set:
+    - requested_slot: null
+  - active_loop: null
+  - action: action_search_book
+  - slot_was_set:
+    - book_title: null
+  - slot_was_set:
+    - book_authors: null
+  - slot_was_set:
+    - wrong_author_names: null
+  - slot_was_set:
+    - book_info_prefilled: false
+  - slot_was_set:
+    - found_books:
+      - - 11399326
+        - Jungle Rock Blues
+        - - 640850
+        - - Nigel Cox
+  - slot_was_set:
+    - selected_list_index: 0
+  - slot_was_set:
+    - has_found_book: true
+  - slot_was_set:
+    - has_list_selection: false
+  - action: utter_confirm_to_borrow
+  - intent: deny
+    user: |-
+      ehh no
+  - action: utter_ok
+  - action: action_reset_slots
+  - intent: inform_book_info
+    user: |-
+      do you have any [series](book_title) by narnia ?
+  - action: action_assign_book_info_to_form
+  - slot_was_set:
+    - book_authors: []
+  - slot_was_set:
+    - book_title: series
+  - slot_was_set:
+    - book_info_prefilled: true
+  - action: search_book_form
+  - active_loop: search_book_form
+  - slot_was_set:
+    - book_title: series
+  - slot_was_set:
+    - book_title: series
+  - slot_was_set:
+    - requested_slot: null
+  - active_loop: null
+  - action: action_search_book
+  - slot_was_set:
+    - book_title: null
+  - slot_was_set:
+    - book_authors: null
+  - slot_was_set:
+    - wrong_author_names: null
+  - slot_was_set:
+    - book_info_prefilled: false
+  - slot_was_set:
+    - found_books:
+      - - 12939
+        - King Lear (School Shakespeare Series)
+        - - 947
+          - 235886
+        - - William Shakespeare
+          - Roma Gill
+      - - 16493
+        - 'Thorn (Dracula Series, #4)'
+        - - 10082
+        - - Fred Saberhagen
+      - - 34234
+        - Wizards and Witches (The Enchanted World Series)
+        - - 369847
+        - - Brendan Lehane
+      - - 51429
+        - 'Rebel Fay (Noble Dead: Series 1, #5)'
+        - - 28946
+          - 1310149
+        - - Barb Hendee
+          - J.C. Hendee
+  - slot_was_set:
+    - selected_list_index: null
+  - slot_was_set:
+    - has_found_book: true
+  - slot_was_set:
+    - has_list_selection: true
+  - action: utter_ask_list_have_desired
+  - intent: deny
+    user: |-
+      no
+  - action: utter_sorry_to_hear_that
+  - action: action_reset_slots
+  - intent: search_book
+    user: |-
+      find me narnia
+  - action: action_reset_slots
+  - action: utter_search_book_greet
+  - action: search_book_form
+  - active_loop: search_book_form
+  - slot_was_set:
+    - book_title: null
+  - slot_was_set:
+    - wrong_author_names: []
+  - slot_was_set:
+    - book_authors: null
+  - slot_was_set:
+    - requested_slot: book_title
+  - intent: inform_book_info
+    user: |-
+      [narnia](book_title)
+  - action: search_book_form
+  - slot_was_set:
+    - book_title: narnia
+  - slot_was_set:
+    - wrong_author_names: []
+  - slot_was_set:
+    - book_authors: null
+  - slot_was_set:
+    - requested_slot: book_authors
+  - intent: inform_book_info
+    user: |-
+      skip
+  - action: search_book_form
+  - slot_was_set:
+    - book_authors:
+      - skip
+  - slot_was_set:
+    - book_title: narnia
+  - slot_was_set:
+    - requested_slot: null
+  - slot_was_set:
+    - requested_slot: null
+  - active_loop: null
+  - action: action_search_book
+  - slot_was_set:
+    - book_title: null
+  - slot_was_set:
+    - book_authors: null
+  - slot_was_set:
+    - wrong_author_names: null
+  - slot_was_set:
+    - book_info_prefilled: false
+  - slot_was_set:
+    - found_books:
+      - - 11129
+        - 'The Chronicles of Narnia: Including an Essay on Writing by C.S. Lewis'
+        - - 1069006
+          - 25523
+        - - C.S. Lewis
+          - Pauline Baynes
+      - - 11136
+        - The Chronicles of Narnia
+        - - 1069006
+          - 25523
+        - - C.S. Lewis
+          - Pauline Baynes
+      - - 37684
+        - 'The Lion, the Witch and the Wardrobe (Chronicles of Narnia, #1)'
+        - - 94838
+          - 1069006
+          - 524634
+        - - Hiawyn Oram
+          - C.S. Lewis
+          - Tudor Humphries
+      - - 55269
+        - C.S. Lewis & Narnia for Dummies
+        - - 7322267
+        - - Richard Wagner
+  - slot_was_set:
+    - selected_list_index: null
+  - slot_was_set:
+    - has_found_book: true
+  - slot_was_set:
+    - has_list_selection: true
+  - action: utter_ask_list_have_desired
+  - intent: select_from_list
+    user: |-
+      The lion one
+  - action: action_default_fallback
+  - intent: inform_book_info
+    user: |-
+      [the lion](book_title)
+  - action: action_assign_book_info_to_form
+  - slot_was_set:
+    - book_authors: []
+  - slot_was_set:
+    - book_title: the lion
+  - slot_was_set:
+    - book_info_prefilled: true
+  - action: search_book_form
+  - active_loop: search_book_form
+  - slot_was_set:
+    - book_title: the lion
+  - slot_was_set:
+    - book_title: the lion
+  - slot_was_set:
+    - requested_slot: null
+  - active_loop: null
+  - action: action_search_book
+  - slot_was_set:
+    - book_title: null
+  - slot_was_set:
+    - book_authors: null
+  - slot_was_set:
+    - wrong_author_names: null
+  - slot_was_set:
+    - book_info_prefilled: false
+  - slot_was_set:
+    - found_books:
+      - - 2570
+        - The Lion and the Jewel
+        - - 978
+        - - Wole Soyinka
+      - - 16951
+        - 'When the Lion Feeds (Courtney, #1)'
+        - - 4043
+        - - Wilbur Smith
+      - - 20810
+        - 'Venice: Lion City: The Religion of Empire'
+        - - 228
+        - - Garry Wills
+      - - 20948
+        - 'The Last Lion 1-2: Visions of Glory/Alone'
+        - - 11789
+        - - William Manchester
+  - slot_was_set:
+    - selected_list_index: null
+  - slot_was_set:
+    - has_found_book: true
+  - slot_was_set:
+    - has_list_selection: true
+  - action: utter_ask_list_have_desired
+  - intent: deny
+    user: |-
+      no
+  - action: utter_sorry_to_hear_that
+  - action: action_reset_slots
+  - intent: inform_book_info
+    user: |-
+      find me a book called [narnia](book_title)
+  - action: action_assign_book_info_to_form
+  - slot_was_set:
+    - book_authors: []
+  - slot_was_set:
+    - book_title: narnia
+  - slot_was_set:
+    - book_info_prefilled: true
+  - action: search_book_form
+  - active_loop: search_book_form
+  - slot_was_set:
+    - book_title: narnia
+  - slot_was_set:
+    - book_title: narnia
+  - slot_was_set:
+    - requested_slot: null
+  - active_loop: null
+  - action: action_search_book
+  - slot_was_set:
+    - book_title: null
+  - slot_was_set:
+    - book_authors: null
+  - slot_was_set:
+    - wrong_author_names: null
+  - slot_was_set:
+    - book_info_prefilled: false
+  - slot_was_set:
+    - found_books:
+      - - 11129
+        - 'The Chronicles of Narnia: Including an Essay on Writing by C.S. Lewis'
+        - - 1069006
+          - 25523
+        - - C.S. Lewis
+          - Pauline Baynes
+      - - 11136
+        - The Chronicles of Narnia
+        - - 1069006
+          - 25523
+        - - C.S. Lewis
+          - Pauline Baynes
+      - - 37684
+        - 'The Lion, the Witch and the Wardrobe (Chronicles of Narnia, #1)'
+        - - 94838
+          - 1069006
+          - 524634
+        - - Hiawyn Oram
+          - C.S. Lewis
+          - Tudor Humphries
+      - - 55269
+        - C.S. Lewis & Narnia for Dummies
+        - - 7322267
+        - - Richard Wagner
+  - slot_was_set:
+    - selected_list_index: null
+  - slot_was_set:
+    - has_found_book: true
+  - slot_was_set:
+    - has_list_selection: true
+  - action: utter_ask_list_have_desired
+  - intent: affirm
+    user: |-
+      yes
+  - action: select_from_list_form
+  - active_loop: select_from_list_form
+  - slot_was_set:
+    - form_flag: false
+  - slot_was_set:
+    - selected_list_index: null
+  - slot_was_set:
+    - is_ambiguous: false
+  - slot_was_set:
+    - narrowed_found_books: []
+  - slot_was_set:
+    - has_list_selection: true
+  - slot_was_set:
+    - requested_slot: selected_list_index
+  - intent: inform_book_info
+    user: |-
+      [The Lion, the Witch and the Wardrobe](book_title)
+  - action: select_from_list_form
+  - slot_was_set:
+    - selected_list_index: 2
+  - slot_was_set:
+    - is_ambiguous: false
+  - slot_was_set:
+    - narrowed_found_books: []
+  - slot_was_set:
+    - has_list_selection: false
+  - slot_was_set:
+    - requested_slot: null
+  - active_loop: null
+  - action: utter_confirm_to_borrow
+  - intent: affirm
+    user: |-
+      yessss
+  - action: action_perform_borrow
+  - action: action_reset_slots
+
+- story: Story from Conversation ID 065bf2e238fc42ce92d5bfc3e48cz099
+  steps:
+  - intent: contact_library
+    user: |-
+      i want to contact
+  - action: contact_form
+  - active_loop: contact_form
+  - slot_was_set:
+    - contact_type: null
+  - slot_was_set:
+    - form_flag: false
+  - slot_was_set:
+    - requested_slot: contact_type
+  - intent: terminate_conversation
+    user: |-
+      cancel
+  - action: utter_ok
+  - action: action_deactivate_loop
+  - active_loop: null
+  - slot_was_set:
+    - requested_slot: null
+  - action: action_reset_slots
+
+- story: Story from Conversation ID 6f345bd2615045d184c5e3be16072ba4
+  steps:
+  - intent: greet
+    user: |-
+      wassup
+  - action: utter_greet
+  - action: utter_help
+  - intent: user_inventory_check_current_borrowing
+    user: |-
+      bro can you check what im borrowing
+  - action: action_user_inventory
+  - intent: search_book
+    user: |-
+      help me find a book
+  - action: action_reset_slots
+  - action: utter_search_book_greet
+  - action: search_book_form
+  - active_loop: search_book_form
+  - slot_was_set:
+    - book_title: null
+  - slot_was_set:
+    - wrong_author_names: []
+  - slot_was_set:
+    - book_authors: null
+  - slot_was_set:
+    - requested_slot: book_title
+  - intent: inform_book_info
+    user: |-
+      it's called [first night of summer](book_title)
+  - action: search_book_form
+  - slot_was_set:
+    - book_title: first night of summer
+  - slot_was_set:
+    - wrong_author_names: []
+  - slot_was_set:
+    - book_authors: null
+  - slot_was_set:
+    - requested_slot: book_authors
+  - intent: inform_book_info
+    user: |-
+      skip
+  - action: search_book_form
+  - slot_was_set:
+    - book_authors:
+      - skip
+  - slot_was_set:
+    - book_title: first night of summer
+  - slot_was_set:
+    - requested_slot: null
+  - slot_was_set:
+    - requested_slot: null
+  - active_loop: null
+  - action: action_search_book
+  - slot_was_set:
+    - book_title: null
+  - slot_was_set:
+    - book_authors: null
+  - slot_was_set:
+    - wrong_author_names: null
+  - slot_was_set:
+    - book_info_prefilled: false
+  - slot_was_set:
+    - found_books:
+      - - 17466895
+        - First Night of Summer
+        - - 6971965
+        - - Landon Parham
+  - slot_was_set:
+    - selected_list_index: 0
+  - slot_was_set:
+    - has_found_book: true
+  - slot_was_set:
+    - has_list_selection: false
+  - action: utter_confirm_to_borrow
+  - intent: deny
+    user: |-
+      nah
+  - action: utter_ok
+  - action: action_reset_slots
+
+- story: Story from Conversation ID 0c10ff5943494fc5b61c49f921cb6d97
+  steps:
+  - intent: greet
+    user: |-
+      hey
+  - action: utter_greet
+  - action: utter_help
+  - intent: user_inventory_check_remaining
+    user: |-
+      how many books can i still borrow
+  - action: action_user_inventory
+  - intent: inform_book_info
+    user: |-
+      i wanna read [the prague cemetery](book_title)
+  - action: action_assign_book_info_to_form
+  - slot_was_set:
+    - book_authors: []
+  - slot_was_set:
+    - book_title: the prague cemetery
+  - slot_was_set:
+    - book_info_prefilled: true
+  - action: search_book_form
+  - active_loop: search_book_form
+  - slot_was_set:
+    - book_title: the prague cemetery
+  - slot_was_set:
+    - book_title: the prague cemetery
+  - slot_was_set:
+    - requested_slot: null
+  - active_loop: null
+  - action: action_search_book
+  - slot_was_set:
+    - book_title: null
+  - slot_was_set:
+    - book_authors: null
+  - slot_was_set:
+    - wrong_author_names: null
+  - slot_was_set:
+    - book_info_prefilled: false
+  - slot_was_set:
+    - found_books:
+      - - 10465292
+        - The Prague Cemetery
+        - - 1730
+          - 1228354
+        - - Umberto Eco
+          - Richard Dixon
+  - slot_was_set:
+    - selected_list_index: 0
+  - slot_was_set:
+    - has_found_book: true
+  - slot_was_set:
+    - has_list_selection: false
+  - action: utter_confirm_to_borrow
+  - intent: affirm
+    user: |-
+      yes
+  - action: action_perform_borrow
+  - action: action_reset_slots
+  - intent: search_book
+    user: |-
+      find me a book
+  - action: action_reset_slots
+  - action: utter_search_book_greet
+  - action: search_book_form
+  - active_loop: search_book_form
+  - slot_was_set:
+    - book_title: null
+  - slot_was_set:
+    - wrong_author_names: []
+  - slot_was_set:
+    - book_authors: null
+  - slot_was_set:
+    - requested_slot: book_title
+  - intent: inform_book_info
+    user: |-
+      skip
+  - action: search_book_form
+  - slot_was_set:
+    - book_title: skip
+  - slot_was_set:
+    - book_authors: null
+  - slot_was_set:
+    - requested_slot: book_authors
+  - intent: inform_book_info
+    user: |-
+      tolkien
+  - action: search_book_form
+  - slot_was_set:
+    - book_authors: null
+  - slot_was_set:
+    - book_title: null
+  - slot_was_set:
+    - requested_slot: book_title
+  - intent: inform_book_info
+    user: |-
+      skip
+  - action: search_book_form
+  - slot_was_set:
+    - book_title: skip
+  - slot_was_set:
+    - book_authors: null
+  - slot_was_set:
+    - requested_slot: book_authors
+  - intent: inform_book_info
+    user: |-
+      j r r tolkien
+  - action: search_book_form
+  - slot_was_set:
+    - book_authors: null
+  - slot_was_set:
+    - book_title: null
+  - slot_was_set:
+    - requested_slot: book_title
+  - intent: select_from_list
+    user: |-
+      the [hobbit](book_title)
+  - action: search_book_form
+  - slot_was_set:
+    - book_title: hobbit
+  - slot_was_set:
+    - wrong_author_names: []
+  - slot_was_set:
+    - book_authors: null
+  - slot_was_set:
+    - requested_slot: book_authors
+  - intent: inform_book_info
+    user: |-
+      skip
+  - action: search_book_form
+  - slot_was_set:
+    - book_authors:
+      - skip
+  - slot_was_set:
+    - book_title: hobbit
+  - slot_was_set:
+    - requested_slot: null
+  - slot_was_set:
+    - requested_slot: null
+  - active_loop: null
+  - action: action_search_book
+  - slot_was_set:
+    - book_title: null
+  - slot_was_set:
+    - book_authors: null
+  - slot_was_set:
+    - wrong_author_names: null
+  - slot_was_set:
+    - book_info_prefilled: false
+  - slot_was_set:
+    - found_books:
+      - - 256803
+        - 'The Hobbit: An Illustrated Edition of the Fantasy Classic (Graphic Novel)'
+        - - 28709
+          - 150123
+          - 42156
+          - 656983
+        - - Chuck Dixon
+          - Sean Deming
+          - David Wenzel
+          - J.R.R. Tolkien
+      - - 394406
+        - The Hobbit, or There and Back Again
+        - - 656983
+        - - J.R.R. Tolkien
+      - - 823753
+        - The Hobbit & The Lord of the Rings
+        - - 656983
+          - 9545
+        - - J.R.R. Tolkien
+          - Alan Lee
+      - - 823754
+        - 'The Annotated Hobbit: The Hobbit, Or, There and Back Again'
+        - - 656983
+          - 1582
+        - - J.R.R. Tolkien
+          - Douglas A. Anderson
+  - slot_was_set:
+    - selected_list_index: null
+  - slot_was_set:
+    - has_found_book: true
+  - slot_was_set:
+    - has_list_selection: true
+  - action: utter_ask_list_have_desired
+  - intent: affirm
+    user: |-
+      yes
+  - action: select_from_list_form
+  - active_loop: select_from_list_form
+  - slot_was_set:
+    - form_flag: false
+  - slot_was_set:
+    - selected_list_index: null
+  - slot_was_set:
+    - is_ambiguous: false
+  - slot_was_set:
+    - narrowed_found_books: []
+  - slot_was_set:
+    - has_list_selection: true
+  - slot_was_set:
+    - requested_slot: selected_list_index
+  - intent: select_from_list
+    user: |-
+      [third]{"entity": "ordinal", "value": 3} one
+  - action: select_from_list_form
+  - slot_was_set:
+    - selected_list_index: 2
+  - slot_was_set:
+    - is_ambiguous: false
+  - slot_was_set:
+    - narrowed_found_books: []
+  - slot_was_set:
+    - has_list_selection: false
+  - slot_was_set:
+    - requested_slot: null
+  - active_loop: null
+  - action: utter_confirm_to_borrow
+  - intent: affirm
+    user: |-
+      yes
+  - action: action_perform_borrow
+  - action: action_reset_slots
+
+- story: Story from Conversation ID b5cddb04ab5346d5b7be862e200356d9
+  steps:
+  - intent: greet
+  - action: utter_greet
+  - action: utter_help
+  - intent: search_book
+  - action: action_reset_slots
+  - action: utter_search_book_greet
+  - action: search_book_form
+  - active_loop: search_book_form
+  - slot_was_set:
+    - book_title: null
+  - slot_was_set:
+    - wrong_author_names: []
+  - slot_was_set:
+    - book_authors: null
+  - slot_was_set:
+    - requested_slot: book_title
+  - slot_was_set:
+    - book_title: skip
+  - slot_was_set:
+    - book_authors: null
+  - slot_was_set:
+    - requested_slot: book_authors
+  - slot_was_set:
+    - book_authors:
+      - john green
+  - slot_was_set:
+    - book_title: skip
+  - slot_was_set:
+    - requested_slot: null
+  - slot_was_set:
+    - requested_slot: null
+  - active_loop: null
+  - action: action_search_book
+  - slot_was_set:
+    - book_title: null
+  - slot_was_set:
+    - book_authors: null
+  - slot_was_set:
+    - wrong_author_names: null
+  - slot_was_set:
+    - book_info_prefilled: false
+  - slot_was_set:
+    - found_books:
+      - - 24781888
+        - Looking for Alaska
+        - - 1406384
+        - - John Green
+      - - 49750
+        - An Abundance of Katherines
+        - - 1406384
+        - - John Green
+      - - 22727409
+        - The Space & The Cat and the Mouse
+        - - 1406384
+        - - John Green
+      - - 22464636
+        - The Fault in Our Stars
+        - - 1406384
+        - - John Green
+  - slot_was_set:
+    - selected_list_index: null
+  - slot_was_set:
+    - has_found_book: true
+  - slot_was_set:
+    - has_list_selection: true
+  - action: utter_ask_list_have_desired
+  - intent: deny
+  - action: utter_sorry_to_hear_that
+  - action: action_reset_slots
+  - intent: user_inventory_check_current_borrowing
+  - action: action_user_inventory
+  - intent: faq_total_allowance
+  - action: utter_total_allowance
+
+- story: Story from Conversation ID b5cddb04ab5346d5b7be862e200356d9
+  steps:
+  - intent: inform_book_info
+    user: |-
+      i want to find a book by [Carlos Ruiz Zafón](PERSON)
+  - action: action_assign_book_info_to_form
+  - slot_was_set:
+    - book_authors:
+      - Carlos Ruiz Zafón
+  - slot_was_set:
+    - book_title: ''
+  - slot_was_set:
+    - book_info_prefilled: true
+  - action: search_book_form
+  - active_loop: search_book_form
+  - slot_was_set:
+    - book_title: ''
+  - slot_was_set:
+    - book_authors:
+      - Carlos Ruiz Zafón
+  - slot_was_set:
+    - requested_slot: null
+  - active_loop: null
+  - action: action_search_book
+  - slot_was_set:
+    - book_title: null
+  - slot_was_set:
+    - book_authors: null
+  - slot_was_set:
+    - wrong_author_names: null
+  - slot_was_set:
+    - book_info_prefilled: false
+  - slot_was_set:
+    - found_books:
+      - - 28547914
+        - The Watcher in the Shadows
+        - - 815
+        - - Carlos Ruiz Zafon
+      - - 18349883
+        - Marina
+        - - 815
+        - - Carlos Ruiz Zafon
+      - - 10625567
+        - The Midnight Palace
+        - - 815
+        - - Carlos Ruiz Zafon
+      - - 17655238
+        - The Prisoner of Heaven
+        - - 815
+        - - Carlos Ruiz Zafon
+  - slot_was_set:
+    - selected_list_index: null
+  - slot_was_set:
+    - has_found_book: true
+  - slot_was_set:
+    - has_list_selection: true
+  - action: utter_ask_list_have_desired
+  - intent: affirm
+    user: |-
+      yes
+  - action: select_from_list_form
+  - active_loop: select_from_list_form
+  - slot_was_set:
+    - form_flag: false
+  - slot_was_set:
+    - selected_list_index: null
+  - slot_was_set:
+    - is_ambiguous: false
+  - slot_was_set:
+    - narrowed_found_books: []
+  - slot_was_set:
+    - has_list_selection: true
+  - slot_was_set:
+    - requested_slot: selected_list_index
+  - intent: inform_book_info
+    user: |-
+      i want [the prisoner of heaven](book_title)
+  - action: select_from_list_form
+  - slot_was_set:
+    - selected_list_index: 3
+  - slot_was_set:
+    - is_ambiguous: false
+  - slot_was_set:
+    - narrowed_found_books: []
+  - slot_was_set:
+    - has_list_selection: false
+  - slot_was_set:
+    - requested_slot: null
+  - active_loop: null
+  - action: utter_confirm_to_borrow
+  - intent: affirm
+    user: |-
+      yes
+  - action: action_perform_borrow
+  - action: action_reset_slots
+
+- story: Story from Conversation ID b5cddb04ab5346d5b7be862e200356d9
+  steps:
+  - intent: inform_book_info
+    user: |-
+      i want to read a [mystery novel called the watcher in the shadows](book_title) by [carlos ruiz zafon](PERSON)
+  - action: action_assign_book_info_to_form
+  - slot_was_set:
+    - book_authors:
+      - carlos ruiz zafon
+  - slot_was_set:
+    - book_title: mystery novel called the watcher in the shadows
+  - slot_was_set:
+    - book_info_prefilled: true
+  - action: search_book_form
+  - active_loop: search_book_form
+  - slot_was_set:
+    - book_title: mystery novel called the watcher in the shadows
+  - slot_was_set:
+    - book_authors:
+      - carlos ruiz zafon
+  - slot_was_set:
+    - requested_slot: null
+  - active_loop: null
+  - action: action_search_book
+  - slot_was_set:
+    - book_title: null
+  - slot_was_set:
+    - book_authors: null
+  - slot_was_set:
+    - wrong_author_names: null
+  - slot_was_set:
+    - book_info_prefilled: false
+  - slot_was_set:
+    - found_books: null
+  - slot_was_set:
+    - selected_list_index: null
+  - slot_was_set:
+    - has_found_book: false
+  - slot_was_set:
+    - has_list_selection: false
+  - intent: inform_book_info
+    user: |-
+      i want to read a novel and it's title is [the watcher in the shadows](book_title)
+  - action: action_assign_book_info_to_form
+  - slot_was_set:
+    - book_authors: []
+  - slot_was_set:
+    - book_title: the watcher in the shadows
+  - slot_was_set:
+    - book_info_prefilled: true
+  - action: search_book_form
+  - active_loop: search_book_form
+  - slot_was_set:
+    - book_title: the watcher in the shadows
+  - slot_was_set:
+    - book_title: the watcher in the shadows
+  - slot_was_set:
+    - requested_slot: null
+  - active_loop: null
+  - action: action_search_book
+  - slot_was_set:
+    - book_title: null
+  - slot_was_set:
+    - book_authors: null
+  - slot_was_set:
+    - wrong_author_names: null
+  - slot_was_set:
+    - book_info_prefilled: false
+  - slot_was_set:
+    - found_books:
+      - - 22594819
+        - Watcher in the Shadows
+        - - 815
+        - - Carlos Ruiz Zafon
+      - - 28547914
+        - The Watcher in the Shadows
+        - - 815
+        - - Carlos Ruiz Zafon
+  - slot_was_set:
+    - selected_list_index: null
+  - slot_was_set:
+    - has_found_book: true
+  - slot_was_set:
+    - has_list_selection: true
+  - action: utter_ask_list_have_desired
+  - intent: affirm
+    user: |-
+      yes
+  - action: select_from_list_form
+  - active_loop: select_from_list_form
+  - slot_was_set:
+    - form_flag: false
+  - slot_was_set:
+    - selected_list_index: null
+  - slot_was_set:
+    - is_ambiguous: false
+  - slot_was_set:
+    - narrowed_found_books: []
+  - slot_was_set:
+    - has_list_selection: true
+  - slot_was_set:
+    - requested_slot: selected_list_index
+  - intent: select_from_list
+    user: |-
+      [last](ordinal) one
+  - action: select_from_list_form
+  - slot_was_set:
+    - selected_list_index: 1
+  - slot_was_set:
+    - is_ambiguous: false
+  - slot_was_set:
+    - narrowed_found_books: []
+  - slot_was_set:
+    - has_list_selection: false
+  - slot_was_set:
+    - requested_slot: null
+  - active_loop: null
+  - action: utter_confirm_to_borrow
+  - intent: deny
+    user: |-
+      nah
+  - action: utter_ok
+  - action: action_reset_slots
+
+- story: Story from Conversation ID 0c10ff5948494fc5b61c49f921cb6d97
+  steps:
+  - intent: greet
+    user: |-
+      hi
+  - action: utter_greet
+  - action: utter_help
+  - intent: inform_book_info
+    user: |-
+      i want to read [harry potter](book_title)[harry potter](PERSON)
+  - action: action_assign_book_info_to_form
+  - slot_was_set:
+    - book_authors: []
+  - slot_was_set:
+    - book_title: harry potter
+  - slot_was_set:
+    - book_info_prefilled: true
+  - action: search_book_form
+  - active_loop: search_book_form
+  - slot_was_set:
+    - book_title: harry potter
+  - slot_was_set:
+    - book_title: harry potter
+  - slot_was_set:
+    - requested_slot: null
+  - active_loop: null
+  - action: action_search_book
+  - slot_was_set:
+    - book_title: null
+  - slot_was_set:
+    - book_authors: null
+  - slot_was_set:
+    - wrong_author_names: null
+  - slot_was_set:
+    - book_info_prefilled: false
+  - slot_was_set:
+    - found_books:
+      - - 49130
+        - 'Harry Potter and the Goblet of Fire (Harry Potter, #4)'
+        - - 1077326
+          - 2927
+        - - J.K. Rowling
+          - Mary GrandPre
+      - - 49810
+        - "Harry Potter and the Philosopher's Stone (Harry Potter, #1)"
+        - - 1077326
+        - - J.K. Rowling
+      - - 49835
+        - 'Harry Potter and the Goblet of Fire (Harry Potter, #4)'
+        - - 1077326
+          - 10917
+        - - J.K. Rowling
+          - Stephen Fry
+      - - 110932
+        - 'Harry Potter and the Order of the Phoenix (Harry Potter, #5)'
+        - - 1077326
+        - - J.K. Rowling
+  - slot_was_set:
+    - selected_list_index: null
+  - slot_was_set:
+    - has_found_book: true
+  - slot_was_set:
+    - has_list_selection: true
+  - action: utter_ask_list_have_desired
+  - intent: affirm
+    user: |-
+      yes
+  - action: select_from_list_form
+  - active_loop: select_from_list_form
+  - slot_was_set:
+    - form_flag: false
+  - slot_was_set:
+    - selected_list_index: null
+  - slot_was_set:
+    - is_ambiguous: false
+  - slot_was_set:
+    - narrowed_found_books: []
+  - slot_was_set:
+    - has_list_selection: true
+  - slot_was_set:
+    - requested_slot: selected_list_index
+  - intent: select_from_list
+    user: |-
+      [the first]{"entity": "time", "value": "2022-02-01T00:00:00.000-08:00"}[first](ordinal) one
+  - action: select_from_list_form
+  - slot_was_set:
+    - selected_list_index: 0
+  - slot_was_set:
+    - is_ambiguous: false
+  - slot_was_set:
+    - narrowed_found_books: []
+  - slot_was_set:
+    - has_list_selection: false
+  - slot_was_set:
+    - requested_slot: null
+  - active_loop: null
+  - action: utter_confirm_to_borrow
+  - intent: affirm
+    user: |-
+      yes
+  - action: action_perform_borrow
+  - action: action_reset_slots

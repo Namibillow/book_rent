@@ -30,7 +30,7 @@ entities:
 - PERSON
 - book_title
 - ordinal
-- dummy_entity
+- dummy_entity # used for camouflage for form
 slots:
   contact_type:
     type: categorical
@@ -75,20 +75,17 @@ slots:
     type: bool
     initial_value: true
     influence_conversation: true
-  requested_slot:
-    type: unfeaturized
-    influence_conversation: false
 responses:
   utter_greet:
   - text: Hello there!
-  - text: Hi
+  - text: Hi!
   - text: Hope you are doing great!
   - text: Welcome!
   utter_provided_services:
   - text: With me, you can search a book from our collection, and ask about the library information such as its opening dates and hours, location, rental limit and contact. You can also ask about your currently borrowing and check their return dates.
   - text: I can help you with searching a book, providing library information like opening datetime, address, rental limit and contact information. I can also help you checking your current borrowing status as well as their return dates.
   utter_help:
-  - text: I can provide you library services. I can help you borrow a book or check your profile, as well as provide you with our library information. To start searching a book, just say "i want to read" and i will help you find a book you are looking for.
+  - text: I can provide you library services. I can help you borrow a book or check your inventory, as well as provide you with our library information. To start searching a book, just say "i want to read" and i will help you find a book you are looking for.
   - text: I am your library bot. I can help you borrow books. To start, you can just say "i am looking for a book", or if you already know what would you like to borrow, then you can also just say the name of the book and or author.
   utter_goodbye:
   - text: Bye, have a nice day!
@@ -113,7 +110,7 @@ responses:
   - text: Sorry, I can't help you.
   utter_yourwelcome:
   - text: You are welcome.
-  - text: my pleasure
+  - text: My pleasure
   utter_restart:
   - text: Ok, terminating the conversation.
   utter_library_location:
@@ -129,7 +126,7 @@ responses:
   utter_next_open_date:
   - text: The library will be open on {day_of_week} {month} {day}, {year} {hour_min}.
   utter_library_phone:
-  - text: The library phone number is 512 345 6789
+  - text: The library phone number is 512 345 6789.
   utter_library_email:
   - text: The library email address is libraryforyou@bot.com
   utter_ask_contact_type:
@@ -137,16 +134,16 @@ responses:
   utter_user_inventory_tell_remaining:
   - text: You can borrow {num_books} more books.
   utter_user_inventory_tell_no_remaining:
-  - text: You have reached our maximum number of books you can rent which is 15. Please return your current borrowing books to borrow.
-  - text: You are borrowing 15 books already from the library and that is our maximum per user. Please return your current borrowing books to borrow a new book.
+  - text: You have reached our maximum number of books you can rent which is 5. Please return your current borrowing books to borrow.
+  - text: You are borrowing 5 books already from the library and that is our maximum per user. Please return your current borrowing books to borrow a new book.
   utter_user_inventory_tell_return:
   - text: '{books_return_dates}'
   utter_user_inventory_tell_current_borrowing:
   - text: You are currently borrowing {num_books} books. Those are {books_info}.
   utter_user_inventory_tell_no_borrowing:
-  - text: You currently do not have any books borrowed from the library. Would you like to borrow a book?
+  - text: You currently do not have any books borrowed from the library. Don't worry, we can help you find a book! To start the search, simply say "search a book".
   utter_total_allowance:
-  - text: You can borrow in total of 15 books from the library.
+  - text: You can borrow in total of 5 books from the library.
   utter_yes_borrowing:
   - text: Yes. You are borrowing
   utter_return_by:
@@ -195,7 +192,7 @@ responses:
   utter_ambiguous_result:
   - text: There are multiple results for the given query. Let's try again. You can also specify by index, for example, say the first one and so on.
   utter_cannot_borrow:
-  - text: Sorry, you are already borrowing 15 books which is our maximum number of books. Please return some of the books you are currently borrowing.
+  - text: Sorry, you are already borrowing 5 books which is our maximum number of books. Please return some of the books you are currently borrowing.
 actions:
 - action_repeat
 - action_tell_opentime

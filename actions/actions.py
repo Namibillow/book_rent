@@ -1340,7 +1340,7 @@ class ActionAssignBookInfoToForm(Action):
         entities = tracker.latest_message['entities']
         book_authors = []
         book_authors_indexes = []
-        book_title_index = ()
+        book_title_index = (-1,-1)
         # extract required entities (not using slots_mapping)
         for entity in entities:
             name = entity["entity"]

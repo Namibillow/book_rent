@@ -6,7 +6,7 @@ from datetime import time, date
 
 USER_ID = 1
 
-MAX_BOOK = 15
+MAX_BOOK = 5
 
 # response needs AM PM
 OPEN_HOURS = {
