@@ -1,0 +1,41 @@
+{
+  "ordinal": {
+    "precision": 0.9375,
+    "recall": 1.0,
+    "f1-score": 0.967741935483871,
+    "support": 15,
+    "confused_with": {}
+  },
+  "contact_type": {
+    "precision": 0.8809523809523809,
+    "recall": 1.0,
+    "f1-score": 0.9367088607594937,
+    "support": 74,
+    "confused_with": {}
+  },
+  "book_title": {
+    "precision": 0.8828795225662066,
+    "recall": 0.9661224489795919,
+    "f1-score": 0.9226271681933347,
+    "support": 2450,
+    "confused_with": {}
+  },
+  "micro avg": {
+    "precision": 0.8831355627472133,
+    "recall": 0.9673099645529736,
+    "f1-score": 0.9233082706766919,
+    "support": 2539
+  },
+  "macro avg": {
+    "precision": 0.9004439678395292,
+    "recall": 0.9887074829931972,
+    "f1-score": 0.9423593214788998,
+    "support": 2539
+  },
+  "weighted avg": {
+    "precision": 0.883146044299993,
+    "recall": 0.9673099645529736,
+    "f1-score": 0.9233041145341199,
+    "support": 2539
+  }
+}

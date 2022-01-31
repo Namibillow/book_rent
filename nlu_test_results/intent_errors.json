@@ -1,0 +1,778 @@
+[
+  {
+    "text": "talk to you later",
+    "intent": "goodbye",
+    "intent_prediction": {
+      "name": "out_of_scope",
+      "confidence": 0.6843751072883606
+    }
+  },
+  {
+    "text": "i don't want to read it",
+    "intent": "deny",
+    "intent_prediction": {
+      "name": "search_book",
+      "confidence": 0.5841701626777649
+    }
+  },
+  {
+    "text": "i dissapprove",
+    "intent": "deny",
+    "intent_prediction": {
+      "name": "inform_book_info",
+      "confidence": 1.0
+    }
+  },
+  {
+    "text": "good afternoon",
+    "intent": "greet",
+    "intent_prediction": {
+      "name": "goodbye",
+      "confidence": 0.3143746554851532
+    }
+  },
+  {
+    "text": "what's up",
+    "intent": "greet",
+    "intent_prediction": {
+      "name": "help",
+      "confidence": 0.465585321187973
+    }
+  },
+  {
+    "text": "yo",
+    "intent": "greet",
+    "intent_prediction": {
+      "name": "out_of_scope",
+      "confidence": 0.6402264833450317
+    }
+  },
+  {
+    "text": "heyo",
+    "intent": "greet",
+    "intent_prediction": {
+      "name": "search_book",
+      "confidence": 0.4005664885044098
+    }
+  },
+  {
+    "text": "sup",
+    "intent": "greet",
+    "intent_prediction": {
+      "name": "inform_book_info",
+      "confidence": 1.0
+    }
+  },
+  {
+    "text": "wassaup",
+    "intent": "greet",
+    "intent_prediction": {
+      "name": "faq_check_location",
+      "confidence": 0.8262402415275574
+    }
+  },
+  {
+    "text": "hey bot",
+    "intent": "greet",
+    "intent_prediction": {
+      "name": "bot_challenge",
+      "confidence": 0.9195210933685303
+    }
+  },
+  {
+    "text": "are you a human or a bot?",
+    "intent": "bot_challenge",
+    "intent_prediction": {
+      "name": "inform_book_info",
+      "confidence": 1.0
+    }
+  },
+  {
+    "text": "are you virtual?",
+    "intent": "bot_challenge",
+    "intent_prediction": {
+      "name": "inform_book_info",
+      "confidence": 0.4224814474582672
+    }
+  },
+  {
+    "text": "that would be great",
+    "intent": "affirm",
+    "intent_prediction": {
+      "name": "repeat_again",
+      "confidence": 0.2718677818775177
+    }
+  },
+  {
+    "text": "go borrow it",
+    "intent": "affirm",
+    "intent_prediction": {
+      "name": "deny",
+      "confidence": 0.20351475477218628
+    }
+  },
+  {
+    "text": "approved",
+    "intent": "affirm",
+    "intent_prediction": {
+      "name": "out_of_scope",
+      "confidence": 0.8203258514404297
+    }
+  },
+  {
+    "text": "affirmative",
+    "intent": "affirm",
+    "intent_prediction": {
+      "name": "terminate_conversation",
+      "confidence": 0.30579569935798645
+    }
+  },
+  {
+    "text": "i wanna read",
+    "intent": "affirm",
+    "intent_prediction": {
+      "name": "search_book",
+      "confidence": 0.9976882934570312
+    }
+  },
+  {
+    "text": "i want to",
+    "intent": "affirm",
+    "intent_prediction": {
+      "name": "search_book",
+      "confidence": 0.9071181416511536
+    }
+  },
+  {
+    "text": "i want to know total number of books I can still borrow?",
+    "intent": "user_inventory_check_remaining",
+    "intent_prediction": {
+      "name": "faq_total_allowance",
+      "confidence": 0.8599454164505005
+    }
+  },
+  {
+    "text": "can i print something",
+    "intent": "out_of_scope",
+    "intent_prediction": {
+      "name": "search_book",
+      "confidence": 0.9447486996650696
+    }
+  },
+  {
+    "text": "Can you please send me an uber",
+    "intent": "out_of_scope",
+    "intent_prediction": {
+      "name": "inform_book_info",
+      "confidence": 0.9030759334564209
+    }
+  },
+  {
+    "text": "do you offer some special deals?",
+    "intent": "out_of_scope",
+    "intent_prediction": {
+      "name": "inform_book_info",
+      "confidence": 0.7218574285507202
+    }
+  },
+  {
+    "text": "what",
+    "intent": "out_of_scope",
+    "intent_prediction": {
+      "name": "repeat_again",
+      "confidence": 0.7117345929145813
+    }
+  },
+  {
+    "text": "do you have a bending machine",
+    "intent": "out_of_scope",
+    "intent_prediction": {
+      "name": "inform_book_info",
+      "confidence": 1.0
+    }
+  },
+  {
+    "text": "are you blind friendly",
+    "intent": "out_of_scope",
+    "intent_prediction": {
+      "name": "inform_book_info",
+      "confidence": 1.0
+    }
+  },
+  {
+    "text": "is your door automatic",
+    "intent": "out_of_scope",
+    "intent_prediction": {
+      "name": "inform_book_info",
+      "confidence": 1.0
+    }
+  },
+  {
+    "text": "i need a phone charger",
+    "intent": "out_of_scope",
+    "intent_prediction": {
+      "name": "contact_library",
+      "confidence": 0.5450266003608704
+    }
+  },
+  {
+    "text": "should i get nissan or toyota for the car?",
+    "intent": "out_of_scope",
+    "intent_prediction": {
+      "name": "inform_book_info",
+      "confidence": 1.0
+    }
+  },
+  {
+    "text": "where can i go to borrow the book?",
+    "intent": "faq_check_location",
+    "intent_prediction": {
+      "name": "search_book",
+      "confidence": 0.8954494595527649
+    }
+  },
+  {
+    "text": "i want to check out your place so i can actually go there in person.",
+    "intent": "faq_check_location",
+    "intent_prediction": {
+      "name": "inform_book_info",
+      "confidence": 1.0
+    }
+  },
+  {
+    "text": "i have a specific book in my mind",
+    "intent": "search_book",
+    "intent_prediction": {
+      "name": "out_of_scope",
+      "confidence": 0.9993529915809631
+    }
+  },
+  {
+    "text": "do you by chance have this rare book?",
+    "intent": "search_book",
+    "intent_prediction": {
+      "name": "inform_book_info",
+      "confidence": 1.0
+    }
+  },
+  {
+    "text": "1st 1 please",
+    "intent": "select_from_list",
+    "intent_prediction": {
+      "name": "inform_book_info",
+      "confidence": 1.0
+    }
+  },
+  {
+    "text": "i need to return a book today. Are you open right now?",
+    "intent": "faq_check_open",
+    "intent_prediction": {
+      "name": "user_inventory_check_return",
+      "confidence": 1.0
+    }
+  },
+  {
+    "text": "what is the schedule for next next monday?",
+    "intent": "faq_check_open",
+    "intent_prediction": {
+      "name": "inform_book_info",
+      "confidence": 0.9979636669158936
+    }
+  },
+  {
+    "text": "tell me how many books i can borrow.",
+    "intent": "faq_total_allowance",
+    "intent_prediction": {
+      "name": "user_inventory_check_remaining",
+      "confidence": 0.9215836524963379
+    }
+  },
+  {
+    "text": "i want to talk someone from the library",
+    "intent": "contact_library",
+    "intent_prediction": {
+      "name": "out_of_scope",
+      "confidence": 0.9903321862220764
+    }
+  },
+  {
+    "text": "i want to ask question to the real person",
+    "intent": "contact_library",
+    "intent_prediction": {
+      "name": "inform_book_info",
+      "confidence": 1.0
+    }
+  },
+  {
+    "text": "i want to send you a message",
+    "intent": "contact_library",
+    "intent_prediction": {
+      "name": "out_of_scope",
+      "confidence": 0.6105950474739075
+    }
+  },
+  {
+    "text": "i need to contact real person about something",
+    "intent": "contact_library",
+    "intent_prediction": {
+      "name": "terminate_conversation",
+      "confidence": 0.19781112670898438
+    }
+  },
+  {
+    "text": "help me check my renting status",
+    "intent": "user_inventory_check_current_borrowing",
+    "intent_prediction": {
+      "name": "out_of_scope",
+      "confidence": 0.9948702454566956
+    }
+  },
+  {
+    "text": "i want to get info about my current borrowing",
+    "intent": "user_inventory_check_current_borrowing",
+    "intent_prediction": {
+      "name": "out_of_scope",
+      "confidence": 0.9838691353797913
+    }
+  },
+  {
+    "text": "can i get information aout borrowing books?",
+    "intent": "user_inventory_check_current_borrowing",
+    "intent_prediction": {
+      "name": "search_book",
+      "confidence": 0.563477098941803
+    }
+  },
+  {
+    "text": "what are my borrowing books?",
+    "intent": "user_inventory_check_current_borrowing",
+    "intent_prediction": {
+      "name": "out_of_scope",
+      "confidence": 0.7816197276115417
+    }
+  },
+  {
+    "text": "all information about my borrowing books?",
+    "intent": "user_inventory_check_current_borrowing",
+    "intent_prediction": {
+      "name": "out_of_scope",
+      "confidence": 0.5776181221008301
+    }
+  },
+  {
+    "text": "am i owning Botham's Book of the Ashes A Lifetime Love Affair with Cricket's Greatest Rivalry by Reto Sorg",
+    "intent": "user_inventory_check_current_borrowing",
+    "intent_prediction": {
+      "name": "inform_book_info",
+      "confidence": 1.0
+    }
+  },
+  {
+    "text": "am i owning One for the Money (Night Huntress number 4.5) by Alan Jacobson",
+    "intent": "user_inventory_check_current_borrowing",
+    "intent_prediction": {
+      "name": "inform_book_info",
+      "confidence": 1.0
+    }
+  },
+  {
+    "text": "am i owning a book called Nu ser du mig (Lacey Flint, number 1) by Sax Rohmer",
+    "intent": "user_inventory_check_current_borrowing",
+    "intent_prediction": {
+      "name": "inform_book_info",
+      "confidence": 0.9999868869781494
+    }
+  },
+  {
+    "text": "am i owning a book called People Will Talk The Surprising Science of Reputation by Judith Evans",
+    "intent": "user_inventory_check_current_borrowing",
+    "intent_prediction": {
+      "name": "inform_book_info",
+      "confidence": 1.0
+    }
+  },
+  {
+    "text": "am i owning a book called Pornucopia (Pornucopia, number 1)",
+    "intent": "user_inventory_check_current_borrowing",
+    "intent_prediction": {
+      "name": "inform_book_info",
+      "confidence": 0.5185295343399048
+    }
+  },
+  {
+    "text": "am i owning a book called The Shakespeare Authorship Debate and Historical Responsibility The text of a lecture delivered in the Chapter House of Exeter Cathedral on Thursday 23 April 2015 by Fiona Buckley",
+    "intent": "user_inventory_check_current_borrowing",
+    "intent_prediction": {
+      "name": "inform_book_info",
+      "confidence": 1.0
+    }
+  },
+  {
+    "text": "am i still keeping Elena Undone by John Williams",
+    "intent": "user_inventory_check_current_borrowing",
+    "intent_prediction": {
+      "name": "inform_book_info",
+      "confidence": 1.0
+    }
+  },
+  {
+    "text": "am i still keeping Eren's Play",
+    "intent": "user_inventory_check_current_borrowing",
+    "intent_prediction": {
+      "name": "user_inventory_check_remaining",
+      "confidence": 0.7607068419456482
+    }
+  },
+  {
+    "text": "am i still keeping Infinity Man and the Forever People number 1 (The New 52)",
+    "intent": "user_inventory_check_current_borrowing",
+    "intent_prediction": {
+      "name": "inform_book_info",
+      "confidence": 1.0
+    }
+  },
+  {
+    "text": "am i still keeping The Happy Journey to Trenton and Camden by Kate White",
+    "intent": "user_inventory_check_current_borrowing",
+    "intent_prediction": {
+      "name": "inform_book_info",
+      "confidence": 1.0
+    }
+  },
+  {
+    "text": "aren't i keeping 101 Family Meal-Time Devotions by Cy Cylkowski",
+    "intent": "user_inventory_check_current_borrowing",
+    "intent_prediction": {
+      "name": "inform_book_info",
+      "confidence": 1.0
+    }
+  },
+  {
+    "text": "aren't i keeping Badortsmysteriet (Hercule Poirot, number 8) by Jojo Moyes",
+    "intent": "user_inventory_check_current_borrowing",
+    "intent_prediction": {
+      "name": "inform_book_info",
+      "confidence": 1.0
+    }
+  },
+  {
+    "text": "aren't i keeping Checkmate (Noughts & Crosses, number 3)",
+    "intent": "user_inventory_check_current_borrowing",
+    "intent_prediction": {
+      "name": "inform_book_info",
+      "confidence": 1.0
+    }
+  },
+  {
+    "text": "aren't i keeping Detective Camp (A to Z Mysteries Super Edition, number 1)",
+    "intent": "user_inventory_check_current_borrowing",
+    "intent_prediction": {
+      "name": "inform_book_info",
+      "confidence": 1.0
+    }
+  },
+  {
+    "text": "aren't i keeping Mr. Majeika",
+    "intent": "user_inventory_check_current_borrowing",
+    "intent_prediction": {
+      "name": "inform_book_info",
+      "confidence": 1.0
+    }
+  },
+  {
+    "text": "aren't i keeping War Stories, Volume 4 by Allan Ahlberg",
+    "intent": "user_inventory_check_current_borrowing",
+    "intent_prediction": {
+      "name": "inform_book_info",
+      "confidence": 1.0
+    }
+  },
+  {
+    "text": "do i still have A Taste of Candy by Reet Tine from the library",
+    "intent": "user_inventory_check_current_borrowing",
+    "intent_prediction": {
+      "name": "inform_book_info",
+      "confidence": 1.0
+    }
+  },
+  {
+    "text": "do i still have Creative Is a Verb If You're Alive, You're Creative by Holter Graham from the library",
+    "intent": "user_inventory_check_current_borrowing",
+    "intent_prediction": {
+      "name": "inform_book_info",
+      "confidence": 1.0
+    }
+  },
+  {
+    "text": "do i still have Gator Girl The Answers (Gator Girl number 4) by Joseph Brodsky from the library",
+    "intent": "user_inventory_check_current_borrowing",
+    "intent_prediction": {
+      "name": "inform_book_info",
+      "confidence": 1.0
+    }
+  },
+  {
+    "text": "do i still have Ghost Warrior by Elizabeth Guizzetti from the library",
+    "intent": "user_inventory_check_current_borrowing",
+    "intent_prediction": {
+      "name": "inform_book_info",
+      "confidence": 1.0
+    }
+  },
+  {
+    "text": "do i still have Having Patience by Bruce Fife from the library",
+    "intent": "user_inventory_check_current_borrowing",
+    "intent_prediction": {
+      "name": "inform_book_info",
+      "confidence": 0.9774193167686462
+    }
+  },
+  {
+    "text": "do i still have Kept from You (Tear Asunder, number 4) by Francesco Bertolino from the library",
+    "intent": "user_inventory_check_current_borrowing",
+    "intent_prediction": {
+      "name": "inform_book_info",
+      "confidence": 1.0
+    }
+  },
+  {
+    "text": "do i still have Out of Order (The Survivor's Club, number 1) by John La Plante from the library",
+    "intent": "user_inventory_check_current_borrowing",
+    "intent_prediction": {
+      "name": "inform_book_info",
+      "confidence": 1.0
+    }
+  },
+  {
+    "text": "do i still have The Afrikaans from the library",
+    "intent": "user_inventory_check_current_borrowing",
+    "intent_prediction": {
+      "name": "inform_book_info",
+      "confidence": 1.0
+    }
+  },
+  {
+    "text": "do i still have The Alexandria Link (Cotton Malone, number 2) from the library",
+    "intent": "user_inventory_check_current_borrowing",
+    "intent_prediction": {
+      "name": "inform_book_info",
+      "confidence": 1.0
+    }
+  },
+  {
+    "text": "do i still have The Jedi Circle Jedi Philosophy for Everyday Life (The Jedi Academy Online Presents Book 2) from the library",
+    "intent": "user_inventory_check_current_borrowing",
+    "intent_prediction": {
+      "name": "inform_book_info",
+      "confidence": 1.0
+    }
+  },
+  {
+    "text": "do i still have The Way of Fire by Paul Bishop from the library",
+    "intent": "user_inventory_check_current_borrowing",
+    "intent_prediction": {
+      "name": "inform_book_info",
+      "confidence": 0.9999956488609314
+    }
+  },
+  {
+    "text": "do i still have The Worst Day of My Life So Far My Mother, Alzheimer's and Me by Cassia Leo from the library",
+    "intent": "user_inventory_check_current_borrowing",
+    "intent_prediction": {
+      "name": "inform_book_info",
+      "confidence": 0.9999935626983643
+    }
+  },
+  {
+    "text": "i need an info about borrowing Sebastian Cork Forget Me Not",
+    "intent": "user_inventory_check_current_borrowing",
+    "intent_prediction": {
+      "name": "user_inventory_check_return",
+      "confidence": 1.0
+    }
+  },
+  {
+    "text": "i need an info about borrowing The Untamed",
+    "intent": "user_inventory_check_current_borrowing",
+    "intent_prediction": {
+      "name": "inform_book_info",
+      "confidence": 0.9999980330467224
+    }
+  },
+  {
+    "text": "i need an info about borrowing This Shattered World (Starbound, number 2)",
+    "intent": "user_inventory_check_current_borrowing",
+    "intent_prediction": {
+      "name": "inform_book_info",
+      "confidence": 0.5227989554405212
+    }
+  },
+  {
+    "text": "i think i have Eye Q And The Efficient Learner by Debby Sly from your library",
+    "intent": "user_inventory_check_current_borrowing",
+    "intent_prediction": {
+      "name": "inform_book_info",
+      "confidence": 1.0
+    }
+  },
+  {
+    "text": "i think i have Faust A Tragedy, Part 1 by Therese Walsh from your library",
+    "intent": "user_inventory_check_current_borrowing",
+    "intent_prediction": {
+      "name": "inform_book_info",
+      "confidence": 1.0
+    }
+  },
+  {
+    "text": "i think i have First Love A Steamy Billionaire Romance about first times (The Scientist & the CEO Book 4) from your library",
+    "intent": "user_inventory_check_current_borrowing",
+    "intent_prediction": {
+      "name": "inform_book_info",
+      "confidence": 1.0
+    }
+  },
+  {
+    "text": "i think i have Practical Genius from your library",
+    "intent": "user_inventory_check_current_borrowing",
+    "intent_prediction": {
+      "name": "faq_check_location",
+      "confidence": 0.6166494488716125
+    }
+  },
+  {
+    "text": "i think i have The Bride Sale from your library",
+    "intent": "user_inventory_check_current_borrowing",
+    "intent_prediction": {
+      "name": "inform_book_info",
+      "confidence": 1.0
+    }
+  },
+  {
+    "text": "i think i have The Complete Idiot's Guide to Writing a Novel from your library",
+    "intent": "user_inventory_check_current_borrowing",
+    "intent_prediction": {
+      "name": "inform_book_info",
+      "confidence": 1.0
+    }
+  },
+  {
+    "text": "i think i have The Devil's Own by Sharon Ashwood from your library",
+    "intent": "user_inventory_check_current_borrowing",
+    "intent_prediction": {
+      "name": "inform_book_info",
+      "confidence": 1.0
+    }
+  },
+  {
+    "text": "i think i have The Possession of Lawrence Eugene Davis by Pablo Rumel from your library",
+    "intent": "user_inventory_check_current_borrowing",
+    "intent_prediction": {
+      "name": "inform_book_info",
+      "confidence": 1.0
+    }
+  },
+  {
+    "text": "i think i have The Rose and the Thorn (The Riyria Chronicles number 2) from your library",
+    "intent": "user_inventory_check_current_borrowing",
+    "intent_prediction": {
+      "name": "inform_book_info",
+      "confidence": 1.0
+    }
+  },
+  {
+    "text": "i think i have This Shattered World (Starbound, number 2) by Don Piper from your library",
+    "intent": "user_inventory_check_current_borrowing",
+    "intent_prediction": {
+      "name": "inform_book_info",
+      "confidence": 1.0
+    }
+  },
+  {
+    "text": "i think i have Vampirism And You! (Guidebook 01) from your library",
+    "intent": "user_inventory_check_current_borrowing",
+    "intent_prediction": {
+      "name": "inform_book_info",
+      "confidence": 1.0
+    }
+  },
+  {
+    "text": "i think i own a copy of Connecting to the Legacy! Learn the Ethical and Spiritual Concerns of Jesus and His Disciples from the library",
+    "intent": "user_inventory_check_current_borrowing",
+    "intent_prediction": {
+      "name": "inform_book_info",
+      "confidence": 1.0
+    }
+  },
+  {
+    "text": "i think i own a copy of Een meisjesleven by Nicole Rollender from the library",
+    "intent": "user_inventory_check_current_borrowing",
+    "intent_prediction": {
+      "name": "inform_book_info",
+      "confidence": 1.0
+    }
+  },
+  {
+    "text": "i think i own a copy of One of These Things First from the library",
+    "intent": "user_inventory_check_current_borrowing",
+    "intent_prediction": {
+      "name": "inform_book_info",
+      "confidence": 1.0
+    }
+  },
+  {
+    "text": "i think i own a copy of Romancing the Duke (Castles Ever After, number 1) by Billy Cowie from the library",
+    "intent": "user_inventory_check_current_borrowing",
+    "intent_prediction": {
+      "name": "inform_book_info",
+      "confidence": 1.0
+    }
+  },
+  {
+    "text": "i think i own a copy of Silken Eyes by Garth Ennis from the library",
+    "intent": "user_inventory_check_current_borrowing",
+    "intent_prediction": {
+      "name": "inform_book_info",
+      "confidence": 1.0
+    }
+  },
+  {
+    "text": "i think i own a copy of When Kat's Away from the library",
+    "intent": "user_inventory_check_current_borrowing",
+    "intent_prediction": {
+      "name": "faq_check_open",
+      "confidence": 0.4937657117843628
+    }
+  },
+  {
+    "text": "To Have and Have Not",
+    "intent": "inform_book_info",
+    "intent_prediction": {
+      "name": "out_of_scope",
+      "confidence": 0.8809096813201904
+    }
+  },
+  {
+    "text": "i am searching for My Dark Highlander (Kilted Athletes Through Time, number 2)",
+    "intent": "inform_book_info",
+    "intent_prediction": {
+      "name": "user_inventory_check_current_borrowing",
+      "confidence": 1.0
+    }
+  },
+  {
+    "text": "i demand Jukebox",
+    "intent": "inform_book_info",
+    "intent_prediction": {
+      "name": "out_of_scope",
+      "confidence": 0.9720403552055359
+    }
+  },
+  {
+    "text": "i request The Visitor",
+    "intent": "inform_book_info",
+    "intent_prediction": {
+      "name": "out_of_scope",
+      "confidence": 0.33032557368278503
+    }
+  }
+]

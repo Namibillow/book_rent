@@ -1,0 +1,3841 @@
+[
+  {
+    "text": "i appriciate your help",
+    "entities": [],
+    "predicted_entities": [
+      {
+        "entity": "book_title",
+        "start": 2,
+        "end": 22,
+        "confidence_entity": 0.7103296518325806,
+        "value": "appriciate your help",
+        "extractor": "DIETClassifier"
+      }
+    ]
+  },
+  {
+    "text": "i dissapprove",
+    "entities": [],
+    "predicted_entities": [
+      {
+        "entity": "book_title",
+        "start": 2,
+        "end": 13,
+        "confidence_entity": 0.9872910380363464,
+        "value": "dissapprove",
+        "extractor": "DIETClassifier"
+      }
+    ]
+  },
+  {
+    "text": "are you a human or a bot?",
+    "entities": [],
+    "predicted_entities": [
+      {
+        "entity": "book_title",
+        "start": 8,
+        "end": 25,
+        "confidence_entity": 0.5901657938957214,
+        "value": "a human or a bot?",
+        "extractor": "DIETClassifier"
+      }
+    ]
+  },
+  {
+    "text": "are you virtual?",
+    "entities": [],
+    "predicted_entities": [
+      {
+        "entity": "book_title",
+        "start": 8,
+        "end": 16,
+        "confidence_entity": 0.9598263502120972,
+        "value": "virtual?",
+        "extractor": "DIETClassifier"
+      }
+    ]
+  },
+  {
+    "text": "do you have a bending machine",
+    "entities": [],
+    "predicted_entities": [
+      {
+        "entity": "book_title",
+        "start": 12,
+        "end": 29,
+        "confidence_entity": 0.7858133912086487,
+        "value": "a bending machine",
+        "extractor": "DIETClassifier"
+      }
+    ]
+  },
+  {
+    "text": "are you blind friendly",
+    "entities": [],
+    "predicted_entities": [
+      {
+        "entity": "book_title",
+        "start": 8,
+        "end": 22,
+        "confidence_entity": 0.9950416684150696,
+        "value": "blind friendly",
+        "extractor": "DIETClassifier"
+      }
+    ]
+  },
+  {
+    "text": "i need a phone charger",
+    "entities": [],
+    "predicted_entities": [
+      {
+        "entity": "contact_type",
+        "start": 9,
+        "end": 14,
+        "confidence_entity": 0.9979107975959778,
+        "value": "phone",
+        "extractor": "DIETClassifier"
+      }
+    ]
+  },
+  {
+    "text": "is there a plug i can use to charge my phone?",
+    "entities": [],
+    "predicted_entities": [
+      {
+        "entity": "book_title",
+        "start": 29,
+        "end": 45,
+        "confidence_entity": 0.6493186950683594,
+        "value": "charge my phone?",
+        "extractor": "DIETClassifier"
+      }
+    ]
+  },
+  {
+    "text": "should i get nissan or toyota for the car?",
+    "entities": [],
+    "predicted_entities": [
+      {
+        "entity": "book_title",
+        "start": 13,
+        "end": 42,
+        "confidence_entity": 0.7935968041419983,
+        "value": "nissan or toyota for the car?",
+        "extractor": "DIETClassifier"
+      }
+    ]
+  },
+  {
+    "text": "i would really appriciated if you can tell me your address.",
+    "entities": [],
+    "predicted_entities": [
+      {
+        "entity": "contact_type",
+        "start": 51,
+        "end": 58,
+        "confidence_entity": 0.7038602232933044,
+        "value": "address",
+        "extractor": "DIETClassifier"
+      }
+    ]
+  },
+  {
+    "text": "i want to check out your place so i can actually go there in person.",
+    "entities": [],
+    "predicted_entities": [
+      {
+        "entity": "book_title",
+        "start": 16,
+        "end": 67,
+        "confidence_entity": 0.5903390645980835,
+        "value": "out your place so i can actually go there in person",
+        "extractor": "DIETClassifier"
+      }
+    ]
+  },
+  {
+    "text": "help look for me a non-fiction",
+    "entities": [],
+    "predicted_entities": [
+      {
+        "entity": "book_title",
+        "start": 19,
+        "end": 30,
+        "confidence_entity": 0.6833896040916443,
+        "value": "non-fiction",
+        "extractor": "DIETClassifier"
+      }
+    ]
+  },
+  {
+    "text": "excuse me, but can you help me to look something?",
+    "entities": [],
+    "predicted_entities": [
+      {
+        "entity": "book_title",
+        "start": 34,
+        "end": 49,
+        "confidence_entity": 0.5949937105178833,
+        "value": "look something?",
+        "extractor": "DIETClassifier"
+      }
+    ]
+  },
+  {
+    "text": "do you by chance have this rare book?",
+    "entities": [],
+    "predicted_entities": [
+      {
+        "entity": "book_title",
+        "start": 32,
+        "end": 36,
+        "confidence_entity": 0.5865858197212219,
+        "value": "book",
+        "extractor": "DIETClassifier"
+      }
+    ]
+  },
+  {
+    "text": "1st 1 please",
+    "entities": [],
+    "predicted_entities": [
+      {
+        "entity": "ordinal",
+        "start": 0,
+        "end": 3,
+        "confidence_entity": 0.9171096086502075,
+        "value": "1st",
+        "extractor": "DIETClassifier"
+      }
+    ]
+  },
+  {
+    "text": "what is the schedule for next next monday?",
+    "entities": [],
+    "predicted_entities": [
+      {
+        "entity": "book_title",
+        "start": 25,
+        "end": 42,
+        "confidence_entity": 0.6786237359046936,
+        "value": "next next monday?",
+        "extractor": "DIETClassifier"
+      }
+    ]
+  },
+  {
+    "text": "what's your telephone?",
+    "entities": [
+      {
+        "start": 12,
+        "end": 21,
+        "value": "telephone",
+        "entity": "contact_type"
+      }
+    ],
+    "predicted_entities": [
+      {
+        "entity": "contact_type",
+        "start": 12,
+        "end": 22,
+        "confidence_entity": 0.8402652144432068,
+        "value": "telephone?",
+        "extractor": "DIETClassifier"
+      }
+    ]
+  },
+  {
+    "text": "can i email account you?",
+    "entities": [
+      {
+        "start": 6,
+        "end": 19,
+        "value": "email account",
+        "entity": "contact_type"
+      }
+    ],
+    "predicted_entities": [
+      {
+        "entity": "contact_type",
+        "start": 6,
+        "end": 19,
+        "confidence_entity": 0.9978220462799072,
+        "value": "email",
+        "extractor": "DIETClassifier",
+        "processors": [
+          "EntitySynonymMapper"
+        ]
+      },
+      {
+        "entity": "contact_type",
+        "start": 23,
+        "end": 24,
+        "confidence_entity": 0.7994570732116699,
+        "value": "?",
+        "extractor": "DIETClassifier"
+      }
+    ]
+  },
+  {
+    "text": "what is your electric mail address?",
+    "entities": [
+      {
+        "start": 13,
+        "end": 34,
+        "value": "electric mail address",
+        "entity": "contact_type"
+      }
+    ],
+    "predicted_entities": [
+      {
+        "entity": "contact_type",
+        "start": 13,
+        "end": 35,
+        "confidence_entity": 0.49737751483917236,
+        "value": "electric mail address?",
+        "extractor": "DIETClassifier"
+      }
+    ]
+  },
+  {
+    "text": "what's your call?",
+    "entities": [
+      {
+        "start": 12,
+        "end": 16,
+        "value": "call",
+        "entity": "contact_type"
+      }
+    ],
+    "predicted_entities": [
+      {
+        "entity": "contact_type",
+        "start": 12,
+        "end": 17,
+        "confidence_entity": 0.4495028257369995,
+        "value": "call?",
+        "extractor": "DIETClassifier"
+      }
+    ]
+  },
+  {
+    "text": "what's your email account?",
+    "entities": [
+      {
+        "start": 12,
+        "end": 25,
+        "value": "email account",
+        "entity": "contact_type"
+      }
+    ],
+    "predicted_entities": [
+      {
+        "entity": "contact_type",
+        "start": 12,
+        "end": 26,
+        "confidence_entity": 0.8752200603485107,
+        "value": "email account?",
+        "extractor": "DIETClassifier"
+      }
+    ]
+  },
+  {
+    "text": "what is your email account?",
+    "entities": [
+      {
+        "start": 13,
+        "end": 26,
+        "value": "email account",
+        "entity": "contact_type"
+      }
+    ],
+    "predicted_entities": [
+      {
+        "entity": "contact_type",
+        "start": 13,
+        "end": 27,
+        "confidence_entity": 0.8697949051856995,
+        "value": "email account?",
+        "extractor": "DIETClassifier"
+      }
+    ]
+  },
+  {
+    "text": "do you know the telephone of the library i can call?",
+    "entities": [
+      {
+        "start": 16,
+        "end": 25,
+        "value": "telephone",
+        "entity": "contact_type"
+      }
+    ],
+    "predicted_entities": [
+      {
+        "entity": "contact_type",
+        "start": 16,
+        "end": 25,
+        "confidence_entity": 0.9178847074508667,
+        "value": "phone",
+        "extractor": "DIETClassifier",
+        "processors": [
+          "EntitySynonymMapper"
+        ]
+      },
+      {
+        "entity": "contact_type",
+        "start": 51,
+        "end": 52,
+        "confidence_entity": 0.6514471173286438,
+        "value": "?",
+        "extractor": "DIETClassifier"
+      }
+    ]
+  },
+  {
+    "text": "what is your telephone?",
+    "entities": [
+      {
+        "start": 13,
+        "end": 22,
+        "value": "telephone",
+        "entity": "contact_type"
+      }
+    ],
+    "predicted_entities": [
+      {
+        "entity": "contact_type",
+        "start": 13,
+        "end": 23,
+        "confidence_entity": 0.569697916507721,
+        "value": "telephone?",
+        "extractor": "DIETClassifier"
+      }
+    ]
+  },
+  {
+    "text": "i had All's Fairy in Love and War (Avalon Web of Magic, number 8) for a while but forgot when to return?",
+    "entities": [
+      {
+        "start": 6,
+        "end": 65,
+        "value": "All's Fairy in Love and War (Avalon Web of Magic, number 8)",
+        "entity": "book_title"
+      }
+    ],
+    "predicted_entities": [
+      {
+        "entity": "book_title",
+        "start": 6,
+        "end": 77,
+        "confidence_entity": 0.6101571917533875,
+        "value": "All's Fairy in Love and War (Avalon Web of Magic, number 8) for a while",
+        "extractor": "DIETClassifier"
+      }
+    ]
+  },
+  {
+    "text": "i had Answer to the Moon for a while but forgot when to return?",
+    "entities": [
+      {
+        "start": 6,
+        "end": 24,
+        "value": "Answer to the Moon",
+        "entity": "book_title"
+      }
+    ],
+    "predicted_entities": [
+      {
+        "entity": "book_title",
+        "start": 6,
+        "end": 36,
+        "confidence_entity": 0.6404821276664734,
+        "value": "Answer to the Moon for a while",
+        "extractor": "DIETClassifier"
+      }
+    ]
+  },
+  {
+    "text": "i need an info about return date of Ut n. 4 Gli uomini se ne vanno gli arrabbiati restano",
+    "entities": [
+      {
+        "start": 36,
+        "end": 89,
+        "value": "Ut n. 4 Gli uomini se ne vanno gli arrabbiati restano",
+        "entity": "book_title"
+      }
+    ],
+    "predicted_entities": [
+      {
+        "entity": "book_title",
+        "start": 36,
+        "end": 70,
+        "confidence_entity": 0.7484397888183594,
+        "value": "Ut n. 4 Gli uomini se ne vanno gli",
+        "extractor": "DIETClassifier"
+      }
+    ]
+  },
+  {
+    "text": "i need an information about return date of Call After Midnight by David R. Reiser and Elizabeth Evans",
+    "entities": [
+      {
+        "start": 43,
+        "end": 62,
+        "value": "Call After Midnight",
+        "entity": "book_title"
+      }
+    ],
+    "predicted_entities": [
+      {
+        "entity": "book_title",
+        "start": 48,
+        "end": 62,
+        "confidence_entity": 0.9624271988868713,
+        "value": "After Midnight",
+        "extractor": "DIETClassifier"
+      }
+    ]
+  },
+  {
+    "text": "i had Bloodlines (Irene Kelly number 9) for a while but forgot when to return?",
+    "entities": [
+      {
+        "start": 6,
+        "end": 39,
+        "value": "Bloodlines (Irene Kelly number 9)",
+        "entity": "book_title"
+      }
+    ],
+    "predicted_entities": [
+      {
+        "entity": "book_title",
+        "start": 6,
+        "end": 51,
+        "confidence_entity": 0.6800246238708496,
+        "value": "Bloodlines (Irene Kelly number 9) for a while",
+        "extractor": "DIETClassifier"
+      }
+    ]
+  },
+  {
+    "text": "i had Healer's Touch (Hearts And Thrones, number 4) for a while but forgot when to return?",
+    "entities": [
+      {
+        "start": 6,
+        "end": 51,
+        "value": "Healer's Touch (Hearts And Thrones, number 4)",
+        "entity": "book_title"
+      }
+    ],
+    "predicted_entities": [
+      {
+        "entity": "book_title",
+        "start": 6,
+        "end": 57,
+        "confidence_entity": 0.8963531851768494,
+        "value": "Healer's Touch (Hearts And Thrones, number 4) for a",
+        "extractor": "DIETClassifier"
+      }
+    ]
+  },
+  {
+    "text": "i have Stephen King's The Cocktail Party but when do i need to return it?",
+    "entities": [
+      {
+        "start": 22,
+        "end": 40,
+        "value": "The Cocktail Party",
+        "entity": "book_title"
+      }
+    ],
+    "predicted_entities": [
+      {
+        "entity": "book_title",
+        "start": 7,
+        "end": 40,
+        "confidence_entity": 0.9906343221664429,
+        "value": "Stephen King's The Cocktail Party",
+        "extractor": "DIETClassifier"
+      }
+    ]
+  },
+  {
+    "text": "i had Passion (Passion, number 1) for a while but forgot when to return?",
+    "entities": [
+      {
+        "start": 6,
+        "end": 33,
+        "value": "Passion (Passion, number 1)",
+        "entity": "book_title"
+      }
+    ],
+    "predicted_entities": [
+      {
+        "entity": "book_title",
+        "start": 6,
+        "end": 39,
+        "confidence_entity": 0.8524549007415771,
+        "value": "Passion (Passion, number 1) for a",
+        "extractor": "DIETClassifier"
+      }
+    ]
+  },
+  {
+    "text": "i had Superior Spider-Man Team-Up Superiority Complex for a while but forgot when to return?",
+    "entities": [
+      {
+        "start": 6,
+        "end": 53,
+        "value": "Superior Spider-Man Team-Up Superiority Complex",
+        "entity": "book_title"
+      }
+    ],
+    "predicted_entities": [
+      {
+        "entity": "book_title",
+        "start": 6,
+        "end": 65,
+        "confidence_entity": 0.4532722532749176,
+        "value": "Superior Spider-Man Team-Up Superiority Complex for a while",
+        "extractor": "DIETClassifier"
+      }
+    ]
+  },
+  {
+    "text": "i had The Lake of Dreams for a while but forgot when to return?",
+    "entities": [
+      {
+        "start": 6,
+        "end": 24,
+        "value": "The Lake of Dreams",
+        "entity": "book_title"
+      }
+    ],
+    "predicted_entities": [
+      {
+        "entity": "book_title",
+        "start": 6,
+        "end": 36,
+        "confidence_entity": 0.7029558420181274,
+        "value": "The Lake of Dreams for a while",
+        "extractor": "DIETClassifier"
+      }
+    ]
+  },
+  {
+    "text": "i had The Rock & Roll Film Encyclopedia for a while but forgot when to return?",
+    "entities": [
+      {
+        "start": 6,
+        "end": 39,
+        "value": "The Rock & Roll Film Encyclopedia",
+        "entity": "book_title"
+      }
+    ],
+    "predicted_entities": [
+      {
+        "entity": "book_title",
+        "start": 6,
+        "end": 51,
+        "confidence_entity": 0.4439716935157776,
+        "value": "The Rock & Roll Film Encyclopedia for a while",
+        "extractor": "DIETClassifier"
+      }
+    ]
+  },
+  {
+    "text": "i had Weddings of the Times for a while but forgot when to return?",
+    "entities": [
+      {
+        "start": 6,
+        "end": 27,
+        "value": "Weddings of the Times",
+        "entity": "book_title"
+      }
+    ],
+    "predicted_entities": [
+      {
+        "entity": "book_title",
+        "start": 6,
+        "end": 39,
+        "confidence_entity": 0.8651241660118103,
+        "value": "Weddings of the Times for a while",
+        "extractor": "DIETClassifier"
+      }
+    ]
+  },
+  {
+    "text": "i have Amy Gash's NPR Road Trips Roadside Attractions Stories That Take You Away... but when do i need to return it?",
+    "entities": [
+      {
+        "start": 18,
+        "end": 83,
+        "value": "NPR Road Trips Roadside Attractions Stories That Take You Away...",
+        "entity": "book_title"
+      }
+    ],
+    "predicted_entities": [
+      {
+        "entity": "book_title",
+        "start": 7,
+        "end": 83,
+        "confidence_entity": 0.7039423584938049,
+        "value": "Amy Gash's NPR Road Trips Roadside Attractions Stories That Take You Away...",
+        "extractor": "DIETClassifier"
+      }
+    ]
+  },
+  {
+    "text": "i had Lugas for a while but forgot when to return?",
+    "entities": [
+      {
+        "start": 6,
+        "end": 11,
+        "value": "Lugas",
+        "entity": "book_title"
+      }
+    ],
+    "predicted_entities": [
+      {
+        "entity": "book_title",
+        "start": 6,
+        "end": 23,
+        "confidence_entity": 0.6059048771858215,
+        "value": "Lugas for a while",
+        "extractor": "DIETClassifier"
+      }
+    ]
+  },
+  {
+    "text": "i have Jerry Siegel's Character Sketches, Volume 2 but when do i need to return it?",
+    "entities": [
+      {
+        "start": 22,
+        "end": 50,
+        "value": "Character Sketches, Volume 2",
+        "entity": "book_title"
+      }
+    ],
+    "predicted_entities": [
+      {
+        "entity": "book_title",
+        "start": 7,
+        "end": 50,
+        "confidence_entity": 0.9932177662849426,
+        "value": "Jerry Siegel's Character Sketches, Volume 2",
+        "extractor": "DIETClassifier"
+      }
+    ]
+  },
+  {
+    "text": "i have Kathleen Bryan's Wayang dan Panggilan Manusia but when do i need to return it?",
+    "entities": [
+      {
+        "start": 24,
+        "end": 52,
+        "value": "Wayang dan Panggilan Manusia",
+        "entity": "book_title"
+      }
+    ],
+    "predicted_entities": [
+      {
+        "entity": "book_title",
+        "start": 7,
+        "end": 44,
+        "confidence_entity": 0.9426164031028748,
+        "value": "Kathleen Bryan's Wayang dan Panggilan",
+        "extractor": "DIETClassifier"
+      }
+    ]
+  },
+  {
+    "text": "i have Piers Platt's Without Warning but when do i need to return it?",
+    "entities": [
+      {
+        "start": 21,
+        "end": 36,
+        "value": "Without Warning",
+        "entity": "book_title"
+      }
+    ],
+    "predicted_entities": [
+      {
+        "entity": "book_title",
+        "start": 7,
+        "end": 36,
+        "confidence_entity": 0.5801571607589722,
+        "value": "Piers Platt's Without Warning",
+        "extractor": "DIETClassifier"
+      }
+    ]
+  },
+  {
+    "text": "i have Zhang Yun's Bloodworth's Bride but when do i need to return it?",
+    "entities": [
+      {
+        "start": 19,
+        "end": 37,
+        "value": "Bloodworth's Bride",
+        "entity": "book_title"
+      }
+    ],
+    "predicted_entities": [
+      {
+        "entity": "book_title",
+        "start": 7,
+        "end": 37,
+        "confidence_entity": 0.8193531632423401,
+        "value": "Zhang Yun's Bloodworth's Bride",
+        "extractor": "DIETClassifier"
+      }
+    ]
+  },
+  {
+    "text": "i have cchiichiw's Street Soldier but when do i need to return it?",
+    "entities": [
+      {
+        "start": 19,
+        "end": 33,
+        "value": "Street Soldier",
+        "entity": "book_title"
+      }
+    ],
+    "predicted_entities": [
+      {
+        "entity": "book_title",
+        "start": 7,
+        "end": 33,
+        "confidence_entity": 0.5845202207565308,
+        "value": "cchiichiw's Street Soldier",
+        "extractor": "DIETClassifier"
+      }
+    ]
+  },
+  {
+    "text": "i need an information about return date of JB by Jurgen Lemke and G.K. Chesterton",
+    "entities": [
+      {
+        "start": 43,
+        "end": 45,
+        "value": "JB",
+        "entity": "book_title"
+      }
+    ],
+    "predicted_entities": []
+  },
+  {
+    "text": "i need an information about return date of Vagamundo y otros relatos by Gero von Boehm and John McLeod",
+    "entities": [
+      {
+        "start": 43,
+        "end": 68,
+        "value": "Vagamundo y otros relatos",
+        "entity": "book_title"
+      }
+    ],
+    "predicted_entities": [
+      {
+        "entity": "book_title",
+        "start": 43,
+        "end": 60,
+        "confidence_entity": 0.959886908531189,
+        "value": "Vagamundo y otros",
+        "extractor": "DIETClassifier"
+      }
+    ]
+  },
+  {
+    "text": "inform me when to return Uncanny X-Men by Kieron Gillen, Vol. 4 by Edgar Rice Burroughs",
+    "entities": [
+      {
+        "start": 25,
+        "end": 63,
+        "value": "Uncanny X-Men by Kieron Gillen, Vol. 4",
+        "entity": "book_title"
+      }
+    ],
+    "predicted_entities": [
+      {
+        "entity": "book_title",
+        "start": 25,
+        "end": 38,
+        "confidence_entity": 0.9957569241523743,
+        "value": "Uncanny X-Men",
+        "extractor": "DIETClassifier"
+      },
+      {
+        "entity": "book_title",
+        "start": 55,
+        "end": 63,
+        "confidence_entity": 0.6035602688789368,
+        "value": ", Vol. 4",
+        "extractor": "DIETClassifier"
+      }
+    ]
+  },
+  {
+    "text": "please inform me when to return Connecting to the Legacy! Learn the Ethical and Spiritual Concerns of Jesus and His Disciples by Robert Burleigh",
+    "entities": [
+      {
+        "start": 32,
+        "end": 125,
+        "value": "Connecting to the Legacy! Learn the Ethical and Spiritual Concerns of Jesus and His Disciples",
+        "entity": "book_title"
+      }
+    ],
+    "predicted_entities": [
+      {
+        "entity": "book_title",
+        "start": 32,
+        "end": 42,
+        "confidence_entity": 0.8589420318603516,
+        "value": "Connecting",
+        "extractor": "DIETClassifier"
+      },
+      {
+        "entity": "book_title",
+        "start": 46,
+        "end": 125,
+        "confidence_entity": 0.732589840888977,
+        "value": "the Legacy! Learn the Ethical and Spiritual Concerns of Jesus and His Disciples",
+        "extractor": "DIETClassifier"
+      }
+    ]
+  },
+  {
+    "text": "tell me when to return Ultimate Comics Spider-Man, by Brian Michael Bendis, Volume 4",
+    "entities": [
+      {
+        "start": 23,
+        "end": 84,
+        "value": "Ultimate Comics Spider-Man, by Brian Michael Bendis, Volume 4",
+        "entity": "book_title"
+      }
+    ],
+    "predicted_entities": [
+      {
+        "entity": "book_title",
+        "start": 23,
+        "end": 50,
+        "confidence_entity": 0.7484765648841858,
+        "value": "Ultimate Comics Spider-Man,",
+        "extractor": "DIETClassifier"
+      },
+      {
+        "entity": "book_title",
+        "start": 68,
+        "end": 84,
+        "confidence_entity": 0.6843963265419006,
+        "value": "Bendis, Volume 4",
+        "extractor": "DIETClassifier"
+      }
+    ]
+  },
+  {
+    "text": "what date to return If Only for a Moment by slmn hrty",
+    "entities": [
+      {
+        "start": 20,
+        "end": 40,
+        "value": "If Only for a Moment",
+        "entity": "book_title"
+      }
+    ],
+    "predicted_entities": [
+      {
+        "entity": "book_title",
+        "start": 23,
+        "end": 40,
+        "confidence_entity": 0.6849472522735596,
+        "value": "Only for a Moment",
+        "extractor": "DIETClassifier"
+      }
+    ]
+  },
+  {
+    "text": "what date to return List do nienarodzonego dziecka by John Brunner",
+    "entities": [
+      {
+        "start": 20,
+        "end": 50,
+        "value": "List do nienarodzonego dziecka",
+        "entity": "book_title"
+      }
+    ],
+    "predicted_entities": [
+      {
+        "entity": "book_title",
+        "start": 25,
+        "end": 50,
+        "confidence_entity": 0.4290311336517334,
+        "value": "do nienarodzonego dziecka",
+        "extractor": "DIETClassifier"
+      }
+    ]
+  },
+  {
+    "text": "tell me when to return Last Exit to Utopia The Survival of Socialism in a Post-Soviet Era by Kathleen Bryan",
+    "entities": [
+      {
+        "start": 23,
+        "end": 89,
+        "value": "Last Exit to Utopia The Survival of Socialism in a Post-Soviet Era",
+        "entity": "book_title"
+      }
+    ],
+    "predicted_entities": [
+      {
+        "entity": "book_title",
+        "start": 23,
+        "end": 85,
+        "confidence_entity": 0.9659685492515564,
+        "value": "Last Exit to Utopia The Survival of Socialism in a Post-Soviet",
+        "extractor": "DIETClassifier"
+      }
+    ]
+  },
+  {
+    "text": "what date to return The Final Service by Errol Le Cain",
+    "entities": [
+      {
+        "start": 20,
+        "end": 37,
+        "value": "The Final Service",
+        "entity": "book_title"
+      }
+    ],
+    "predicted_entities": [
+      {
+        "entity": "book_title",
+        "start": 20,
+        "end": 29,
+        "confidence_entity": 0.857455313205719,
+        "value": "The Final",
+        "extractor": "DIETClassifier"
+      }
+    ]
+  },
+  {
+    "text": "when to return Chuck's Zimmer. Gedichte - Lieder.",
+    "entities": [
+      {
+        "start": 15,
+        "end": 49,
+        "value": "Chuck's Zimmer. Gedichte - Lieder.",
+        "entity": "book_title"
+      }
+    ],
+    "predicted_entities": [
+      {
+        "entity": "book_title",
+        "start": 15,
+        "end": 48,
+        "confidence_entity": 0.9180060625076294,
+        "value": "Chuck's Zimmer. Gedichte - Lieder",
+        "extractor": "DIETClassifier"
+      }
+    ]
+  },
+  {
+    "text": "when was the return date of Catkin",
+    "entities": [
+      {
+        "start": 28,
+        "end": 34,
+        "value": "Catkin",
+        "entity": "book_title"
+      }
+    ],
+    "predicted_entities": []
+  },
+  {
+    "text": "which date to return Get the Best from Yourself",
+    "entities": [
+      {
+        "start": 21,
+        "end": 47,
+        "value": "Get the Best from Yourself",
+        "entity": "book_title"
+      }
+    ],
+    "predicted_entities": [
+      {
+        "entity": "book_title",
+        "start": 25,
+        "end": 47,
+        "confidence_entity": 0.90107661485672,
+        "value": "the Best from Yourself",
+        "extractor": "DIETClassifier"
+      }
+    ]
+  },
+  {
+    "text": "am i owning Botham's Book of the Ashes A Lifetime Love Affair with Cricket's Greatest Rivalry by Reto Sorg",
+    "entities": [
+      {
+        "start": 12,
+        "end": 93,
+        "value": "Botham's Book of the Ashes A Lifetime Love Affair with Cricket's Greatest Rivalry",
+        "entity": "book_title"
+      }
+    ],
+    "predicted_entities": [
+      {
+        "entity": "book_title",
+        "start": 29,
+        "end": 93,
+        "confidence_entity": 0.9634576439857483,
+        "value": "the Ashes A Lifetime Love Affair with Cricket's Greatest Rivalry",
+        "extractor": "DIETClassifier"
+      }
+    ]
+  },
+  {
+    "text": "am i owning a book called The Shakespeare Authorship Debate and Historical Responsibility The text of a lecture delivered in the Chapter House of Exeter Cathedral on Thursday 23 April 2015 by Fiona Buckley",
+    "entities": [
+      {
+        "start": 26,
+        "end": 188,
+        "value": "The Shakespeare Authorship Debate and Historical Responsibility The text of a lecture delivered in the Chapter House of Exeter Cathedral on Thursday 23 April 2015",
+        "entity": "book_title"
+      }
+    ],
+    "predicted_entities": [
+      {
+        "entity": "book_title",
+        "start": 26,
+        "end": 177,
+        "confidence_entity": 0.9302024245262146,
+        "value": "The Shakespeare Authorship Debate and Historical Responsibility The text of a lecture delivered in the Chapter House of Exeter Cathedral on Thursday 23",
+        "extractor": "DIETClassifier"
+      },
+      {
+        "entity": "book_title",
+        "start": 184,
+        "end": 188,
+        "confidence_entity": 0.7517387866973877,
+        "value": "2015",
+        "extractor": "DIETClassifier"
+      }
+    ]
+  },
+  {
+    "text": "am i still borrowing Independence Lost Lives on the Edge of the American Revolution by Geoffrey Neil",
+    "entities": [
+      {
+        "start": 21,
+        "end": 83,
+        "value": "Independence Lost Lives on the Edge of the American Revolution",
+        "entity": "book_title"
+      }
+    ],
+    "predicted_entities": [
+      {
+        "entity": "book_title",
+        "start": 5,
+        "end": 10,
+        "confidence_entity": 0.9864299297332764,
+        "value": "still",
+        "extractor": "DIETClassifier"
+      },
+      {
+        "entity": "book_title",
+        "start": 21,
+        "end": 83,
+        "confidence_entity": 0.9351451396942139,
+        "value": "Independence Lost Lives on the Edge of the American Revolution",
+        "extractor": "DIETClassifier"
+      }
+    ]
+  },
+  {
+    "text": "am i still borrowing L'isola dell'amore proibito by Kate Proctor",
+    "entities": [
+      {
+        "start": 21,
+        "end": 48,
+        "value": "L'isola dell'amore proibito",
+        "entity": "book_title"
+      }
+    ],
+    "predicted_entities": [
+      {
+        "entity": "book_title",
+        "start": 5,
+        "end": 10,
+        "confidence_entity": 0.5935699939727783,
+        "value": "still",
+        "extractor": "DIETClassifier"
+      },
+      {
+        "entity": "book_title",
+        "start": 21,
+        "end": 48,
+        "confidence_entity": 0.9745444655418396,
+        "value": "L'isola dell'amore proibito",
+        "extractor": "DIETClassifier"
+      }
+    ]
+  },
+  {
+    "text": "am i still keeping Dark Visions A Collection of Modern Horror - Volume Two",
+    "entities": [
+      {
+        "start": 19,
+        "end": 74,
+        "value": "Dark Visions A Collection of Modern Horror - Volume Two",
+        "entity": "book_title"
+      }
+    ],
+    "predicted_entities": [
+      {
+        "entity": "book_title",
+        "start": 11,
+        "end": 74,
+        "confidence_entity": 0.7798463106155396,
+        "value": "keeping Dark Visions A Collection of Modern Horror - Volume Two",
+        "extractor": "DIETClassifier"
+      }
+    ]
+  },
+  {
+    "text": "am i still keeping Deadly Coast (Tom Dugan, number 2) by Kevin Trout",
+    "entities": [
+      {
+        "start": 19,
+        "end": 53,
+        "value": "Deadly Coast (Tom Dugan, number 2)",
+        "entity": "book_title"
+      }
+    ],
+    "predicted_entities": [
+      {
+        "entity": "book_title",
+        "start": 11,
+        "end": 53,
+        "confidence_entity": 0.9130089282989502,
+        "value": "keeping Deadly Coast (Tom Dugan, number 2)",
+        "extractor": "DIETClassifier"
+      }
+    ]
+  },
+  {
+    "text": "am i still keeping Elena Undone by John Williams",
+    "entities": [
+      {
+        "start": 19,
+        "end": 31,
+        "value": "Elena Undone",
+        "entity": "book_title"
+      }
+    ],
+    "predicted_entities": [
+      {
+        "entity": "book_title",
+        "start": 11,
+        "end": 31,
+        "confidence_entity": 0.5910460352897644,
+        "value": "keeping Elena Undone",
+        "extractor": "DIETClassifier"
+      }
+    ]
+  },
+  {
+    "text": "am i still keeping Eren's Play",
+    "entities": [
+      {
+        "start": 19,
+        "end": 30,
+        "value": "Eren's Play",
+        "entity": "book_title"
+      }
+    ],
+    "predicted_entities": [
+      {
+        "entity": "book_title",
+        "start": 11,
+        "end": 18,
+        "confidence_entity": 0.8851810693740845,
+        "value": "keeping",
+        "extractor": "DIETClassifier"
+      },
+      {
+        "entity": "book_title",
+        "start": 19,
+        "end": 30,
+        "confidence_entity": 0.6730300784111023,
+        "value": "Eren's Play",
+        "extractor": "DIETClassifier"
+      }
+    ]
+  },
+  {
+    "text": "am i still keeping Infinity Man and the Forever People number 1 (The New 52)",
+    "entities": [
+      {
+        "start": 19,
+        "end": 76,
+        "value": "Infinity Man and the Forever People number 1 (The New 52)",
+        "entity": "book_title"
+      }
+    ],
+    "predicted_entities": [
+      {
+        "entity": "book_title",
+        "start": 11,
+        "end": 76,
+        "confidence_entity": 0.9262354373931885,
+        "value": "keeping Infinity Man and the Forever People number 1 (The New 52)",
+        "extractor": "DIETClassifier"
+      }
+    ]
+  },
+  {
+    "text": "am i still keeping Jurassic Park (Jurassic Park, number 1) by Jp Jones",
+    "entities": [
+      {
+        "start": 19,
+        "end": 58,
+        "value": "Jurassic Park (Jurassic Park, number 1)",
+        "entity": "book_title"
+      }
+    ],
+    "predicted_entities": [
+      {
+        "entity": "book_title",
+        "start": 11,
+        "end": 58,
+        "confidence_entity": 0.9726090431213379,
+        "value": "keeping Jurassic Park (Jurassic Park, number 1)",
+        "extractor": "DIETClassifier"
+      }
+    ]
+  },
+  {
+    "text": "am i still keeping Nasty Women by Andre Dubus",
+    "entities": [
+      {
+        "start": 19,
+        "end": 30,
+        "value": "Nasty Women",
+        "entity": "book_title"
+      }
+    ],
+    "predicted_entities": [
+      {
+        "entity": "book_title",
+        "start": 11,
+        "end": 30,
+        "confidence_entity": 0.8744076490402222,
+        "value": "keeping Nasty Women",
+        "extractor": "DIETClassifier"
+      }
+    ]
+  },
+  {
+    "text": "am i still keeping The Happy Journey to Trenton and Camden by Kate White",
+    "entities": [
+      {
+        "start": 19,
+        "end": 58,
+        "value": "The Happy Journey to Trenton and Camden",
+        "entity": "book_title"
+      }
+    ],
+    "predicted_entities": [
+      {
+        "entity": "book_title",
+        "start": 11,
+        "end": 58,
+        "confidence_entity": 0.6323164105415344,
+        "value": "keeping The Happy Journey to Trenton and Camden",
+        "extractor": "DIETClassifier"
+      }
+    ]
+  },
+  {
+    "text": "am i still keeping Vampires and Vixens (Psy-Vamp number 1)",
+    "entities": [
+      {
+        "start": 19,
+        "end": 58,
+        "value": "Vampires and Vixens (Psy-Vamp number 1)",
+        "entity": "book_title"
+      }
+    ],
+    "predicted_entities": [
+      {
+        "entity": "book_title",
+        "start": 11,
+        "end": 58,
+        "confidence_entity": 0.9721164703369141,
+        "value": "keeping Vampires and Vixens (Psy-Vamp number 1)",
+        "extractor": "DIETClassifier"
+      }
+    ]
+  },
+  {
+    "text": "aren't i keeping 101 Family Meal-Time Devotions by Cy Cylkowski",
+    "entities": [
+      {
+        "start": 17,
+        "end": 47,
+        "value": "101 Family Meal-Time Devotions",
+        "entity": "book_title"
+      }
+    ],
+    "predicted_entities": [
+      {
+        "entity": "book_title",
+        "start": 9,
+        "end": 47,
+        "confidence_entity": 0.9377599954605103,
+        "value": "keeping 101 Family Meal-Time Devotions",
+        "extractor": "DIETClassifier"
+      }
+    ]
+  },
+  {
+    "text": "aren't i keeping Badortsmysteriet (Hercule Poirot, number 8) by Jojo Moyes",
+    "entities": [
+      {
+        "start": 17,
+        "end": 60,
+        "value": "Badortsmysteriet (Hercule Poirot, number 8)",
+        "entity": "book_title"
+      }
+    ],
+    "predicted_entities": [
+      {
+        "entity": "book_title",
+        "start": 9,
+        "end": 60,
+        "confidence_entity": 0.9207163453102112,
+        "value": "keeping Badortsmysteriet (Hercule Poirot, number 8)",
+        "extractor": "DIETClassifier"
+      }
+    ]
+  },
+  {
+    "text": "aren't i keeping Checkmate (Noughts & Crosses, number 3)",
+    "entities": [
+      {
+        "start": 17,
+        "end": 56,
+        "value": "Checkmate (Noughts & Crosses, number 3)",
+        "entity": "book_title"
+      }
+    ],
+    "predicted_entities": [
+      {
+        "entity": "book_title",
+        "start": 9,
+        "end": 56,
+        "confidence_entity": 0.9845141768455505,
+        "value": "keeping Checkmate (Noughts & Crosses, number 3)",
+        "extractor": "DIETClassifier"
+      }
+    ]
+  },
+  {
+    "text": "aren't i keeping Detective Camp (A to Z Mysteries Super Edition, number 1)",
+    "entities": [
+      {
+        "start": 17,
+        "end": 74,
+        "value": "Detective Camp (A to Z Mysteries Super Edition, number 1)",
+        "entity": "book_title"
+      }
+    ],
+    "predicted_entities": [
+      {
+        "entity": "book_title",
+        "start": 9,
+        "end": 74,
+        "confidence_entity": 0.9183756113052368,
+        "value": "keeping Detective Camp (A to Z Mysteries Super Edition, number 1)",
+        "extractor": "DIETClassifier"
+      }
+    ]
+  },
+  {
+    "text": "aren't i keeping Mr. Majeika",
+    "entities": [
+      {
+        "start": 17,
+        "end": 28,
+        "value": "Mr. Majeika",
+        "entity": "book_title"
+      }
+    ],
+    "predicted_entities": [
+      {
+        "entity": "book_title",
+        "start": 9,
+        "end": 28,
+        "confidence_entity": 0.6704927086830139,
+        "value": "keeping Mr. Majeika",
+        "extractor": "DIETClassifier"
+      }
+    ]
+  },
+  {
+    "text": "aren't i keeping War Stories, Volume 4 by Allan Ahlberg",
+    "entities": [
+      {
+        "start": 17,
+        "end": 38,
+        "value": "War Stories, Volume 4",
+        "entity": "book_title"
+      }
+    ],
+    "predicted_entities": [
+      {
+        "entity": "book_title",
+        "start": 9,
+        "end": 38,
+        "confidence_entity": 0.9674009084701538,
+        "value": "keeping War Stories, Volume 4",
+        "extractor": "DIETClassifier"
+      }
+    ]
+  },
+  {
+    "text": "can you confirm if i am borrowing The Longest Afternoon The 400 Men Who Decided the Battle of Waterloo by Mark Bunting and Simon Mugford",
+    "entities": [
+      {
+        "start": 34,
+        "end": 102,
+        "value": "The Longest Afternoon The 400 Men Who Decided the Battle of Waterloo",
+        "entity": "book_title"
+      }
+    ],
+    "predicted_entities": [
+      {
+        "entity": "book_title",
+        "start": 34,
+        "end": 93,
+        "confidence_entity": 0.9200659990310669,
+        "value": "The Longest Afternoon The 400 Men Who Decided the Battle of",
+        "extractor": "DIETClassifier"
+      }
+    ]
+  },
+  {
+    "text": "can you verify if i am borrowing What If Everybody Did That?",
+    "entities": [
+      {
+        "start": 33,
+        "end": 60,
+        "value": "What If Everybody Did That?",
+        "entity": "book_title"
+      }
+    ],
+    "predicted_entities": [
+      {
+        "entity": "book_title",
+        "start": 33,
+        "end": 37,
+        "confidence_entity": 0.4724598228931427,
+        "value": "What",
+        "extractor": "DIETClassifier"
+      },
+      {
+        "entity": "book_title",
+        "start": 41,
+        "end": 60,
+        "confidence_entity": 0.664772629737854,
+        "value": "Everybody Did That?",
+        "extractor": "DIETClassifier"
+      }
+    ]
+  },
+  {
+    "text": "do i still have A Taste of Candy by Reet Tine from the library",
+    "entities": [
+      {
+        "start": 16,
+        "end": 32,
+        "value": "A Taste of Candy",
+        "entity": "book_title"
+      }
+    ],
+    "predicted_entities": [
+      {
+        "entity": "book_title",
+        "start": 16,
+        "end": 26,
+        "confidence_entity": 0.6940798759460449,
+        "value": "A Taste of",
+        "extractor": "DIETClassifier"
+      }
+    ]
+  },
+  {
+    "text": "do i still have Creative Is a Verb If You're Alive, You're Creative by Holter Graham from the library",
+    "entities": [
+      {
+        "start": 16,
+        "end": 67,
+        "value": "Creative Is a Verb If You're Alive, You're Creative",
+        "entity": "book_title"
+      }
+    ],
+    "predicted_entities": [
+      {
+        "entity": "book_title",
+        "start": 16,
+        "end": 34,
+        "confidence_entity": 0.9895880222320557,
+        "value": "Creative Is a Verb",
+        "extractor": "DIETClassifier"
+      },
+      {
+        "entity": "book_title",
+        "start": 45,
+        "end": 67,
+        "confidence_entity": 0.5074923038482666,
+        "value": "Alive, You're Creative",
+        "extractor": "DIETClassifier"
+      }
+    ]
+  },
+  {
+    "text": "don't i have been borrowing Ghost in His Eyes ?",
+    "entities": [
+      {
+        "start": 28,
+        "end": 45,
+        "value": "Ghost in His Eyes",
+        "entity": "book_title"
+      }
+    ],
+    "predicted_entities": [
+      {
+        "entity": "book_title",
+        "start": 28,
+        "end": 47,
+        "confidence_entity": 0.7419343590736389,
+        "value": "Ghost in His Eyes ?",
+        "extractor": "DIETClassifier"
+      }
+    ]
+  },
+  {
+    "text": "don't i have been borrowing Hug ?",
+    "entities": [
+      {
+        "start": 28,
+        "end": 31,
+        "value": "Hug",
+        "entity": "book_title"
+      }
+    ],
+    "predicted_entities": [
+      {
+        "entity": "book_title",
+        "start": 13,
+        "end": 17,
+        "confidence_entity": 0.6226863861083984,
+        "value": "been",
+        "extractor": "DIETClassifier"
+      },
+      {
+        "entity": "book_title",
+        "start": 28,
+        "end": 33,
+        "confidence_entity": 0.9382489323616028,
+        "value": "Hug ?",
+        "extractor": "DIETClassifier"
+      }
+    ]
+  },
+  {
+    "text": "don't i have been borrowing Merry Christmas, Baby (Nightshade number 4.5) ?",
+    "entities": [
+      {
+        "start": 28,
+        "end": 73,
+        "value": "Merry Christmas, Baby (Nightshade number 4.5)",
+        "entity": "book_title"
+      }
+    ],
+    "predicted_entities": [
+      {
+        "entity": "book_title",
+        "start": 28,
+        "end": 75,
+        "confidence_entity": 0.9336298108100891,
+        "value": "Merry Christmas, Baby (Nightshade number 4.5) ?",
+        "extractor": "DIETClassifier"
+      }
+    ]
+  },
+  {
+    "text": "don't i have been borrowing Minibijbel Motoren by Christopher Yost ?",
+    "entities": [
+      {
+        "start": 28,
+        "end": 46,
+        "value": "Minibijbel Motoren",
+        "entity": "book_title"
+      }
+    ],
+    "predicted_entities": [
+      {
+        "entity": "book_title",
+        "start": 28,
+        "end": 38,
+        "confidence_entity": 0.9798688292503357,
+        "value": "Minibijbel",
+        "extractor": "DIETClassifier"
+      }
+    ]
+  },
+  {
+    "text": "don't i have been borrowing Riding on a Beam of Light ?",
+    "entities": [
+      {
+        "start": 28,
+        "end": 53,
+        "value": "Riding on a Beam of Light",
+        "entity": "book_title"
+      }
+    ],
+    "predicted_entities": [
+      {
+        "entity": "book_title",
+        "start": 28,
+        "end": 55,
+        "confidence_entity": 0.5836265683174133,
+        "value": "Riding on a Beam of Light ?",
+        "extractor": "DIETClassifier"
+      }
+    ]
+  },
+  {
+    "text": "i need an info about borrowing Into the Realm The Call of the Rose",
+    "entities": [
+      {
+        "start": 31,
+        "end": 66,
+        "value": "Into the Realm The Call of the Rose",
+        "entity": "book_title"
+      }
+    ],
+    "predicted_entities": [
+      {
+        "entity": "book_title",
+        "start": 7,
+        "end": 9,
+        "confidence_entity": 0.897044837474823,
+        "value": "an",
+        "extractor": "DIETClassifier"
+      },
+      {
+        "entity": "book_title",
+        "start": 31,
+        "end": 66,
+        "confidence_entity": 0.5153849124908447,
+        "value": "Into the Realm The Call of the Rose",
+        "extractor": "DIETClassifier"
+      }
+    ]
+  },
+  {
+    "text": "i need an info about borrowing Katie Woo Celebrates (Katie Woo",
+    "entities": [
+      {
+        "start": 31,
+        "end": 62,
+        "value": "Katie Woo Celebrates (Katie Woo",
+        "entity": "book_title"
+      }
+    ],
+    "predicted_entities": [
+      {
+        "entity": "book_title",
+        "start": 7,
+        "end": 9,
+        "confidence_entity": 0.5585468411445618,
+        "value": "an",
+        "extractor": "DIETClassifier"
+      },
+      {
+        "entity": "book_title",
+        "start": 31,
+        "end": 62,
+        "confidence_entity": 0.5830931067466736,
+        "value": "Katie Woo Celebrates (Katie Woo",
+        "extractor": "DIETClassifier"
+      }
+    ]
+  },
+  {
+    "text": "i need an info about borrowing Mrs. Dalloway (Annotated)",
+    "entities": [
+      {
+        "start": 31,
+        "end": 56,
+        "value": "Mrs. Dalloway (Annotated)",
+        "entity": "book_title"
+      }
+    ],
+    "predicted_entities": [
+      {
+        "entity": "book_title",
+        "start": 7,
+        "end": 9,
+        "confidence_entity": 0.7291015982627869,
+        "value": "an",
+        "extractor": "DIETClassifier"
+      },
+      {
+        "entity": "book_title",
+        "start": 31,
+        "end": 56,
+        "confidence_entity": 0.8072807192802429,
+        "value": "Mrs. Dalloway (Annotated)",
+        "extractor": "DIETClassifier"
+      }
+    ]
+  },
+  {
+    "text": "i need an info about borrowing Sebastian Cork Forget Me Not",
+    "entities": [
+      {
+        "start": 31,
+        "end": 59,
+        "value": "Sebastian Cork Forget Me Not",
+        "entity": "book_title"
+      }
+    ],
+    "predicted_entities": [
+      {
+        "entity": "book_title",
+        "start": 41,
+        "end": 45,
+        "confidence_entity": 0.5476018190383911,
+        "value": "Cork",
+        "extractor": "DIETClassifier"
+      }
+    ]
+  },
+  {
+    "text": "i need an info about borrowing The Untamed",
+    "entities": [
+      {
+        "start": 31,
+        "end": 42,
+        "value": "The Untamed",
+        "entity": "book_title"
+      }
+    ],
+    "predicted_entities": [
+      {
+        "entity": "book_title",
+        "start": 7,
+        "end": 9,
+        "confidence_entity": 0.5653191208839417,
+        "value": "an",
+        "extractor": "DIETClassifier"
+      },
+      {
+        "entity": "book_title",
+        "start": 31,
+        "end": 42,
+        "confidence_entity": 0.9286060333251953,
+        "value": "The Untamed",
+        "extractor": "DIETClassifier"
+      }
+    ]
+  },
+  {
+    "text": "i need an info about borrowing This Shattered World (Starbound, number 2)",
+    "entities": [
+      {
+        "start": 31,
+        "end": 73,
+        "value": "This Shattered World (Starbound, number 2)",
+        "entity": "book_title"
+      }
+    ],
+    "predicted_entities": [
+      {
+        "entity": "book_title",
+        "start": 7,
+        "end": 9,
+        "confidence_entity": 0.7814162373542786,
+        "value": "an",
+        "extractor": "DIETClassifier"
+      },
+      {
+        "entity": "book_title",
+        "start": 31,
+        "end": 73,
+        "confidence_entity": 0.5308086276054382,
+        "value": "This Shattered World (Starbound, number 2)",
+        "extractor": "DIETClassifier"
+      }
+    ]
+  },
+  {
+    "text": "i need an information about borrowing Gabriel's Christmas Wish (A Regency Christmas Summons Novella)",
+    "entities": [
+      {
+        "start": 38,
+        "end": 100,
+        "value": "Gabriel's Christmas Wish (A Regency Christmas Summons Novella)",
+        "entity": "book_title"
+      }
+    ],
+    "predicted_entities": [
+      {
+        "entity": "book_title",
+        "start": 7,
+        "end": 9,
+        "confidence_entity": 0.7685474157333374,
+        "value": "an",
+        "extractor": "DIETClassifier"
+      },
+      {
+        "entity": "book_title",
+        "start": 38,
+        "end": 100,
+        "confidence_entity": 0.7367538213729858,
+        "value": "Gabriel's Christmas Wish (A Regency Christmas Summons Novella)",
+        "extractor": "DIETClassifier"
+      }
+    ]
+  },
+  {
+    "text": "i need an information about borrowing Murder by the Seaside",
+    "entities": [
+      {
+        "start": 38,
+        "end": 59,
+        "value": "Murder by the Seaside",
+        "entity": "book_title"
+      }
+    ],
+    "predicted_entities": [
+      {
+        "entity": "book_title",
+        "start": 7,
+        "end": 9,
+        "confidence_entity": 0.5486987233161926,
+        "value": "an",
+        "extractor": "DIETClassifier"
+      },
+      {
+        "entity": "book_title",
+        "start": 38,
+        "end": 44,
+        "confidence_entity": 0.7950074672698975,
+        "value": "Murder",
+        "extractor": "DIETClassifier"
+      }
+    ]
+  },
+  {
+    "text": "i think i have The Bride Sale from your library",
+    "entities": [
+      {
+        "start": 15,
+        "end": 29,
+        "value": "The Bride Sale",
+        "entity": "book_title"
+      }
+    ],
+    "predicted_entities": [
+      {
+        "entity": "book_title",
+        "start": 15,
+        "end": 24,
+        "confidence_entity": 0.9915590286254883,
+        "value": "The Bride",
+        "extractor": "DIETClassifier"
+      }
+    ]
+  },
+  {
+    "text": "i think i have The Possession of Lawrence Eugene Davis by Pablo Rumel from your library",
+    "entities": [
+      {
+        "start": 15,
+        "end": 54,
+        "value": "The Possession of Lawrence Eugene Davis",
+        "entity": "book_title"
+      }
+    ],
+    "predicted_entities": [
+      {
+        "entity": "book_title",
+        "start": 15,
+        "end": 32,
+        "confidence_entity": 0.7684638500213623,
+        "value": "The Possession of",
+        "extractor": "DIETClassifier"
+      }
+    ]
+  },
+  {
+    "text": "i think i own a copy of When Kat's Away from the library",
+    "entities": [
+      {
+        "start": 24,
+        "end": 39,
+        "value": "When Kat's Away",
+        "entity": "book_title"
+      }
+    ],
+    "predicted_entities": [
+      {
+        "entity": "book_title",
+        "start": 29,
+        "end": 39,
+        "confidence_entity": 0.8277767300605774,
+        "value": "Kat's Away",
+        "extractor": "DIETClassifier"
+      }
+    ]
+  },
+  {
+    "text": "Books and Characters French & English by Christopher McDougall",
+    "entities": [
+      {
+        "start": 0,
+        "end": 37,
+        "value": "Books and Characters French & English",
+        "entity": "book_title"
+      }
+    ],
+    "predicted_entities": []
+  },
+  {
+    "text": "Cesare Casella",
+    "entities": [],
+    "predicted_entities": [
+      {
+        "entity": "book_title",
+        "start": 0,
+        "end": 6,
+        "confidence_entity": 0.6820782423019409,
+        "value": "Cesare",
+        "extractor": "DIETClassifier"
+      }
+    ]
+  },
+  {
+    "text": "Dale Cameron and Meryl Streep",
+    "entities": [],
+    "predicted_entities": [
+      {
+        "entity": "book_title",
+        "start": 0,
+        "end": 29,
+        "confidence_entity": 0.6210017204284668,
+        "value": "Dale Cameron and Meryl Streep",
+        "extractor": "DIETClassifier"
+      }
+    ]
+  },
+  {
+    "text": "Dian Dincin Buchmans Herbal Medicine Natural Way to Get Well and Stay Well",
+    "entities": [
+      {
+        "start": 0,
+        "end": 74,
+        "value": "Dian Dincin Buchmans Herbal Medicine Natural Way to Get Well and Stay Well",
+        "entity": "book_title"
+      }
+    ],
+    "predicted_entities": [
+      {
+        "entity": "book_title",
+        "start": 0,
+        "end": 4,
+        "confidence_entity": 0.7903254628181458,
+        "value": "Dian",
+        "extractor": "DIETClassifier"
+      },
+      {
+        "entity": "book_title",
+        "start": 21,
+        "end": 51,
+        "confidence_entity": 0.4410812258720398,
+        "value": "Herbal Medicine Natural Way to",
+        "extractor": "DIETClassifier"
+      }
+    ]
+  },
+  {
+    "text": "Grendel",
+    "entities": [
+      {
+        "start": 0,
+        "end": 7,
+        "value": "Grendel",
+        "entity": "book_title"
+      }
+    ],
+    "predicted_entities": []
+  },
+  {
+    "text": "Jhankar Mahbub and Julie Anne Lindsey",
+    "entities": [],
+    "predicted_entities": [
+      {
+        "entity": "book_title",
+        "start": 0,
+        "end": 7,
+        "confidence_entity": 0.8216566443443298,
+        "value": "Jhankar",
+        "extractor": "DIETClassifier"
+      }
+    ]
+  },
+  {
+    "text": "Mary Fox and Leon Wolff",
+    "entities": [],
+    "predicted_entities": [
+      {
+        "entity": "book_title",
+        "start": 0,
+        "end": 17,
+        "confidence_entity": 0.5178642868995667,
+        "value": "Mary Fox and Leon",
+        "extractor": "DIETClassifier"
+      }
+    ]
+  },
+  {
+    "text": "PERSON3's name is Edward Herrmann",
+    "entities": [],
+    "predicted_entities": [
+      {
+        "entity": "book_title",
+        "start": 0,
+        "end": 9,
+        "confidence_entity": 0.5862377882003784,
+        "value": "PERSON3's",
+        "extractor": "DIETClassifier"
+      }
+    ]
+  },
+  {
+    "text": "PERSON3's name is Freddy Jackson Brown",
+    "entities": [],
+    "predicted_entities": [
+      {
+        "entity": "book_title",
+        "start": 0,
+        "end": 9,
+        "confidence_entity": 0.7679709196090698,
+        "value": "PERSON3's",
+        "extractor": "DIETClassifier"
+      },
+      {
+        "entity": "book_title",
+        "start": 18,
+        "end": 38,
+        "confidence_entity": 0.6467002034187317,
+        "value": "Freddy Jackson Brown",
+        "extractor": "DIETClassifier"
+      }
+    ]
+  },
+  {
+    "text": "PERSON3's name is Fyodor Dostoyevsky",
+    "entities": [],
+    "predicted_entities": [
+      {
+        "entity": "book_title",
+        "start": 25,
+        "end": 36,
+        "confidence_entity": 0.6833575367927551,
+        "value": "Dostoyevsky",
+        "extractor": "DIETClassifier"
+      }
+    ]
+  },
+  {
+    "text": "PERSON3's name is Stan Tekiela",
+    "entities": [],
+    "predicted_entities": [
+      {
+        "entity": "book_title",
+        "start": 0,
+        "end": 9,
+        "confidence_entity": 0.8425995707511902,
+        "value": "PERSON3's",
+        "extractor": "DIETClassifier"
+      },
+      {
+        "entity": "book_title",
+        "start": 18,
+        "end": 30,
+        "confidence_entity": 0.6387512683868408,
+        "value": "Stan Tekiela",
+        "extractor": "DIETClassifier"
+      }
+    ]
+  },
+  {
+    "text": "PERSON3's name is Vahur Kersna",
+    "entities": [],
+    "predicted_entities": [
+      {
+        "entity": "book_title",
+        "start": 0,
+        "end": 9,
+        "confidence_entity": 0.4821251332759857,
+        "value": "PERSON3's",
+        "extractor": "DIETClassifier"
+      },
+      {
+        "entity": "book_title",
+        "start": 18,
+        "end": 30,
+        "confidence_entity": 0.8286524415016174,
+        "value": "Vahur Kersna",
+        "extractor": "DIETClassifier"
+      }
+    ]
+  },
+  {
+    "text": "The Complete Science Fiction Treasury of H.G. Wells by Michael Forcier",
+    "entities": [
+      {
+        "start": 0,
+        "end": 51,
+        "value": "The Complete Science Fiction Treasury of H.G. Wells",
+        "entity": "book_title"
+      }
+    ],
+    "predicted_entities": [
+      {
+        "entity": "book_title",
+        "start": 0,
+        "end": 44,
+        "confidence_entity": 0.5536085963249207,
+        "value": "The Complete Science Fiction Treasury of H.G",
+        "extractor": "DIETClassifier"
+      }
+    ]
+  },
+  {
+    "text": "To Have and Have Not",
+    "entities": [
+      {
+        "start": 0,
+        "end": 20,
+        "value": "To Have and Have Not",
+        "entity": "book_title"
+      }
+    ],
+    "predicted_entities": [
+      {
+        "entity": "book_title",
+        "start": 8,
+        "end": 11,
+        "confidence_entity": 0.5413433909416199,
+        "value": "and",
+        "extractor": "DIETClassifier"
+      }
+    ]
+  },
+  {
+    "text": "can you do a search for All's Fairy in Love and War (Avalon Web of Magic, number 8)",
+    "entities": [
+      {
+        "start": 24,
+        "end": 83,
+        "value": "All's Fairy in Love and War (Avalon Web of Magic, number 8)",
+        "entity": "book_title"
+      }
+    ],
+    "predicted_entities": [
+      {
+        "entity": "book_title",
+        "start": 11,
+        "end": 83,
+        "confidence_entity": 0.5086253881454468,
+        "value": "a search for All's Fairy in Love and War (Avalon Web of Magic, number 8)",
+        "extractor": "DIETClassifier"
+      }
+    ]
+  },
+  {
+    "text": "can you do a search for On Fire (Elemental Short Stories Book, number 1)",
+    "entities": [
+      {
+        "start": 24,
+        "end": 72,
+        "value": "On Fire (Elemental Short Stories Book, number 1)",
+        "entity": "book_title"
+      }
+    ],
+    "predicted_entities": [
+      {
+        "entity": "book_title",
+        "start": 13,
+        "end": 72,
+        "confidence_entity": 0.9215579032897949,
+        "value": "search for On Fire (Elemental Short Stories Book, number 1)",
+        "extractor": "DIETClassifier"
+      }
+    ]
+  },
+  {
+    "text": "can you do a search for To Have and Have Not",
+    "entities": [
+      {
+        "start": 24,
+        "end": 44,
+        "value": "To Have and Have Not",
+        "entity": "book_title"
+      }
+    ],
+    "predicted_entities": []
+  },
+  {
+    "text": "do you have Angie Smibert's They Cage the Animals at Night",
+    "entities": [
+      {
+        "start": 28,
+        "end": 58,
+        "value": "They Cage the Animals at Night",
+        "entity": "book_title"
+      }
+    ],
+    "predicted_entities": [
+      {
+        "entity": "book_title",
+        "start": 12,
+        "end": 58,
+        "confidence_entity": 0.9803433418273926,
+        "value": "Angie Smibert's They Cage the Animals at Night",
+        "extractor": "DIETClassifier"
+      }
+    ]
+  },
+  {
+    "text": "do you have Ari Harper's Arlo Finch in the Valley of Fire",
+    "entities": [
+      {
+        "start": 25,
+        "end": 57,
+        "value": "Arlo Finch in the Valley of Fire",
+        "entity": "book_title"
+      }
+    ],
+    "predicted_entities": [
+      {
+        "entity": "book_title",
+        "start": 12,
+        "end": 57,
+        "confidence_entity": 0.9464092254638672,
+        "value": "Ari Harper's Arlo Finch in the Valley of Fire",
+        "extractor": "DIETClassifier"
+      }
+    ]
+  },
+  {
+    "text": "do you have Katelyn Skye's El Socialista Sentimental",
+    "entities": [
+      {
+        "start": 27,
+        "end": 52,
+        "value": "El Socialista Sentimental",
+        "entity": "book_title"
+      }
+    ],
+    "predicted_entities": [
+      {
+        "entity": "book_title",
+        "start": 12,
+        "end": 52,
+        "confidence_entity": 0.6538061499595642,
+        "value": "Katelyn Skye's El Socialista Sentimental",
+        "extractor": "DIETClassifier"
+      }
+    ]
+  },
+  {
+    "text": "do you have Leslie Kelly's All's Fairy in Love and War (Avalon Web of Magic, number 8)",
+    "entities": [
+      {
+        "start": 27,
+        "end": 86,
+        "value": "All's Fairy in Love and War (Avalon Web of Magic, number 8)",
+        "entity": "book_title"
+      }
+    ],
+    "predicted_entities": [
+      {
+        "entity": "book_title",
+        "start": 12,
+        "end": 86,
+        "confidence_entity": 0.9968365430831909,
+        "value": "Leslie Kelly's All's Fairy in Love and War (Avalon Web of Magic, number 8)",
+        "extractor": "DIETClassifier"
+      }
+    ]
+  },
+  {
+    "text": "do you have Milan Watson's Surprised by God How I Learned to Stop Worrying and Love Religion",
+    "entities": [
+      {
+        "start": 27,
+        "end": 92,
+        "value": "Surprised by God How I Learned to Stop Worrying and Love Religion",
+        "entity": "book_title"
+      }
+    ],
+    "predicted_entities": [
+      {
+        "entity": "book_title",
+        "start": 12,
+        "end": 92,
+        "confidence_entity": 0.579123318195343,
+        "value": "Milan Watson's Surprised by God How I Learned to Stop Worrying and Love Religion",
+        "extractor": "DIETClassifier"
+      }
+    ]
+  },
+  {
+    "text": "do you have Stephen Baxter's Il verde mi dona",
+    "entities": [
+      {
+        "start": 29,
+        "end": 45,
+        "value": "Il verde mi dona",
+        "entity": "book_title"
+      }
+    ],
+    "predicted_entities": [
+      {
+        "entity": "book_title",
+        "start": 12,
+        "end": 45,
+        "confidence_entity": 0.6555640697479248,
+        "value": "Stephen Baxter's Il verde mi dona",
+        "extractor": "DIETClassifier"
+      }
+    ]
+  },
+  {
+    "text": "do you have Tim Weaver's Huber Hill and the Brotherhood of Coronado (Huber Hill, number 2)",
+    "entities": [
+      {
+        "start": 25,
+        "end": 90,
+        "value": "Huber Hill and the Brotherhood of Coronado (Huber Hill, number 2)",
+        "entity": "book_title"
+      }
+    ],
+    "predicted_entities": [
+      {
+        "entity": "book_title",
+        "start": 12,
+        "end": 90,
+        "confidence_entity": 0.8899743556976318,
+        "value": "Tim Weaver's Huber Hill and the Brotherhood of Coronado (Huber Hill, number 2)",
+        "extractor": "DIETClassifier"
+      }
+    ]
+  },
+  {
+    "text": "do you have one by Margaret Yorke",
+    "entities": [],
+    "predicted_entities": [
+      {
+        "entity": "book_title",
+        "start": 12,
+        "end": 15,
+        "confidence_entity": 0.6867385506629944,
+        "value": "one",
+        "extractor": "DIETClassifier"
+      }
+    ]
+  },
+  {
+    "text": "do you have one by Patrick Benson",
+    "entities": [],
+    "predicted_entities": [
+      {
+        "entity": "book_title",
+        "start": 12,
+        "end": 15,
+        "confidence_entity": 0.45521944761276245,
+        "value": "one",
+        "extractor": "DIETClassifier"
+      }
+    ]
+  },
+  {
+    "text": "do you have one by Samantha Peale",
+    "entities": [],
+    "predicted_entities": [
+      {
+        "entity": "book_title",
+        "start": 12,
+        "end": 15,
+        "confidence_entity": 0.5471010804176331,
+        "value": "one",
+        "extractor": "DIETClassifier"
+      }
+    ]
+  },
+  {
+    "text": "do you have one called Empire by Lynsay Sands",
+    "entities": [
+      {
+        "start": 23,
+        "end": 29,
+        "value": "Empire",
+        "entity": "book_title"
+      }
+    ],
+    "predicted_entities": [
+      {
+        "entity": "book_title",
+        "start": 23,
+        "end": 32,
+        "confidence_entity": 0.5484320521354675,
+        "value": "Empire by",
+        "extractor": "DIETClassifier"
+      }
+    ]
+  },
+  {
+    "text": "do you have one called The Blood of Strangers Stories from Emergency Medicine by Tim Turner",
+    "entities": [
+      {
+        "start": 23,
+        "end": 77,
+        "value": "The Blood of Strangers Stories from Emergency Medicine",
+        "entity": "book_title"
+      }
+    ],
+    "predicted_entities": [
+      {
+        "entity": "book_title",
+        "start": 23,
+        "end": 68,
+        "confidence_entity": 0.9548737406730652,
+        "value": "The Blood of Strangers Stories from Emergency",
+        "extractor": "DIETClassifier"
+      }
+    ]
+  },
+  {
+    "text": "do you own a Anno's Medieval World GB in your library?",
+    "entities": [
+      {
+        "start": 13,
+        "end": 37,
+        "value": "Anno's Medieval World GB",
+        "entity": "book_title"
+      }
+    ],
+    "predicted_entities": [
+      {
+        "entity": "book_title",
+        "start": 11,
+        "end": 40,
+        "confidence_entity": 0.870775043964386,
+        "value": "a Anno's Medieval World GB in",
+        "extractor": "DIETClassifier"
+      }
+    ]
+  },
+  {
+    "text": "do you own a Black Liquor Poems in your library?",
+    "entities": [
+      {
+        "start": 13,
+        "end": 31,
+        "value": "Black Liquor Poems",
+        "entity": "book_title"
+      }
+    ],
+    "predicted_entities": [
+      {
+        "entity": "book_title",
+        "start": 11,
+        "end": 34,
+        "confidence_entity": 0.6555125117301941,
+        "value": "a Black Liquor Poems in",
+        "extractor": "DIETClassifier"
+      },
+      {
+        "entity": "book_title",
+        "start": 47,
+        "end": 48,
+        "confidence_entity": 0.8325897455215454,
+        "value": "?",
+        "extractor": "DIETClassifier"
+      }
+    ]
+  },
+  {
+    "text": "do you own a Piacere, io sono Gauss in your library?",
+    "entities": [
+      {
+        "start": 13,
+        "end": 35,
+        "value": "Piacere, io sono Gauss",
+        "entity": "book_title"
+      }
+    ],
+    "predicted_entities": [
+      {
+        "entity": "book_title",
+        "start": 11,
+        "end": 38,
+        "confidence_entity": 0.8818270564079285,
+        "value": "a Piacere, io sono Gauss in",
+        "extractor": "DIETClassifier"
+      }
+    ]
+  },
+  {
+    "text": "do you own a Taken by the Shifters The Collection (Taken by the Shifters number 1-3) in your library?",
+    "entities": [
+      {
+        "start": 13,
+        "end": 84,
+        "value": "Taken by the Shifters The Collection (Taken by the Shifters number 1-3)",
+        "entity": "book_title"
+      }
+    ],
+    "predicted_entities": [
+      {
+        "entity": "book_title",
+        "start": 11,
+        "end": 87,
+        "confidence_entity": 0.6164979934692383,
+        "value": "a Taken by the Shifters The Collection (Taken by the Shifters number 1-3) in",
+        "extractor": "DIETClassifier"
+      },
+      {
+        "entity": "book_title",
+        "start": 100,
+        "end": 101,
+        "confidence_entity": 0.8966785669326782,
+        "value": "?",
+        "extractor": "DIETClassifier"
+      }
+    ]
+  },
+  {
+    "text": "do you own a The Congressman Who Loved Flaubert 21 Stories and Novellas in your library?",
+    "entities": [
+      {
+        "start": 13,
+        "end": 71,
+        "value": "The Congressman Who Loved Flaubert 21 Stories and Novellas",
+        "entity": "book_title"
+      }
+    ],
+    "predicted_entities": [
+      {
+        "entity": "book_title",
+        "start": 11,
+        "end": 74,
+        "confidence_entity": 0.6336536407470703,
+        "value": "a The Congressman Who Loved Flaubert 21 Stories and Novellas in",
+        "extractor": "DIETClassifier"
+      }
+    ]
+  },
+  {
+    "text": "do you own a The Norton Anthology of English Literature, Vol. A Middle Ages in your library?",
+    "entities": [
+      {
+        "start": 13,
+        "end": 75,
+        "value": "The Norton Anthology of English Literature, Vol. A Middle Ages",
+        "entity": "book_title"
+      }
+    ],
+    "predicted_entities": [
+      {
+        "entity": "book_title",
+        "start": 11,
+        "end": 92,
+        "confidence_entity": 0.5463108420372009,
+        "value": "a The Norton Anthology of English Literature, Vol. A Middle Ages in your library?",
+        "extractor": "DIETClassifier"
+      }
+    ]
+  },
+  {
+    "text": "do you own a To Have and Have Not in your library?",
+    "entities": [
+      {
+        "start": 13,
+        "end": 33,
+        "value": "To Have and Have Not",
+        "entity": "book_title"
+      }
+    ],
+    "predicted_entities": [
+      {
+        "entity": "book_title",
+        "start": 21,
+        "end": 33,
+        "confidence_entity": 0.4571070969104767,
+        "value": "and Have Not",
+        "extractor": "DIETClassifier"
+      }
+    ]
+  },
+  {
+    "text": "do you own a Where the Dead Live in your library?",
+    "entities": [
+      {
+        "start": 13,
+        "end": 32,
+        "value": "Where the Dead Live",
+        "entity": "book_title"
+      }
+    ],
+    "predicted_entities": [
+      {
+        "entity": "book_title",
+        "start": 11,
+        "end": 35,
+        "confidence_entity": 0.4916997253894806,
+        "value": "a Where the Dead Live in",
+        "extractor": "DIETClassifier"
+      }
+    ]
+  },
+  {
+    "text": "i am looking for something like Love Means... Patience",
+    "entities": [
+      {
+        "start": 32,
+        "end": 54,
+        "value": "Love Means... Patience",
+        "entity": "book_title"
+      }
+    ],
+    "predicted_entities": [
+      {
+        "entity": "book_title",
+        "start": 5,
+        "end": 16,
+        "confidence_entity": 0.5122949481010437,
+        "value": "looking for",
+        "extractor": "DIETClassifier"
+      },
+      {
+        "entity": "book_title",
+        "start": 17,
+        "end": 54,
+        "confidence_entity": 0.5561676025390625,
+        "value": "something like Love Means... Patience",
+        "extractor": "DIETClassifier"
+      }
+    ]
+  },
+  {
+    "text": "i am looking for something like Midnight Rescue (Killer Instincts, number 1)",
+    "entities": [
+      {
+        "start": 32,
+        "end": 76,
+        "value": "Midnight Rescue (Killer Instincts, number 1)",
+        "entity": "book_title"
+      }
+    ],
+    "predicted_entities": [
+      {
+        "entity": "book_title",
+        "start": 17,
+        "end": 76,
+        "confidence_entity": 0.9904273748397827,
+        "value": "something like Midnight Rescue (Killer Instincts, number 1)",
+        "extractor": "DIETClassifier"
+      }
+    ]
+  },
+  {
+    "text": "i am looking for something like Raising An Emotionally Intelligent Child",
+    "entities": [
+      {
+        "start": 32,
+        "end": 72,
+        "value": "Raising An Emotionally Intelligent Child",
+        "entity": "book_title"
+      }
+    ],
+    "predicted_entities": [
+      {
+        "entity": "book_title",
+        "start": 17,
+        "end": 72,
+        "confidence_entity": 0.9720325469970703,
+        "value": "something like Raising An Emotionally Intelligent Child",
+        "extractor": "DIETClassifier"
+      }
+    ]
+  },
+  {
+    "text": "i am looking for something like Rumic Theater One Or Double",
+    "entities": [
+      {
+        "start": 32,
+        "end": 59,
+        "value": "Rumic Theater One Or Double",
+        "entity": "book_title"
+      }
+    ],
+    "predicted_entities": [
+      {
+        "entity": "book_title",
+        "start": 17,
+        "end": 45,
+        "confidence_entity": 0.8968242406845093,
+        "value": "something like Rumic Theater",
+        "extractor": "DIETClassifier"
+      },
+      {
+        "entity": "book_title",
+        "start": 53,
+        "end": 59,
+        "confidence_entity": 0.7206329703330994,
+        "value": "Double",
+        "extractor": "DIETClassifier"
+      }
+    ]
+  },
+  {
+    "text": "i am searching for Every Bitter Thing (Chief Inspector Mario Silva number 4) by Paco Medina",
+    "entities": [
+      {
+        "start": 19,
+        "end": 76,
+        "value": "Every Bitter Thing (Chief Inspector Mario Silva number 4)",
+        "entity": "book_title"
+      }
+    ],
+    "predicted_entities": [
+      {
+        "entity": "book_title",
+        "start": 5,
+        "end": 76,
+        "confidence_entity": 0.9894517064094543,
+        "value": "searching for Every Bitter Thing (Chief Inspector Mario Silva number 4)",
+        "extractor": "DIETClassifier"
+      }
+    ]
+  },
+  {
+    "text": "i am searching for Having Patience by Catherine McKenzie",
+    "entities": [
+      {
+        "start": 19,
+        "end": 34,
+        "value": "Having Patience",
+        "entity": "book_title"
+      }
+    ],
+    "predicted_entities": [
+      {
+        "entity": "book_title",
+        "start": 5,
+        "end": 34,
+        "confidence_entity": 0.5168353915214539,
+        "value": "searching for Having Patience",
+        "extractor": "DIETClassifier"
+      }
+    ]
+  },
+  {
+    "text": "i am searching for Meeting Your Half-Orange An Utterly Upbeat Guide to Using Dating Optimism to Find Your Perfect Match",
+    "entities": [
+      {
+        "start": 19,
+        "end": 119,
+        "value": "Meeting Your Half-Orange An Utterly Upbeat Guide to Using Dating Optimism to Find Your Perfect Match",
+        "entity": "book_title"
+      }
+    ],
+    "predicted_entities": [
+      {
+        "entity": "book_title",
+        "start": 5,
+        "end": 119,
+        "confidence_entity": 0.9476640224456787,
+        "value": "searching for Meeting Your Half-Orange An Utterly Upbeat Guide to Using Dating Optimism to Find Your Perfect Match",
+        "extractor": "DIETClassifier"
+      }
+    ]
+  },
+  {
+    "text": "i am searching for My Dark Highlander (Kilted Athletes Through Time, number 2)",
+    "entities": [
+      {
+        "start": 19,
+        "end": 78,
+        "value": "My Dark Highlander (Kilted Athletes Through Time, number 2)",
+        "entity": "book_title"
+      }
+    ],
+    "predicted_entities": [
+      {
+        "entity": "book_title",
+        "start": 5,
+        "end": 78,
+        "confidence_entity": 0.994783341884613,
+        "value": "searching for My Dark Highlander (Kilted Athletes Through Time, number 2)",
+        "extractor": "DIETClassifier"
+      }
+    ]
+  },
+  {
+    "text": "i am seeking for Black Anthology Adult Adoptees Claim Their Space",
+    "entities": [
+      {
+        "start": 17,
+        "end": 65,
+        "value": "Black Anthology Adult Adoptees Claim Their Space",
+        "entity": "book_title"
+      }
+    ],
+    "predicted_entities": [
+      {
+        "entity": "book_title",
+        "start": 5,
+        "end": 65,
+        "confidence_entity": 0.86747145652771,
+        "value": "seeking for Black Anthology Adult Adoptees Claim Their Space",
+        "extractor": "DIETClassifier"
+      }
+    ]
+  },
+  {
+    "text": "i am seeking for Blame",
+    "entities": [
+      {
+        "start": 17,
+        "end": 22,
+        "value": "Blame",
+        "entity": "book_title"
+      }
+    ],
+    "predicted_entities": [
+      {
+        "entity": "book_title",
+        "start": 5,
+        "end": 22,
+        "confidence_entity": 0.9980682730674744,
+        "value": "seeking for Blame",
+        "extractor": "DIETClassifier"
+      }
+    ]
+  },
+  {
+    "text": "i am seeking for Captive Queen A Novel of Eleanor of Aquitaine by Daniel Pinkwater and Nevil Shute",
+    "entities": [
+      {
+        "start": 17,
+        "end": 62,
+        "value": "Captive Queen A Novel of Eleanor of Aquitaine",
+        "entity": "book_title"
+      }
+    ],
+    "predicted_entities": [
+      {
+        "entity": "book_title",
+        "start": 5,
+        "end": 62,
+        "confidence_entity": 0.9918656945228577,
+        "value": "seeking for Captive Queen A Novel of Eleanor of Aquitaine",
+        "extractor": "DIETClassifier"
+      }
+    ]
+  },
+  {
+    "text": "i am seeking for Das Schlimmste kommt noch oder Fast eine Jugend",
+    "entities": [
+      {
+        "start": 17,
+        "end": 64,
+        "value": "Das Schlimmste kommt noch oder Fast eine Jugend",
+        "entity": "book_title"
+      }
+    ],
+    "predicted_entities": [
+      {
+        "entity": "book_title",
+        "start": 5,
+        "end": 64,
+        "confidence_entity": 0.5337286591529846,
+        "value": "seeking for Das Schlimmste kommt noch oder Fast eine Jugend",
+        "extractor": "DIETClassifier"
+      }
+    ]
+  },
+  {
+    "text": "i am seeking for Fearless (Ruin, number 2.5)",
+    "entities": [
+      {
+        "start": 17,
+        "end": 44,
+        "value": "Fearless (Ruin, number 2.5)",
+        "entity": "book_title"
+      }
+    ],
+    "predicted_entities": [
+      {
+        "entity": "book_title",
+        "start": 5,
+        "end": 44,
+        "confidence_entity": 0.9959819316864014,
+        "value": "seeking for Fearless (Ruin, number 2.5)",
+        "extractor": "DIETClassifier"
+      }
+    ]
+  },
+  {
+    "text": "i am seeking for La primavera dei maimorti by Andrea Tezumo and Anya Howard",
+    "entities": [
+      {
+        "start": 17,
+        "end": 42,
+        "value": "La primavera dei maimorti",
+        "entity": "book_title"
+      }
+    ],
+    "predicted_entities": [
+      {
+        "entity": "book_title",
+        "start": 5,
+        "end": 42,
+        "confidence_entity": 0.9809931516647339,
+        "value": "seeking for La primavera dei maimorti",
+        "extractor": "DIETClassifier"
+      }
+    ]
+  },
+  {
+    "text": "i am seeking for Lucifer's Children by Constance Garnett and Ellen Raskin",
+    "entities": [
+      {
+        "start": 17,
+        "end": 35,
+        "value": "Lucifer's Children",
+        "entity": "book_title"
+      }
+    ],
+    "predicted_entities": [
+      {
+        "entity": "book_title",
+        "start": 5,
+        "end": 35,
+        "confidence_entity": 0.8201361298561096,
+        "value": "seeking for Lucifer's Children",
+        "extractor": "DIETClassifier"
+      }
+    ]
+  },
+  {
+    "text": "i am seeking for Techniques of Jewelry Illustration and Color Rendering",
+    "entities": [
+      {
+        "start": 17,
+        "end": 71,
+        "value": "Techniques of Jewelry Illustration and Color Rendering",
+        "entity": "book_title"
+      }
+    ],
+    "predicted_entities": [
+      {
+        "entity": "book_title",
+        "start": 5,
+        "end": 71,
+        "confidence_entity": 0.9914888143539429,
+        "value": "seeking for Techniques of Jewelry Illustration and Color Rendering",
+        "extractor": "DIETClassifier"
+      }
+    ]
+  },
+  {
+    "text": "i am seeking for The Affair",
+    "entities": [
+      {
+        "start": 17,
+        "end": 27,
+        "value": "The Affair",
+        "entity": "book_title"
+      }
+    ],
+    "predicted_entities": [
+      {
+        "entity": "book_title",
+        "start": 5,
+        "end": 27,
+        "confidence_entity": 0.9866666197776794,
+        "value": "seeking for The Affair",
+        "extractor": "DIETClassifier"
+      }
+    ]
+  },
+  {
+    "text": "i am seeking for The Forgetting Curve (Memento Nora, number 2) by Giannes Ioannides and John Steven Gurney",
+    "entities": [
+      {
+        "start": 17,
+        "end": 62,
+        "value": "The Forgetting Curve (Memento Nora, number 2)",
+        "entity": "book_title"
+      }
+    ],
+    "predicted_entities": [
+      {
+        "entity": "book_title",
+        "start": 5,
+        "end": 62,
+        "confidence_entity": 0.9962847232818604,
+        "value": "seeking for The Forgetting Curve (Memento Nora, number 2)",
+        "extractor": "DIETClassifier"
+      }
+    ]
+  },
+  {
+    "text": "i am seeking for Welcome Home Travels in Smalltown Canada by Becky Masterman and Masami Kurumada",
+    "entities": [
+      {
+        "start": 17,
+        "end": 57,
+        "value": "Welcome Home Travels in Smalltown Canada",
+        "entity": "book_title"
+      }
+    ],
+    "predicted_entities": [
+      {
+        "entity": "book_title",
+        "start": 5,
+        "end": 57,
+        "confidence_entity": 0.6308838129043579,
+        "value": "seeking for Welcome Home Travels in Smalltown Canada",
+        "extractor": "DIETClassifier"
+      }
+    ]
+  },
+  {
+    "text": "i demand Jukebox",
+    "entities": [
+      {
+        "start": 9,
+        "end": 16,
+        "value": "Jukebox",
+        "entity": "book_title"
+      }
+    ],
+    "predicted_entities": []
+  },
+  {
+    "text": "i demand Pursuit",
+    "entities": [
+      {
+        "start": 9,
+        "end": 16,
+        "value": "Pursuit",
+        "entity": "book_title"
+      }
+    ],
+    "predicted_entities": [
+      {
+        "entity": "book_title",
+        "start": 2,
+        "end": 16,
+        "confidence_entity": 0.9074425101280212,
+        "value": "demand Pursuit",
+        "extractor": "DIETClassifier"
+      }
+    ]
+  },
+  {
+    "text": "i request The Visitor",
+    "entities": [
+      {
+        "start": 10,
+        "end": 21,
+        "value": "The Visitor",
+        "entity": "book_title"
+      }
+    ],
+    "predicted_entities": []
+  },
+  {
+    "text": "please find I Won't Comb My Hair",
+    "entities": [
+      {
+        "start": 12,
+        "end": 32,
+        "value": "I Won't Comb My Hair",
+        "entity": "book_title"
+      }
+    ],
+    "predicted_entities": [
+      {
+        "entity": "book_title",
+        "start": 14,
+        "end": 32,
+        "confidence_entity": 0.6615021228790283,
+        "value": "Won't Comb My Hair",
+        "extractor": "DIETClassifier"
+      }
+    ]
+  },
+  {
+    "text": "please find N.P by Debby Sly",
+    "entities": [
+      {
+        "start": 12,
+        "end": 15,
+        "value": "N.P",
+        "entity": "book_title"
+      }
+    ],
+    "predicted_entities": []
+  },
+  {
+    "text": "searching for Can Such Things Be? by Cassandra Chandler",
+    "entities": [
+      {
+        "start": 14,
+        "end": 33,
+        "value": "Can Such Things Be?",
+        "entity": "book_title"
+      }
+    ],
+    "predicted_entities": [
+      {
+        "entity": "book_title",
+        "start": 23,
+        "end": 33,
+        "confidence_entity": 0.661653995513916,
+        "value": "Things Be?",
+        "extractor": "DIETClassifier"
+      }
+    ]
+  },
+  {
+    "text": "searching for Safe by His Side (Colby Agency number 1) by N Gray",
+    "entities": [
+      {
+        "start": 14,
+        "end": 54,
+        "value": "Safe by His Side (Colby Agency number 1)",
+        "entity": "book_title"
+      }
+    ],
+    "predicted_entities": [
+      {
+        "entity": "book_title",
+        "start": 0,
+        "end": 9,
+        "confidence_entity": 0.9350144863128662,
+        "value": "searching",
+        "extractor": "DIETClassifier"
+      },
+      {
+        "entity": "book_title",
+        "start": 14,
+        "end": 54,
+        "confidence_entity": 0.5173380374908447,
+        "value": "Safe by His Side (Colby Agency number 1)",
+        "extractor": "DIETClassifier"
+      }
+    ]
+  },
+  {
+    "text": "searching for Sun King",
+    "entities": [
+      {
+        "start": 14,
+        "end": 22,
+        "value": "Sun King",
+        "entity": "book_title"
+      }
+    ],
+    "predicted_entities": [
+      {
+        "entity": "book_title",
+        "start": 0,
+        "end": 13,
+        "confidence_entity": 0.6628127098083496,
+        "value": "searching for",
+        "extractor": "DIETClassifier"
+      }
+    ]
+  },
+  {
+    "text": "searching for The Mountain Between Us by Anna Gavalda",
+    "entities": [
+      {
+        "start": 14,
+        "end": 37,
+        "value": "The Mountain Between Us",
+        "entity": "book_title"
+      }
+    ],
+    "predicted_entities": [
+      {
+        "entity": "book_title",
+        "start": 0,
+        "end": 37,
+        "confidence_entity": 0.7858178615570068,
+        "value": "searching for The Mountain Between Us",
+        "extractor": "DIETClassifier"
+      }
+    ]
+  },
+  {
+    "text": "searching for The Southwest Inside Out An Illustrated Guide to the Land and Its History",
+    "entities": [
+      {
+        "start": 14,
+        "end": 87,
+        "value": "The Southwest Inside Out An Illustrated Guide to the Land and Its History",
+        "entity": "book_title"
+      }
+    ],
+    "predicted_entities": [
+      {
+        "entity": "book_title",
+        "start": 0,
+        "end": 9,
+        "confidence_entity": 0.539206862449646,
+        "value": "searching",
+        "extractor": "DIETClassifier"
+      },
+      {
+        "entity": "book_title",
+        "start": 14,
+        "end": 87,
+        "confidence_entity": 0.6615512371063232,
+        "value": "The Southwest Inside Out An Illustrated Guide to the Land and Its History",
+        "extractor": "DIETClassifier"
+      }
+    ]
+  },
+  {
+    "text": "slmn hrty and Glenn Danzig",
+    "entities": [],
+    "predicted_entities": [
+      {
+        "entity": "book_title",
+        "start": 0,
+        "end": 26,
+        "confidence_entity": 0.6427982449531555,
+        "value": "slmn hrty and Glenn Danzig",
+        "extractor": "DIETClassifier"
+      }
+    ]
+  },
+  {
+    "text": "that one by Savanna Fox",
+    "entities": [],
+    "predicted_entities": [
+      {
+        "entity": "book_title",
+        "start": 5,
+        "end": 23,
+        "confidence_entity": 0.5760732293128967,
+        "value": "one by Savanna Fox",
+        "extractor": "DIETClassifier"
+      }
+    ]
+  },
+  {
+    "text": "that was by Arabella Kurtz and David Sedaris",
+    "entities": [],
+    "predicted_entities": [
+      {
+        "entity": "book_title",
+        "start": 12,
+        "end": 20,
+        "confidence_entity": 0.5581995844841003,
+        "value": "Arabella",
+        "extractor": "DIETClassifier"
+      }
+    ]
+  },
+  {
+    "text": "that was by Heli Kalliolevo and Flora Dare",
+    "entities": [],
+    "predicted_entities": [
+      {
+        "entity": "book_title",
+        "start": 12,
+        "end": 42,
+        "confidence_entity": 0.560905396938324,
+        "value": "Heli Kalliolevo and Flora Dare",
+        "extractor": "DIETClassifier"
+      }
+    ]
+  },
+  {
+    "text": "the name of the author should be something like Bingo Marasigan",
+    "entities": [],
+    "predicted_entities": [
+      {
+        "entity": "book_title",
+        "start": 33,
+        "end": 53,
+        "confidence_entity": 0.5960645079612732,
+        "value": "something like Bingo",
+        "extractor": "DIETClassifier"
+      }
+    ]
+  },
+  {
+    "text": "the name of the author should be something similar to Elizabeth Loraine",
+    "entities": [],
+    "predicted_entities": [
+      {
+        "entity": "book_title",
+        "start": 33,
+        "end": 53,
+        "confidence_entity": 0.5202801823616028,
+        "value": "something similar to",
+        "extractor": "DIETClassifier"
+      }
+    ]
+  },
+  {
+    "text": "the name of the author should be something similar to Jacque Stevens",
+    "entities": [],
+    "predicted_entities": [
+      {
+        "entity": "book_title",
+        "start": 33,
+        "end": 53,
+        "confidence_entity": 0.5337316989898682,
+        "value": "something similar to",
+        "extractor": "DIETClassifier"
+      }
+    ]
+  },
+  {
+    "text": "the name of the author should be something similar to Lena Brown",
+    "entities": [],
+    "predicted_entities": [
+      {
+        "entity": "book_title",
+        "start": 33,
+        "end": 42,
+        "confidence_entity": 0.9277284741401672,
+        "value": "something",
+        "extractor": "DIETClassifier"
+      }
+    ]
+  },
+  {
+    "text": "the one with Entice (The Embrace Series, number 2)",
+    "entities": [
+      {
+        "start": 13,
+        "end": 50,
+        "value": "Entice (The Embrace Series, number 2)",
+        "entity": "book_title"
+      }
+    ],
+    "predicted_entities": [
+      {
+        "entity": "book_title",
+        "start": 0,
+        "end": 50,
+        "confidence_entity": 0.5588669776916504,
+        "value": "the one with Entice (The Embrace Series, number 2)",
+        "extractor": "DIETClassifier"
+      }
+    ]
+  },
+  {
+    "text": "the one with Rite of Conquest (William the Conqueror, number 1)",
+    "entities": [
+      {
+        "start": 13,
+        "end": 63,
+        "value": "Rite of Conquest (William the Conqueror, number 1)",
+        "entity": "book_title"
+      }
+    ],
+    "predicted_entities": [
+      {
+        "entity": "book_title",
+        "start": 0,
+        "end": 63,
+        "confidence_entity": 0.7734130620956421,
+        "value": "the one with Rite of Conquest (William the Conqueror, number 1)",
+        "extractor": "DIETClassifier"
+      }
+    ]
+  },
+  {
+    "text": "the one with Spain A Unique History",
+    "entities": [
+      {
+        "start": 13,
+        "end": 35,
+        "value": "Spain A Unique History",
+        "entity": "book_title"
+      }
+    ],
+    "predicted_entities": [
+      {
+        "entity": "book_title",
+        "start": 0,
+        "end": 35,
+        "confidence_entity": 0.8146566152572632,
+        "value": "the one with Spain A Unique History",
+        "extractor": "DIETClassifier"
+      }
+    ]
+  },
+  {
+    "text": "the one with Sweetwater (The Kihn number 1)",
+    "entities": [
+      {
+        "start": 13,
+        "end": 43,
+        "value": "Sweetwater (The Kihn number 1)",
+        "entity": "book_title"
+      }
+    ],
+    "predicted_entities": [
+      {
+        "entity": "book_title",
+        "start": 0,
+        "end": 43,
+        "confidence_entity": 0.7570856809616089,
+        "value": "the one with Sweetwater (The Kihn number 1)",
+        "extractor": "DIETClassifier"
+      }
+    ]
+  },
+  {
+    "text": "the one with The Dead City Rollers",
+    "entities": [
+      {
+        "start": 13,
+        "end": 34,
+        "value": "The Dead City Rollers",
+        "entity": "book_title"
+      }
+    ],
+    "predicted_entities": [
+      {
+        "entity": "book_title",
+        "start": 0,
+        "end": 34,
+        "confidence_entity": 0.5650935769081116,
+        "value": "the one with The Dead City Rollers",
+        "extractor": "DIETClassifier"
+      }
+    ]
+  },
+  {
+    "text": "the one with Wolf Hall",
+    "entities": [
+      {
+        "start": 13,
+        "end": 22,
+        "value": "Wolf Hall",
+        "entity": "book_title"
+      }
+    ],
+    "predicted_entities": [
+      {
+        "entity": "book_title",
+        "start": 0,
+        "end": 22,
+        "confidence_entity": 0.5956118106842041,
+        "value": "the one with Wolf Hall",
+        "extractor": "DIETClassifier"
+      }
+    ]
+  },
+  {
+    "text": "the title was something like An Isolated Incident",
+    "entities": [
+      {
+        "start": 29,
+        "end": 49,
+        "value": "An Isolated Incident",
+        "entity": "book_title"
+      }
+    ],
+    "predicted_entities": [
+      {
+        "entity": "book_title",
+        "start": 0,
+        "end": 3,
+        "confidence_entity": 0.9463014006614685,
+        "value": "the",
+        "extractor": "DIETClassifier"
+      },
+      {
+        "entity": "book_title",
+        "start": 14,
+        "end": 49,
+        "confidence_entity": 0.7398634552955627,
+        "value": "something like An Isolated Incident",
+        "extractor": "DIETClassifier"
+      }
+    ]
+  },
+  {
+    "text": "the title was something like Beyond Denial (Beyond, number 2.5)",
+    "entities": [
+      {
+        "start": 29,
+        "end": 63,
+        "value": "Beyond Denial (Beyond, number 2.5)",
+        "entity": "book_title"
+      }
+    ],
+    "predicted_entities": [
+      {
+        "entity": "book_title",
+        "start": 0,
+        "end": 3,
+        "confidence_entity": 0.9329553246498108,
+        "value": "the",
+        "extractor": "DIETClassifier"
+      },
+      {
+        "entity": "book_title",
+        "start": 14,
+        "end": 63,
+        "confidence_entity": 0.6448701024055481,
+        "value": "something like Beyond Denial (Beyond, number 2.5)",
+        "extractor": "DIETClassifier"
+      }
+    ]
+  },
+  {
+    "text": "the title was something like Eunica",
+    "entities": [
+      {
+        "start": 29,
+        "end": 35,
+        "value": "Eunica",
+        "entity": "book_title"
+      }
+    ],
+    "predicted_entities": [
+      {
+        "entity": "book_title",
+        "start": 0,
+        "end": 3,
+        "confidence_entity": 0.7848465442657471,
+        "value": "the",
+        "extractor": "DIETClassifier"
+      },
+      {
+        "entity": "book_title",
+        "start": 14,
+        "end": 35,
+        "confidence_entity": 0.899060070514679,
+        "value": "something like Eunica",
+        "extractor": "DIETClassifier"
+      }
+    ]
+  },
+  {
+    "text": "the title was something like Perdida en la realidad",
+    "entities": [
+      {
+        "start": 29,
+        "end": 51,
+        "value": "Perdida en la realidad",
+        "entity": "book_title"
+      }
+    ],
+    "predicted_entities": [
+      {
+        "entity": "book_title",
+        "start": 0,
+        "end": 3,
+        "confidence_entity": 0.8983232378959656,
+        "value": "the",
+        "extractor": "DIETClassifier"
+      },
+      {
+        "entity": "book_title",
+        "start": 14,
+        "end": 51,
+        "confidence_entity": 0.7683610320091248,
+        "value": "something like Perdida en la realidad",
+        "extractor": "DIETClassifier"
+      }
+    ]
+  },
+  {
+    "text": "the title was something like The Alexandria Link (Cotton Malone, number 2)",
+    "entities": [
+      {
+        "start": 29,
+        "end": 74,
+        "value": "The Alexandria Link (Cotton Malone, number 2)",
+        "entity": "book_title"
+      }
+    ],
+    "predicted_entities": [
+      {
+        "entity": "book_title",
+        "start": 0,
+        "end": 3,
+        "confidence_entity": 0.7019451260566711,
+        "value": "the",
+        "extractor": "DIETClassifier"
+      },
+      {
+        "entity": "book_title",
+        "start": 14,
+        "end": 74,
+        "confidence_entity": 0.5385581254959106,
+        "value": "something like The Alexandria Link (Cotton Malone, number 2)",
+        "extractor": "DIETClassifier"
+      }
+    ]
+  },
+  {
+    "text": "you have Breakup Formula ?",
+    "entities": [
+      {
+        "start": 9,
+        "end": 24,
+        "value": "Breakup Formula",
+        "entity": "book_title"
+      }
+    ],
+    "predicted_entities": [
+      {
+        "entity": "book_title",
+        "start": 9,
+        "end": 26,
+        "confidence_entity": 0.5122125744819641,
+        "value": "Breakup Formula ?",
+        "extractor": "DIETClassifier"
+      }
+    ]
+  },
+  {
+    "text": "you have Communiceren in the New Normal ?",
+    "entities": [
+      {
+        "start": 9,
+        "end": 39,
+        "value": "Communiceren in the New Normal",
+        "entity": "book_title"
+      }
+    ],
+    "predicted_entities": [
+      {
+        "entity": "book_title",
+        "start": 9,
+        "end": 41,
+        "confidence_entity": 0.939570426940918,
+        "value": "Communiceren in the New Normal ?",
+        "extractor": "DIETClassifier"
+      }
+    ]
+  },
+  {
+    "text": "you have Saving the Bride A Mail Order Bride Historical Western Romance ?",
+    "entities": [
+      {
+        "start": 9,
+        "end": 71,
+        "value": "Saving the Bride A Mail Order Bride Historical Western Romance",
+        "entity": "book_title"
+      }
+    ],
+    "predicted_entities": [
+      {
+        "entity": "book_title",
+        "start": 9,
+        "end": 73,
+        "confidence_entity": 0.7917848229408264,
+        "value": "Saving the Bride A Mail Order Bride Historical Western Romance ?",
+        "extractor": "DIETClassifier"
+      }
+    ]
+  },
+  {
+    "text": "you have The Forgetting Curve (Memento Nora, number 2) ?",
+    "entities": [
+      {
+        "start": 9,
+        "end": 54,
+        "value": "The Forgetting Curve (Memento Nora, number 2)",
+        "entity": "book_title"
+      }
+    ],
+    "predicted_entities": [
+      {
+        "entity": "book_title",
+        "start": 9,
+        "end": 56,
+        "confidence_entity": 0.9875727891921997,
+        "value": "The Forgetting Curve (Memento Nora, number 2) ?",
+        "extractor": "DIETClassifier"
+      }
+    ]
+  },
+  {
+    "text": "you have The Kidnapped King (A to Z Mysteries, number 11) ?",
+    "entities": [
+      {
+        "start": 9,
+        "end": 57,
+        "value": "The Kidnapped King (A to Z Mysteries, number 11)",
+        "entity": "book_title"
+      }
+    ],
+    "predicted_entities": [
+      {
+        "entity": "book_title",
+        "start": 9,
+        "end": 59,
+        "confidence_entity": 0.9720601439476013,
+        "value": "The Kidnapped King (A to Z Mysteries, number 11) ?",
+        "extractor": "DIETClassifier"
+      }
+    ]
+  },
+  {
+    "text": "you have Wisteria Cottage ?",
+    "entities": [
+      {
+        "start": 9,
+        "end": 25,
+        "value": "Wisteria Cottage",
+        "entity": "book_title"
+      }
+    ],
+    "predicted_entities": [
+      {
+        "entity": "book_title",
+        "start": 9,
+        "end": 27,
+        "confidence_entity": 0.9698090553283691,
+        "value": "Wisteria Cottage ?",
+        "extractor": "DIETClassifier"
+      }
+    ]
+  }
+]

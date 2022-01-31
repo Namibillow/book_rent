@@ -2,11 +2,9 @@
 
 This repository is for the Human Machine Dialogue course final project.
 
-Using rasa v2.8.16, rasa-sdk v2.8.3 and python v3.8.12.
+I have created a library help service bot using rasa v2.8.16, rasa-sdk v2.8.3 and python v3.8.12.
 
-I have created a library help service bot. 
-
-However, not all the files are included for privacy and size reasons.
+Not all the files required to run this are included for privacy and size reasons.
 
 ### To quickly exaplin what's contained in this repo: 
 
@@ -19,3 +17,5 @@ However, not all the files are included for privacy and size reasons.
 - **utils/** contains files used to create data
 - **tests/** contains files for testing examples & stories used for testing 
 - **endpoints.yml** contains the webhook configuration for the custom action  
+- **models/** contains saved trained models
+- ***_test_results/** contains test results for NLU & Dialogue models 

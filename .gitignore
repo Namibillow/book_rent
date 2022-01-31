@@ -13,6 +13,7 @@ credentials.yml
 *.data
 ga_connector.py 
 gactions
+models/
 ngrok
 endpoints.yml
 .DS_Store

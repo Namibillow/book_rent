@@ -1,0 +1,85 @@
+version: "2.0"
+stories:
+- story: greet, cancel (/home/naminami/Desktop/rasas/book_rent/tests/test_stories.yml)
+  steps:
+  - intent: greet
+  - action: utter_greet
+  - action: utter_help
+  - intent: terminate_conversation
+  - action: utter_ok  # predicted: action_unlikely_intent
+  - action: action_reset_slots
+- story: Story from Conversation ID b5cddb04ab5346d5b7be862e200356d9 (/home/naminami/Desktop/rasas/book_rent/tests/test_stories.yml)
+  steps:
+  - intent: greet
+  - action: utter_greet
+  - action: utter_help
+  - intent: search_book
+  - action: action_reset_slots  # predicted: action_unlikely_intent
+  - action: utter_search_book_greet
+  - action: search_book_form
+  - active_loop: search_book_form
+  - slot_was_set:
+    - book_title: null
+  - slot_was_set:
+    - wrong_author_names: []
+  - slot_was_set:
+    - book_authors: null
+  - slot_was_set:
+    - requested_slot: book_title
+  - slot_was_set:
+    - book_title: skip
+  - slot_was_set:
+    - book_authors: null
+  - slot_was_set:
+    - requested_slot: book_authors
+  - slot_was_set:
+    - book_authors:
+      - john green
+  - slot_was_set:
+    - book_title: skip
+  - slot_was_set:
+    - requested_slot: null
+  - slot_was_set:
+    - requested_slot: null
+  - active_loop: null
+  - action: action_search_book
+  - slot_was_set:
+    - book_title: null
+  - slot_was_set:
+    - book_authors: null
+  - slot_was_set:
+    - wrong_author_names: null
+  - slot_was_set:
+    - book_info_prefilled: false
+  - slot_was_set:
+    - found_books:
+      - - 24781888
+        - Looking for Alaska
+        - - 1406384
+        - - John Green
+      - - 49750
+        - An Abundance of Katherines
+        - - 1406384
+        - - John Green
+      - - 22727409
+        - The Space & The Cat and the Mouse
+        - - 1406384
+        - - John Green
+      - - 22464636
+        - The Fault in Our Stars
+        - - 1406384
+        - - John Green
+  - slot_was_set:
+    - selected_list_index: null
+  - slot_was_set:
+    - has_found_book: true
+  - slot_was_set:
+    - has_list_selection: true
+  - action: utter_ask_list_have_desired
+  - intent: deny
+  - action: utter_sorry_to_hear_that
+  - action: action_reset_slots
+  - intent: user_inventory_check_current_borrowing
+  - action: action_user_inventory
+  - intent: faq_total_allowance
+  - action: utter_total_allowance
