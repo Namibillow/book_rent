@@ -1,6 +1,6 @@
 version: "2.0"
 nlu:
-- intent: goodbye
+- intent: goodbye # 10 examples
   examples: |
     - see you later
     - goodbye
@@ -12,7 +12,7 @@ nlu:
     - good bye
     - bye
     - talk to you tomorrow
-- intent: terminate_conversation
+- intent: terminate_conversation # 11 examples
   examples: |
     - i want to quit this dialog
     - terminate
@@ -25,7 +25,7 @@ nlu:
     - restart
     - quit the conversation
     - end the conversation
-- intent: thanks
+- intent: thanks # 10 examples
   examples: |
     - good job!
     - thank you for the help
@@ -37,7 +37,7 @@ nlu:
     - thank you so much
     - thank you
     - your service is amazing
-- intent: deny
+- intent: deny # 12 examples
   examples: |
     - no
     - no borrowing
@@ -51,7 +51,7 @@ nlu:
     - i don't think so
     - nope
     - i don't want to borrow anymore
-- intent: repeat_again
+- intent: repeat_again # 12 examples
   examples: |
     - repeat please
     - say it again
@@ -65,7 +65,7 @@ nlu:
     - what
     - say it one more time please
     - what's that
-- intent: greet
+- intent: greet # 14 examples
   examples: |
     - how are you doing
     - hello there
@@ -81,7 +81,7 @@ nlu:
     - goodmorning
     - hi
     - wassup
-- intent: help
+- intent: help # 16 examples
   examples: |
     - help me please
     - what does the bot provide
@@ -99,7 +99,7 @@ nlu:
     - what are the offers
     - what do you offer
     - help
-- intent: bot_challenge
+- intent: bot_challenge # 17 examples
   examples: |
     - are you real
     - are you sure that you're a bot
@@ -118,7 +118,7 @@ nlu:
     - are you a rasa bot
     - are you an ai
     - are you some new ai
-- intent: affirm
+- intent: affirm # 25 examples
   examples: |
     - sure
     - yes i wanna read it
@@ -145,7 +145,7 @@ nlu:
     - cool
     - positive
     - yes
-- intent: user_inventory_check_remaining
+- intent: user_inventory_check_remaining # 27 examples
   examples: |
     - how many books i can still borrow from the library
     - tell me how many books i can still borrow.
@@ -174,7 +174,7 @@ nlu:
     - how many books can i still borrow from the library
     - what's the book limit i still have
     - i wanna know how many books i can borrow more.
-- intent: out_of_scope
+- intent: out_of_scope # 133 examples
   examples: |
     - make a cat noise
     - can i bring my dog to the library
@@ -309,7 +309,7 @@ nlu:
     - set a timer at 6 am
     - my washing machine isn't working
     - i want to extend the return dates of my books i am borrowing
-- intent: faq_check_location
+- intent: faq_check_location # 69 examples
   examples: |
     - can you give me your address
     - give me location please
@@ -380,7 +380,7 @@ nlu:
     - where is your location
     - you got location
     - where are you at
-- intent: search_book
+- intent: search_book # 72 examples
   examples: |
     - search
     - do a search
@@ -454,7 +454,7 @@ nlu:
     - start the search of the book
     - i am looking for a particular book to read
     - help me find a book
-- intent: select_from_list
+- intent: select_from_list # 104 examples
   examples: |
     - fourth one
     - the [ninetyninth](ordinal)
@@ -560,7 +560,7 @@ nlu:
     - get me the [third](ordinal) one
     - the [2nd](ordinal)
     - third book
-- intent: faq_check_open
+- intent: faq_check_open # 64 examples
   examples: |
     - i want to ask you do you guys open this afternoon
     - what is the time of the library
@@ -626,7 +626,7 @@ nlu:
     - what are timings of the library
     - do you open five pm
     - are you opening at right this moment
-- intent: faq_total_allowance
+- intent: faq_total_allowance # 64 examples
   examples: |
     - i wanna borrow up to maximum limit of the books, how many is that
     - could you tell me the number of books one could borrow in general
@@ -692,7 +692,7 @@ nlu:
     - can you tell me how many books i can borrow in total
     - what is the total limit of borrowing for me
     - do you know what's the number of books i can borrow in general
-- intent: contact_library
+- intent: contact_library # 177 examples
   examples: |
     - give me your [call](contact_type) please.
     - give me the [email account](contact_type) of the library please.
@@ -871,7 +871,7 @@ nlu:
     - would you be nice enough to tell me the library's [telephone number](contact_type)
     - do you have an [email address]{"entity": "contact_type", "value": "email"}
     - i want to contact
-- intent: user_inventory_check_return
+- intent: user_inventory_check_return # 1542 examples 
   examples: |
     - return date of [diary of a baby](book_title) please
     - return date of [just like me](book_title) please
@@ -2417,7 +2417,7 @@ nlu:
     - i have a book called [prodigy](book_title) borrowed from library and i want to know what date i need to return them.
     - when exactly is the rental date for the book by hanns joachim friedrichs .
     - information about the return date of a book with title [at long last love : how to find the best relationship of your life](book_title) by warren bennis and z. fairbairns .
-- intent: user_inventory_check_current_borrowing
+- intent: user_inventory_check_current_borrowing # 1572 examples
   examples: |
     - can you check what im borrowing
     - got time to check what im borrowing
@@ -3990,7 +3990,7 @@ nlu:
     - check for me that if i am borrowing a book written by peter calvocoressi
     - am i borrowing any books written by wolfgang iser right now
     - bro can you check what im borrowing
-- intent: inform_book_info
+- intent: inform_book_info # 2000 examples
   examples: |
     - can you search for [A Bullet for Cinderella](book_title)
     - title is [where does the white go when the snow melts? (the adventures of andrew)](book_title)
